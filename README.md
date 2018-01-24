@@ -1,2 +1,2 @@
-# calendrier_collaboratif
+# Calendrier Collaboratif
 Projet d'un calendrier collaboratif
