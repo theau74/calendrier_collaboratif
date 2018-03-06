@@ -5,7 +5,7 @@ function display_home(){
 	require ("pages/home.php");
 
 }
-function display_main(){
+function display_main($event_list){
 
     require ("pages/main.php");
 

@@ -3,6 +3,7 @@
 session_start();
 include("dblog/dblog.php");
 include("modele/crypt.php");
+include("modele/event.php");
 include("modele/user.php");
 include("controller/controller.php");
 include("view/display.php");

@@ -4,7 +4,7 @@ if ($page == "home") {
     display_home();
 }
 elseif ($page == "main") {
-    display_main();
+    display_main($event_list);
 }
 elseif ($page == "propos") {
     display_apropos();
