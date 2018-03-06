@@ -18,12 +18,6 @@
     overflow-y: auto;
 }
 
-.nav-cal{
-    word-wrap: break-word;
-    width: 168px;
-    height: 100%;
-    position: fixed;
-
 
 #nav-content{
     padding: 10px;
