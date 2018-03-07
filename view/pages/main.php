@@ -1,14 +1,4 @@
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-
-    <link rel='stylesheet' href='lib/fullcalendar.css' />
-    <script src='lib/jquery.min.js'></script>
-    <script src='lib/moment.min.js'></script>
-    <script src='lib/fullcalendar.js'></script>
-    <div class="ac-header-home">
-
-        <h1 class="ac-header-home-title">Agenda Collaboratif</h1>
+  <h1 class="ac-header-home-title">Agenda Collaboratif</h1>
 
     </div>
 

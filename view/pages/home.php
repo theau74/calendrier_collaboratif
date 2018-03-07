@@ -1,3 +1,8 @@
+<h1 class="ac-header-home-title">
+    Agenda Collaboratif
+</h1>
+
+
 <div class="ac-home ac-home-signin">
 
     <form action="index.php?ac=signin" method="post">
@@ -22,7 +27,7 @@
                     </li>
 
                     <li class="ac-home-sign-item-boutton-right">
-                        <a href="sub.php" class="ac-home-sign-item-boutton-sign">
+                        <a href="index.php?subform" class="ac-home-sign-item-boutton-sign">
                             Inscription
                         </a>
                     </li>
