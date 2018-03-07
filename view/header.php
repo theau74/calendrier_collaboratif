@@ -10,11 +10,11 @@
     <link href="asset/css/main.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="asset/js/pre_load.js"></script>
     <script type="text/javascript" src="../asset/js/script.js"></script>
-    <link rel='stylesheet' href='asset/calendar/fullcalendar.css' />
-    <script src='asset/calendar/lib/jquery.min.js'></script>
-    <script src='asset/calendar/lib/moment.min.js'></script>
-    <script src='asset/calendar/fullcalendar.js'></script>
-    <script src='asset/calendar/locale/fr.js'></script>
+    <link rel='stylesheet' href='asset/css/fullcalendar.css' />
+    <script src='asset/js/jquery.min.js'></script>
+    <script src='asset/js/moment.min.js'></script>
+    <script src='asset/js/fullcalendar.js'></script>
+    <script src='asset/js/fr.js'></script>
     <title>Agenda Collaboratif - Agenda</title>
     <meta name="keywords"/>
     <meta name="description"/>
