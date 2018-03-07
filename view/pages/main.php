@@ -2,7 +2,16 @@
 
     </div>
 
-
+  <?php
+  foreach ($event_list as $events){
+      var_dump($events);
+      echo"{";
+      if(!empty($events['id'])){
+          echo'title : "'.$events['id'].'",';
+      }
+      echo"}";
+  }
+  ?>
     <script>$(document).ready(function() {
 
             // Le calendrier peut être charger dans la page :
@@ -16,6 +25,8 @@
                 contentHeight: 600,
 
                 events: [
+
+
                     {
                         title  : 'event1',
                         start  : '2018-02-01',
