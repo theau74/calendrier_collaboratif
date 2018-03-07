@@ -2,16 +2,7 @@
 
     </div>
 
-  <?php
-  foreach ($event_list as $events){
-      var_dump($events);
-      echo"{";
-      if(!empty($events['id'])){
-          echo'title : "'.$events['id'].'",';
-      }
-      echo"}";
-  }
-  ?>
+
     <script>$(document).ready(function() {
 
             // Le calendrier peut être charger dans la page :
@@ -27,38 +18,25 @@
                 events: [
 
 
-                    {
-                        title  : 'event1',
-                        start  : '2018-02-01',
-                        type : 'public'
-                    },
-                    {
-                        title  : 'event2',
-                        start  : '2018-02-05T08:00:00',
-                        end    : '2018-02-05T10:00:00',
-                        type : 'private'
-                    },
-                    {
-                        title  : 'event3',
-                        start  : '2018-02-09T12:30:00',
-                        default: '02:00:00'
-                    },
-                    {
-                        title  : 'event4',
-                        start  : '2018-02-06T08:00:00',
-                        end    : '2018-02-06T10:00:00',
-                        description : "c'est dla balle"
-                    },
-                    {
-                        title  : 'event5',
-                        start  : '2018-02-09T08:00:00',
-                        end    : '2018-02-009T10:00:00'
-                    },
-                    {
-                        title  : 'event6',
-                        start  : '2018-02-10T08:00:00',
-                        end    : '2018-02-10T10:00:00'
+                    <?php
+                    foreach ($event_list as $events){
+                        echo"{";
+                        if(!empty($events['id'])){
+                            echo'id : "'.$events['id'].'",';
+                        }if(!empty($events['nom'])){
+                            echo'title : "'.$events['nom'].'",';
+                        }if(!empty($events['description'])){
+                            echo'description : "'.$events['description'].'",';
+                        }if(!empty($events['type'])){
+                            echo'type : "'.$events['type'].'",';
+                        }if(!empty($events['start'])){
+                            echo'start : "'.$events['start'].'",';
+                        }if(!empty($events['end'])){
+                            echo'end : "'.$events['end'].'",';
+                        }
+                        echo"},";
                     }
+                    ?>
                 ],
 
                 navLinks: true,

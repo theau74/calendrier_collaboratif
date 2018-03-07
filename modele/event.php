@@ -12,6 +12,7 @@ WHERE U.id_users ='$id'");
         $event_list[$loop]= $donnees;
         $loop++;
     }
+
     return $event_list;
 
 }
