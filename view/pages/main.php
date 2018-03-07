@@ -8,13 +8,13 @@
             // Le calendrier peut être charger dans la page :
 
             $('#calendar').fullCalendar({
-                //Heure de début :
+
                 minTime : "06:00:00",
-                //Heure de fin :
+
                 maxTime : "19:00:00",
 
                 contentHeight: 600,
-                //Liste des évenements :
+
                 events: [
                     {
                         title  : 'event1',
@@ -49,20 +49,20 @@
                         end    : '2018-02-10T10:00:00'
                     }
                 ],
-                // Fonction pour cliquer sur les dates :
+
                 navLinks: true,
                 navLinkWeekClick:'agendaDay',
                 navLinkDayClick:'agendaDay',
-                // Fonction Drag and Drop :
+
                 editable: true,
                 eventDrop: function(event, delta, revertFunc) {
                     if (!confirm(event.title + " commence maitenant a : " + event.start.format() + " ete vous sure de ce changement? ")) {
                         revertFunc();
                     } else {
-                        //document.location.href="test2.html";
+                        document.location.href="test2.html";
                     }
                 },
-                // Button du calendrier
+
                 customButtons: {
                     Mois: {
                         text: 'Mois',
@@ -91,7 +91,7 @@
 
                 },
 
-                //Header du calendrier
+
                 header: {
                     right: 'Mois,Semaine,Jour,Agenda',
                     center: 'title',
@@ -104,7 +104,6 @@
 
             });
         });
-        $('#draggable1').draggable();
     </script>
 
 </head>
