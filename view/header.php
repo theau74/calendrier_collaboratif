@@ -20,3 +20,8 @@
 
 </head>
 <body>
+
+<?php
+display_user_session();
+
+?>
