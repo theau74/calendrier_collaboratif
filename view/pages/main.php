@@ -70,7 +70,7 @@
                     if (!confirm(event.title + " commence maitenant a : " + event.start.format() + " ete vous sure de ce changement? ")) {
                         revertFunc();
                     } else {
-                        document.location.href="test2.html";
+
                     }
                 },
 
