@@ -23,16 +23,6 @@
     padding: 10px;
 }
 
-footer{
-    position: fixed;
-    bottom: 0px;
-    left: 0px;
-    width: 144px;
-    border-top: 2px solid darkgreen;
-    color: white;
-    padding-left: 43px;
-}
-
 
 /*********************************************************************************\
  * Global                                                                        *
@@ -139,11 +129,6 @@ a {
     border: 2px solid transparent;
     border-radius: 20px;
     padding: 10px 10px;
-    -webkit-transform: 0.5s;
-    -moz-transform: 0.5s;
-    -ms-transform: 0.5s;
-    -o-transform: 0.5s;
-    transform: 0.5s;
 }
 
 .ac-home-sign-item-input:focus {
@@ -154,7 +139,7 @@ a {
 .ac-home-sign-allBoutton {
     display: inline-block;
     width: 100%;
-    padding: 10px 30px;
+    padding: 10px 50px;
     margin-top: 50px;
 }
 
