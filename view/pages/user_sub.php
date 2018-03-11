@@ -15,7 +15,7 @@
             </li>
 
             <li class="ac-home-sign-item">
-                <input type='password' class="ac-home-sign-item-input" name="Mot de passe" placeholder="Mot de passe" required>
+                <input type='password' class="ac-home-sign-item-input" name="password" placeholder="Mot de passe" required>
             </li>
 
             <li class="ac-home-sign-item">

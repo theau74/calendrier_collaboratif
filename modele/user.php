@@ -53,8 +53,34 @@ function get_info_user_by_id($id, $c){
         $user_info= $row;
     }
     return $user_info;
-
 }
+
+function get_users_list($c){
+    $sql = ("SELECT id, Fname, Lname FROM users");
+    $result = mysqli_query($c,$sql);
+    $users_list= array ();
+    $loop = 0;
+    while ($donnees = mysqli_fetch_assoc($result))
+    {
+        $users_list[$loop]= $donnees;
+        $loop++;
+    }
+    return $users_list;
+}
+
+function get_users_id_by_group_id($id_groups, $c){
+    $sql = ("SELECT id_users FROM users_groups WHERE id_groups='$id_groups'");
+    $result = mysqli_query($c,$sql);
+    $users_list= array ();
+    $loop = 0;
+    while ($donnees = mysqli_fetch_assoc($result))
+    {
+        $users_list[$loop]= $donnees;
+        $loop++;
+    }
+    return $users_list;
+}
+
 
 
 

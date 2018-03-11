@@ -21,4 +21,13 @@ elseif (($page == "sub_failed")) {
 elseif (($page == "user_sub")) {
     display_user_sub();
 }
+elseif (($page == "create-event")) {
+    display_create_event();
+}elseif (($page == "set_event_visibility")) {
+    display_event_visibility($groups_list, $users_list);
+}
+elseif (($page == "creation_event_sucess")) {
+    display_creation_event_sucess();
+}
+
 

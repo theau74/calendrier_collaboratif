@@ -50,4 +50,12 @@ function display_signup_failed(){
     require ("pages/signup_failed.php");
 
 }
-
+function display_create_event(){
+    require ("pages/create_event.php");
+}
+function display_event_visibility($groups_list, $users_list){
+    require ("pages/event_visibility.php");
+}
+function display_creation_event_sucess(){
+    require ("pages/creation_event_sucess.php");
+}

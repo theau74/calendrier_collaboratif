@@ -31,7 +31,9 @@
                             echo'type : "'.$events['type'].'",';
                         }if(!empty($events['start'])){
                             echo'start : "'.$events['start'].'",';
-                        }if(!empty($events['end'])){
+                        }
+
+                        if(!empty($events['end']) and $events['end']!= ""){
                             echo'end : "'.$events['end'].'",';
                         }
                         echo"},";
