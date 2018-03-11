@@ -1,58 +1,5 @@
-.main-header{
-	background-color: green;
-	width: 100%;
-    height: 60px;
-    top: 0px;
-    position: relative;
-
-}
-
-.main-cal{
-    word-wrap: break-word;
-	background-color: red;
-    top: 60px;
-	bottom: 0px;
-    left: 188px;
-    position: fixed;
-    padding: 5px;
-    overflow-y: auto;
-}
-
-
-#nav-content{
-    padding: 10px;
-}
-
-
 /*********************************************************************************\
- * Global                                                                        *
-\*********************************************************************************/
-
-
-/*********************************************************************************\
- * Global                     COMMIT                                                   *
-\*********************************************************************************/
-
-
-/*********************************************************************************\
- * Global                                                                        *
-\*********************************************************************************/
-
-
-/*********************************************************************************\
- * Global                                                                        *
-\*********************************************************************************/
-
-
-/*********************************************************************************\
- * Global                                                                        *
-\*********************************************************************************/
-
-
-
-
-/*********************************************************************************\
- * Global                                                                        *
+ *   Global                                                                      *
 \*********************************************************************************/
 
 
@@ -63,10 +10,15 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: #636e72;
+    font-family: 'PT Sans', sans-serif;
+    background: url("../img/Bgc_home.jpg") no-repeat;
+    background-size: cover;
+/*    background: rgb(4,73,153);
+    background: -moz-linear-gradient(-45deg, rgba(4,73,153,1) 0%, rgba(134,99,204,1) 100%);
+    background: -webkit-linear-gradient(-45deg, rgba(4,73,153,1) 0%,rgba(134,99,204,1) 100%);
+    background: linear-gradient(135deg, rgba(4,73,153,1) 0%,rgba(134,99,204,1) 100%); */
     font-size: 15px;
-    height: 100vh;
+    height: calc(100vh - 50px);
 }
 
 a {
@@ -76,71 +28,97 @@ a {
 
 ::placeholder {
     font-size: 14px;
-    color: gray;
+    color: #FFF;
 }
 
 
 /*********************************************************************************\
- * Header Home                                                                   *
+ *   Container                                                                   *
 \*********************************************************************************/
 
 
-.ac-header-home {
-    border-bottom: 2px solid black;
-}
-
-.ac-header-home-title {
-    text-transform: uppercase;
-    text-align: center;
-    padding: 40px;
-    font-size: 20px;
-    color: #fff;
-}
-
-
-/*********************************************************************************\
- * Home                                                                          *
-\*********************************************************************************/
-
-
-.ac-home {
+.ac-home-container {
     width: 100%;
-    padding: 130px 50px;
-    color: #fff;
-    height: calc(100vh - 100px - 60px);
+    padding: 50px;
+    height: calc(100vh - 130px - 80px);
     overflow-y: auto;
 }
 
+
+/*********************************************************************************\
+ *   Home                                                                        *
+\*********************************************************************************/
+
+
+/*************\
+ *   Header  *
+\*************/
+
+
+.ac-home-header {
+    padding: 10px 25px;
+    width: 250px;
+    margin: 25px auto;
+/*    background: rgb(4,73,153);
+    background: -moz-linear-gradient(-45deg, rgba(4,73,153,1) 0%, rgba(134,99,204,1) 100%);
+    background: -webkit-linear-gradient(-45deg, rgba(4,73,153,1) 0%,rgba(134,99,204,1) 100%);
+    background: linear-gradient(135deg, rgba(4,73,153,1) 0%,rgba(134,99,204,1) 100%); */
+    box-shadow: 4px 4px 10px 0px #000;
+    border-radius: 5px;
+}
+
+.ac-home-header-title {
+    font-size: 30px;
+    color: #FFF;
+}
+
+
+/*************\
+ *   Main    *
+\*************/
+
+
+.ac-home {
+    max-width: 500px;
+    border-radius: 5px;
+    padding: 25px;
+    box-shadow: 4px 4px 10px 0px #000;
+    background-color: #5765A2;
+    margin: 0 auto;
+}
+
 .ac-home-signin {
-    padding: 130px 50px;
+    padding: 70px 50px;
 }
 
 .ac-home-signup {
-    padding: 50px;
+    padding: 20px 50px;
 }
 
 .ac-home-sign-item {
-    padding: 5px 10px;
+    padding: 8px 10px;
 }
 
 .ac-home-sign-item-input {
+    color: #fff;
     width: 100%;
-    height: 40px;
-    border: 2px solid transparent;
-    border-radius: 20px;
+    height: 30px;
     padding: 10px 10px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #000;
 }
 
 .ac-home-sign-item-input:focus {
     outline: none;
-    border: 2px solid;
+    border-bottom: 1px solid #fff;
 }
 
 .ac-home-sign-allBoutton {
     display: inline-block;
     width: 100%;
-    padding: 10px 50px;
-    margin-top: 50px;
+    padding: 10px 20px;
+    margin-top: 20px;
 }
 
 .ac-home-sign-item-boutton-left {
@@ -152,74 +130,146 @@ a {
 }
 
 .ac-home-sign-item-boutton-log {
-    border: 2px solid #fff;
-    border-radius: 20px;
+    border-color: transparent;
+    border-radius: 5px;
     text-transform: uppercase;
+    font-family: "PT Sans", sans-serif;
     font-weight: 700;
     font-size: 14px;
     padding: 0 20px;
     margin-bottom: 10px;
-    line-height: 36px;
+    line-height: 40px;
     height: 40px;
     width: 100%;
-    min-width: 200px;
+    min-width: 170px;
     color: #fff;
     cursor: pointer;
-    background-color: #eb2f06;
+    background-color: transparent;
+    box-shadow: 4px 4px 10px 0px #000;
+
+
+    -webkit-transition: background-color .25s ease-in-out, color .25s ease-in-out, transform .25s ease-in-out, box-shadow .25s ease-in-out;
+    -moz-transition: background-color .25s ease-in-out, color .25s ease-in-out, transform .25s ease-in-out, box-shadow .25s ease-in-out;
+    transition: background-color .25s ease-in-out, color .25s ease-in-out, transform .25s ease-in-out, box-shadow .25s ease-in-out;
+
 }
 
 .ac-home-sign-item-boutton-log:hover {
-    transform: scale(1.1);
+    transform: scale(0.95);
+    background-color: #fff;
+    color: #000;
+    box-shadow: 6px 6px 8px 0px #000;
+
+
+
 }
 
 .ac-home-sign-item-boutton-sign {
-    border: 2px solid #fff;
-    border-radius: 20px;
+    border-color: transparent;
+    border-radius: 5px;
     text-transform: uppercase;
     text-align: center;
     font-weight: 700;
     font-size: 14px;
     padding: 0 20px;
     margin-top: 10px;
-    line-height: 36px;
+    line-height: 40px;
     height: 40px;
     width: 100%;
-    min-width: 200px;
+    min-width: 170px;
     color: #fff;
     cursor: pointer;
-    background-color: gray;
     display: block;
+    background-color: #16EAA8;
+    box-shadow: 4px 4px 10px 0px #000;
+
+
+    -webkit-transition: background-color .25s ease-in-out, color .25s ease-in-out, transform .25s ease-in-out, box-shadow .25s ease-in-out;
+    -moz-transition: background-color .25s ease-in-out, color .25s ease-in-out, transform .25s ease-in-out, box-shadow .25s ease-in-out;
+    transition: background-color .25s ease-in-out, color .25s ease-in-out, transform .25s ease-in-out, box-shadow .25s ease-in-out;
+
 }
 
 .ac-home-sign-item-boutton-sign:hover {
-    transform: scale(1.1);
+    transform: scale(0.95);
+    background-color: #76EAA8;
+    box-shadow: 6px 6px 8px 0px #000;
+
+}
+
+.ac-home-signin-text {
+    color: #fff;
+}
+
+.ac-home-signin-continue {
+    width: 90px;
+    padding: 6px 12px;
+    margin-left: auto;
+    display: block;
+    border: 1px solid;
+    border-radius: 5px;
+    color: #fff;
+    box-shadow: 4px 4px 10px -2px black;
+}
+
+
+/*************\
+ *   Footer  *
+\*************/
+
+
+.ac-home-footer {
+    padding: 9px 25px;
+    width: 220px;
+    margin: 25px auto;
+    background-color: transparent;
+/*    background: rgb(4,73,153);
+    background: -moz-linear-gradient(-45deg, rgba(4,73,153,1) 0%, rgba(134,99,204,1) 100%);
+    background: -webkit-linear-gradient(-45deg, rgba(4,73,153,1) 0%,rgba(134,99,204,1) 100%);
+    background: linear-gradient(135deg, rgba(4,73,153,1) 0%,rgba(134,99,204,1) 100%); */
+    box-shadow: 4px 4px 10px 0px #000;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.ac-home-footer-title {
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    width: 100%;
 }
 
 
 /*********************************************************************************\
- * Container                                                                     *
+ *   Main                                                                        *
 \*********************************************************************************/
 
-
-.ac-container {
-    width: 1000px;
-    margin: 0 auto;
+.gb_fc {
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 4px;
+    padding: 12px;
+    overflow: hidden;
+    vertical-align: middle;
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+    -webkit-user-select: none;
+    -webkit-flex: 0 0 auto;
+    flex: 0 0 auto;
 }
 
 
-/*********************************************************************************\
- * Header - NavBar                                                               *
-\*********************************************************************************/
 
 
-.ac-header-nav {
-
-}
 
 
-/*********************************************************************************\
- * Main                                                                          *
-\*********************************************************************************/
+
 
 
 .ac-main {
@@ -231,62 +281,97 @@ a {
     width: 100%;
     height: 70px;
     position: relative;
-    box-shadow: inset 0px 0px 0px 1px #000000;
+    background-color: #fcf8e3;
+    box-shadow: inset 0px 0px 6px -2px #000000;
 }
 
 .ac-main-calendrier {
-    width: calc(100% - 250px);
+    width: 100%;
     height: calc(100vh - 70px);
     float: right;
     background-color: #fff;
     overflow-y: auto;
-    box-shadow: inset 0px 0px 0px 1px #000000;
+    padding: 20px 10px 10px;
+    box-shadow: inset 0px 0px 0px 1px #fcf8e3;
 }
 
-.ac-main-nav {
-    width: 250px;
+.ac-main-createEvent {
+    width: 100%;
     height: calc(100vh - 70px);
-    float: left;
-    background-color: #fff;
-    overflow-y: scroll;
-    box-shadow: inset 0px 0px 0px 1px #000000;
+    float: right;
+    overflow-y: auto;
+    padding: 20px 10px 10px;
+    box-shadow: inset 0px 0px 0px 1px #fcf8e3;
+}
+
+
+.ac-main-nav {
+    display: none;
 }
 
 
 /*********************************************************************************\
- * Mini Calendrier                                                                        *
+ *   Mini Calendrier                                                             *
 \*********************************************************************************/
 
 
 .ac-main-nav-miniCalendrier {
+    display: block;
     height: 250px;
+    background-color: #ff6655;
+    padding: 5px;
 }
 
 
 /*********************************************************************************\
- * Footer                                                                        *
+ *   Calendrier                                                                  *
 \*********************************************************************************/
 
-.ac-footer {
-    height: 60px;
-    color: #fff;
-    text-align: center;
-    font-size: 14px;
-    padding: 12px;
-    border-top: 2px solid black;
+.fc-toolbar {
+    padding: 5px;
 }
 
-.ac-footer-title {
-
-}
-
-.ac-footer-subtitle {
-
+.fc-view {
+    padding: 5px;
 }
 
 
 /*********************************************************************************\
- * Media screen                                                                  *
+ *   Footer                                                                      *
+\*********************************************************************************/
+
+
+/*************\
+ *   Main    *
+\*************/
+
+
+.ac-main-footer {
+    margin-top: auto;
+    height: 40px;
+    width: 250px;
+    padding: 10px;
+}
+
+.ac-main-footer-title {
+    text-align: center;
+    font-size: 14px;
+    color: #000;
+    width: 100%;
+    line-height: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+/*********************************************************************************\
+ *   Media screen                                                                *
 \*********************************************************************************/
 
 
@@ -300,13 +385,23 @@ a {
         border-bottom: none;
     }
 
-    .ac-footer {
+    .ac-main-footer {
         border-top: none;
     }
 }
 
 @media only screen and (min-width: 1150px) {
-    .ac-home {
-
+    .ac-main-calendrier {
+        width: calc(100% - 250px);
+    }
+    .ac-main-nav {
+        width: 250px;
+        height: calc(100vh - 70px);
+        float: left;
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        overflow-y: scroll;
+        box-shadow: inset 0px 1px 0px 0px #fcf8e3;
     }
 }

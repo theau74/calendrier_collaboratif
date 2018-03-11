@@ -1,3 +1,20 @@
+<div class="ac-main-header">
+
+    <form action="index.php?logout" method="post">
+        <button type="submit" class="of-header-nav-item-button" name="logout">
+            Déconnexion
+        </button>
+    </form>
+
+    <form action="index.php?create-event" method="post">
+        <button type="submit" class="" name="create">
+            Créer
+        </button>
+
+    </form>
+
+</div>
+
 <?php
 echo'<form action="index.php?ac=create-invitation" method="post">';
 foreach ($users_list as $user) {

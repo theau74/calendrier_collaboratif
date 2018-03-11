@@ -22,6 +22,7 @@ function user_signin($pseudo, $password, $c, $encryption_key) {
 		else {
 			//attribution d'une session vide
 			unset ($_SESSION['stats']);
+
 			return false;
 		}
 	}

@@ -18,6 +18,7 @@ if (empty($_GET)) {
     if (isset($_GET["ac"])) {
 
         if ($_GET["ac"] == "signin") {
+
             if (user_signin($_POST["pseudo"], $_POST["password"], $c, $encryption_key)) {
                 $page = "connection_success";
             } else {

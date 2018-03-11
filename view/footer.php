@@ -1,12 +1,8 @@
-<footer class="ac-footer">
+<footer class="ac-home-footer">
 
-    <h2 class="ac-footer-title">
-        Agenda Collaboratif
-    </h2>
-
-    <h3 class="ac-footer-subtitle">
+    <h2 class="ac-home-footer-title">
         Pimp My CSS
-    </h3>
+    </h2>
 
 </footer>
 
