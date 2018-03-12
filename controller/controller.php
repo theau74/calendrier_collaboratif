@@ -82,6 +82,12 @@ if (empty($_GET)) {
         $users_list = get_users_list($c);
         $page = "create-group";
     }
+// Page invitation
+    if (isset($_GET["invitation"])){
+        $invitation_list = get_invitation_by_id_user($_SESSION['id'],$c);
+        $invitation_group_list = get_group_invitation($_SESSION['id'],$c);
+        var_dump($invitation_group_list );
+        $page = "invitation";
 
 
 //formulaire de modification d'information

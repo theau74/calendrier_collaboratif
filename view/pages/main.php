@@ -14,78 +14,89 @@ $(document).ready(function() {
         events: [
 
 
-            <?php
-            foreach ($event_list as $events){
-                echo"{";
-                if(!empty($events['id'])){
-                    echo'id : "'.$events['id'].'",';
-                }if(!empty($events['nom'])){
-                    echo'title : "'.$events['nom'].'",';
-                }if(!empty($events['description'])){
-                    echo'description : "'.$events['description'].'",';
-                }if(!empty($events['type'])){
-                    echo'type : "'.$events['type'].'",';
-                }if(!empty($events['start'])){
-                    echo'start : "'.$events['start'].'",';
+                    <?php
+                    foreach ($event_list as $events){
+                        echo"{";
+                        if(!empty($events['id'])){
+                            echo'id : "'.$events['id'].'",';
+                        }if(!empty($events['nom'])){
+                            echo'title : "'.$events['nom'].'",';
+                        }if(!empty($events['description'])){
+                            echo'description : "'.$events['description'].'",';
+                        }if(!empty($events['type'])){
+                            echo'type : "'.$events['type'].'",';
+                        }if(!empty($events['start'])){
+                            echo'start : "'.$events['start'].'",';
+                        }if(!empty($events['end'])){
+                            echo'end : "'.$events['end'].'",';
+                        }
+                        echo"},";
+                    }
+                    ?>
+                ],
+
+                navLinks: true,
+                navLinkWeekClick:'agendaDay',
+                navLinkDayClick:'agendaDay',
+                eventClick: function(event) {
+                    if (event.description) {
+                        alert("event : " + event.title + "description : " + event.description);
+                    }
+                    else{
+                        alert("event : " + event.title );
+                    }
+                },
+                editable: true,
+                eventDrop: function(event, delta, revertFunc) {
+                    if (!confirm(event.title + " commence maitenant a : " + event.start.format() + " ete vous sure de ce changement? ")) {
+                        revertFunc();
+                    } else {
+
+                    }
+                },
+
+                customButtons: {
+                    Mois: {
+                        text: 'Mois',
+                        click: function () {
+                            $('#calendar').fullCalendar('changeView', 'month')
+                        }
+                    },
+                    Semaine: {
+                        text: 'Semaine',
+                        click: function () {
+                            $('#calendar').fullCalendar('changeView', 'agendaWeek')
+                        }
+
+                    },
+                    Jour: {
+                        text: 'Jour',
+                        click: function () {
+                            $('#calendar').fullCalendar('changeView', 'agendaDay')
+                        }
+                    },
+                    Agenda: {text: 'Agenda',
+                        click: function () {
+                            $('#calendar').fullCalendar('changeView', 'listWeek')
+                        }
+                    }
+
+                },
+
+
+                header: {
+                    right: 'Mois,Semaine,Jour,Agenda',
+                    center: 'title',
+                    left: 'prev,next,today'
                 }
-                if(!empty($events['end']) and $events['end']!= ""){
-                    echo'end : "'.$events['end'].'",';
-                }
-                         echo"},";
-            }
-            ?>
-        ],
 
-        navLinks: true,
-        navLinkWeekClick:'agendaDay',
-        navLinkDayClick:'agendaDay',
 
-        editable: true,
-        eventDrop: function(event, delta, revertFunc) {
-            if (!confirm(event.title + " commence maitenant a : " + event.start.format() + " ete vous sure de ce changement? ")) {
-                revertFunc();
-            } else {
 
-            }
-        },
 
-        customButtons: {
-            Mois: {
-                text: 'Mois',
-                click: function () {
-                    $('#calendar').fullCalendar('changeView', 'month')
-                }
-            },
-            Semaine: {
-                text: 'Semaine',
-                click: function () {
-                    $('#calendar').fullCalendar('changeView', 'agendaWeek')
-                }
 
-            },
-            Jour: {
-                text: 'Jour',
-                click: function () {
-                    $('#calendar').fullCalendar('changeView', 'agendaDay')
-                }
-            },
-            Agenda: {text: 'Agenda',
-                click: function () {
-                    $('#calendar').fullCalendar('changeView', 'listWeek')
-                }
-            }
-
-        },
-
-        header: {
-            right: 'Mois,Semaine,Jour,Agenda',
-            center: 'title',
-            left: 'prev,next,today'
-        }
-
-    });
-});
-</script>
+            });
+        });
+    </script>
 
 <div class="ac-main-header">
 
@@ -109,7 +120,7 @@ $(document).ready(function() {
 
 <div class="ac-main">
 
-    <div class="ac-main-nav" id="nav-bar">
+    <div class="ac-main-nav">
 
         <div class="ac-main-nav-miniCalendrier">
             <!--  Mini Calendar  --> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad animi, architecto asperiores delectus deleniti distinctio eaque earum exercitationem fugiat laborum maxime mollitia neque nihil officiis placeat porro quaerat sed sunt.
@@ -134,9 +145,9 @@ $(document).ready(function() {
 
     </div>
 
-    <div class="ac-main-calendrier" id="cal">
+    <div class="ac-main-calendrier">
 
-        <div id="calendar"></div>
+        <div id='calendar'></div>
 
     </div>
 
