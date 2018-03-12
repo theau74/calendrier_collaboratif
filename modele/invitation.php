@@ -37,3 +37,44 @@ function create_invitation($creator, $c, $encryption_key) {
         return false;
     }
 }
+function get_invitation_by_id_user($id_user,$c){
+    $sql = ("SELECT I.id_event, I.id_user, I.id_group, I.etat, E.nom as event_name, E.start, E.end, G.nom as group_name, G.description FROM invitation I 
+INNER JOIN events E ON E.id = I.id_event 
+INNER JOIN groups G ON G.id = I.id_group
+WHERE I.id_user ='$id_user' GROUP BY id_event");
+    $result = mysqli_query($c,$sql);
+    $invitation_list= array ();
+    $loop = 0;
+    while ($donnees = mysqli_fetch_assoc($result))
+    {
+        $invitation_list[$loop]= $donnees;
+        $loop++;
+    }
+    return $invitation_list;
+
+}
+function get_group_invitation($id_user,$c){
+    $sql =("SELECT * FROM groups G INNER JOIN users_groups U ON G.id = U.id_groups WHERE U.id_users ='$id_user'");
+    $result = mysqli_query($c,$sql);
+    $invitation_group_list = array();
+    $loop = 0;
+    while ($donnees = mysqli_fetch_assoc($result))
+    {
+        $invitation_group_list[$loop]= $donnees;
+        $loop++;
+    }
+    return $invitation_group_list;
+}
+function set_invitation($id_user,$id_event,$response,$c){
+    if ($response) {
+        $sql = ("UPDATE invitation SET etat ='valider' WHERE id_user ='$id_user' AND id_event='$id_event'");
+    } else {
+        $sql = ("UPDATE invitation SET etat ='refuser' WHERE id_user ='$id_user' AND id_event='$id_event'");
+    }
+    if(mysqli_query($c,$sql)){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
