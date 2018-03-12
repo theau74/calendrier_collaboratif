@@ -89,6 +89,18 @@ if (empty($_GET)) {
         var_dump($invitation_group_list );
         $page = "invitation";
 
+    }
+//Valider ou refuser une invitation
+    if (isset($_GET["set_invitation"])) {
+        if($_GET["set_invitation"]=="true"){
+            set_invitation($_POST["id_user"],$_POST["id_event"],true,$c);
+        }
+        elseif($_GET["set_invitation"]=="false"){
+            set_invitation($_POST["id_user"],$_POST["id_event"],false,$c);
+        }
+        $page ="main";
+        $event_list = get_event_by_user_id($_SESSION['id'], $c);
+    }
 
 //formulaire de modification d'information
     if (isset($_GET["infoform"])) {

@@ -52,51 +52,46 @@ $(document).ready(function() {
                         revertFunc();
                     } else {
 
-                    }
-                },
+            }
+        },
 
-                customButtons: {
-                    Mois: {
-                        text: 'Mois',
-                        click: function () {
-                            $('#calendar').fullCalendar('changeView', 'month')
-                        }
-                    },
-                    Semaine: {
-                        text: 'Semaine',
-                        click: function () {
-                            $('#calendar').fullCalendar('changeView', 'agendaWeek')
-                        }
-
-                    },
-                    Jour: {
-                        text: 'Jour',
-                        click: function () {
-                            $('#calendar').fullCalendar('changeView', 'agendaDay')
-                        }
-                    },
-                    Agenda: {text: 'Agenda',
-                        click: function () {
-                            $('#calendar').fullCalendar('changeView', 'listWeek')
-                        }
-                    }
-
-                },
-
-
-                header: {
-                    right: 'Mois,Semaine,Jour,Agenda',
-                    center: 'title',
-                    left: 'prev,next,today'
+        customButtons: {
+            Mois: {
+                text: 'Mois',
+                click: function () {
+                    $('#calendar').fullCalendar('changeView', 'month')
+                }
+            },
+            Semaine: {
+                text: 'Semaine',
+                click: function () {
+                    $('#calendar').fullCalendar('changeView', 'agendaWeek')
                 }
 
+            },
+            Jour: {
+                text: 'Jour',
+                click: function () {
+                    $('#calendar').fullCalendar('changeView', 'agendaDay')
+                }
+            },
+            Agenda: {text: 'Agenda',
+                click: function () {
+                    $('#calendar').fullCalendar('changeView', 'listWeek')
+                }
+            }
 
+        },
 
+        header: {
+            right: 'Mois,Semaine,Jour,Agenda',
+            center: 'title',
+            left: 'prev,next,today'
+        }
 
-
-            });
-        });
-    </script>
+    });
+});
+</script>
 
 <div class="ac-main-header">
 
@@ -152,3 +147,12 @@ $(document).ready(function() {
     </div>
 
 </div>
+
+
+
+
+</body>
+
+
+<?php
+
