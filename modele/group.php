@@ -54,7 +54,6 @@ function create_group($idcreator, $c, $encryption_key) {
                 }
                 $loop++;
             }
-
             if(mysqli_query($c,$sql2)){
                 return true;
             }else{

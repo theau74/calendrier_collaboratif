@@ -34,5 +34,6 @@ elseif (($page == "invitation")){
 }
 elseif (($page == "create-group")) {
     display_create_group($users_list);
+}
 
 
