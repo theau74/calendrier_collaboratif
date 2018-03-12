@@ -57,6 +57,13 @@ if (empty($_GET)) {
                 echo"creation_failed";
             }
         }
+        if ($_GET["ac"] == "create-group") {
+            if (create_group($_SESSION['id'] ,$c, $encryption_key)) {
+                $page = "creation_group_sucess";
+            } else {
+                echo"creation_failed";
+            }
+        }
     }
     //formulaire d'incription
     if (isset($_GET["subform"])) {
@@ -70,6 +77,10 @@ if (empty($_GET)) {
     }
     if (isset($_GET["create-event"])) {
         $page = "create-event";
+    }
+    if (isset($_GET["create-group"])) {
+        $users_list = get_users_list($c);
+        $page = "create-group";
     }
 
 

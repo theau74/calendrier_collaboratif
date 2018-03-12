@@ -29,5 +29,7 @@ elseif (($page == "create-event")) {
 elseif (($page == "creation_event_sucess")) {
     display_creation_event_sucess();
 }
+elseif (($page == "create-group")) {
+    display_create_group($users_list);
 
-
+}

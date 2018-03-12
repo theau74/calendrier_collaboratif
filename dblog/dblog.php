@@ -2,7 +2,7 @@
 
 try
 {
-		$c = mysqli_connect("localhost", "root", "root", "agenda");
+		$c = mysqli_connect("localhost", "root", "", "agenda");
 }
 
 catch (Exception $e)

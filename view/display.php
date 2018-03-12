@@ -59,3 +59,6 @@ function display_event_visibility($groups_list, $users_list){
 function display_creation_event_sucess(){
     require ("pages/creation_event_sucess.php");
 }
+function display_create_group($users_list){
+    require ("pages/create_group.php");
+}
