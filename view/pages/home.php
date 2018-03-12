@@ -7,11 +7,18 @@
 </div>
 
 <div class="ac-home-container ac-home-signin">
+
     <div class="ac-home">
 
         <form action="index.php?ac=signin" method="post">
 
             <ul>
+
+                <li class="ac-home-sign-item">
+                    <h2 class="ac-home-sign-item-h2">
+                        Connexion
+                    </h2>
+                </li>
 
                 <li class="ac-home-sign-item">
                     <input type="text" class="ac-home-sign-item-input" name="pseudo" placeholder="Login" required>
@@ -44,4 +51,5 @@
         </form>
 
     </div>
+
 </div>
