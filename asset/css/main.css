@@ -28,14 +28,13 @@ a {
 
 
 
-::placeholder {
+input::placeholder {
     color: #fff;
 }
 
 input:placeholder-shown {
     color: #fff;
 }
-
 
 
 /*********************************************************************************\
@@ -87,7 +86,7 @@ input:placeholder-shown {
 .ac-home {
     max-width: 500px;
     border-radius: 5px;
-    padding: 25px;
+    padding: 10px 25px;
     box-shadow: 4px 4px 10px 0px #000;
     background-color: #5765A2;
     margin: 0 auto;
@@ -104,7 +103,13 @@ input:placeholder-shown {
 .ac-home-sign-item {
     padding: 8px 10px;
 }
-
+.ac-home-sign-item-h2 {
+    color: #fff;
+    line-height: 30px;
+    font-size: 18px;
+    text-align: right;
+    text-transform: uppercase;
+}
 .ac-home-sign-item-input {
     color: #fff;
     width: 100%;
@@ -253,41 +258,58 @@ input:placeholder-shown {
  *   Main                                                                        *
 \*********************************************************************************/
 
-.gb_fc {
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-    display: inline-block;
-    margin: 0 4px;
-    padding: 12px;
-    overflow: hidden;
-    vertical-align: middle;
-    cursor: pointer;
-    height: 24px;
-    width: 24px;
-    -webkit-user-select: none;
-    -webkit-flex: 0 0 auto;
-    flex: 0 0 auto;
-}
-
-
-
-
-
-
-
-
 
 .ac-main {
 
 }
 
 .ac-main-header {
-    background-color: #fff;
     width: 100%;
     height: 70px;
     position: relative;
     background-color: #fcf8e3;
     box-shadow: inset 0px 0px 6px -2px #000000;
+}
+
+.ac-main-header-create {
+    float: right;
+    line-height: 50px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: transparent;
+}
+
+.ac-main-header-create:hover {
+    background-color: grey;
+}
+
+.ac-main-header-logout {
+    float: right;
+    line-height: 50px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: transparent;
+}
+
+.ac-main-header-logout:hover {
+    background-color: grey;
+}
+
+.ac-main-header-menue-sandwish {
+    display: block;
+    float: left;
+    line-height: 50px;
+    width: 50px;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+.ac-main-header-menue-sandwish:hover {
+    background-color: grey;
 }
 
 .ac-main-calendrier {
@@ -302,8 +324,7 @@ input:placeholder-shown {
 
 .ac-main-createEvent {
     width: 100%;
-    height: calc(100vh - 70px);
-    float: right;
+    height: calc(100vh - 150px);
     overflow-y: auto;
     padding: 20px 10px 10px;
     box-shadow: inset 0px 0px 0px 1px #fcf8e3;
@@ -354,7 +375,7 @@ input:placeholder-shown {
 .ac-main-footer {
     margin-top: auto;
     height: 40px;
-    width: 250px;
+    width: 100%;
     padding: 10px;
 }
 
@@ -367,12 +388,27 @@ input:placeholder-shown {
 }
 
 
+/*********************************************************************************\
+ *   Responsive                                                                  *
+\*********************************************************************************/
 
 
+.responsive-nav-bar {
+    width: 100%;
+    height: calc(100vh - 70px);
+    float: left;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    overflow-y: scroll;
+    box-shadow: inset 0px 1px 0px 0px #fcf8e3;
+    position: absolute;
+    z-index: 2;
+}
 
+.responsive-calendrier {
 
-
-
+}
 
 
 /*********************************************************************************\
@@ -409,4 +445,9 @@ input:placeholder-shown {
         overflow-y: scroll;
         box-shadow: inset 0px 1px 0px 0px #fcf8e3;
     }
+
+    .ac-main-header-menue-sandwish {
+        display: none;
+    }
+
 }

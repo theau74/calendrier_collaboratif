@@ -13,6 +13,12 @@
             <ul>
 
                 <li class="ac-home-sign-item">
+                    <h2 class="ac-home-sign-item-h2">
+                        Inscription
+                    </h2>
+                </li>
+
+                <li class="ac-home-sign-item">
                     <input type="text" class="ac-home-sign-item-input" name="Pseudo" placeholder="Pseudo" required>
                 </li>
 

@@ -89,24 +89,27 @@ $(document).ready(function() {
 
 <div class="ac-main-header">
 
+    <a href="javascript:void(0);" style="font-size:15px;" class="ac-main-header-menue-sandwish" onclick="myFunction()">
+        &#9776;
+    </a>
+
     <form action="index.php?logout" method="post">
-        <button type="submit" class="of-header-nav-item-button" name="logout">
+        <button type="submit" class="ac-main-header-logout" name="logout">
             Déconnexion
         </button>
     </form>
 
     <form action="index.php?create-event" method="post">
-        <button type="submit" class="" name="create">
+        <button type="submit" class="ac-main-header-create" name="create">
             Créer
         </button>
-
     </form>
 
 </div>
 
 <div class="ac-main">
 
-    <div class="ac-main-nav">
+    <div class="ac-main-nav" id="nav-bar">
 
         <div class="ac-main-nav-miniCalendrier">
             <!--  Mini Calendar  --> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad animi, architecto asperiores delectus deleniti distinctio eaque earum exercitationem fugiat laborum maxime mollitia neque nihil officiis placeat porro quaerat sed sunt.
@@ -131,9 +134,9 @@ $(document).ready(function() {
 
     </div>
 
-    <div class="ac-main-calendrier">
+    <div class="ac-main-calendrier" id="cal">
 
-        <div id='calendar'></div>
+        <div id="calendar"></div>
 
     </div>
 
