@@ -1,95 +1,96 @@
 <script>
-    $(document).ready(function () {
+$(document).ready(function() {
 
-        // Le calendrier peut être charger dans la page :
+    // Le calendrier peut être charger dans la page :
 
-        $('#calendar').fullCalendar({
+    $('#calendar').fullCalendar({
 
             minTime: "00:00:00",
 
             maxTime: "24:00:00",
 
-            contentHeight: "auto",
+        contentHeight: "auto",
 
-            events: [
+        events: [
 
 
-                <?php
-                foreach ($event_list as $events) {
-                    echo "{";
-                    if (!empty($events['id'])) {
-                        echo 'id : "' . $events['id'] . '",';
+                    <?php
+                    foreach ($event_list as $events){
+                        echo"{";
+                        if(!empty($events['id'])){
+                            echo'id : "'.$events['id'].'",';
+                        }if(!empty($events['nom'])){
+                            echo'title : "'.$events['nom'].'",';
+                        }if(!empty($events['description'])){
+                            echo'description : "'.$events['description'].'",';
+                        }if(!empty($events['type'])){
+                            echo'type : "'.$events['type'].'",';
+                        }if(!empty($events['start'])){
+                            echo'start : "'.$events['start'].'",';
+                        }if(!empty($events['end'])){
+                            echo'end : "'.$events['end'].'",';
+                        }
+                        echo"},";
                     }
-                    if (!empty($events['nom'])) {
-                        echo 'title : "' . $events['nom'] . '",';
-                    }
-                    if (!empty($events['description'])) {
-                        echo 'description : "' . $events['description'] . '",';
-                    }
-                    if (!empty($events['type'])) {
-                        echo 'type : "' . $events['type'] . '",';
-                    }
-                    if (!empty($events['start'])) {
-                        echo 'start : "' . $events['start'] . '",';
-                    }
-                    if (!empty($events['end']) and $events['end'] != "") {
-                        echo 'end : "' . $events['end'] . '",';
-                    }
-                    echo "},";
-                }
-                ?>
-            ],
+                    ?>
+                ],
 
-            navLinks: true,
-            navLinkWeekClick: 'agendaDay',
-            navLinkDayClick: 'agendaDay',
+                navLinks: true,
+                navLinkWeekClick:'agendaDay',
+                navLinkDayClick:'agendaDay',
+                eventClick: function(event) {
+                    if (event.description) {
+                        alert("event : " + event.title + "description : " + event.description);
+                    }
+                    else{
+                        alert("event : " + event.title );
+                    }
+                },
+                editable: true,
+                eventDrop: function(event, delta, revertFunc) {
+                    if (!confirm(event.title + " commence maitenant a : " + event.start.format() + " ete vous sure de ce changement? ")) {
+                        revertFunc();
+                    } else {
 
-            editable: true,
-            eventDrop: function (event, delta, revertFunc) {
-                if (!confirm(event.title + " commence maitenant a : " + event.start.format() + " ete vous sure de ce changement? ")) {
-                    revertFunc();
-                } else {
+            }
+        },
 
+        customButtons: {
+            Mois: {
+                text: 'Mois',
+                click: function () {
+                    $('#calendar').fullCalendar('changeView', 'month')
                 }
             },
-
-            customButtons: {
-                Mois: {
-                    text: 'Mois',
-                    click: function () {
-                        $('#calendar').fullCalendar('changeView', 'month')
-                    }
-                },
-                Semaine: {
-                    text: 'Semaine',
-                    click: function () {
-                        $('#calendar').fullCalendar('changeView', 'agendaWeek')
-                    }
-
-                },
-                Jour: {
-                    text: 'Jour',
-                    click: function () {
-                        $('#calendar').fullCalendar('changeView', 'agendaDay')
-                    }
-                },
-                Agenda: {
-                    text: 'Agenda',
-                    click: function () {
-                        $('#calendar').fullCalendar('changeView', 'listWeek')
-                    }
+            Semaine: {
+                text: 'Semaine',
+                click: function () {
+                    $('#calendar').fullCalendar('changeView', 'agendaWeek')
                 }
 
             },
-
-            header: {
-                right: 'Mois,Semaine,Jour,Agenda',
-                center: 'title',
-                left: 'prev,next,today'
+            Jour: {
+                text: 'Jour',
+                click: function () {
+                    $('#calendar').fullCalendar('changeView', 'agendaDay')
+                }
+            },
+            Agenda: {text: 'Agenda',
+                click: function () {
+                    $('#calendar').fullCalendar('changeView', 'listWeek')
+                }
             }
 
-        });
+        },
+
+        header: {
+            right: 'Mois,Semaine,Jour,Agenda',
+            center: 'title',
+            left: 'prev,next,today'
+        }
+
     });
+});
 </script>
 
 <div class="ac-main-header">
