@@ -1,16 +1,15 @@
 <div class="ac-main-header">
 
     <form action="index.php?logout" method="post">
-        <button type="submit" class="of-header-nav-item-button" name="logout">
+        <button type="submit" class="ac-main-header-logout" name="logout">
             Déconnexion
         </button>
     </form>
 
     <form action="index.php?create-event" method="post">
-        <button type="submit" class="" name="create">
+        <button type="submit" class="ac-main-header-create" name="create">
             Créer
         </button>
-
     </form>
 
 </div>

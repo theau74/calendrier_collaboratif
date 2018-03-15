@@ -651,23 +651,23 @@ NOTE: use percentage font sizes or else old IE chokes
   content: "\2039";
   font-weight: bold;
   font-size: 200%;
-  top: -7%; }
+}
 
 .fc-icon-right-single-arrow:after {
   content: "\203A";
   font-weight: bold;
   font-size: 200%;
-  top: -7%; }
+}
 
 .fc-icon-left-double-arrow:after {
   content: "\AB";
   font-size: 160%;
-  top: -7%; }
+}
 
 .fc-icon-right-double-arrow:after {
   content: "\BB";
   font-size: 160%;
-  top: -7%; }
+}
 
 .fc-icon-left-triangle:after {
   content: "\25C4";

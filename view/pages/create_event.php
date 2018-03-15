@@ -25,25 +25,25 @@
         <ul>
 
             <li class="ac-home-sign-item">
-                <input type="text" class="ac-home-sign-item-input" name="nom" placeholder="nom">
+                <input type="text" class="ac-home-sign-item-input" name="titre" placeholder="Titre de l'Evenement">
             </li>
 
             <li class="ac-home-sign-item">
-                <input type="text" class="ac-home-sign-item-input" name="description" placeholder="description">
+                <input type="text" class="ac-home-sign-item-input" name="Description" placeholder="Description">
             </li>
 
             <li class="ac-home-sign-item">
-                <input type="text" class="ac-home-sign-item-input" name="type" placeholder="type">
+                <input type="text" class="ac-home-sign-item-input" name="Type" placeholder="Type">
             </li>
 
             <li class="ac-home-sign-item">
-                <input type="date" class="ac-home-sign-item-input" name="start_date" placeholder="type">
-                <input type="time" class="ac-home-sign-item-input" name="start_time" placeholder="type">
+                <input type="date" class="ac-home-sign-item-input" name="start_date" placeholder="Type">
+                <input type="time" class="ac-home-sign-item-input" name="start_time" placeholder="Type">
             </li>
 
             <li class="ac-home-sign-item">
-                <input type="date" class="ac-home-sign-item-input" name="end_date" placeholder="type">
-                <input type="time" class="ac-home-sign-item-input" name="end_time" placeholder="type">
+                <input type="date" class="ac-home-sign-item-input" name="end_date" placeholder="Type">
+                <input type="time" class="ac-home-sign-item-input" name="end_time" placeholder="Type">
             </li>
 
             <li class="ac-home-sign-allBoutton">
@@ -62,5 +62,97 @@
         </ul>
 
     </form>
+
+    <div id="addEvent" class="event">
+
+        <div class="event-content">
+            <div class="event-header">
+
+                <span class="close">
+                    &times;
+                </span>
+
+                <input type="text" id="addEventTitle" placeholder="Titre de l'événement">
+
+            </div>
+
+            <div class="event-body">
+
+                <input type="text" name="nom">
+
+                <div class="creneaux">
+                    <p class="crenTxt">
+                        Du
+                    </p>
+
+                    <input class="dateEv" type="Date" placeholder="type" name="start_date">
+
+                    <input class="hoursEv" type="time" placeholder="type" name="start_time">
+
+                    <p class="crenTxt">
+                        au
+                    </p>
+
+                    <input class="dateEv" type="Date" placeholder="type" name="end_date">
+
+                    <input class="hoursEv" type="time" placeholder=type name="end_time">
+
+                </div>
+
+                <div>
+                    <input class="descript" type="text" placeholder="Description" name="description">
+                </div>
+
+
+                <label class="container">
+
+                    <p id="checkbox-container">
+                        Meeting
+                    </p>
+
+                    <input type="checkbox">
+
+                    <span class="checkmark">
+
+                    </span>
+
+                </label>
+
+                <label class="container">
+
+                    <p id="checkbox-container">
+                        Brainstorming
+                    </p>
+
+                    <input type="checkbox">
+
+                    <span class="checkmark">
+
+                    </span>
+
+                </label>
+
+                <label class="container">
+
+                    <p id="checkbox-container">
+                        Panel
+                    </p>
+
+                    <input type="checkbox">
+
+                    <span class="checkmark">
+
+                    </span>
+
+                </label>
+
+
+            </div>
+            <div class="event-footer">
+                <button type="submit" id="save" name="create">Enregister</button>
+            </div>
+        </div>
+
+    </div>
 
 </div>

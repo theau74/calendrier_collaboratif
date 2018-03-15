@@ -37,6 +37,17 @@ input:placeholder-shown {
 }
 
 
+
+
+.fc-scroller.fc-day-grid-container {
+    height: calc(100vh - 200px);
+    overflow-y: auto;
+}
+
+
+
+
+
 /*********************************************************************************\
  *   Container                                                                   *
 \*********************************************************************************/
@@ -271,16 +282,6 @@ input:placeholder-shown {
     box-shadow: inset 0px 0px 6px -2px #000000;
 }
 
-.ac-main-header-create {
-    float: right;
-    line-height: 50px;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    text-transform: uppercase;
-    background-color: transparent;
-}
-
 .ac-main-header-create:hover {
     background-color: grey;
 }
@@ -306,9 +307,10 @@ input:placeholder-shown {
     width: 50px;
     padding: 10px 10px;
     text-align: center;
+    font-size: 15px;
 }
 
-.ac-main-header-menue-sandwish:hover {
+.ac-main-header-menue-sandwish:active {
     background-color: grey;
 }
 
@@ -318,8 +320,26 @@ input:placeholder-shown {
     float: right;
     background-color: #fff;
     overflow-y: auto;
-    padding: 20px 10px 10px;
     box-shadow: inset 0px 0px 0px 1px #fcf8e3;
+}
+
+.ac-main-calendrier-create {
+    height: 50px;
+    width: 50px;
+    line-height: 30px;
+    padding-bottom: 5px;
+    background-color: #3b9f97;
+    box-shadow: 2px 2px 8px 0 #000;
+    bottom: 20px;
+    right: 20px;
+    position: absolute;
+    z-index: 2;
+    border-radius: 50%;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+    color: white;
+    font-size: 30px;
 }
 
 .ac-main-createEvent {
@@ -354,14 +374,71 @@ input:placeholder-shown {
 \*********************************************************************************/
 
 .fc-toolbar {
-    padding: 5px;
+    padding: 0px;
+}
+
+.fc-toolbar h2 {
+    text-align: center;
+    line-height: 30px;
 }
 
 .fc-view {
-    padding: 5px;
 }
 
+.fc-view-container {
+}
 
+.fc-button-group {
+    width: 100%;
+}
+
+.fc-right {
+    width: 50%;
+}
+
+.fc-left {
+    width: 50%;
+}
+
+.fc-center {
+    height: 30px;
+    margin: 0;
+    padding: 0px;
+    float: left;
+    position: absolute;
+    top: 20px;
+    left: 130px;
+}
+
+.fc button {
+    width: 50%;
+}
+
+.fc-button-group button {
+    border-radius: 0px 0px 0px 0px!important;
+}
+
+button.fc-today-button.fc-button.fc-state-default.fc-corner-right.fc-state-disabled {
+    width: 100%;
+}
+
+.fc .fc-button-group > * {
+    margin: 0 0 0 0px;
+}
+
+.fc-scroller.fc-time-grid-container {
+    height: calc(100vh - 230px)!important;
+}
+
+th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
+    line-height: 30px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.fc-view.fc-month-view.fc-basic-view table tbody tr td div div .fc-row.fc-week.fc-widget-content {
+    height: 94px;
+}
 /*********************************************************************************\
  *   Footer                                                                      *
 \*********************************************************************************/
@@ -450,4 +527,254 @@ input:placeholder-shown {
         display: none;
     }
 
+}
+
+
+
+/*********************************************************************************\
+ *   Arnaud                                                               *
+\*********************************************************************************/
+
+
+.event {
+    display: block;
+    position: fixed;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    z-index: 2;
+
+}
+
+
+.event-content {
+    position: relative;
+    margin: auto;
+    padding: 0;
+    width: 80%;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    box-shadow: 2px 2px 8px 0 rgba(0,0,0,1);
+}
+
+
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+
+.close {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    float: right;
+    margin-top: -20px;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+.event-header {
+    word-wrap: break-word;
+    padding: 35px 15px;
+    background-color: #3b9f97;
+    color: white;
+
+}
+
+.event-body {
+    word-wrap: break-word;
+    padding: 10px 15px;
+    width: 100%;
+    background-color: #fff;
+}
+
+.event-footer {
+    word-wrap: break-word;
+    padding: 35px 15px;
+    background-color: #3b9f97;
+    color: white;
+
+}
+
+#addButt{
+    outline: 0;
+    color: white;
+    border:none;
+    background-color: #3b9f97;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    box-shadow: 2px 2px 8px 0 rgba(0,0,0,1);
+    font-size: 200%;
+    cursor: pointer;
+    float: right;
+}
+
+#addButt:active {
+    height: 55px;
+    width: 55px;
+}
+
+
+#addEventTitle{
+    position: absolute;
+    margin-top: -18px;
+    padding: 6px;
+    width: 90%;
+    font-size: 20px;
+    color: white;
+    background-color: #3b9f97;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 3px solid white;
+    outline: none;
+}
+#addEventTitle::placeholder{
+    color: white;
+}
+
+.container {
+    cursor: pointer;
+    font-size: 22px;
+    display: block;
+    padding: 20px 10px;
+    word-break: break-all;
+    width: 30%;
+}
+
+
+#checkbox-container{
+    position: absolute;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-left: 80px;
+    font-family: 'PT Sans', sans-serif;
+}
+
+/*cacher checkbox par default */
+.container input {
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* custom checkbox */
+.checkmark {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    border: 3px solid #3b9f97;
+    border-radius: 8px;
+    cursor: pointer;
+
+}
+
+
+.container:hover input ~ .checkmark {
+    background-color: #efefef;
+}
+
+/* checked, then background-color */
+.container input:checked ~ .checkmark {
+    background-color: #3b9f97;
+}
+
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.container .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+
+
+.creneaux{
+    display: inline-block;
+    width: 100%;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 22px;
+
+}
+.descript{
+    float: right;
+    border:none;
+    text-align: center;
+    background-color: grey;
+}
+.descript::placeholder{
+    color: white;
+
+}
+.hoursEv{
+
+    border: none;
+    border-bottom: 2px solid #3b9f97;
+    outline: none;
+    font-size: 20px;
+
+    margin-left: 10px;
+
+}
+
+.dateEv{
+    border: none;
+    border-bottom: 2px solid #3b9f97;
+    font-size: 20px;
+    margin-left: 15px;
+}
+
+.crenTxt{
+    display: inline-block;
+    width: 4%;
+    margin-left: 20px;
+}
+#save{
+    color: white;
+    background-color: #3b9f97;
+    outline: none;
+    font-size: 20px;
+    box-shadow: 4px 4px 10px 0px #000;
+    border: none;
+    float: right;
+    border-radius: 5px;
+}
+#save:hover{
+    background-color: #238c83;
+    cursor: pointer;
+}
+#save:active{
+    transform: scale(0.95);
 }
