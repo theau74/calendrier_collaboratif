@@ -1,26 +1,6 @@
-<div class="ac-main-header">
+<div class="ac-createEvent">
 
-    <form action="index.php?logout" method="post">
-        <button type="submit" class="ac-main-header-logout" name="logout">
-            Déconnexion
-        </button>
-    </form>
-
-    <form action="index.php?create-event" method="post">
-        <button type="submit" class="ac-main-header-create" name="create">
-            Créer
-        </button>
-    </form>
-
-</div>
-
-<div class="ac-main-createEvent">
-
-    <a href="index.php">
-        Retour
-    </a>
-
-    <form action="index.php?ac=create-event" method="post">
+    <form style="display:none;" action="index.php?ac=create-event" method="post">
 
         <ul>
 
@@ -63,96 +43,102 @@
 
     </form>
 
-    <div id="addEvent" class="event">
+    <div class="ac-createEvent-header">
 
-        <div class="event-content">
-            <div class="event-header">
+        <a href="index.php" class="close">
+            &#xf00d;
+        </a>
 
-                <span class="close">
-                    &times;
-                </span>
+        <button type="submit" id="save" name="create">
+            Enregistrer
+        </button>
 
-                <input type="text" id="addEventTitle" placeholder="Titre de l'événement">
-
-            </div>
-
-            <div class="event-body">
-
-                <input type="text" name="nom">
-
-                <div class="creneaux">
-                    <p class="crenTxt">
-                        Du
-                    </p>
-
-                    <input class="dateEv" type="Date" placeholder="type" name="start_date">
-
-                    <input class="hoursEv" type="time" placeholder="type" name="start_time">
-
-                    <p class="crenTxt">
-                        au
-                    </p>
-
-                    <input class="dateEv" type="Date" placeholder="type" name="end_date">
-
-                    <input class="hoursEv" type="time" placeholder=type name="end_time">
-
-                </div>
-
-                <div>
-                    <input class="descript" type="text" placeholder="Description" name="description">
-                </div>
-
-
-                <label class="container">
-
-                    <p id="checkbox-container">
-                        Meeting
-                    </p>
-
-                    <input type="checkbox">
-
-                    <span class="checkmark">
-
-                    </span>
-
-                </label>
-
-                <label class="container">
-
-                    <p id="checkbox-container">
-                        Brainstorming
-                    </p>
-
-                    <input type="checkbox">
-
-                    <span class="checkmark">
-
-                    </span>
-
-                </label>
-
-                <label class="container">
-
-                    <p id="checkbox-container">
-                        Panel
-                    </p>
-
-                    <input type="checkbox">
-
-                    <span class="checkmark">
-
-                    </span>
-
-                </label>
-
-
-            </div>
-            <div class="event-footer">
-                <button type="submit" id="save" name="create">Enregister</button>
-            </div>
-        </div>
+        <input type="text" id="addEventTitle" placeholder="Titre de l'événement ...">
 
     </div>
+
+    <div class="ac-createEvent-body">
+
+        <div class="ac-createEvent-body-creneaux">
+
+            <div class="ac-createEvent-body-creneaux-first">
+
+                <i class="ac-createEvent-body-creneaux-crenTxt">
+                    &#xf017;
+                </i>
+
+                <input class="ac-createEvent-body-creneaux-dateEv" type="Date" placeholder="type" name="start_date">
+
+                <input class="ac-createEvent-body-creneaux-hoursEv" type="time" placeholder="type" name="start_time">
+
+            </div>
+
+            <div class="ac-createEvent-body-creneaux-second">
+
+                <i class="ac-createEvent-body-creneaux-crenTxt">
+                    &#xf017;
+                </i>
+
+                <input class="ac-createEvent-body-creneaux-dateEv" type="Date" placeholder="type" name="end_date">
+
+                <input class="ac-createEvent-body-creneaux-hoursEv" type="time" placeholder=type name="end_time">
+
+            </div>
+
+        </div>
+
+        <div class="ac-createEvent-body-description">
+            <input class="ac-createEvent-body-description-input" type="text" placeholder="Description" name="description">
+        </div>
+
+
+        <label class="container">
+
+            <p id="checkbox-container">
+                Meeting
+            </p>
+
+            <input type="checkbox">
+
+            <span class="checkmark">
+
+                    </span>
+
+        </label>
+
+        <label class="container">
+
+            <p id="checkbox-container">
+                Brainstorming
+            </p>
+
+            <input type="checkbox">
+
+            <span class="checkmark">
+
+                    </span>
+
+        </label>
+
+        <label class="container">
+
+            <p id="checkbox-container">
+                Panel
+            </p>
+
+            <input type="checkbox">
+
+            <span class="checkmark">
+
+                    </span>
+
+        </label>
+
+
+    </div>
+
+</div>
+
+</div>
 
 </div>
