@@ -26,9 +26,9 @@ $(document).ready(function() {
                         }if(!empty($events['type'])){
                             echo'type : "'.$events['type'].'",';
                         }if(!empty($events['start'])){
-                            echo'start : "'.$events['start'].'",';
+                            echo'start : "'.$events['start'].'T'.$events['start_hour'].'",';
                         }if(!empty($events['end'])){
-                            echo'end : "'.$events['end'].'",';
+                            echo'end : "'.$events['end'].'T'.$events['end_hour'].'",';
                         }
                         echo"},";
                     }
