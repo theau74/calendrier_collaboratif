@@ -1,43 +1,46 @@
 function afficheNav() {
     var x = document.getElementById('nav-bar');
+    var y = document.getElementById('cal');
+    var z = document.getElementById('fondGris');
+    var h = document.getElementById('mainHeader');
+
+
     if (x.className === "ac-main-nav") {
         x.className += " responsive-nav-bar";
+        h.style.zIndex = "2";
     } else {
         x.className = "ac-main-nav";
+        h.style.zIndex = "0";
     }
-    var y = document.getElementById('cal');
+
     if (y.className === "ac-main-calendrier") {
         y.className += " responsive-calendrier";
     } else {
         y.className = "ac-main-calendrier";
     }
+
+    if (x.className === "ac-main-nav responsive-nav-bar") {
+        z.style.opacity = "1";
+    } else {
+        z.style.opacity = "0";
+    }
+
+
 }
 
-// popup création événement
-// variable fenetre
-var addevent = document.getElementById('addEvent');
+var addevent = document.getElementById("createEvent");                          // variable fenetre
+var butt     = document.getElementById("bouttonCree");                              // variable bouton qui ouvre fenetre
+var span     = document.getElementsByClassName("ac-createEvent-header-close")[0];   // variable pour close la fenetre
+var save     = document.getElementById("save");       // quand click sur bouton, ouvre la fenetre
 
-// variable bouton qui ouvre fenetre
-var butt = document.getElementById("addButt");
-
-// variable pour close la fenetre
-var span = document.getElementsByClassName("close")[0];
-
-var save = document.getElementById("save");
-// quand click sur bouton, ouvre la fenetre
 butt.onclick = function() {
     addevent.style.display = "block";
 }
 
-// quand click sur la croix, ferme la fenetre
 span.onclick = function() {
     addevent.style.display = "none";
 }
-save.onclick = function(){
+
+save.onclick = function() {
     addevent.style.display = "none";
-}
-window.onclick = function(event) {
-    if (event.target == event) {
-        addevent.style.display = "none";
-    }
 }

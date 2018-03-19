@@ -12,7 +12,7 @@
 
             <ul>
 
-                <li class="ac-home-sign-item">
+                <li class="ac-home-sign-item ac-home-sign-item-inscrip">
                     <h2 class="ac-home-sign-item-h2">
                         Inscription
                     </h2>

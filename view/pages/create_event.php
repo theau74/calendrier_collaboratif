@@ -1,48 +1,5 @@
 <div class="ac-createEvent">
 
-    <form style="display:none;" action="index.php?ac=create-event" method="post">
-
-        <ul>
-
-            <li class="ac-home-sign-item">
-                <input type="text" class="ac-home-sign-item-input" name="titre" placeholder="Titre de l'Evenement">
-            </li>
-
-            <li class="ac-home-sign-item">
-                <input type="text" class="ac-home-sign-item-input" name="Description" placeholder="Description">
-            </li>
-
-            <li class="ac-home-sign-item">
-                <input type="text" class="ac-home-sign-item-input" name="Type" placeholder="Type">
-            </li>
-
-            <li class="ac-home-sign-item">
-                <input type="date" class="ac-home-sign-item-input" name="start_date" placeholder="Type">
-                <input type="time" class="ac-home-sign-item-input" name="start_time" placeholder="Type">
-            </li>
-
-            <li class="ac-home-sign-item">
-                <input type="date" class="ac-home-sign-item-input" name="end_date" placeholder="Type">
-                <input type="time" class="ac-home-sign-item-input" name="end_time" placeholder="Type">
-            </li>
-
-            <li class="ac-home-sign-allBoutton">
-                <ul>
-
-                    <li class="ac-home-sign-item-boutton-left">
-                        <button type="submit" class="ac-home-sign-item-boutton-log" name="subscribe">
-                            valider
-                        </button>
-                    </li>
-
-
-                </ul>
-            </li>
-
-        </ul>
-
-    </form>
-
     <div class="ac-createEvent-header">
 
         <a href="index.php" class="close">
@@ -136,9 +93,5 @@
 
 
     </div>
-
-</div>
-
-</div>
 
 </div>
