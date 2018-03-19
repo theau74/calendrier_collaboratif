@@ -20,11 +20,13 @@ GROUP BY I.id_event");
 function create_event($idcreator, $c, $encryption_key) {
     $nom = $_POST["nom"];
     $description = $_POST["description"];
-    $type = $_POST['type'];
-    $start = $_POST["start_date"]."T".$_POST["start_time"];
-    $end = $_POST["end_date"]."T".$_POST["end_time"];
+    //$type = $_POST['type'];
+    $start = $_POST["start_date"];
+    $start_hour = $_POST["start_time"];
+    $end = $_POST["end_date"];
+    $end_hour = $_POST["end_time"];
     //insertion des valeurs dans la bdd
-    $sql = ("INSERT INTO events(nom, creator, description, type, start, end) VALUES('$nom', '$idcreator', '$description' ,'$type', '$start', '$end')");
+    $sql = ("INSERT INTO events(nom, creator, description, start, start_hour, end, end_hour) VALUES('$nom', '$idcreator', '$description', '$start', '$start_hour', '$end', '$end_hour')");
     if(mysqli_query($c,$sql)){
         return true;
     }
