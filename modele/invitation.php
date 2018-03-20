@@ -91,3 +91,32 @@ function set_invitation($id_user,$id_event,$response,$c){
         return false;
     }
 }
+function set_group_invitation($id_user,$id_group,$response,$c){
+    if ($response) {
+        $sql = ("UPDATE users_groups SET etat ='valider' WHERE id_users ='$id_user' AND id_groups ='$id_group'");
+    } else {
+        $sql = ("UPDATE users_groups SET etat ='refuser' WHERE id_users ='$id_user' AND id_groups ='$id_group'");
+    }
+    if(mysqli_query($c,$sql)){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+function get_pending_invitation_by_id_user($id_user,$c){
+    $sql = ("SELECT I.id_event, I.id_user, I.id_group, I.etat, E.nom as event_name, E.start, E.end, G.nom as group_name, G.description FROM invitation I
+    INNER JOIN events E ON E.id = I.id_event 
+    INNER JOIN groups G ON G.id = I.id_group 
+    WHERE I.id_user ='$id_user' AND I.etat = 'envoie' GROUP BY I.id_event ");
+    $result = mysqli_query($c,$sql);
+    $pending_invitation_list= array ();
+    $loop = 0;
+    while ($donnees = mysqli_fetch_assoc($result))
+    {
+        $pending_invitation_list[$loop]= $donnees;
+        $loop++;
+    }
+
+    return $pending_invitation_list;
+}

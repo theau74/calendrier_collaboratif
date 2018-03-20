@@ -3,7 +3,7 @@
 \*********************************************************************************/
 
 ::-webkit-scrollbar {
-    width: 0px;
+    display: none;
 }
 
 * {
@@ -379,9 +379,6 @@ input:placeholder-shown {
     box-shadow: inset -4px -5px 9px -5px;
 }
 
-::-webkit-scrollbar {
-    display: none;
-}
 
 /*********************************************************************************\
  *   Creer Event                                                                 *

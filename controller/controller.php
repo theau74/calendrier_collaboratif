@@ -5,6 +5,8 @@ if (empty($_GET)) {
 // Vérification si l'user est enregisté
     if (isset($_SESSION['stats']) and $page != "connection_failed" and $page != "sub_failed") {
         $event_list = get_event_by_user_id($_SESSION['id'], $c);
+        $pending_invitation_list = get_pending_invitation_by_id_user($_SESSION['id'], $c);
+
         $page = "main";
     } else {
         $page = "home";
@@ -86,11 +88,22 @@ if (empty($_GET)) {
     if (isset($_GET["invitation"])){
         $invitation_list = get_invitation_by_id_user($_SESSION['id'],$c);
         $invitation_group_list = get_group_invitation($_SESSION['id'],$c);
-        var_dump($invitation_group_list );
         $page = "invitation";
 
     }
-//Valider ou refuser une invitation
+//Page liste des invitation d'evenement
+    if (isset($_GET["list_invitation"])){
+        $invitation_list = get_invitation_by_id_user($_SESSION['id'],$c);
+        $page = "list_invitation";
+
+    }
+//Page liste des invitation de groupe
+    if (isset($_GET["list_invitation_gr"])) {
+        $invitation_group_list = get_group_invitation($_SESSION['id'], $c);
+        $page = "list_invitation_gr";
+    }
+
+//Valider ou refuser une invitation d'event
     if (isset($_GET["set_invitation"])) {
         if($_GET["set_invitation"]=="true"){
             set_invitation($_POST["id_user"],$_POST["id_event"],true,$c);
@@ -100,7 +113,23 @@ if (empty($_GET)) {
         }
         $page ="main";
         $event_list = get_event_by_user_id($_SESSION['id'], $c);
+        $pending_invitation_list = get_pending_invitation_by_id_user($_SESSION['id'], $c);
     }
+//Valider ou refuser une invitation de groupe
+    if (isset($_GET["set_group_invitation"])) {
+        if($_GET["set_group_invitation"]=="true"){
+            set_group_invitation($_POST["id_users"],$_POST["id_groups"],true,$c);
+        }
+        elseif($_GET["set_group_invitation"]=="false"){
+            set_group_invitation($_POST["id_users"],$_POST["id_groups"],false,$c);
+        }
+        $event_list = get_event_by_user_id($_SESSION['id'], $c);
+        $page ="main";
+    }
+
+
+
+
 
 //formulaire de modification d'information
     if (isset($_GET["infoform"])) {
