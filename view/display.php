@@ -3,6 +3,7 @@
 function display_home(){
 
 	require ("pages/home.php");
+    include ("view/footer_home.php");
 
 }
 function display_main($event_list){

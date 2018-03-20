@@ -137,6 +137,20 @@
 
             <div class="ac-createEvent-body-creneaux">
 
+                <label class="container">
+
+                    <p id="checkbox-container">
+                        Toute la journée
+                    </p>
+
+                    <input type="checkbox">
+
+                    <span class="checkmark">
+
+                    </span>
+
+                </label>
+
                 <div class="ac-createEvent-body-creneaux-first">
 
                     <i class="ac-createEvent-body-creneaux-crenTxt">
@@ -256,11 +270,27 @@
                 <input type="checkbox" >
                 <span class="checkmark"></span>
             </label>
+            <label class="container">
+                <p id="checkbox-container">Meeting</p>
+                <input type="checkbox" >
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">
+                <p id="checkbox-container">Meeting</p>
+                <input type="checkbox" >
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">
+                <p id="checkbox-container">Meeting</p>
+                <input type="checkbox" >
+                <span class="checkmark"></span>
+            </label>
+
         </div>
 
         <div class="ac-main-nav-accDec" style="overflow-y: scroll;">
 
-            
+
 
         </div>
 

@@ -28,10 +28,10 @@ function afficheNav() {
 
 }
 
-var addevent = document.getElementById("createEvent");                          // variable fenetre
+var addevent = document.getElementById("createEvent");                              // variable fenetre
 var butt     = document.getElementById("bouttonCree");                              // variable bouton qui ouvre fenetre
 var span     = document.getElementsByClassName("ac-createEvent-header-close")[0];   // variable pour close la fenetre
-var save     = document.getElementById("save");       // quand click sur bouton, ouvre la fenetre
+var save     = document.getElementById("save");                                     // quand click sur bouton, ouvre la fenetre
 
 butt.onclick = function() {
     addevent.style.display = "block";

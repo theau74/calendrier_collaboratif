@@ -263,9 +263,9 @@ input:placeholder-shown {
 
 .ac-fontGris {
     position: fixed;
-    top: 0;
+    top: 70px;
     left: 0;
-    bottom: 0;
+    bottom: -70px;
     right: 0;
     background-color: rgba(0,0,0,0.38);
     z-index: 1;
@@ -643,6 +643,7 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
 .fc-view.fc-month-view.fc-basic-view table tbody tr td div div .fc-row.fc-week.fc-widget-content {
     height: calc((100vh - 160px) / 6)!important;
 }
+
 /*********************************************************************************\
  *   Footer                                                                      *
 \*********************************************************************************/
@@ -746,17 +747,14 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
 .container {
     cursor: pointer;
     font-size: 22px;
-    display: block;
+    display: flex;
     padding: 20px 0px 0px;
     word-break: break-all;
-    width: 30%;
+    width: 100%;
 }
 
 
 #checkbox-container{
-    width: 234px;
-    margin-left: 65px;
-    font-family: 'PT Sans', sans-serif;
 }
 
 /*cacher checkbox par default */
@@ -767,7 +765,6 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
 
 /* custom checkbox */
 .checkmark {
-    position: absolute;
     height: 25px;
     width: 25px;
     border: 3px solid #3b9f97;
@@ -796,10 +793,9 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
 }
 
 .container .checkmark:after {
-    left: 6px;
-    top: 2px;
     width: 5px;
     height: 10px;
+    margin-left: 5px;
     border: solid white;
     border-width: 0 3px 3px 0;
     -webkit-transform: rotate(45deg);
