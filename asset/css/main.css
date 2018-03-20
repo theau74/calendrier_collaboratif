@@ -356,7 +356,32 @@ input:placeholder-shown {
 .ac-main-nav {
     display: none;
 }
+.ac-main-nav-invit {
+    display: block;
+    height: 50%;
+    background-color: #dbc762;
+    padding: 20px;
+    padding-right: 17px;
+    box-shadow: inset -4px 5px 9px -5px;
+}
+.ac-main-nav-showEv{
+    display: block;
+    height: 30%;
+    background-color: #fcf8e3;
+    box-shadow: inset 0px 0px 6px 0px;
+}
 
+.ac-main-nav-accDec{
+    display: block;
+    height: 20%;
+    background-color: #dbc762;
+    padding: 20px;
+    box-shadow: inset -4px -5px 9px -5px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
 
 /*********************************************************************************\
  *   Creer Event                                                                 *
@@ -629,10 +654,12 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
 
 
 .ac-main-footer {
+    background-color: #fcf8e3;
     margin-top: auto;
     height: 40px;
     width: 100%;
     padding: 10px;
+    box-shadow: inset -4px -5px 9px -3px;
 }
 
 .ac-main-footer-title {
@@ -720,17 +747,15 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
     cursor: pointer;
     font-size: 22px;
     display: block;
-    padding: 20px 10px;
+    padding: 20px 0px 0px;
     word-break: break-all;
     width: 30%;
 }
 
 
 #checkbox-container{
-    position: absolute;
-    margin-left: 5px;
-    margin-top: 5px;
-    margin-left: 80px;
+    width: 234px;
+    margin-left: 65px;
     font-family: 'PT Sans', sans-serif;
 }
 

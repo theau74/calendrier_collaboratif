@@ -223,21 +223,46 @@
 
     <div class="ac-main-nav" id="nav-bar">
 
-        <div class="ac-main-nav-miniCalendrier">
-            <!--  Mini Calendar  -->
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad animi, architecto
-            asperiores delectus deleniti distinctio eaque earum exercitationem fugiat laborum maxime mollitia neque
-            nihil officiis placeat porro quaerat sed sunt.
-        </div>
+        <div class="ac-main-nav-invit" style="overflow-y: scroll;">
 
-        <div>
+
 
         </div>
 
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet cumque dicta ex, harum id labore laboriosam
-            minima, nihil obcaecati pariatur provident quasi, reiciendis repellat sit vero! Ex nostrum odit voluptatum!
-        </p>
+        <div class="ac-main-nav-showEv" style="overflow-y: scroll;">
+
+            <label class="container">
+                <p id="checkbox-container">OuiboNjourOrvoirheohooe</p>
+                <input type="checkbox" >
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">
+                <p id="checkbox-container">Meeting</p>
+                <input type="checkbox" >
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">
+                <p id="checkbox-container">Meeting</p>
+                <input type="checkbox" >
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">
+                <p id="checkbox-container">Meeting</p>
+                <input type="checkbox" >
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">
+                <p id="checkbox-container">Meeting</p>
+                <input type="checkbox" >
+                <span class="checkmark"></span>
+            </label>
+        </div>
+
+        <div class="ac-main-nav-accDec" style="overflow-y: scroll;">
+
+            
+
+        </div>
 
         <div class="ac-main-footer">
 
