@@ -22,6 +22,7 @@ function create_invitation($user_list, $creator, $c, $encryption_key) {
 
     //invitation par groupe
     if(!empty($_POST['groups-choice'])) {
+
         foreach ($_POST['groups-choice'] as $group) {
 
             $users_list_by_group = get_users_id_by_group_id($group, $c);

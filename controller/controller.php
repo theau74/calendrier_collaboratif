@@ -1,6 +1,7 @@
 <?php
 //direction de base
 $page = "home";
+
 if (empty($_GET)) {
 // Vérification si l'user est enregisté
     if (isset($_SESSION['stats']) and $page != "connection_failed" and $page != "sub_failed") {

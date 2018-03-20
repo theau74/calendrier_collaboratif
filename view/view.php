@@ -1,5 +1,4 @@
 <?php
-
 if ($page == "home") {
     display_home();
 }
