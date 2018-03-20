@@ -3,9 +3,10 @@
 function display_home(){
 
 	require ("pages/home.php");
+    include ("view/footer_home.php");
 
 }
-function display_main($event_list){
+function display_main($event_list,$pending_invitation_list){
 
     require ("pages/main.php");
 
@@ -69,6 +70,12 @@ function display_creation_event_sucess(){
 }
 function display_invitation($invitation_list,$invitation_group_list){
     require("pages/set_invitation.php");
+}
+function display_list_invitation_event($invitation_list){
+    require("pages/list_invitation_event.php");
+}
+function display_list_invitation_group($invitation_group_list){
+    require("pages/list_invitation_group.php");
 }
 
 function display_create_group($users_list){

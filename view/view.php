@@ -4,7 +4,7 @@ if ($page == "home") {
     display_home();
 }
 elseif ($page == "main") {
-    display_main($event_list);
+    display_main($event_list,$pending_invitation_list);
 }
 elseif ($page == "propos") {
     display_apropos();
@@ -39,6 +39,13 @@ elseif (($page == "creation_event_sucess")) {
 elseif (($page == "invitation")){
     display_invitation($invitation_list,$invitation_group_list);
 }
+elseif (($page == "list_invitation")){
+    display_list_invitation_event($invitation_list);
+}
+elseif (($page == "list_invitation_gr")){
+    display_list_invitation_group($invitation_group_list);
+}
+
 elseif (($page == "create-group")) {
     display_create_group($users_list);
 }

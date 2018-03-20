@@ -14,7 +14,7 @@
 
             <ul>
 
-                <li class="ac-home-sign-item">
+                <li class="ac-home-sign-item ac-home-sign-item-connec">
                     <h2 class="ac-home-sign-item-h2">
                         Connexion
                     </h2>
