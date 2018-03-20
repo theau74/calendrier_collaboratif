@@ -12,8 +12,22 @@
 
 
     </div>
+    creneau deja pris, veuillez en choisir un autre
     <form action="index.php?ac=create-event" method="post">
-        <input type="text" id="addEventTitle" placeholder="Titre de l'événement ..." name="nom">
+        <input type="hidden" id="addEventTitle" name="nom" value="<?php echo$post['nom']; ?>">
+        <input type="hidden" placeholder="Description" name="description" value="<?php echo$post['description']; ?>">
+        <?php
+        if(isset($post['users-choice'])) {
+            foreach ($post['users-choice'] as $user) {
+                echo '<input type="hidden" name="users-choice[]" value="' . $user . '">';
+            }
+        }
+        if(isset($post['groups-choice'])) {
+            foreach ($post['groups-choice'] as $group) {
+                echo '<input type="hidden" name="users-choice[]" value="' . $group . '">';
+            }
+        }
+        ?>
         <div class="ac-createEvent-body">
 
             <div class="ac-createEvent-body-creneaux">
@@ -45,24 +59,9 @@
             </div>
 
             <div class="ac-createEvent-body-description">
-                <input class="ac-createEvent-body-description-input" type="text" placeholder="Description" name="description">
+
             </div>
-            <?php
-            foreach ($users_list as $user) {
-            echo"<div>";
-                echo $user['Fname'];
-                echo $user['Lname'];
-                echo '<input class="of-main-block-salle-radio" type="checkbox" name="users-choice[]" value="' . $user['id'] . '">';
-                echo "</div>";
-            }
-            foreach ($groups_list as $group) {
-            echo"<div>";
-                echo $group['nom'];
-                echo $group['description'];
-                echo '<input class="of-main-block-salle-radio" type="checkbox" name="groups-choice[]" value="' . $group['id'] . '">';
-                echo "</div>";
-            }
-            ?>
+
             <input type="submit" value="valider">
         </div>
     </form>

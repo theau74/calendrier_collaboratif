@@ -17,14 +17,7 @@ GROUP BY I.id_event");
 }
 
 //creation d'évenemenent dans la base
-function create_event($idcreator, $c, $encryption_key) {
-    $nom = $_POST["nom"];
-    $description = $_POST["description"];
-    //$type = $_POST['type'];
-    $start = $_POST["start_date"];
-    $start_hour = $_POST["start_time"];
-    $end = $_POST["end_date"];
-    $end_hour = $_POST["end_time"];
+function create_event($nom, $description, $idcreator, $start, $start_hour, $end, $end_hour, $c, $encryption_key) {
     //insertion des valeurs dans la bdd
     $sql = ("INSERT INTO events(nom, creator, description, start, start_hour, end, end_hour) VALUES('$nom', '$idcreator', '$description', '$start', '$start_hour', '$end', '$end_hour')");
     if(mysqli_query($c,$sql)){
@@ -55,6 +48,59 @@ LIMIT 1");
 }
 
 
+function verify_user_disponibility($start, $start_hour, $end, $end_hour, $user_id, $c){
+    $start_time = date_timestamp_get(date_create(''.$start.' '.$start_hour.''));
+    $end_time = date_timestamp_get(date_create(''.$end.' '.$end_hour.''));
+    $event_list = get_event_by_user_id($user_id, $c);
+    foreach ($event_list as $event){
+        $event_start =  date_timestamp_get(date_create(''.$event['start'].' '.$event['start_hour'].''));
+        $event_end =  date_timestamp_get(date_create(''.$event['end'].' '.$event['end_hour'].''));
+        if($event_start > $start_time && $event_start < $end_time ||  $event_end < $end_time && $event_end > $end_time || $event_start <= $start_time && $event_end >= $end_time){
+            return false;
+        }
+    }
+    return true;
+}
+
+function verify_user_list_disponibility($start, $start_hour, $end, $end_hour, $user_list, $c){
+    $start_timestanp = date_timestamp_get(date_create(''.$start.' '.$start_hour.''));
+    $end_timestamp = date_timestamp_get(date_create(''.$end.' '.$end_hour.''));
+
+    foreach ($user_list as $user) {
+        $event_list = get_event_by_user_id($user, $c);
+        foreach ($event_list as $event) {
+            $event_start = date_timestamp_get(date_create('' . $event['start'] . ' ' . $event['start_hour'] . ''));
+            $event_end = date_timestamp_get(date_create('' . $event['end'] . ' ' . $event['end_hour'] . ''));
+            if ($event_start > $start_timestanp && $event_start < $end_timestamp || $event_end < $end_timestamp && $event_end > $end_timestamp || $event_start <= $start_timestanp && $event_end >= $end_timestamp) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+function search_five_next_free_slot($user_list, $time_date, $time_hour, $step, $start, $limit_hour, $limit_slot, $c){
+    $free_slot = 0;
+    $loop = 0;
+    $day = 0;
+    $end = $time_hour + $step;
+    var_dump(date_timestamp_get(date_create('' . $time_date . ' ' . $time_hour . '')))+(86400 * $day);
+    while ($free_slot < $limit_slot){
+
+        if(verify_user_list_disponibility(date_timestamp_get(date_create('' . $time_date . ' ' . $time_hour . '')))+(86400 * $day)){
+
+        }else{
+
+        }
 
 
-
+        //incrémentation du créneau
+        if(($end + $step) > $limit_hour){
+            $time_hour = $start;
+            $end = $start + $step;
+            $day++;
+        } else{
+            $time_hour = $time_hour + $step;
+            $end = $end + $step;
+        }
+    }
+}
