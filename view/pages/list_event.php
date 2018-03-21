@@ -27,12 +27,16 @@ foreach ($event_list as $events) {
         echo '<li>heure de  fin : ' . $events['end_hour'].'</li>';
     }
     echo"</ul>";
-    echo'<form  action="index.php?ac=delete-event" method="post">
-        <input type="submit" value="supprimer" name="delete">
+    echo'<form  action="index.php" method="post">
+       <button type="submit" class="" id="saveEvent"  name="action" value="delete-event">
+                    supprimer
+                </button>
         <input type="hidden" value="'.$events['id_event'].'" name="id_event">
         </form>';
-    echo'<form  action="index.php?ac=update-event" method="post">
-         <input type="submit" value="modifier" name="modify">
+    echo'<form  action="index.php" method="post">
+        <button type="submit" class="" id="saveEvent"  name="action" value="set-event">
+                    modifier
+                </button>
          <input type="text" value="'.$events['nom'].'" name="nom"> 
          <input type="date" value="'.$events['start'].'" name="start"> 
          <input type="time" value="'.$events['start_hour'].'" name="start_hour">

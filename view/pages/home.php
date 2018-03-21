@@ -10,7 +10,7 @@
 
     <div class="ac-home">
 
-        <form action="index.php?ac=signin" method="post">
+        <form action="index.php" method="post">
 
             <ul>
 
@@ -31,19 +31,21 @@
                 <li class="ac-home-sign-allBoutton">
                     <ul>
 
-                        <li class="ac-home-sign-item-boutton-left">
-                            <button type="submit" class="ac-home-sign-item-boutton-log" name="subscribe">
-                                Connexion
+                        <li class="ac-home-sign-item-boutton-right">
+                            <button type="submit" class="ac-home-sign-item-boutton-sign" id="savePopup"  name="action" value="signin">
+                                connection
                             </button>
                         </li>
-
                         <li class="ac-home-sign-item-boutton-right">
                             <a href="index.php?subform" class="ac-home-sign-item-boutton-sign">
                                 Inscription
                             </a>
                         </li>
 
+
+
                     </ul>
+
                 </li>
 
             </ul>

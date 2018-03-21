@@ -20,7 +20,7 @@
         Retour
     </a>
 
-    <form action="index.php?ac=create-group" method="post">
+    <form action="index.php" method="post">
 
         <ul>
 
@@ -51,8 +51,8 @@
                 <ul>
 
                     <li class="ac-home-sign-item-boutton-left">
-                        <button type="submit" class="ac-home-sign-item-boutton-log" name="subscribe">
-                            valider
+                        <button type="submit" class="" id="saveEvent"  name="action" value="create-group">
+                            enregistrer
                         </button>
                     </li>
 

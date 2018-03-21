@@ -105,7 +105,7 @@
         &#9776;
     </a>
 
-    <button id="bouttonCreeGroup" type="submit" class="ac-main-header-createGroup" name="create">
+    <button id="bouttonCreeGroup" type="submit" class="ac-main-header-createGroup"  name="action" value="create-event">
         &#xe7f0;
     </button>
 
@@ -122,15 +122,16 @@
 <div class="ac-main">
 
     <div class="ac-createEvent" style="display:none;" id="createEvent">
-        <form action="index.php?ac=create-event" method="post">
+        <form action="index.php" method="post">
             <div class="ac-createEvent-header">
 
                 <div class="ac-createEvent-header-close" id="closeEvent">
                     &#xf00d;
                 </div>
 
-                <button type="submit" class="ac-createEvent-header-save" id="saveEvent" name="create">
-                    Enregistrer
+
+                <button type="submit" class="ac-createEvent-header-save" id="saveEvent"  name="action" value="create-event">
+                    enregistrer
                 </button>
 
                 <input class="ac-createEvent-header-title" type="text" placeholder="Titre de l'événement ..."  name="nom" required>
@@ -161,7 +162,7 @@
                             &#xf017;
                         </i>
 
-                        <input class="ac-createEvent-body-creneaux-dateEv" type="Date" placeholder="type" name="start_date"> required
+                        <input class="ac-createEvent-body-creneaux-dateEv" type="Date" placeholder="type" name="start_date" required>
 
                         <input class="ac-createEvent-body-creneaux-hoursEv" type="time" placeholder="type"
                                name="start_time" required>
@@ -211,7 +212,7 @@
     </div>
 
     <div class="ac-createEvent-popUp" style="display: none" id="createEvent-Deskstop">
-        <form action="index.php?ac=create-event" method="post">
+        <form action="index.php" method="post">
             <div class="ac-createEvent-popUp-content">
 
                 <div class="ac-createEvent-header">
@@ -220,7 +221,7 @@
                         &#xf00d;
                     </div>
 
-                    <button type="submit" class="ac-createEvent-header-save" id="savePopup" name="create">
+                    <button type="submit" class="ac-createEvent-header-save" id="savePopup"  name="action" value="create-event">
                         Enregistrer
                     </button>
 
@@ -308,14 +309,14 @@
     </div>
 
     <div class="ac-createGroup" style="display:none;" id="createGroup">
-        <form action="index.php?ac=create-event" method="post">
+        <form action="index.php" method="post">
             <div class="ac-createEvent-header">
 
                 <div class="ac-createEvent-header-close" id="closeGroup">
                     &#xf00d;
                 </div>
 
-                <button type="submit" class="ac-createEvent-header-save" id="saveGroup" name="create">
+                <button type="submit" class="ac-createEvent-header-save" id="saveGroup"  name="action" value="create-event">
                     Enregistrer
                 </button>
 
@@ -457,15 +458,15 @@
 
                 echo "<div class='ac-main-nav-invit-item-boutton'>";
 
-                echo '<form  action="index.php?ac=set-invitation" method="post">
-                                <input class="ac-main-nav-invit-item-boutton-valider" type="submit" value="valider" >
+                echo '<form  action="index.php" method="post">
+                                <input class="ac-main-nav-invit-item-boutton-valider" type="submit"  name="action" value="valid-invit">
                                 <input type="hidden" value="' . $invitation['id_user'] . '" name="id_user">
                                 <input type="hidden" value="' . $invitation['id_event'] . '" name="id_event">
                                 <input type="hidden" value="true" name="response">
                             </form>';
 
-                echo '<form  action="index.php?ac=set-invitation" method="post">
-                                <input class="ac-main-nav-invit-item-boutton-refuser" type="submit" value="refuser" >
+                echo '<form  action="index.php" method="post">
+                                <input class="ac-main-nav-invit-item-boutton-refuser" type="submit"  name="action" value="deny-invit" >
                                 <input type="hidden" value="' . $invitation['id_user'] . '" name="id_user">
                                 <input type="hidden" value="' . $invitation['id_event'] . '" name="id_event">
                                 <input type="hidden" value="false" name="response">
@@ -510,7 +511,7 @@
 
         </div>
 
-        <button id="bouttonCreeEvent" type="submit" class="ac-main-calendrier-createEvent" name="create">
+        <button id="bouttonCreeEvent" type="submit" class="ac-main-calendrier-createEvent"  name="action" value="create-event">
             +
         </button>
 

@@ -13,7 +13,7 @@
 
     </div>
     creneau deja pris, veuillez en choisir un autre
-    <form action="index.php?ac=create-event" method="post">
+    <form action="index.php" method="post">
         <input type="hidden" id="addEventTitle" name="nom" value="<?php echo$post['nom']; ?>">
         <input type="hidden" placeholder="Description" name="description" value="<?php echo$post['description']; ?>">
         <?php
@@ -62,7 +62,9 @@
 
             </div>
 
-            <input type="submit" value="valider">
+            <button type="submit" class="ac-createEvent-header-save" id="saveEvent"  name="action" value="create-event">
+                enregistrer
+            </button>
         </div>
     </form>
 

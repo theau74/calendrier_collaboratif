@@ -46,7 +46,7 @@
                     <ul>
 
                         <li class="ac-home-sign-item-boutton-left">
-                            <button type="submit" class="ac-home-sign-item-boutton-log" name="subscribe">
+                            <button type="submit" class="ac-home-sign-item-boutton-log" name="action" value="signup">
                                 Validé
                             </button>
                         </li>

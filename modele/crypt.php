@@ -14,4 +14,5 @@ function decrypt($encrypted_string, $encryption_key) {
     $decrypted_string = mcrypt_decrypt(MCRYPT_BLOWFISH, $encryption_key, $encrypted_string, MCRYPT_MODE_ECB, $iv);
     return $decrypted_string;
 }
+
 ?>
