@@ -21,10 +21,8 @@ function afficheNav() {
 
     if (x.className === "ac-main-nav responsive-nav-bar") {
         z.style.opacity = "1";
-        z.style.pointerEvents = "auto";
     } else {
         z.style.opacity = "0";
-        z.style.pointerEvents = "none";
     }
 
 

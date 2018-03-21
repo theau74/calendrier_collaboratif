@@ -53,6 +53,7 @@ function verify_user_disponibility($start, $start_hour, $end, $end_hour, $user_i
     $end_time = date_timestamp_get(date_create(''.$end.' '.$end_hour.''));
     $event_list = get_event_by_user_id($user_id, $c);
     foreach ($event_list as $event){
+
         $event_start =  date_timestamp_get(date_create(''.$event['start'].' '.$event['start_hour'].''));
         $event_end =  date_timestamp_get(date_create(''.$event['end'].' '.$event['end_hour'].''));
         if($event_start > $start_time && $event_start < $end_time ||  $event_end < $end_time && $event_end > $end_time || $event_start <= $start_time && $event_end >= $end_time){

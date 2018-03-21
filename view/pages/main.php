@@ -237,108 +237,139 @@
 
     <div class="ac-main-nav" id="nav-bar">
 
-        <div class="ac-main-nav-invit">
-
+        <div class="ac-main-nav-invit" style="overflow-y: scroll;">
             <?php
-            foreach ($pending_invitation_list as $invitation) {
-                echo "<div class='ac-main-nav-invit-item'>";
-
-                    echo "<ul class='ac-main-nav-invit-item-description'>";
-                    if (!empty($invitation['event_name'])) {
-                        echo "<li class='ac-main-nav-invit-item-description-name'>" . $invitation['event_name'] . '</li>';
-                    }
-                    if (!empty($invitation['start'])) {
-                        echo "<li class='ac-main-nav-invit-item-description-jourStart'>" . $invitation['start'] . '</li>';
-                    }
-                    if (!empty($invitation['start_hour'])) {
-                        echo "<li class='ac-main-nav-invit-item-description-heureStart'>" . $invitation['start_hour'] . '</li>';
-                    }
-                    if (!empty($invitation['end'])) {
-                        echo "<li class='ac-main-nav-invit-item-description-jourFin'>" . $invitation['end'] . '</li>';
-                    }
-                    if (!empty($invitation['end_hour'])) {
-                        echo "<li class='ac-main-nav-invit-item-description-heureFin'>" . $invitation['end_hour'] . '</li>';
-                    }
-                    if (!empty($invitation['group_name'])) {
-                        echo "<li class='ac-main-nav-invit-item-description-nonGroupe'>" . $invitation['group_name'] . '</li>';
-                    }
-                    echo "</ul>";
-
-                    echo "<div class='ac-main-nav-invit-item-boutton'>";
-
-                        echo'<form  action="index.php?set_invitation=true" method="post">
-                                <input class="ac-main-nav-invit-item-boutton-valider" type="submit" value="valider" name="valider">
-                                <input type="hidden" value="' . $invitation['id_user'] . '" name="id_user">
-                                <input type="hidden" value="' . $invitation['id_event'] . '" name="id_event">
-                            </form>';
-
-                        echo'<form  action="index.php?set_invitation=false" method="post">
-                                <input class="ac-main-nav-invit-item-boutton-refuser" type="submit" value="refuser" name="refuser">
-                                <input type="hidden" value="' . $invitation['id_user'] . '" name="id_user">
-                                <input type="hidden" value="' . $invitation['id_event'] . '" name="id_event">
-                            </form>';
-
-                    echo "</div>";
-
-                echo "</div>";
+            foreach ($pending_invitation_list as $invitation){
+                echo "<ul>";
+                if(!empty($invitation['id_event'])){
+                    echo"<li>id de l'evenement : ".$invitation['id_event'].'</li>';
+                }if(!empty($invitation['event_name'])){
+                    echo"<li>nom de l'evenement : ".$invitation['event_name'].'</li>';
+                }if(!empty($invitation['start'])){
+                    echo"<li>debut de l'evenement : ".$invitation['start'].'</li>';
+                }if(!empty($invitation['end'])){
+                    echo"<li>fin de l'evenement : ".$invitation['end'].'</li>';
+                }if(!empty($invitation['group_name'])){
+                    echo"<li>nom du groupe : ".$invitation['group_name'].'</li>';
+                }
+                echo'<form  action="index.php?set_invitation=true" method="post">
+                    <input type="submit" value="valider" name="valider">
+                    <input type="hidden" value="'.$invitation['id_user'].'" name="id_user">
+                    <input type="hidden" value="'.$invitation['id_event'].'" name="id_event">
+                </form>';
+                echo'<form  action="index.php?set_invitation=false" method="post">
+                    <input type="submit" value="refuser" name="refuser">
+                    <input type="hidden" value="'.$invitation['id_user'].'" name="id_user">
+                    <input type="hidden" value="'.$invitation['id_event'].'" name="id_event">
+                 </form>';
+                echo"</ul>";
+            }
+            ?>
+            <?php
+            foreach ($pending_invitation_list as $invitation){
+                echo "<ul>";
+                if(!empty($invitation['id_event'])){
+                    echo"<li>id de l'evenement : ".$invitation['id_event'].'</li>';
+                }if(!empty($invitation['event_name'])){
+                    echo"<li>nom de l'evenement : ".$invitation['event_name'].'</li>';
+                }if(!empty($invitation['start'])){
+                    echo"<li>debut de l'evenement : ".$invitation['start'].'</li>';
+                }if(!empty($invitation['end'])){
+                    echo"<li>fin de l'evenement : ".$invitation['end'].'</li>';
+                }if(!empty($invitation['group_name'])){
+                    echo"<li>nom du groupe : ".$invitation['group_name'].'</li>';
+                }
+                echo'<form  action="index.php?set_invitation=true" method="post">
+                    <input type="submit" value="valider" name="valider">
+                    <input type="hidden" value="'.$invitation['id_user'].'" name="id_user">
+                    <input type="hidden" value="'.$invitation['id_event'].'" name="id_event">
+                </form>';
+                echo'<form  action="index.php?set_invitation=false" method="post">
+                    <input type="submit" value="refuser" name="refuser">
+                    <input type="hidden" value="'.$invitation['id_user'].'" name="id_user">
+                    <input type="hidden" value="'.$invitation['id_event'].'" name="id_event">
+                 </form>';
+                echo"</ul>";
+            }
+            ?>
+            <?php
+            foreach ($pending_invitation_list as $invitation){
+                echo "<ul>";
+                if(!empty($invitation['id_event'])){
+                    echo"<li>id de l'evenement : ".$invitation['id_event'].'</li>';
+                }if(!empty($invitation['event_name'])){
+                    echo"<li>nom de l'evenement : ".$invitation['event_name'].'</li>';
+                }if(!empty($invitation['start'])){
+                    echo"<li>debut de l'evenement : ".$invitation['start'].'</li>';
+                }if(!empty($invitation['end'])){
+                    echo"<li>fin de l'evenement : ".$invitation['end'].'</li>';
+                }if(!empty($invitation['group_name'])){
+                    echo"<li>nom du groupe : ".$invitation['group_name'].'</li>';
+                }
+                echo'<form  action="index.php?set_invitation=true" method="post">
+                    <input type="submit" value="valider" name="valider">
+                    <input type="hidden" value="'.$invitation['id_user'].'" name="id_user">
+                    <input type="hidden" value="'.$invitation['id_event'].'" name="id_event">
+                </form>';
+                echo'<form  action="index.php?set_invitation=false" method="post">
+                    <input type="submit" value="refuser" name="refuser">
+                    <input type="hidden" value="'.$invitation['id_user'].'" name="id_user">
+                    <input type="hidden" value="'.$invitation['id_event'].'" name="id_event">
+                 </form>';
+                echo"</ul>";
             }
             ?>
 
+
         </div>
 
-        <div class="ac-main-nav-showEv">
+        <div class="ac-main-nav-showEv" style="overflow-y: scroll;">
 
             <label class="container">
                 <p id="checkbox-container">OuiboNjourOrvoirheohooe</p>
-                <input type="checkbox">
+                <input type="checkbox" >
                 <span class="checkmark"></span>
             </label>
-
             <label class="container">
                 <p id="checkbox-container">Meeting</p>
-                <input type="checkbox">
+                <input type="checkbox" >
                 <span class="checkmark"></span>
             </label>
-
             <label class="container">
                 <p id="checkbox-container">Meeting</p>
-                <input type="checkbox">
+                <input type="checkbox" >
                 <span class="checkmark"></span>
             </label>
-
             <label class="container">
                 <p id="checkbox-container">Meeting</p>
-                <input type="checkbox">
+                <input type="checkbox" >
                 <span class="checkmark"></span>
             </label>
-
             <label class="container">
                 <p id="checkbox-container">Meeting</p>
-                <input type="checkbox">
+                <input type="checkbox" >
                 <span class="checkmark"></span>
             </label>
-
             <label class="container">
                 <p id="checkbox-container">Meeting</p>
-                <input type="checkbox">
+                <input type="checkbox" >
                 <span class="checkmark"></span>
             </label>
-
             <label class="container">
                 <p id="checkbox-container">Meeting</p>
-                <input type="checkbox">
+                <input type="checkbox" >
                 <span class="checkmark"></span>
             </label>
-
             <label class="container">
                 <p id="checkbox-container">Meeting</p>
-                <input type="checkbox">
+                <input type="checkbox" >
                 <span class="checkmark"></span>
             </label>
 
         </div>
 
-        <div class="ac-main-nav-accDec">
+        <div class="ac-main-nav-accDec" style="overflow-y: scroll;">
+
 
 
         </div>

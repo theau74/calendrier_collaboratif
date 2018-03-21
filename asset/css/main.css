@@ -13,7 +13,7 @@
 }
 
 body {
-    font-family: 'Roboto','PT Sans', sans-serif;
+    font-family: 'PT Sans', sans-serif;
     background: url("../img/Bgc_home_petite.png") no-repeat;
     background-size: cover;
 /*    background: rgb(4,73,153);
@@ -304,8 +304,6 @@ input:placeholder-shown {
     cursor: pointer;
     text-transform: uppercase;
     background-color: transparent;
-    font-family: 'Roboto';
-    font-size: 16px;
 }
 
 .ac-main-header-logout:hover {
@@ -358,134 +356,27 @@ input:placeholder-shown {
 .ac-main-nav {
     display: none;
 }
-
-/*************\
- *   Invite  *
-\*************/
-
-
 .ac-main-nav-invit {
     display: block;
     height: 50%;
     background-color: #dbc762;
-    box-shadow: inset -5px 5px 9px -5px #000;
-    overflow-y: scroll;
+    padding: 20px;
+    padding-right: 17px;
+    box-shadow: inset -4px 5px 9px -5px;
 }
-
-.ac-main-nav-invit-item {
-    margin: 15px;
-    height: 80px;
-    display: flex;
-    box-shadow: 2px 3px 20px -4px #000;
-}
-
-/*************\
- *  Descrip  *
-\*************/
-
-.ac-main-nav-invit-item-description {
-    width: 70%;
-    display: inline-block;
-    border-radius: 5px 0px 0px 5px;
-}
-
-.ac-main-nav-invit-item-description li {
-    width: 50%;
-    display: inline-block;
-    line-height: 20px;
-    text-transform: uppercase;
-}
-
-.ac-main-nav-invit-item-description-name {
-    width: 100% !important;
-}
-
-.ac-main-nav-invit-item-description-jourStart {
-
-}
-
-.ac-main-nav-invit-item-description-heureStart {
-
-}
-
-.ac-main-nav-invit-item-description-jourFin {
-
-}
-
-.ac-main-nav-invit-item-description-heureFin {
-
-}
-
-.ac-main-nav-invit-item-description-nonGroupe {
-    width: 100% !important;
-}
-
-
-/*************\
- *  Boutton  *
-\*************/
-
-
-.ac-main-nav-invit-item-boutton {
-    display: inline-block;
-    width: 30%;
-}
-
-.ac-main-nav-invit-item-boutton form input {
-    width: 100%;
-    height: 40px;
-    padding: 0;
-    margin: 0;
-    border: none;
-    cursor: pointer;
-    text-transform: uppercase;
-}
-
-.ac-main-nav-invit-item-boutton-valider {
-    border-radius: 0px 5px 0px 0px;
-    background-color: red;
-
-}
-
-.ac-main-nav-invit-item-boutton-valider:hover {
-
-}
-
-.ac-main-nav-invit-item-boutton-refuser {
-    border-radius: 0px 0px 5px 0px;
-
-}
-
-.ac-main-nav-invit-item-boutton-refuser:hover {
-
-}
-
-
-/*************\
- *  ShowEven *
-\*************/
-
-
 .ac-main-nav-showEv{
     display: block;
     height: 30%;
-    box-shadow: 0px 0px 8px 0px #000;
-    overflow-y: scroll;
+    background-color: #fcf8e3;
+    box-shadow: inset 0px 0px 6px 0px;
 }
-
-
-/*************\
- *  Décision  *
-\*************/
-
 
 .ac-main-nav-accDec{
     display: block;
     height: 20%;
     background-color: #dbc762;
     padding: 20px;
-    box-shadow: inset -5px 5px 9px -5px #000;
-    overflow-y: scroll;
+    box-shadow: inset -4px -5px 9px -5px;
 }
 
 
@@ -493,9 +384,8 @@ input:placeholder-shown {
  *   Creer Event                                                                 *
 \*********************************************************************************/
 
-
 .ac-createEvent {
-    display: none;
+    display: block;
     width: 100%;
     height: 100vh;
     position: absolute;
@@ -629,6 +519,15 @@ input:placeholder-shown {
 
 }
 
+
+
+
+
+
+
+
+
+
 .ac-createEvent-footer {
     width: 100%;
     height: 15%;
@@ -753,11 +652,12 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
 
 
 .ac-main-footer {
+    background-color: #fcf8e3;
     margin-top: auto;
     height: 40px;
     width: 100%;
     padding: 10px;
-    box-shadow: 0px 0px 8px 0px #000;
+    box-shadow: inset -4px -5px 9px -3px;
 }
 
 .ac-main-footer-title {
@@ -780,9 +680,9 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
     float: left;
     display: flex;
     flex-direction: column;
-    background-color: #fcf8e3;
+    background-color: #fff;
     overflow-y: scroll;
-    box-shadow: inset -2px 2px 10px -1px #000;
+    box-shadow: inset 0px 1px 0px 0px #fcf8e3;
     position: absolute;
     z-index: 2;
 }
@@ -815,7 +715,6 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
     .ac-main-calendrier {
         width: calc(100% - 250px);
     }
-
     .ac-main-nav {
         width: 250px;
         height: calc(100vh - 70px);
@@ -823,21 +722,15 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
         display: flex;
         flex-direction: column;
         background-color: #fff;
-        overflow-y: hidden;
-        box-shadow: inset -2px 2px 10px -1px #000;
-    }
-
-    .fc-center {
-        left: 400px;
+        overflow-y: scroll;
+        box-shadow: inset 0px 1px 0px 0px #fcf8e3;
     }
 
     .ac-main-header-menue-sandwish {
         display: none;
     }
 
-    .ac-createEvent {
-        display: none!important;
-    }
+
 }
 
 
@@ -896,7 +789,7 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
 
 .container .checkmark:after {
     width: 5px;
-    height: 12px;
+    height: 10px;
     margin-left: 5px;
     border: solid white;
     border-width: 0 3px 3px 0;
