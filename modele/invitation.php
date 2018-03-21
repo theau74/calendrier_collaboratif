@@ -105,7 +105,8 @@ function set_group_invitation($id_user,$id_group,$response,$c){
     }
 }
 function get_pending_invitation_by_id_user($id_user,$c){
-    $sql = ("SELECT I.id_event, I.id_user, I.id_group, I.etat, E.nom as event_name, E.start, E.end, G.nom as group_name, G.description FROM invitation I
+    $sql = ("SELECT I.id_event, I.id_user, I.id_group, I.etat, E.nom as event_name, E.start, E.end, E.start_hour, E.end_hour, G.nom as group_name, G.description 
+    FROM invitation I
     INNER JOIN events E ON E.id = I.id_event 
     INNER JOIN groups G ON G.id = I.id_group 
     WHERE I.id_user ='$id_user' AND I.etat = 'envoie' GROUP BY I.id_event ");
