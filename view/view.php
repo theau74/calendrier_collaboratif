@@ -3,7 +3,7 @@ if ($page == "home") {
     display_home();
 }
 elseif ($page == "main") {
-    display_main($event_list,$pending_invitation_list);
+    display_main($event_list,$pending_invitation_list, $groups_list, $users_list);
 }
 elseif ($page == "propos") {
     display_apropos();

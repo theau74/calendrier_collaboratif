@@ -32,17 +32,28 @@ function afficheNav() {
 
 var addevent = document.getElementById("createEvent");                              // variable fenetre
 var butt     = document.getElementById("bouttonCree");                              // variable bouton qui ouvre fenetre
-var span     = document.getElementsByClassName("ac-createEvent-header-close")[0];   // variable pour close la fenetre
+var popup    = document.getElementById("createEvent-Deskstop");
+var span     = document.getElementsByClassName("ac-createEvent-header-close")[0];
+var close     = document.getElementsByClassName("ac-createEvent-popUp-header-close")[0]; // variable pour close la fenetre
 var save     = document.getElementById("save");                                     // quand click sur bouton, ouvre la fenetre
+var savepopup = document.getElementById("savepopup")
 
 butt.onclick = function() {
     addevent.style.display = "block";
+    popup.style.display = "block";
 }
 
 span.onclick = function() {
     addevent.style.display = "none";
 }
 
+close.onclick = function() {
+    popup.style.display = "none";
+}
+
 save.onclick = function() {
     addevent.style.display = "none";
+}
+savepopup.onclick = function () {
+    popup.style.display = "none";
 }

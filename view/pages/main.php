@@ -117,7 +117,7 @@
 
 <div class="ac-main">
 
-    <div class="ac-createEvent" id="createEvent">
+    <div class="ac-createEvent" style="display: none" id="createEvent">
 
         <div class="ac-createEvent-header">
 
@@ -231,7 +231,138 @@
 
     </div>
 
-    <div class="ac-fontGris" id="fondGris">
+    <div id="createEvent-Deskstop" style="display: none" class="ac-createEvent-popUp">
+        <div class="ac-createEvent-popUp-content">
+            <div class="ac-createEvent-header">
+                <div class="ac-createEvent-popUp-header-close" id="close">
+                    &#xf00d;
+                </div>
+
+                <button type="submit" class="ac-createEvent-header-save" id="savepopup" name="create">
+                    Enregistrer
+                </button>
+
+                <input class="ac-createEvent-header-title" type="text" placeholder="Titre de l'événement... ">
+
+            </div>
+            <div class="ac-createEvent-popUp-body">
+                <div class="ac-createEvent-body-creneaux">
+                    <label class="container">
+
+                        <p id="checkbox-container">
+                            Toute la journée
+                        </p>
+
+                        <input type="checkbox">
+
+                        <span class="checkmark">
+
+                        </span>
+
+                    </label>
+
+                    <div class="ac-createEvent-body-creneaux-first">
+
+                        <i class="ac-createEvent-body-creneaux-crenTxt">
+                            &#xf017;
+                        </i>
+
+                        <input class="ac-createEvent-body-creneaux-dateEv" type="Date" placeholder="type" name="start_date">
+
+                        <input class="ac-createEvent-body-creneaux-hoursEv" type="time" placeholder="type"
+                               name="start_time">
+
+                    </div>
+
+                    <div class="ac-createEvent-body-creneaux-second">
+
+                        <i class="ac-createEvent-body-creneaux-crenTxt">
+                            &#xf017;
+                        </i>
+
+                        <input class="ac-createEvent-body-creneaux-dateEv" type="Date" placeholder="type" name="end_date">
+
+                        <input class="ac-createEvent-body-creneaux-hoursEv" type="time" placeholder=type name="end_time">
+
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="ac-createEvent-body-description">
+                <input class="ac-createEvent-body-description-input" type="text" placeholder="Description"
+                       name="description">
+            </div>
+            <?php
+            foreach ($users_list as $user) {
+                echo"<div>";
+                echo $user['Fname'];
+                echo $user['Lname'];
+                echo '<input class="of-main-block-salle-radio" type="checkbox" name="users-choice[]" value="' . $user['id'] . '">';
+                echo "</div>";
+            }
+            foreach ($groups_list as $group) {
+                echo"<div>";
+                echo $group['nom'];
+                echo $group['description'];
+                echo '<input class="of-main-block-salle-radio" type="checkbox" name="groups-choice[]" value="' . $group['id'] . '">';
+                echo "</div>";
+            }
+            ?>
+            <label class="container">
+
+                <p id="checkbox-container">
+                    Meeting
+                </p>
+
+                <input type="checkbox">
+
+                <span class="checkmark">
+
+                        </span>
+
+            </label>
+
+            <label class="container">
+
+                <p id="checkbox-container">
+                    Brainstorming
+                </p>
+
+                <input type="checkbox">
+
+                <span class="checkmark">
+
+                        </span>
+
+            </label>
+
+            <label class="container">
+
+                <p id="checkbox-container">
+                    Panel
+                </p>
+
+                <input type="checkbox">
+
+                <span class="checkmark">
+
+                        </span>
+
+            </label>
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="ac-fontGris" id="fondGris">
 
     </div>
 
