@@ -6,6 +6,10 @@
     display: none;
 }
 
+:focus {
+    outline: none;
+}
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -13,7 +17,7 @@
 }
 
 body {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Roboto','PT Sans', sans-serif;
     background: url("../img/Bgc_home_petite.png") no-repeat;
     background-size: cover;
 /*    background: rgb(4,73,153);
@@ -304,6 +308,8 @@ input:placeholder-shown {
     cursor: pointer;
     text-transform: uppercase;
     background-color: transparent;
+    font-family: 'Roboto';
+    font-size: 16px;
 }
 
 .ac-main-header-logout:hover {
@@ -324,6 +330,22 @@ input:placeholder-shown {
     background-color: grey;
 }
 
+.ac-main-header-createGroup {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    float: right;
+    line-height: 50px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 16px;
+}
+
 .ac-main-calendrier {
     width: 100%;
     height: calc(100vh - 70px);
@@ -333,7 +355,7 @@ input:placeholder-shown {
     box-shadow: inset 0px 0px 0px 1px #fcf8e3;
 }
 
-.ac-main-calendrier-create {
+.ac-main-calendrier-createEvent {
     display: block;
     height: 50px;
     width: 50px;
@@ -356,27 +378,141 @@ input:placeholder-shown {
 .ac-main-nav {
     display: none;
 }
+
+/*************\
+ *   Invite  *
+\*************/
+
+
 .ac-main-nav-invit {
     display: block;
     height: 50%;
     background-color: #dbc762;
-    padding: 20px;
-    padding-right: 17px;
-    box-shadow: inset -4px 5px 9px -5px;
+    box-shadow: inset -5px 5px 9px -5px #000;
+    overflow-y: scroll;
+    border-radius: 5px;
 }
+
+.ac-main-nav-invit-item {
+    margin: 15px;
+    height: 80px;
+    display: flex;
+    box-shadow: 2px 3px 20px -4px #000;
+    border-radius: 5px;
+}
+
+/*************\
+ *  Descrip  *
+\*************/
+
+.ac-main-nav-invit-item-description {
+    width: 70%;
+    display: inline-block;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.ac-main-nav-invit-item-description li {
+    width: 50%;
+    display: inline-block;
+    line-height: 20px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.ac-main-nav-invit-item-description-name {
+    width: 100% !important;
+    border-bottom: 1px solid;
+    padding: 0px 20px;
+    text-align: left !important;
+}
+
+.ac-main-nav-invit-item-description-jourStart {
+}
+
+.ac-main-nav-invit-item-description-heureStart {
+    border-left: 1px solid;
+}
+
+.ac-main-nav-invit-item-description-jourFin {
+}
+
+.ac-main-nav-invit-item-description-heureFin {
+    border-left: 1px solid;
+}
+
+.ac-main-nav-invit-item-description-nonGroupe {
+    width: 100% !important;
+    border-top: 1px solid;
+    text-align: center;
+}
+
+
+/*************\
+ *  Boutton  *
+\*************/
+
+
+.ac-main-nav-invit-item-boutton {
+    display: inline-block;
+    width: 30%;
+}
+
+.ac-main-nav-invit-item-boutton form input {
+    width: 100%;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.ac-main-nav-invit-item-boutton-valider {
+    border-radius: 0px 5px 0px 0px;
+    background-color: red;
+
+}
+
+.ac-main-nav-invit-item-boutton-valider:hover {
+
+}
+
+.ac-main-nav-invit-item-boutton-refuser {
+    border-radius: 0px 0px 5px 0px;
+
+}
+
+.ac-main-nav-invit-item-boutton-refuser:hover {
+
+}
+
+
+/*************\
+ *  ShowEven *
+\*************/
+
+
 .ac-main-nav-showEv{
     display: block;
     height: 30%;
-    background-color: #fcf8e3;
-    box-shadow: inset 0px 0px 6px 0px;
+    box-shadow: 0px 0px 8px 0px #000;
+    overflow-y: scroll;
+    padding: 0px 10px;
 }
+
+
+/*************\
+ *  Décision  *
+\*************/
+
 
 .ac-main-nav-accDec{
     display: block;
     height: 20%;
     background-color: #dbc762;
     padding: 20px;
-    box-shadow: inset -4px -5px 9px -5px;
+    box-shadow: inset -5px 5px 9px -5px #000;
+    overflow-y: scroll;
 }
 
 
@@ -384,8 +520,8 @@ input:placeholder-shown {
  *   Creer Event                                                                 *
 \*********************************************************************************/
 
+
 .ac-createEvent {
-    display: block;
     width: 100%;
     height: 100vh;
     position: absolute;
@@ -393,6 +529,9 @@ input:placeholder-shown {
     top: 0;
 }
 
+.ac-createEvent-popUp-body{
+
+}
 .ac-createEvent-header {
     width: 100%;
     height: 80px;
@@ -652,12 +791,11 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
 
 
 .ac-main-footer {
-    background-color: #fcf8e3;
     margin-top: auto;
     height: 40px;
     width: 100%;
     padding: 10px;
-    box-shadow: inset -4px -5px 9px -3px;
+    box-shadow: 0px 0px 8px 0px #000;
 }
 
 .ac-main-footer-title {
@@ -680,9 +818,9 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
     float: left;
     display: flex;
     flex-direction: column;
-    background-color: #fff;
+    background-color: #fcf8e3;
     overflow-y: scroll;
-    box-shadow: inset 0px 1px 0px 0px #fcf8e3;
+    box-shadow: inset -2px 2px 10px -1px #000;
     position: absolute;
     z-index: 2;
 }
@@ -696,6 +834,11 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
  *   Media screen                                                                *
 \*********************************************************************************/
 
+@media only screen and (max-width: 1150px){
+    .ac-createEvent-popUp {
+        display: none!important;
+    }
+}
 
 @media only screen and (min-width: 600px) {
     .ac-home {
@@ -715,6 +858,7 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
     .ac-main-calendrier {
         width: calc(100% - 250px);
     }
+
     .ac-main-nav {
         width: 250px;
         height: calc(100vh - 70px);
@@ -722,13 +866,75 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
         display: flex;
         flex-direction: column;
         background-color: #fff;
-        overflow-y: scroll;
-        box-shadow: inset 0px 1px 0px 0px #fcf8e3;
+        overflow-y: hidden;
+        box-shadow: inset -2px 2px 10px -1px #000;
+    }
+
+    .fc-center {
+        left: 400px;
     }
 
     .ac-main-header-menue-sandwish {
         display: none;
     }
+
+    .ac-createEvent {
+        display: none!important;
+    }
+
+
+
+
+
+
+    .ac-createEvent-popUp{
+        display: block;
+        position: fixed;
+        z-index: 999;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+    }
+    .ac-createEvent-popUp-content{
+        position: relative;
+        margin: auto;
+        padding: 0;
+        background-color: #fff;
+        width: 80%;
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration: 0.4s
+        box-shadow: 3px 3px 15px 2px;
+    }
+    @-webkit-keyframes animatetop {
+        from {top:-300px; opacity:0}
+        to {top:0; opacity:1}
+    }
+
+    @keyframes animatetop {
+        from {top:-300px; opacity:0}
+        to {top:0; opacity:1}
+    }
+
+
+    .ac-createEvent-popUp-header-close {
+        color: white;
+        float: left;
+        cursor: pointer;
+        padding: 15px 0px 0px 15px;
+        font: normal normal normal 20px/1 FontAwesome;
+    }
+
+    .ac-createEvent-popUp-header-close:hover,
+    .ac-createEvent-popUp-header-close:focus {
+        color: #000;
+        text-decoration: none;
+    }
+
 
 
 }
@@ -746,6 +952,7 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
     padding: 20px 0px 0px;
     word-break: break-all;
     width: 100%;
+    justify-content: space-between;
 }
 
 
@@ -779,7 +986,6 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
 
 .checkmark:after {
     content: "";
-    position: absolute;
     display: none;
 }
 
@@ -789,7 +995,7 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
 
 .container .checkmark:after {
     width: 5px;
-    height: 10px;
+    height: 12px;
     margin-left: 5px;
     border: solid white;
     border-width: 0 3px 3px 0;

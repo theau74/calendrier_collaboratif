@@ -6,7 +6,7 @@ function display_home(){
     include ("view/footer_home.php");
 
 }
-function display_main($event_list,$pending_invitation_list){
+function display_main($event_list,$pending_invitation_list, $groups_list, $users_list){
 
     require ("pages/main.php");
 

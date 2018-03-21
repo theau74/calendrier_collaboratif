@@ -7,7 +7,8 @@ if (empty($_GET)) {
     if (isset($_SESSION['stats']) and $page != "connection_failed" and $page != "sub_failed") {
         $event_list = get_event_by_user_id($_SESSION['id'], $c);
         $pending_invitation_list = get_pending_invitation_by_id_user($_SESSION['id'], $c);
-
+        $groups_list = get_groups_list($c);
+        $users_list = get_users_list($c);
         $page = "main";
     } else {
         $page = "home";
