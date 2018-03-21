@@ -252,73 +252,22 @@
                 }if(!empty($invitation['group_name'])){
                     echo"<li>nom du groupe : ".$invitation['group_name'].'</li>';
                 }
-                echo'<form  action="index.php?set_invitation=true" method="post">
-                    <input type="submit" value="valider" name="valider">
+                echo'<form  action="index.php?ac=set-invitation" method="post">
+                    <input type="submit" value="valider" >
                     <input type="hidden" value="'.$invitation['id_user'].'" name="id_user">
                     <input type="hidden" value="'.$invitation['id_event'].'" name="id_event">
+                    <input type="hidden" value="true" name="response">
                 </form>';
-                echo'<form  action="index.php?set_invitation=false" method="post">
-                    <input type="submit" value="refuser" name="refuser">
+                echo'<form  action="index.php?ac=set-invitation" method="post">
+                    <input type="submit" value="refuser" >
                     <input type="hidden" value="'.$invitation['id_user'].'" name="id_user">
                     <input type="hidden" value="'.$invitation['id_event'].'" name="id_event">
+                    <input type="hidden" value="false" name="response">
                  </form>';
                 echo"</ul>";
             }
             ?>
-            <?php
-            foreach ($pending_invitation_list as $invitation){
-                echo "<ul>";
-                if(!empty($invitation['id_event'])){
-                    echo"<li>id de l'evenement : ".$invitation['id_event'].'</li>';
-                }if(!empty($invitation['event_name'])){
-                    echo"<li>nom de l'evenement : ".$invitation['event_name'].'</li>';
-                }if(!empty($invitation['start'])){
-                    echo"<li>debut de l'evenement : ".$invitation['start'].'</li>';
-                }if(!empty($invitation['end'])){
-                    echo"<li>fin de l'evenement : ".$invitation['end'].'</li>';
-                }if(!empty($invitation['group_name'])){
-                    echo"<li>nom du groupe : ".$invitation['group_name'].'</li>';
-                }
-                echo'<form  action="index.php?set_invitation=true" method="post">
-                    <input type="submit" value="valider" name="valider">
-                    <input type="hidden" value="'.$invitation['id_user'].'" name="id_user">
-                    <input type="hidden" value="'.$invitation['id_event'].'" name="id_event">
-                </form>';
-                echo'<form  action="index.php?set_invitation=false" method="post">
-                    <input type="submit" value="refuser" name="refuser">
-                    <input type="hidden" value="'.$invitation['id_user'].'" name="id_user">
-                    <input type="hidden" value="'.$invitation['id_event'].'" name="id_event">
-                 </form>';
-                echo"</ul>";
-            }
-            ?>
-            <?php
-            foreach ($pending_invitation_list as $invitation){
-                echo "<ul>";
-                if(!empty($invitation['id_event'])){
-                    echo"<li>id de l'evenement : ".$invitation['id_event'].'</li>';
-                }if(!empty($invitation['event_name'])){
-                    echo"<li>nom de l'evenement : ".$invitation['event_name'].'</li>';
-                }if(!empty($invitation['start'])){
-                    echo"<li>debut de l'evenement : ".$invitation['start'].'</li>';
-                }if(!empty($invitation['end'])){
-                    echo"<li>fin de l'evenement : ".$invitation['end'].'</li>';
-                }if(!empty($invitation['group_name'])){
-                    echo"<li>nom du groupe : ".$invitation['group_name'].'</li>';
-                }
-                echo'<form  action="index.php?set_invitation=true" method="post">
-                    <input type="submit" value="valider" name="valider">
-                    <input type="hidden" value="'.$invitation['id_user'].'" name="id_user">
-                    <input type="hidden" value="'.$invitation['id_event'].'" name="id_event">
-                </form>';
-                echo'<form  action="index.php?set_invitation=false" method="post">
-                    <input type="submit" value="refuser" name="refuser">
-                    <input type="hidden" value="'.$invitation['id_user'].'" name="id_user">
-                    <input type="hidden" value="'.$invitation['id_event'].'" name="id_event">
-                 </form>';
-                echo"</ul>";
-            }
-            ?>
+
 
 
         </div>

@@ -80,9 +80,10 @@ function get_group_invitation($id_user,$c){
     return $invitation_group_list;
 }
 function set_invitation($id_user,$id_event,$response,$c){
-    if ($response) {
+    if ($response == "true") {
         $sql = ("UPDATE invitation SET etat ='valider' WHERE id_user ='$id_user' AND id_event='$id_event'");
-    } else {
+
+    } elseif($response == "false") {
         $sql = ("UPDATE invitation SET etat ='refuser' WHERE id_user ='$id_user' AND id_event='$id_event'");
     }
     if(mysqli_query($c,$sql)){
@@ -93,9 +94,9 @@ function set_invitation($id_user,$id_event,$response,$c){
     }
 }
 function set_group_invitation($id_user,$id_group,$response,$c){
-    if ($response) {
+    if ($response == "true") {
         $sql = ("UPDATE users_groups SET etat ='valider' WHERE id_users ='$id_user' AND id_groups ='$id_group'");
-    } else {
+    } elseif($response == "false") {
         $sql = ("UPDATE users_groups SET etat ='refuser' WHERE id_users ='$id_user' AND id_groups ='$id_group'");
     }
     if(mysqli_query($c,$sql)){

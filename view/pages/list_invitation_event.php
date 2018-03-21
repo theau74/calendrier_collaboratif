@@ -18,11 +18,12 @@ foreach ($invitation_list as $invitation){
         }if(!empty($invitation['etat'])){
             echo"<li>etat de l'evenement : ".$invitation['etat'].'</li>';
         }
-        echo'<form  action="index.php?set_invitation=true" method="post">
-        <input type="submit" value="valider" name="valider">
-        <input type="hidden" value="'.$invitation['id_user'].'" name="id_user">
-        <input type="hidden" value="'.$invitation['id_event'].'" name="id_event">
-        </form>';
+        echo'<form  action="index.php?ac=set-invitation" method="post">
+             <input type="submit" value="valider" >
+             <input type="hidden" value="'.$invitation['id_user'].'" name="id_user">
+             <input type="hidden" value="'.$invitation['id_event'].'" name="id_event">
+             <input type="hidden" value="true" name="response">
+             </form>';
         echo"</ul>";
     }
 
@@ -47,11 +48,12 @@ foreach ($invitation_list as $invitation){
         }if(!empty($invitation['etat'])){
             echo"<li>etat de l'evenement : ".$invitation['etat'].'</li>';
         }
-        echo'<form  action="index.php?set_invitation=false" method="post">
-        <input type="submit" value="refuser" name="refuser">
-        <input type="hidden" value="'.$invitation['id_user'].'" name="id_user">
-        <input type="hidden" value="'.$invitation['id_event'].'" name="id_event">
-        </form>';
+        echo'<form  action="index.php?ac=set-invitation" method="post">
+                    <input type="submit" value="refuser" >
+                    <input type="hidden" value="'.$invitation['id_user'].'" name="id_user">
+                    <input type="hidden" value="'.$invitation['id_event'].'" name="id_event">
+                    <input type="hidden" value="false" name="response">
+                 </form>';
         echo"</ul>";
     }
 

@@ -74,7 +74,61 @@ if (empty($_GET)) {
                 echo"creation_failed";
             }
         }
+        //Valider ou refuser une invitation d'event
+        if ($_GET["ac"]== "set-invitation") {
+            if ( set_invitation($_POST["id_user"],$_POST["id_event"],$_POST["response"],$c)) {
+                $event_list = get_event_by_user_id($_SESSION['id'], $c);
+                $pending_invitation_list = get_pending_invitation_by_id_user($_SESSION['id'], $c);
+                $page ="main";
+
+            }
+            else{
+                echo"set_failed";
+            }
+
+
+        }
+        //Valider ou refuser une invitation de groupe
+        if ($_GET["ac"]=="set-group-invitation") {
+            if(set_group_invitation($_POST["id_users"],$_POST["id_groups"],$_POST["response"],$c)){
+                $invitation_group_list = get_group_invitation($_SESSION['id'], $c);
+                $page ="list_invitation_gr";
+            }
+            else{
+                echo"set_failed";
+            }
+
+
+        }
+        //suppression d'évenement
+        if ($_GET["ac"]=="delete-event") {
+            if(delete_event_by_id($_POST["id_event"],$c)){
+                $event_list = get_event_by_user_id($_SESSION['id'], $c);
+                $pending_invitation_list =get_pending_invitation_by_id_user($_SESSION['id'], $c);
+                $page ="main";
+            }
+            else{
+                echo"delete_failed";
+            }
+
+
+        }
+        //modification d'évenement
+        if ($_GET["ac"]=="update-event") {
+            if(update_event_by_id($_POST["id_event"],$_POST["nom"],$_POST["start"],$_POST["start_hour"],$_POST["end"],$_POST["end_hour"],$c)){
+                $event_list = get_event_by_user_id($_SESSION['id'], $c);
+                $page ="list_event";
+            }
+            else{
+                echo"update_failed";
+            }
+
+
+        }
     }
+
+
+
     //formulaire d'incription
     if (isset($_GET["subform"])) {
         $page = "user_sub";
@@ -113,41 +167,13 @@ if (empty($_GET)) {
         $page = "list_invitation_gr";
     }
 
-//Valider ou refuser une invitation d'event
-    if (isset($_GET["set_invitation"])) {
-        if($_GET["set_invitation"]=="true"){
-            set_invitation($_POST["id_user"],$_POST["id_event"],true,$c);
-        }
-        elseif($_GET["set_invitation"]=="false"){
-            set_invitation($_POST["id_user"],$_POST["id_event"],false,$c);
-        }
-        $page ="main";
-        $event_list = get_event_by_user_id($_SESSION['id'], $c);
-        $pending_invitation_list = get_pending_invitation_by_id_user($_SESSION['id'], $c);
-    }
-//Valider ou refuser une invitation de groupe
-    if (isset($_GET["set_group_invitation"])) {
-        if($_GET["set_group_invitation"]=="true"){
-            set_group_invitation($_POST["id_users"],$_POST["id_groups"],true,$c);
-        }
-        elseif($_GET["set_group_invitation"]=="false"){
-            set_group_invitation($_POST["id_users"],$_POST["id_groups"],false,$c);
-        }
-        $event_list = get_event_by_user_id($_SESSION['id'], $c);
-        $page ="main";
-    }
+
 //Page liste des evenenment
     if (isset($_GET["list_event"])){
         $event_list = get_event_by_user_id($_SESSION['id'], $c);
         $page ="list_event";
     }
-    //suppression d'évenement
-    if (isset($_GET["delete_event"])) {
-        delete_event_by_id($_POST["id_event"],$c);
-        $event_list = get_event_by_user_id($_SESSION['id'], $c);
-        $pending_invitation_list =get_pending_invitation_by_id_user($_SESSION['id'], $c);
-        $page ="main";
-    }
+
 
 
 

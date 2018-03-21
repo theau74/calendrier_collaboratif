@@ -65,6 +65,15 @@ function delete_event_by_id($id_event,$c){
     }
 
 }
+function update_event_by_id($id_event,$nom,$start,$start_hour,$end,$end_hour,$c){
+    $sql = ("UPDATE events SET nom = '$nom', start = '$start', start_hour = '$start_hour', end = '$end', end_hour = '$end_hour' WHERE id = '$id_event'");
+    if(mysqli_query($c,$sql)){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
 
 function verify_user_disponibility($start, $start_hour, $end, $end_hour, $user_id, $c){
     $start_time = date_timestamp_get(date_create(''.$start.' '.$start_hour.''));

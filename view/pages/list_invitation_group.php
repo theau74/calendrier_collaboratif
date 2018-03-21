@@ -9,10 +9,11 @@ foreach ($invitation_group_list as $invitation_group){
         }if(!empty($invitation_group['description'])){
             echo"<li>description du groupe : ".$invitation_group['description'].'</li>';
         }
-        echo'<form  action="index.php?set_group_invitation=true" method="post">
-        <input type="submit" value="valider" name="valider">
+        echo'<form  action="index.php?ac=set-group-invitation" method="post">
+        <input type="submit" value="valider" >
         <input type="hidden" value="'.$invitation_group['id_users'].'" name="id_users">
         <input type="hidden" value="'.$invitation_group['id_groups'].'" name="id_groups">
+        <input type="hidden" value="true" name="response">
         </form>';
         echo"</ul>";
     }
@@ -29,10 +30,11 @@ foreach ($invitation_group_list as $invitation_group) {
         if (!empty($invitation_group['description'])) {
             echo "<li>description du groupe : " . $invitation_group['description'] . '</li>';
         }
-        echo'<form  action="index.php?set_group_invitation=false" method="post">
-        <input type="submit" value="refuser" name="refuser">
+        echo'<form  action="index.php?ac=set-group-invitation" method="post">
+        <input type="submit" value="refuser" >
         <input type="hidden" value="'.$invitation_group['id_users'].'" name="id_users">
         <input type="hidden" value="'.$invitation_group['id_groups'].'" name="id_groups">
+        <input type="hidden" value="false" name="response">
         </form>';
         echo"</ul>";
     }
@@ -49,15 +51,17 @@ foreach ($invitation_group_list as $invitation_group) {
         if (!empty($invitation_group['description'])) {
             echo "<li>description du groupe : " . $invitation_group['description'] . '</li>';
         }
-        echo'<form  action="index.php?set_group_invitation=false" method="post">
-        <input type="submit" value="refuser" name="refuser">
+        echo'<form  action="index.php?ac=set-group-invitation" method="post">
+        <input type="submit" value="refuser" >
         <input type="hidden" value="'.$invitation_group['id_users'].'" name="id_users">
         <input type="hidden" value="'.$invitation_group['id_groups'].'" name="id_groups">
+        <input type="hidden" value="false" name="response">
         </form>';
-        echo'<form  action="index.php?set_group_invitation=true" method="post">
-        <input type="submit" value="valider" name="valider">
+        echo'<form  action="index.php?ac=set-group-invitation" method="post">
+        <input type="submit" value="valider" >
         <input type="hidden" value="'.$invitation_group['id_users'].'" name="id_users">
         <input type="hidden" value="'.$invitation_group['id_groups'].'" name="id_groups">
+        <input type="hidden" value="true" name="response">
         </form>';
         echo"</ul>";
     }
