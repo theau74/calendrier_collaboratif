@@ -38,9 +38,9 @@
                         &#xf017;
                     </i>
 
-                    <input class="ac-createEvent-body-creneaux-dateEv" type="Date" placeholder="type" name="start_date">
+                    <input class="ac-createEvent-body-creneaux-dateEv" type="Date" placeholder="type" name="start_date" required>
 
-                    <input class="ac-createEvent-body-creneaux-hoursEv" type="time" placeholder="type" name="start_time">
+                    <input class="ac-createEvent-body-creneaux-hoursEv" type="time" placeholder="type" name="start_time" required>
 
                 </div>
 
@@ -50,9 +50,9 @@
                         &#xf017;
                     </i>
 
-                    <input class="ac-createEvent-body-creneaux-dateEv" type="Date" placeholder="type" name="end_date">
+                    <input class="ac-createEvent-body-creneaux-dateEv" type="Date" placeholder="type" name="end_date" required>
 
-                    <input class="ac-createEvent-body-creneaux-hoursEv" type="time" placeholder=type name="end_time">
+                    <input class="ac-createEvent-body-creneaux-hoursEv" type="time" placeholder=type name="end_time" required>
 
                 </div>
 

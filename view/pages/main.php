@@ -133,7 +133,7 @@
                     Enregistrer
                 </button>
 
-                <input class="ac-createEvent-header-title" type="text" placeholder="Titre de l'événement ..." required>
+                <input class="ac-createEvent-header-title" type="text" placeholder="Titre de l'événement ..."  name="nom" required>
 
             </div>
 
@@ -224,7 +224,7 @@
                         Enregistrer
                     </button>
 
-                    <input class="ac-createEvent-header-title" type="text" placeholder="Titre de l'événement... " required>
+                    <input class="ac-createEvent-header-title" type="text" placeholder="Titre de l'événement... " name="nom" required>
 
                 </div>
 
@@ -319,7 +319,7 @@
                     Enregistrer
                 </button>
 
-                <input class="ac-createEvent-header-title" type="text" placeholder="Titre de l'événement ...">
+                <input class="ac-createEvent-header-title" type="text" placeholder="Titre de l'événement ..."  name="nom" required>
 
             </div>
 
