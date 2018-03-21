@@ -44,6 +44,9 @@ elseif (($page == "list_invitation")){
 elseif (($page == "list_invitation_gr")){
     display_list_invitation_group($invitation_group_list);
 }
+elseif (($page == "list_event")){
+    display_list_event($event_list);
+}
 
 elseif (($page == "create-group")) {
     display_create_group($users_list);

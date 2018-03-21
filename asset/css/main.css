@@ -13,7 +13,7 @@
 }
 
 body {
-    font-family: 'Roboto','PT Sans', sans-serif;
+    font-family: 'PT Sans', sans-serif;
     background: url("../img/Bgc_home_petite.png") no-repeat;
     background-size: cover;
 /*    background: rgb(4,73,153);
@@ -493,11 +493,8 @@ input:placeholder-shown {
  *   Creer Event                                                                 *
 \*********************************************************************************/
 
-.ac-createEvent-popUp{
 
-}
 .ac-createEvent {
-    display: none;
     width: 100%;
     height: 100vh;
     position: absolute;
@@ -506,7 +503,7 @@ input:placeholder-shown {
 }
 
 .ac-createEvent-popUp-body{
-    padding: 0px 40px;
+
 }
 .ac-createEvent-header {
     width: 100%;

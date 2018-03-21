@@ -58,6 +58,7 @@ if (empty($_GET)) {
                 $page = "select-slot";
             }
         }
+
         //creation des invitation d'évenement
         if ($_GET["ac"] == "create-invitation") {
             if (create_invitation($_SESSION['id'] ,$c, $encryption_key)) {
@@ -136,8 +137,18 @@ if (empty($_GET)) {
         $event_list = get_event_by_user_id($_SESSION['id'], $c);
         $page ="main";
     }
-
-
+//Page liste des evenenment
+    if (isset($_GET["list_event"])){
+        $event_list = get_event_by_user_id($_SESSION['id'], $c);
+        $page ="list_event";
+    }
+    //suppression d'évenement
+    if (isset($_GET["delete_event"])) {
+        delete_event_by_id($_POST["id_event"],$c);
+        $event_list = get_event_by_user_id($_SESSION['id'], $c);
+        $pending_invitation_list =get_pending_invitation_by_id_user($_SESSION['id'], $c);
+        $page ="main";
+    }
 
 
 

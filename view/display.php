@@ -77,7 +77,9 @@ function display_list_invitation_event($invitation_list){
 function display_list_invitation_group($invitation_group_list){
     require("pages/list_invitation_group.php");
 }
-
+function display_list_event($event_list){
+    require("pages/list_event.php");
+}
 function display_create_group($users_list){
     require ("pages/create_group.php");
 }

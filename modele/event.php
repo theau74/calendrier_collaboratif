@@ -47,12 +47,31 @@ LIMIT 1");
     $result->close();
 }
 
+function delete_event_by_id($id_event,$c){
+    $sql_event = ("DELETE FROM events 
+    WHERE events.id ='$id_event'");
+    $sql_invi= ("DELETE FROM invitation
+    WHERE invitation.id_event='$id_event'");
+    if(mysqli_query($c,$sql_event)){
+        if(mysqli_query($c,$sql_invi)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    else{
+        return false;
+    }
+
+}
 
 function verify_user_disponibility($start, $start_hour, $end, $end_hour, $user_id, $c){
     $start_time = date_timestamp_get(date_create(''.$start.' '.$start_hour.''));
     $end_time = date_timestamp_get(date_create(''.$end.' '.$end_hour.''));
     $event_list = get_event_by_user_id($user_id, $c);
     foreach ($event_list as $event){
+
         $event_start =  date_timestamp_get(date_create(''.$event['start'].' '.$event['start_hour'].''));
         $event_end =  date_timestamp_get(date_create(''.$event['end'].' '.$event['end_hour'].''));
         if($event_start > $start_time && $event_start < $end_time ||  $event_end < $end_time && $event_end > $end_time || $event_start <= $start_time && $event_end >= $end_time){
