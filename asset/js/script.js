@@ -28,30 +28,59 @@ function afficheNav() {
 
 }
 
-var addevent = document.getElementById("createEvent");                              // variable fenetre
-var butt     = document.getElementById("bouttonCree");                              // variable bouton qui ouvre fenetre
-var popup    = document.getElementById("createEvent-Deskstop");
-var span     = document.getElementsByClassName("ac-createEvent-header-close")[0];
-var close     = document.getElementsByClassName("ac-createEvent-popUp-header-close")[0]; // variable pour close la fenetre
-var save     = document.getElementById("save");                                     // quand click sur bouton, ouvre la fenetre
-var savepopup = document.getElementById("savepopup")
 
-butt.onclick = function() {
-    addevent.style.display = "block";
-    popup.style.display = "block";
+var creeEvent           = document.getElementById("createEvent");                              // variable fenetre
+var bouttonCreeEvent    = document.getElementById("bouttonCreeEvent");                              // variable bouton qui ouvre fenetre
+var saveEvent           = document.getElementById("saveEvent");                                     // quand click sur bouton, ouvre la fenetre
+var closeEvent          = document.getElementById("closeEvent");   // variable pour close la fenetre
+
+var popupEvent          = document.getElementById("createEvent-Deskstop");
+var savePopup           = document.getElementById("savePopup");
+var closePopup          = document.getElementById("closePopup");
+
+var bouttonCreeGroup    = document.getElementById("bouttonCreeGroup");                              // variable bouton qui ouvre fenetre
+var creeGroup           = document.getElementById("createGroup");                              // variable fenetre
+var saveGroup           = document.getElementById("saveGroup");                                     // quand click sur bouton, ouvre la fenetre
+var closeGroup          = document.getElementById("closeGroup");   // variable pour close la fenetre
+
+
+
+bouttonCreeEvent.onclick = function() {
+    creeEvent.style.display = "block";
+    popupEvent.style.display = "block";
 }
 
-span.onclick = function() {
-    addevent.style.display = "none";
+saveEvent.onclick = function() {
+    creeEvent.style.display = "none";
 }
 
-close.onclick = function() {
-    popup.style.display = "none";
+closeEvent.onclick = function() {
+    creeEvent.style.display = "none";
 }
 
-save.onclick = function() {
-    addevent.style.display = "none";
+
+
+
+
+savePopup.onclick = function () {
+    popupEvent.style.display = "none";
 }
-savepopup.onclick = function () {
-    popup.style.display = "none";
+
+closePopup.onclick = function() {
+    popupEvent.style.display = "none";
+}
+
+
+
+
+bouttonCreeGroup.onclick = function() {
+    creeGroup.style.display = "block";
+}
+
+saveGroup.onclick = function() {
+    creeGroup.style.display = "none";
+}
+
+closeGroup.onclick = function() {
+    creeGroup.style.display = "none";
 }

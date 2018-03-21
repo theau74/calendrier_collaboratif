@@ -6,6 +6,10 @@
     display: none;
 }
 
+:focus {
+    outline: none;
+}
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -13,7 +17,7 @@
 }
 
 body {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Roboto','PT Sans', sans-serif;
     background: url("../img/Bgc_home_petite.png") no-repeat;
     background-size: cover;
 /*    background: rgb(4,73,153);
@@ -326,6 +330,22 @@ input:placeholder-shown {
     background-color: grey;
 }
 
+.ac-main-header-createGroup {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    float: right;
+    line-height: 50px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 16px;
+}
+
 .ac-main-calendrier {
     width: 100%;
     height: calc(100vh - 70px);
@@ -335,7 +355,7 @@ input:placeholder-shown {
     box-shadow: inset 0px 0px 0px 1px #fcf8e3;
 }
 
-.ac-main-calendrier-create {
+.ac-main-calendrier-createEvent {
     display: block;
     height: 50px;
     width: 50px;
@@ -370,6 +390,7 @@ input:placeholder-shown {
     background-color: #dbc762;
     box-shadow: inset -5px 5px 9px -5px #000;
     overflow-y: scroll;
+    border-radius: 5px;
 }
 
 .ac-main-nav-invit-item {
@@ -377,6 +398,7 @@ input:placeholder-shown {
     height: 80px;
     display: flex;
     box-shadow: 2px 3px 20px -4px #000;
+    border-radius: 5px;
 }
 
 /*************\
@@ -394,30 +416,34 @@ input:placeholder-shown {
     display: inline-block;
     line-height: 20px;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .ac-main-nav-invit-item-description-name {
     width: 100% !important;
+    border-bottom: 1px solid;
+    padding: 0px 20px;
+    text-align: left !important;
 }
 
 .ac-main-nav-invit-item-description-jourStart {
-
 }
 
 .ac-main-nav-invit-item-description-heureStart {
-
+    border-left: 1px solid;
 }
 
 .ac-main-nav-invit-item-description-jourFin {
-
 }
 
 .ac-main-nav-invit-item-description-heureFin {
-
+    border-left: 1px solid;
 }
 
 .ac-main-nav-invit-item-description-nonGroupe {
     width: 100% !important;
+    border-top: 1px solid;
+    text-align: center;
 }
 
 
@@ -471,6 +497,7 @@ input:placeholder-shown {
     height: 30%;
     box-shadow: 0px 0px 8px 0px #000;
     overflow-y: scroll;
+    padding: 0px 10px;
 }
 
 
@@ -630,6 +657,15 @@ input:placeholder-shown {
     color: white;
 
 }
+
+
+
+
+
+
+
+
+
 
 .ac-createEvent-footer {
     width: 100%;
@@ -916,6 +952,7 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
     padding: 20px 0px 0px;
     word-break: break-all;
     width: 100%;
+    justify-content: space-between;
 }
 
 
@@ -949,7 +986,6 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
 
 .checkmark:after {
     content: "";
-    position: absolute;
     display: none;
 }
 

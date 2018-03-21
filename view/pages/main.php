@@ -105,6 +105,10 @@
         &#9776;
     </a>
 
+    <button id="bouttonCreeGroup" type="submit" class="ac-main-header-createGroup" name="create">
+        &#xe7f0;
+    </button>
+
     <form action="index.php?logout" method="post">
 
         <button type="submit" class="ac-main-header-logout" name="logout">
@@ -117,15 +121,201 @@
 
 <div class="ac-main">
 
-    <div class="ac-createEvent" style="display: none" id="createEvent">
+    <div class="ac-createEvent" style="display:none;" id="createEvent">
 
         <div class="ac-createEvent-header">
 
-            <div class="ac-createEvent-header-close" id="close">
+            <div class="ac-createEvent-header-close" id="closeEvent">
                 &#xf00d;
             </div>
 
-            <button type="submit" class="ac-createEvent-header-save" id="save" name="create">
+            <button type="submit" class="ac-createEvent-header-save" id="saveEvent" name="create">
+                Enregistrer
+            </button>
+
+            <input class="ac-createEvent-header-title" type="text" placeholder="Titre de l'événement ...">
+
+        </div>
+
+        <div class="ac-createEvent-body">
+
+            <div class="ac-createEvent-body-creneaux">
+
+                <label class="container">
+
+                    <p id="checkbox-container">
+                        Toute la journée
+                    </p>
+
+                    <input type="checkbox">
+
+                    <span class="checkmark">
+
+                    </span>
+
+                </label>
+
+                <div class="ac-createEvent-body-creneaux-first">
+
+                    <i class="ac-createEvent-body-creneaux-crenTxt">
+                        &#xf017;
+                    </i>
+
+                    <input class="ac-createEvent-body-creneaux-dateEv" type="Date" placeholder="type" name="start_date">
+
+                    <input class="ac-createEvent-body-creneaux-hoursEv" type="time" placeholder="type"
+                           name="start_time">
+
+                </div>
+
+                <div class="ac-createEvent-body-creneaux-second">
+
+                    <i class="ac-createEvent-body-creneaux-crenTxt">
+                        &#xf017;
+                    </i>
+
+                    <input class="ac-createEvent-body-creneaux-dateEv" type="Date" placeholder="type" name="end_date">
+
+                    <input class="ac-createEvent-body-creneaux-hoursEv" type="time" placeholder=type name="end_time">
+
+                </div>
+
+            </div>
+
+            <div class="ac-createEvent-body-description">
+                <input class="ac-createEvent-body-description-input" type="text" placeholder="Description"
+                       name="description">
+            </div>
+
+            <?php
+            foreach ($users_list as $user) {
+                echo '<label class="container">';
+                echo '<span class="name">' . $user['Fname'] . '</span>';
+                echo '<span class="lname">' . $user['Lname'] . '</span>';
+                echo '<input class="" type="checkbox" name="users-choice[]" value="' . $user['id'] . '">';
+                echo '<span class="checkmark"></span>';
+                echo "</label>";
+            }
+            foreach ($groups_list as $group) {
+                echo '<label class="container">';
+                echo '<span class="name">' . $group['nom'] . '</span>';
+                echo '<span class="lname">' . $group['description'] . '</span>';
+                echo '<input class="of-main-block-salle-radio" type="checkbox" name="groups-choice[]" value="' . $group['id'] . '">';
+                echo '<span class="checkmark"></span>';
+                echo '</label>';
+            }
+            ?>
+
+        </div>
+
+    </div>
+
+    <div class="ac-createEvent-popUp" style="display: none" id="createEvent-Deskstop">
+
+        <div class="ac-createEvent-popUp-content">
+
+            <div class="ac-createEvent-header">
+
+                <div class="ac-createEvent-popUp-header-close" id="closePopup">
+                    &#xf00d;
+                </div>
+
+                <button type="submit" class="ac-createEvent-header-save" id="savePopup" name="create">
+                    Enregistrer
+                </button>
+
+                <input class="ac-createEvent-header-title" type="text" placeholder="Titre de l'événement... ">
+
+            </div>
+
+            <div class="ac-createEvent-popUp-body">
+
+                <div class="ac-createEvent-body-creneaux">
+
+                    <label class="container">
+
+                        <p id="checkbox-container">
+                            Toute la journée
+                        </p>
+
+                        <input type="checkbox">
+
+                        <span class="checkmark">
+
+                        </span>
+
+                    </label>
+
+                    <div class="ac-createEvent-body-creneaux-first">
+
+                        <i class="ac-createEvent-body-creneaux-crenTxt">
+                            &#xf017;
+                        </i>
+
+                        <input class="ac-createEvent-body-creneaux-dateEv" type="Date" placeholder="type"
+                               name="start_date">
+
+                        <input class="ac-createEvent-body-creneaux-hoursEv" type="time" placeholder="type"
+                               name="start_time">
+
+                    </div>
+
+                    <div class="ac-createEvent-body-creneaux-second">
+
+                        <i class="ac-createEvent-body-creneaux-crenTxt">
+                            &#xf017;
+                        </i>
+
+                        <input class="ac-createEvent-body-creneaux-dateEv" type="Date" placeholder="type"
+                               name="end_date">
+
+                        <input class="ac-createEvent-body-creneaux-hoursEv" type="time" placeholder=type
+                               name="end_time">
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="ac-createEvent-body-description">
+                <input class="ac-createEvent-body-description-input" type="text" placeholder="Description"
+                       name="description">
+            </div>
+
+            <?php
+            foreach ($users_list as $user) {
+                echo '<label class="container">';
+                echo '<span class="name">' . $user['Fname'] . '</span>';
+                echo '<span class="lname">' . $user['Lname'] . '</span>';
+                echo '<input class="" type="checkbox" name="users-choice[]" value="' . $user['id'] . '">';
+                echo '<span class="checkmark"></span>';
+                echo "</label>";
+            }
+            foreach ($groups_list as $group) {
+                echo '<label class="container">';
+                echo '<span class="name">' . $group['nom'] . '</span>';
+                echo '<span class="lname">' . $group['description'] . '</span>';
+                echo '<input class="of-main-block-salle-radio" type="checkbox" name="groups-choice[]" value="' . $group['id'] . '">';
+                echo '<span class="checkmark"></span>';
+                echo '</label>';
+            }
+            ?>
+
+        </div>
+
+    </div>
+
+    <div class="ac-createGroup" style="display:none;" id="createGroup">
+
+        <div class="ac-createEvent-header">
+
+            <div class="ac-createEvent-header-close" id="closeGroup">
+                &#xf00d;
+            </div>
+
+            <button type="submit" class="ac-createEvent-header-save" id="saveGroup" name="create">
                 Enregistrer
             </button>
 
@@ -231,276 +421,73 @@
 
     </div>
 
-    <div id="createEvent-Deskstop" style="display: none" class="ac-createEvent-popUp">
-        <div class="ac-createEvent-popUp-content">
-            <div class="ac-createEvent-header">
-                <div class="ac-createEvent-popUp-header-close" id="close">
-                    &#xf00d;
-                </div>
-
-                <button type="submit" class="ac-createEvent-header-save" id="savepopup" name="create">
-                    Enregistrer
-                </button>
-
-                <input class="ac-createEvent-header-title" type="text" placeholder="Titre de l'événement... ">
-
-            </div>
-            <div class="ac-createEvent-popUp-body">
-                <div class="ac-createEvent-body-creneaux">
-                    <label class="container">
-
-                        <p id="checkbox-container">
-                            Toute la journée
-                        </p>
-
-                        <input type="checkbox">
-
-                        <span class="checkmark">
-
-                        </span>
-
-                    </label>
-
-                    <div class="ac-createEvent-body-creneaux-first">
-
-                        <i class="ac-createEvent-body-creneaux-crenTxt">
-                            &#xf017;
-                        </i>
-
-                        <input class="ac-createEvent-body-creneaux-dateEv" type="Date" placeholder="type" name="start_date">
-
-                        <input class="ac-createEvent-body-creneaux-hoursEv" type="time" placeholder="type"
-                               name="start_time">
-
-                    </div>
-
-                    <div class="ac-createEvent-body-creneaux-second">
-
-                        <i class="ac-createEvent-body-creneaux-crenTxt">
-                            &#xf017;
-                        </i>
-
-                        <input class="ac-createEvent-body-creneaux-dateEv" type="Date" placeholder="type" name="end_date">
-
-                        <input class="ac-createEvent-body-creneaux-hoursEv" type="time" placeholder=type name="end_time">
-
-                    </div>
-
-                </div>
-
-
-            </div>
-            <div class="ac-createEvent-body-description">
-                <input class="ac-createEvent-body-description-input" type="text" placeholder="Description"
-                       name="description">
-            </div>
-            <?php
-            foreach ($users_list as $user) {
-                echo"<div>";
-                echo $user['Fname'];
-                echo $user['Lname'];
-                echo '<input class="of-main-block-salle-radio" type="checkbox" name="users-choice[]" value="' . $user['id'] . '">';
-                echo "</div>";
-            }
-            foreach ($groups_list as $group) {
-                echo"<div>";
-                echo $group['nom'];
-                echo $group['description'];
-                echo '<input class="of-main-block-salle-radio" type="checkbox" name="groups-choice[]" value="' . $group['id'] . '">';
-                echo "</div>";
-            }
-            ?>
-            <label class="container">
-
-                <p id="checkbox-container">
-                    Meeting
-                </p>
-
-                <input type="checkbox">
-
-                <span class="checkmark">
-
-                        </span>
-
-            </label>
-
-            <label class="container">
-
-                <p id="checkbox-container">
-                    Brainstorming
-                </p>
-
-                <input type="checkbox">
-
-                <span class="checkmark">
-
-                        </span>
-
-            </label>
-
-            <label class="container">
-
-                <p id="checkbox-container">
-                    Panel
-                </p>
-
-                <input type="checkbox">
-
-                <span class="checkmark">
-
-                        </span>
-
-            </label>
-
-
-
-        </div>
-    </div>
-</div>
-
-
-
-
-
-<div class="ac-fontGris" id="fondGris">
+    <div class="ac-fontGris" id="fondGris">
 
     </div>
 
     <div class="ac-main-nav" id="nav-bar">
 
         <div class="ac-main-nav-invit" style="overflow-y: scroll;">
-            <?php
-            foreach ($pending_invitation_list as $invitation){
-                echo "<ul>";
-                if(!empty($invitation['id_event'])){
-                    echo"<li>id de l'evenement : ".$invitation['id_event'].'</li>';
-                }if(!empty($invitation['event_name'])){
-                    echo"<li>nom de l'evenement : ".$invitation['event_name'].'</li>';
-                }if(!empty($invitation['start'])){
-                    echo"<li>debut de l'evenement : ".$invitation['start'].'</li>';
-                }if(!empty($invitation['end'])){
-                    echo"<li>fin de l'evenement : ".$invitation['end'].'</li>';
-                }if(!empty($invitation['group_name'])){
-                    echo"<li>nom du groupe : ".$invitation['group_name'].'</li>';
-                }
-                echo'<form  action="index.php?set_invitation=true" method="post">
-                    <input type="submit" value="valider" name="valider">
-                    <input type="hidden" value="'.$invitation['id_user'].'" name="id_user">
-                    <input type="hidden" value="'.$invitation['id_event'].'" name="id_event">
-                </form>';
-                echo'<form  action="index.php?set_invitation=false" method="post">
-                    <input type="submit" value="refuser" name="refuser">
-                    <input type="hidden" value="'.$invitation['id_user'].'" name="id_user">
-                    <input type="hidden" value="'.$invitation['id_event'].'" name="id_event">
-                 </form>';
-                echo"</ul>";
-            }
-            ?>
-            <?php
-            foreach ($pending_invitation_list as $invitation){
-                echo "<ul>";
-                if(!empty($invitation['id_event'])){
-                    echo"<li>id de l'evenement : ".$invitation['id_event'].'</li>';
-                }if(!empty($invitation['event_name'])){
-                    echo"<li>nom de l'evenement : ".$invitation['event_name'].'</li>';
-                }if(!empty($invitation['start'])){
-                    echo"<li>debut de l'evenement : ".$invitation['start'].'</li>';
-                }if(!empty($invitation['end'])){
-                    echo"<li>fin de l'evenement : ".$invitation['end'].'</li>';
-                }if(!empty($invitation['group_name'])){
-                    echo"<li>nom du groupe : ".$invitation['group_name'].'</li>';
-                }
-                echo'<form  action="index.php?set_invitation=true" method="post">
-                    <input type="submit" value="valider" name="valider">
-                    <input type="hidden" value="'.$invitation['id_user'].'" name="id_user">
-                    <input type="hidden" value="'.$invitation['id_event'].'" name="id_event">
-                </form>';
-                echo'<form  action="index.php?set_invitation=false" method="post">
-                    <input type="submit" value="refuser" name="refuser">
-                    <input type="hidden" value="'.$invitation['id_user'].'" name="id_user">
-                    <input type="hidden" value="'.$invitation['id_event'].'" name="id_event">
-                 </form>';
-                echo"</ul>";
-            }
-            ?>
-            <?php
-            foreach ($pending_invitation_list as $invitation){
-                echo "<ul>";
-                if(!empty($invitation['id_event'])){
-                    echo"<li>id de l'evenement : ".$invitation['id_event'].'</li>';
-                }if(!empty($invitation['event_name'])){
-                    echo"<li>nom de l'evenement : ".$invitation['event_name'].'</li>';
-                }if(!empty($invitation['start'])){
-                    echo"<li>debut de l'evenement : ".$invitation['start'].'</li>';
-                }if(!empty($invitation['end'])){
-                    echo"<li>fin de l'evenement : ".$invitation['end'].'</li>';
-                }if(!empty($invitation['group_name'])){
-                    echo"<li>nom du groupe : ".$invitation['group_name'].'</li>';
-                }
-                echo'<form  action="index.php?set_invitation=true" method="post">
-                    <input type="submit" value="valider" name="valider">
-                    <input type="hidden" value="'.$invitation['id_user'].'" name="id_user">
-                    <input type="hidden" value="'.$invitation['id_event'].'" name="id_event">
-                </form>';
-                echo'<form  action="index.php?set_invitation=false" method="post">
-                    <input type="submit" value="refuser" name="refuser">
-                    <input type="hidden" value="'.$invitation['id_user'].'" name="id_user">
-                    <input type="hidden" value="'.$invitation['id_event'].'" name="id_event">
-                 </form>';
-                echo"</ul>";
-            }
-            ?>
 
+            <?php
+
+            foreach ($pending_invitation_list as $invitation) {
+                echo "<div class='ac-main-nav-invit-item'>";
+
+                echo "<ul class='ac-main-nav-invit-item-description'>";
+                if (!empty($invitation['event_name'])) {
+                    echo "<li class='ac-main-nav-invit-item-description-name'>" . $invitation['event_name'] . '</li>';
+                }
+                if (!empty($invitation['start'])) {
+                    echo "<li class='ac-main-nav-invit-item-description-jourStart'>" . $invitation['start'] . '</li>';
+                }
+                if (!empty($invitation['start_hour'])) {
+                    echo "<li class='ac-main-nav-invit-item-description-heureStart'>" . $invitation['start_hour'] . '</li>';
+                }
+                if (!empty($invitation['end'])) {
+                    echo "<li class='ac-main-nav-invit-item-description-jourFin'>" . $invitation['end'] . '</li>';
+                }
+                if (!empty($invitation['end_hour'])) {
+                    echo "<li class='ac-main-nav-invit-item-description-heureFin'>" . $invitation['end_hour'] . '</li>';
+                }
+                if (!empty($invitation['group_name'])) {
+                    echo "<li class='ac-main-nav-invit-item-description-nonGroupe'>" . $invitation['group_name'] . '</li>';
+                }
+                echo "</ul>";
+
+                echo "<div class='ac-main-nav-invit-item-boutton'>";
+
+                echo '<form  action="index.php?set_invitation=true" method="post">
+                                <input class="ac-main-nav-invit-item-boutton-valider" type="submit" value="valider" name="valider">
+                                <input type="hidden" value="' . $invitation['id_user'] . '" name="id_user">
+                                <input type="hidden" value="' . $invitation['id_event'] . '" name="id_event">
+                            </form>';
+
+                echo '<form  action="index.php?set_invitation=false" method="post">
+                                <input class="ac-main-nav-invit-item-boutton-refuser" type="submit" value="refuser" name="refuser">
+                                <input type="hidden" value="' . $invitation['id_user'] . '" name="id_user">
+                                <input type="hidden" value="' . $invitation['id_event'] . '" name="id_event">
+                            </form>';
+
+                echo "</div>";
+
+                echo "</div>";
+            }
+            ?>
 
         </div>
 
         <div class="ac-main-nav-showEv" style="overflow-y: scroll;">
 
             <label class="container">
-                <p id="checkbox-container">OuiboNjourOrvoirheohooe</p>
-                <input type="checkbox" >
-                <span class="checkmark"></span>
-            </label>
-            <label class="container">
                 <p id="checkbox-container">Meeting</p>
-                <input type="checkbox" >
-                <span class="checkmark"></span>
-            </label>
-            <label class="container">
-                <p id="checkbox-container">Meeting</p>
-                <input type="checkbox" >
-                <span class="checkmark"></span>
-            </label>
-            <label class="container">
-                <p id="checkbox-container">Meeting</p>
-                <input type="checkbox" >
-                <span class="checkmark"></span>
-            </label>
-            <label class="container">
-                <p id="checkbox-container">Meeting</p>
-                <input type="checkbox" >
-                <span class="checkmark"></span>
-            </label>
-            <label class="container">
-                <p id="checkbox-container">Meeting</p>
-                <input type="checkbox" >
-                <span class="checkmark"></span>
-            </label>
-            <label class="container">
-                <p id="checkbox-container">Meeting</p>
-                <input type="checkbox" >
-                <span class="checkmark"></span>
-            </label>
-            <label class="container">
-                <p id="checkbox-container">Meeting</p>
-                <input type="checkbox" >
+                <input type="checkbox">
                 <span class="checkmark"></span>
             </label>
 
         </div>
 
         <div class="ac-main-nav-accDec" style="overflow-y: scroll;">
-
 
 
         </div>
@@ -521,10 +508,9 @@
 
         </div>
 
-        <button id="bouttonCree" type="submit" class="ac-main-calendrier-create" name="create">
+        <button id="bouttonCreeEvent" type="submit" class="ac-main-calendrier-createEvent" name="create">
             +
         </button>
 
     </div>
-
 </div>
