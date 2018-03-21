@@ -45,14 +45,22 @@ function display_signin_failed(){
 	require ("pages/signin_failed.php");
 
 }
+function display_creation_failed(){
+
+	require ("pages/creation_failed.php");
+
+}
 
 function display_signup_failed(){
 
     require ("pages/signup_failed.php");
 
 }
-function display_create_event(){
+function display_create_event($groups_list, $users_list){
     require ("pages/create_event.php");
+}
+function display_select_slot($post){
+    require ("pages/select_slot.php");
 }
 function display_event_visibility($groups_list, $users_list){
     require ("pages/event_visibility.php");
