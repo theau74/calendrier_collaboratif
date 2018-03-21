@@ -62,9 +62,6 @@ closeEvent.onclick = function() {
 
 
 
-savePopup.onclick = function () {
-    popupEvent.style.display = "none";
-}
 
 closePopup.onclick = function() {
     popupEvent.style.display = "none";

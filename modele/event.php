@@ -105,7 +105,7 @@ function search_five_next_free_slot($user_list, $time_date, $time_hour, $step, $
     var_dump(date_timestamp_get(date_create('' . $time_date . ' ' . $time_hour . '')))+(86400 * $day);
     while ($free_slot < $limit_slot){
 
-        if(verify_user_list_disponibility(date_timestamp_get(date_create('' . $time_date . ' ' . $time_hour . '')))+(86400 * $day)){
+        if(verify_user_list_disponibility($start, $start_hour, $end, $end_hour, $user_list, $c)){
 
         }else{
 
