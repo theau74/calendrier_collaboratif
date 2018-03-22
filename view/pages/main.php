@@ -1,4 +1,3 @@
-
 <script>
     $(document).ready(function () {
 
@@ -123,19 +122,20 @@
 <div class="ac-main">
 
     <div class="ac-createEvent" style="display:none;" id="createEvent">
+
         <form action="index.php" method="post">
+
             <div class="ac-createEvent-header">
 
                 <div class="ac-createEvent-header-close" id="closeEvent">
                     &#xf00d;
                 </div>
 
-
                 <button type="submit" class="ac-createEvent-header-save" id="saveEvent"  name="action" value="create-event">
                     enregistrer
                 </button>
 
-                <input class="ac-createEvent-header-title" type="text" placeholder="Titre de l'événement ..."  name="nom" required>
+                <input class="ac-createEvent-header-title" type="text" placeholder="Titre de l'événement :"  name="nom" required>
 
             </div>
 
@@ -185,7 +185,7 @@
                 </div>
 
                 <div class="ac-createEvent-body-description">
-                    <input class="ac-createEvent-body-description-input" type="text" placeholder="Description"
+                    <input class="ac-createEvent-body-description-input" type="text" placeholder="Description :"
                            name="description" required>
                 </div>
 
@@ -209,11 +209,15 @@
                 ?>
 
             </div>
+
         </form>
+
     </div>
 
     <div class="ac-createEvent-popUp" style="display: none" id="createEvent-Deskstop">
+
         <form action="index.php" method="post">
+
             <div class="ac-createEvent-popUp-content">
 
                 <div class="ac-createEvent-popUp-header">
@@ -322,59 +326,47 @@
 
         <form action="index.php" method="post">
 
-            <div class="ac-createEvent-header">
+            <div class="ac-createGroup-header">
 
-                <div class="ac-createEvent-header-close" id="closeGroup">
+                <div class="ac-createGroup-header-close" id="closeGroup">
                     &#xf00d;
                 </div>
 
-                <button type="submit" class="ac-createEvent-header-save" id="saveGroup"  name="action" value="create-event">
+                <button type="submit" class="ac-createEvent-header-save" id="saveGroup"  name="action" value="create-group">
                     Enregistrer
                 </button>
 
-                <input class="ac-createEvent-header-title" type="text" placeholder="Titre de l'événement ..."  name="nom" required>
+                <input type="text" class="ac-createGroup-header-title" name="nom" placeholder="Nom du Groupe :" required>
 
             </div>
 
-            <ul>
+            <div class="ac-createGroup-body">
 
-                <li class="ac-home-sign-item">
-                    <input type="text" class="ac-home-sign-item-input" name="nom" placeholder="nom">
-                </li>
+                <ul>
 
-                <li class="ac-home-sign-item">
-                    <input type="text" class="ac-home-sign-item-input" name="description" placeholder="description">
-                </li>
+                    <?php
+                    foreach ($users_list as $user) {
+                        echo"<li class='ac-createGroup-body-item'>";
 
-                <?php
-                echo'<form action="index.php?ac=create-invitation" method="post">';
-                foreach ($users_list as $user) {
-                    echo"<div>";
-                    echo $user['Fname'];
-                    echo $user['Lname'];
-                    echo"<select name='user_right[]'>
-                                 <option value='3'>utilisateur</option>
-                                 <option value='2'>admin</option>
+                        echo "<p class='ac-createGroup-body-item-name'>" . $user['Fname'] . "</p>";
+                        echo "<p class='ac-createGroup-body-item-lname'>" . $user['Lname'] . "</p>";
+                        echo"<select class='ac-createGroup-body-item-select' name='user_right[]'>
+                                 <option value='3'>Utilisateur</option>
+                                 <option value='2'>Administrateur</option>
                             </select>";
-                    echo '<input class="of-main-block-salle-radio" type="checkbox" name="users-choice[]" value="' . $user['id'] . '">';
-                    echo "</div>";
-                }
-                ?>
+                        echo '<input class="ac-createGroup-body-item-checkbox" type="checkbox" name="users-choice[]" value="' . $user['id'] . '">';
 
-                <li class="ac-home-sign-allBoutton">
-                    <ul>
+                        echo "</li>";
+                    }
+                    ?>
 
-                        <li class="ac-home-sign-item-boutton-left">
-                            <button type="submit" class="ac-home-sign-item-boutton-log" name="subscribe">
-                                valider
-                            </button>
-                        </li>
+                    <li class="ac-createGroup-body-item">
+                        <input type="text" class="ac-createGroup-body-item-descriptionGroup" name="description" placeholder="description">
+                    </li>
 
+                </ul>
 
-                    </ul>
-                </li>
-
-            </ul>
+            </div>
 
         </form>
 
@@ -408,16 +400,16 @@
                 if (!empty($invitation['end_hour'])) {
                     echo "<li class='ac-main-nav-invit-item-description-heureFin'>" . $invitation['end_hour'] . '</li>';
                 }
-                if (!empty($invitation['group_name'])) {
-                    echo "<li class='ac-main-nav-invit-item-description-nonGroupe'>" . $invitation['group_name'] . '</li>';
+                if (!empty($invitation['description'])) {
+                    echo "<li class='ac-main-nav-invit-item-description-descript'>" . $invitation['description'] . '</li>';
                 }
                 echo "</ul>";
 
                 echo "<div class='ac-main-nav-invit-item-boutton'>";
 
                 echo '<form  action="index.php" method="post">
-                                <button type="submit" class="" id="saveEvent"  name="action" value="valid_event_invit">
-                                    valider
+                                <button type="submit" class="ac-main-nav-invit-item-boutton-valider" id="saveEvent"  name="action" value="valid_event_invit">
+                                    &#xf00c;
                                 </button>
                                 <input type="hidden" value="' . $invitation['id_user'] . '" name="id_user">
                                 <input type="hidden" value="' . $invitation['id_event'] . '" name="id_event">
@@ -425,8 +417,8 @@
                             </form>';
 
                 echo '<form  action="index.php" method="post">
-                                <button type="submit" class="" id="saveEvent"  name="action" value="deny_event_invit">
-                                    refuser
+                                <button type="submit" class="ac-main-nav-invit-item-boutton-refuser" id="saveEvent"  name="action" value="deny_event_invit">
+                                    &#xf00d;
                                 </button>
                                 <input type="hidden" value="' . $invitation['id_user'] . '" name="id_user">
                                 <input type="hidden" value="' . $invitation['id_event'] . '" name="id_event">
@@ -443,10 +435,10 @@
 
         <div class="ac-main-nav-showEv" style="overflow-y: scroll;">
 
-            <label class="container">
-                <p id="checkbox-container">Meeting</p>
+            <label class="ac-main-nav-showEv-container">
                 <input type="checkbox">
-                <span class="checkmark"></span>
+                <span class="ac-main-nav-showEv-checkmark"></span>
+                <p id="checkbox-container">Meeting</p>
             </label>
 
         </div>

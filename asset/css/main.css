@@ -2,6 +2,7 @@
  *   Global                                                                      *
 \*********************************************************************************/
 
+
 ::-webkit-scrollbar {
     display: none;
 }
@@ -17,7 +18,7 @@
 }
 
 body {
-    font-family: 'Roboto','PT Sans', sans-serif;
+    font-family: 'Roboto', 'PT Sans', sans-serif;
     /*  background: url("../img/Bgc_home_petite.png") no-repeat;*/
     background-size: cover;
     background: #1B2129;
@@ -173,7 +174,6 @@ input:placeholder-shown {
     background-color: transparent;
     box-shadow: 4px 4px 20px -4px #000;
 
-
     -webkit-transition: background-color .25s ease-in-out, color .25s ease-in-out, transform .25s ease-in-out, box-shadow .25s ease-in-out;
     -moz-transition: background-color .25s ease-in-out, color .25s ease-in-out, transform .25s ease-in-out, box-shadow .25s ease-in-out;
     transition: background-color .25s ease-in-out, color .25s ease-in-out, transform .25s ease-in-out, box-shadow .25s ease-in-out;
@@ -185,8 +185,6 @@ input:placeholder-shown {
     background-color: #fff;
     color: #000;
     box-shadow: 6px 6px 8px 0px #000;
-
-
 
 }
 
@@ -208,7 +206,6 @@ input:placeholder-shown {
     display: block;
     background-color: #453963;
     box-shadow: 4px 4px 20px -4px #000;
-
 
     -webkit-transition: background-color .25s ease-in-out, color .25s ease-in-out, transform .25s ease-in-out, box-shadow .25s ease-in-out;
     -moz-transition: background-color .25s ease-in-out, color .25s ease-in-out, transform .25s ease-in-out, box-shadow .25s ease-in-out;
@@ -390,6 +387,7 @@ input:placeholder-shown {
     display: none;
 }
 
+
 /*************\
  *   Invite  *
 \*************/
@@ -405,16 +403,18 @@ input:placeholder-shown {
 
 .ac-main-nav-invit-item {
     margin: 15px;
-    height: 82px;
+    height: 84px;
     display: flex;
     box-shadow: 2px 3px 20px -4px #000;
     border-radius: 5px;
     border: 1px solid;
 }
 
+
 /*************\
  *  Descrip  *
 \*************/
+
 
 .ac-main-nav-invit-item-description {
     width: 70%;
@@ -433,33 +433,37 @@ input:placeholder-shown {
 
 .ac-main-nav-invit-item-description-name {
     width: 100%;
-    border-bottom: 1px solid;
     padding: 0px 20px;
     text-align: left;
 }
 
 .ac-main-nav-invit-item-description-jourStart {
     width: 70%;
+    border-top: 1px solid;
 }
 
 .ac-main-nav-invit-item-description-heureStart {
     width: 30%;
     border-left: 1px solid;
+    border-top: 1px solid;
 }
 
 .ac-main-nav-invit-item-description-jourFin {
     width: 70%;
+    border-bottom: 1px solid;
 }
 
 .ac-main-nav-invit-item-description-heureFin {
     width: 30%;
     border-left: 1px solid;
+    border-bottom: 1px solid;
+
 }
 
-.ac-main-nav-invit-item-description-nonGroupe {
+.ac-main-nav-invit-item-description-descript {
     width: 100%;
-    border-top: 1px solid;
     text-align: center;
+    font-size: 10px;
 }
 
 
@@ -473,9 +477,9 @@ input:placeholder-shown {
     width: 30%;
 }
 
-.ac-main-nav-invit-item-boutton form input {
+.ac-main-nav-invit-item-boutton form button {
     width: 100%;
-    height: 40px;
+    height: 41px;
     padding: 0;
     margin: 0;
     border: none;
@@ -485,8 +489,10 @@ input:placeholder-shown {
 
 .ac-main-nav-invit-item-boutton-valider {
     border-radius: 0px 5px 0px 0px;
-    background-color: red;
-
+    background-color: #fff;
+    font: normal normal normal 14px/1 FontAwesome;
+    color: #000;
+    font-size: 20px;
 }
 
 .ac-main-nav-invit-item-boutton-valider:hover {
@@ -495,7 +501,10 @@ input:placeholder-shown {
 
 .ac-main-nav-invit-item-boutton-refuser {
     border-radius: 0px 0px 5px 0px;
-
+    background-color: #b71540;
+    font: normal normal normal 14px/1 FontAwesome;
+    color: #fff;
+    font-size: 20px;
 }
 
 .ac-main-nav-invit-item-boutton-refuser:hover {
@@ -508,7 +517,7 @@ input:placeholder-shown {
 \*************/
 
 
-.ac-main-nav-showEv{
+.ac-main-nav-showEv {
     display: block;
     height: 30%;
     box-shadow: 0px 0px 8px 0px #000;
@@ -522,7 +531,7 @@ input:placeholder-shown {
 \*************/
 
 
-.ac-main-nav-accDec{
+.ac-main-nav-accDec {
     display: block;
     height: 20%;
     background-color: #576574;
@@ -543,7 +552,7 @@ input:placeholder-shown {
     left: 0;
     bottom: -70px;
     right: 0;
-    background-color: rgba(0,0,0,0.38);
+    background-color: rgba(0, 0, 0, 0.38);
     z-index: 1;
     pointer-events: none;
     -webkit-transition: opacity 200ms ease-in-out;
@@ -566,15 +575,6 @@ input:placeholder-shown {
 }
 
 .ac-createEvent-header {
-    width: 100%;
-    height: 80px;
-    word-wrap: break-word;
-    padding: 0px;
-    background-color: #1C2229;
-    color: white;
-}
-
-.ac-createEvent-popUp-header {
     width: 100%;
     height: 80px;
     word-wrap: break-word;
@@ -612,46 +612,15 @@ input:placeholder-shown {
     cursor: pointer;
 }
 
-.ac-createEvent-header-save:hover{
+.ac-createEvent-header-save:hover {
     background-color: #576574;
 }
 
-.ac-createEvent-header-save:active{
-    background-color: #8395a7;
-}
-
-.ac-createEvent-popUp-header-save {
-    color: white;
-    background-color: #1C2229;
-    outline: none;
-    font-size: 14px;
-    border: none;
-    float: right;
-    line-height: 20px;
-    padding: 10px 15px;
-    text-transform: uppercase;
-    cursor: pointer;
-}
-
-.ac-createEvent-popUp-header-save:hover{
-    background-color: #576574;
-}
-
-.ac-createEvent-popUp-header-save:active{
+.ac-createEvent-header-save:active {
     background-color: #8395a7;
 }
 
 .ac-createEvent-header-title {
-    width: 100%;
-    font-size: 16px;
-    color: white;
-    background-color: #1C2229;
-    border: none;
-    outline: none;
-    height: 40px;
-    padding: 0px 10px;
-}
-.ac-createEvent-popUp-header-title {
     width: 100%;
     font-size: 16px;
     color: white;
@@ -676,13 +645,452 @@ input:placeholder-shown {
     margin-top: 10px;
 }
 
+.ac-createEvent-body-creneaux-first {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+}
+
+.ac-createEvent-body-creneaux-second {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+}
+
+.ac-createEvent-body-creneaux-crenTxt {
+    display: inline-block;
+    width: 20%;
+    border: none;
+    outline: none;
+    padding: 10px 10px;
+    font: normal normal normal 30px/1 FontAwesome;
+}
+
+.ac-createEvent-body-creneaux-dateEv {
+    font-size: 17px;
+    line-height: 98px;
+}
+
+.ac-createEvent-body-creneaux-hoursEv {
+    width: 23%;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    line-height: 98px;
+    padding-left: 10px;
+}
+
+.ac-createEvent-body-description-input {
+    width: 100%;
+    font-size: 16px;
+    color: white;
+    background-color: #1C2229;
+    border: none;
+    outline: none;
+    height: 40px;
+    padding: 0px 10px;
+}
+
+.ac-createEvent-body-description-input::placeholder {
+    color: white;
+
+}
+
+.ac-createEvent-footer {
+    width: 100%;
+    height: 15%;
+    word-wrap: break-word;
+    padding: 10px;
+    background-color: #3b9f97;
+    color: white;
+}
+
+
+/*********************************************************************************\
+ *   Create Groupe                                                                  *
+\*********************************************************************************/
+
+
+.ac-createGroup {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 5;
+    top: 0;
+}
+
+.ac-createGroup-header {
+    width: 100%;
+    height: 80px;
+    word-wrap: break-word;
+    padding: 0px;
+    background-color: #1C2229;
+    color: white;
+}
+
+.ac-createGroup-header-close {
+    color: white;
+    float: left;
+    cursor: pointer;
+    padding: 15px 15px 0px 15px;
+    font: normal normal normal 20px/1 FontAwesome;
+}
+
+.ac-createGroup-header-close:hover {
+    transform: scale(1.1);
+}
+
+.ac-createGroup-header-close:active {
+    transform: scale(.9);
+}
+
+.ac-createGroup-header-save {
+    color: white;
+    background-color: #1C2229;
+    outline: none;
+    font-size: 14px;
+    border: none;
+    float: right;
+    line-height: 20px;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.ac-createGroup-header-save:hover {
+    background-color: #576574;
+}
+
+.ac-createGroup-header-save:active {
+    background-color: #8395a7;
+}
+
+.ac-createGroup-header-title {
+    width: 100%;
+    font-size: 16px;
+    color: white;
+    background-color: #1C2229;
+    border: none;
+    outline: none;
+    height: 40px;
+    padding: 0px 10px;
+}
+
+.ac-createGroup-body {
+    width: 100%;
+    height: calc(100vh - 80px);
+    padding: 5px 0px;
+    background-color: #fff;
+    color: #000;
+    overflow-y: auto;
+}
+
+.ac-createGroup-body-creneaux {
+    border-bottom: 1px solid #dfe6e9;
+    margin-top: 10px;
+}
+
+.ac-createGroup-body-creneaux-first {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+}
+
+.ac-createGroup-body-creneaux-second {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+}
+
+.ac-createGroup-body-creneaux-crenTxt {
+    display: inline-block;
+    width: 20%;
+    border: none;
+    outline: none;
+    padding: 10px 10px;
+    font: normal normal normal 30px/1 FontAwesome;
+}
+
+.ac-createGroup-body-creneaux-dateEv {
+    font-size: 17px;
+    line-height: 98px;
+}
+
+.ac-createGroup-body-creneaux-hoursEv {
+    width: 23%;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    line-height: 98px;
+    padding-left: 10px;
+}
+
+.ac-createGroup-body-description-input {
+    width: 100%;
+    font-size: 16px;
+    color: white;
+    background-color: #1C2229;
+    border: none;
+    outline: none;
+    height: 40px;
+    padding: 0px 10px;
+}
+
+.ac-createGroup-body-description-input::placeholder {
+    color: white;
+
+}
+
+.ac-createGroup-body-item {
+    display: flex;
+    height: 40px;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.ac-createGroup-body-item-name {
+    width: 30%;
+    text-align: left;
+    line-height: 40px;
+    padding-left: 10px;
+}
+
+.ac-createGroup-body-item-lname {
+    width: 30%;
+    text-align: left;
+    line-height: 40px;
+    padding-left: 10px;
+}
+
+.ac-createGroup-body-item-select {
+    height: 40px;
+    background-color: red;
+    border: none;
+    border-radius: 0px;
+    width: 30%;
+    float: right;
+    display: block;
+}
+
+.ac-createGroup-body-item-checkbox {
+    width: 15%;
+    height: 40px;
+    margin: 0;
+}
+
+.ac-createGroup-body-item-descriptionGroup {
+
+}
+
+.ac-createGroup-footer {
+    width: 100%;
+    height: 15%;
+    word-wrap: break-word;
+    padding: 10px;
+    background-color: #3b9f97;
+    color: white;
+}
+
+
+/*********************************************************************************\
+ *   Calendrier                                                                  *
+\*********************************************************************************/
+
+
+.fc-scroller.fc-day-grid-container {
+    height: calc(100vh - 200px) !important;
+    overflow-y: auto;
+}
+
+.fc-toolbar {
+    padding: 0px;
+    background-color: #1B2129;
+}
+
+.fc-toolbar h2 {
+    text-align: center;
+    line-height: 30px;
+}
+
+.fc-view {
+    z-index: 0;
+}
+
+.fc-event {
+    border: 1px solid #1C2229;
+}
+
+.fc-event, .fc-event-dot {
+    background-color: #1C2229;
+}
+
+.fc-view-container {
+    background-color: #8395a7;
+}
+
+.fc-button-group {
+    width: 100%;
+}
+
+.fc-left {
+    width: 50%;
+}
+
+.fc-center {
+    text-transform: uppercase;
+    height: 30px;
+    margin: 0;
+    padding: 0px;
+    float: left;
+    position: absolute;
+    top: 20px;
+    left: 90px;
+    color: #fff;
+}
+
+.fc-right {
+    width: 50%;
+}
+
+.fc button {
+    width: 50%;
+    background-color: #1C2229;
+    background-image: none;
+    color: #fff;
+    box-shadow: none;
+    line-height: 20px;
+    font-size: 20px;
+    text-shadow: none;
+}
+
+.fc button:hover {
+    background-color: #576574;
+}
+
+.fc button:active {
+    background-color: #8395a7;
+}
+
+.fc-button-group button {
+    border-radius: 0px 0px 0px 0px !important;
+}
+
+button.fc-today-button.fc-button.fc-state-default.fc-corner-right {
+    width: 100%;
+}
+
+button.fc-today-button.fc-button.fc-state-default.fc-corner-right.fc-state-disabled {
+    width: 100%;
+}
+
+.fc .fc-button-group > * {
+    margin: 0 0 0 0px;
+}
+
+.fc-scroller.fc-time-grid-container {
+    height: calc(100vh - 230px) !important;
+}
+
+th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
+    line-height: 30px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.fc-view.fc-month-view.fc-basic-view table tbody tr td div div .fc-row.fc-week.fc-widget-content {
+    height: calc((100vh - 160px) / 6) !important;
+}
+
+.fc-unthemed th,
+.fc-unthemed td,
+.fc-unthemed thead,
+.fc-unthemed tbody,
+.fc-unthemed .fc-divider,
+.fc-unthemed .fc-row,
+.fc-unthemed .fc-content,
+.fc-unthemed .fc-popover,
+.fc-unthemed .fc-list-view,
+.fc-unthemed .fc-list-heading td {
+    border-color: #000;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 20px;
+}
+
+.fc-ltr .fc-basic-view .fc-day-top .fc-day-number {
+    color: #fff;
+}
+
+.fc-unthemed td.fc-today {
+    background: #c8d6e5;
+}
+
+.fc-toolbar.fc-header-toolbar {
+    margin-bottom: 0px;
+}
+
+a[data-goto] {
+    color: #fff;
+}
+
+/*********************************************************************************\
+ *   PopUp                                                                       *
+\*********************************************************************************/
+
+
+/*************\
+ *   Event   *
+\*************/
+
+
+.ac-createEvent-popUp-header {
+    width: 100%;
+    height: 80px;
+    word-wrap: break-word;
+    padding: 0px;
+    background-color: #1C2229;
+    color: white;
+}
+
+.ac-createEvent-popUp-header-save {
+    color: white;
+    background-color: #1C2229;
+    outline: none;
+    font-size: 14px;
+    border: none;
+    float: right;
+    line-height: 20px;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.ac-createEvent-popUp-header-save:hover {
+    background-color: #576574;
+}
+
+.ac-createEvent-popUp-header-save:active {
+    background-color: #8395a7;
+}
+
+.ac-createEvent-popUp-header-title {
+    width: 100%;
+    font-size: 16px;
+    color: white;
+    background-color: #1C2229;
+    border: none;
+    outline: none;
+    height: 40px;
+    padding: 0px 10px;
+}
+
 .ac-createEvent-popUp-body {
     background-color: #fff;
     height: 260px;
 
 }
 
-.ac-createEvent-popUp-body-creneaux-title{
+.ac-createEvent-popUp-body-creneaux-title {
     margin-bottom: 15px;
     width: 100%;
     font-size: 35px;
@@ -698,7 +1106,7 @@ input:placeholder-shown {
     height: 100%;
 }
 
-.ac-createEvent-popUp-body-invitation{
+.ac-createEvent-popUp-body-invitation {
     width: 50%;
     float: right;
     height: 100%;
@@ -706,7 +1114,7 @@ input:placeholder-shown {
 
 }
 
-.ac-createEvent-popUp-body-invitation-title{
+.ac-createEvent-popUp-body-invitation-title {
     margin-bottom: 10px;
     width: 100%;
     font-size: 35px;
@@ -714,7 +1122,8 @@ input:placeholder-shown {
     cursor: default;
     padding-top: 10px;
 }
-.ac-createEvent-popUp-body-invitation-users{
+
+.ac-createEvent-popUp-body-invitation-users {
     cursor: default;
     font-size: 21px;
     background-color: #1C2229;
@@ -723,19 +1132,13 @@ input:placeholder-shown {
     padding: 5px 0;
 }
 
-.ac-createEvent-popUp-body-invitation-groups{
+.ac-createEvent-popUp-body-invitation-groups {
     cursor: default;
     font-size: 21px;
     background-color: #1C2229;
     color: #FFF;
     text-align: center;
     padding: 5px 0;
-}
-
-.ac-createEvent-body-creneaux-first {
-    display: flex;
-    justify-content: space-between;
-    height: 100px;
 }
 
 .ac-createEvent-popUp-body-creneaux-first {
@@ -744,27 +1147,12 @@ input:placeholder-shown {
     margin-top: 30px;
 }
 
-.ac-createEvent-body-creneaux-second {
-    display: flex;
-    justify-content: space-between;
-    height: 100px;
-}
-
 .ac-createEvent-popUp-body-creneaux-second {
     display: flex;
     height: 70px;
 }
 
-.ac-createEvent-body-creneaux-crenTxt{
-    display: inline-block;
-    width: 20%;
-    border: none;
-    outline: none;
-    padding: 10px 10px;
-    font: normal normal normal 30px/1 FontAwesome;
-}
-
-.ac-createEvent-popUp-body-creneaux-crenTxt{
+.ac-createEvent-popUp-body-creneaux-crenTxt {
     display: inline-block;
     border: none;
     outline: none;
@@ -772,12 +1160,7 @@ input:placeholder-shown {
     font: normal normal normal 30px/1 FontAwesome;
 }
 
-.ac-createEvent-body-creneaux-dateEv{
-    font-size: 17px;
-    line-height: 98px;
-}
-
-.ac-createEvent-popUp-body-creneaux-dateEv{
+.ac-createEvent-popUp-body-creneaux-dateEv {
     font-size: 17px;
     height: 50px;
     padding-left: 65px;
@@ -787,16 +1170,7 @@ input:placeholder-shown {
     margin: 0 40px;
 }
 
-.ac-createEvent-body-creneaux-hoursEv{
-    width: 23%;
-    border: none;
-    outline: none;
-    font-size: 17px;
-    line-height: 98px;
-    padding-left: 10px;
-}
-
-.ac-createEvent-popUp-body-creneaux-hoursEv{
+.ac-createEvent-popUp-body-creneaux-hoursEv {
     border: none;
     outline: none;
     font-size: 19px;
@@ -813,22 +1187,6 @@ input:placeholder-shown {
     box-shadow: 2px 7px 12px 3px;
 }
 
-.ac-createEvent-body-description-input {
-    width: 100%;
-    font-size: 16px;
-    color: white;
-    background-color: #1C2229;
-    border: none;
-    outline: none;
-    height: 40px;
-    padding: 0px 10px;
-}
-
-.ac-createEvent-body-description-input::placeholder{
-    color: white;
-
-}
-
 .ac-createEvent-popUp-body-description-input {
     width: 100%;
     font-size: 16px;
@@ -840,18 +1198,175 @@ input:placeholder-shown {
     padding: 0px 10px;
 }
 
-.ac-createEvent-popUp-body-description-input::placeholder{
+.ac-createEvent-popUp-body-description-input::placeholder {
     color: white;
 
 }
 
-.ac-createEvent-footer {
+
+/*************\
+ *   Groupe  *
+\*************/
+
+
+.ac-createGroup-popUp-header {
     width: 100%;
-    height: 15%;
+    height: 80px;
     word-wrap: break-word;
-    padding: 10px;
-    background-color: #3b9f97;
+    padding: 0px;
+    background-color: #1C2229;
     color: white;
+}
+
+.ac-createGroup-popUp-header-save {
+    color: white;
+    background-color: #1C2229;
+    outline: none;
+    font-size: 14px;
+    border: none;
+    float: right;
+    line-height: 20px;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.ac-createGroup-popUp-header-save:hover {
+    background-color: #576574;
+}
+
+.ac-createGroup-popUp-header-save:active {
+    background-color: #8395a7;
+}
+
+.ac-createGroup-popUp-header-title {
+    width: 100%;
+    font-size: 16px;
+    color: white;
+    background-color: #1C2229;
+    border: none;
+    outline: none;
+    height: 40px;
+    padding: 0px 10px;
+}
+
+.ac-createGroup-popUp-body {
+    background-color: #fff;
+    height: 260px;
+
+}
+
+.ac-createGroup-popUp-body-creneaux-title {
+    margin-bottom: 15px;
+    width: 100%;
+    font-size: 35px;
+    text-align: center;
+    cursor: default;
+}
+
+.ac-createGroup-popUp-body-creneaux {
+    width: 50%;
+    float: left;
+    padding: 10px;
+    border-right: 1px solid #000;
+    height: 100%;
+}
+
+.ac-createGroup-popUp-body-invitation {
+    width: 50%;
+    float: right;
+    height: 100%;
+    overflow-y: scroll;
+
+}
+
+.ac-createGroup-popUp-body-invitation-title {
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: 35px;
+    text-align: center;
+    cursor: default;
+    padding-top: 10px;
+}
+
+.ac-createGroup-popUp-body-invitation-users {
+    cursor: default;
+    font-size: 21px;
+    background-color: #1C2229;
+    color: #FFF;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.ac-createGroup-popUp-body-invitation-groups {
+    cursor: default;
+    font-size: 21px;
+    background-color: #1C2229;
+    color: #FFF;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.ac-createGroup-popUp-body-creneaux-first {
+    display: flex;
+    height: 70px;
+    margin-top: 30px;
+}
+
+.ac-createGroup-popUp-body-creneaux-second {
+    display: flex;
+    height: 70px;
+}
+
+.ac-createGroup-popUp-body-creneaux-crenTxt {
+    display: inline-block;
+    border: none;
+    outline: none;
+    padding: 10px 10px;
+    font: normal normal normal 30px/1 FontAwesome;
+}
+
+.ac-createGroup-popUp-body-creneaux-dateEv {
+    font-size: 17px;
+    height: 50px;
+    padding-left: 65px;
+    background-color: #c8d6e5;
+    border: none;
+    box-shadow: 0px 0px 5px 1px;
+    margin: 0 40px;
+}
+
+.ac-createGroup-popUp-body-creneaux-hoursEv {
+    border: none;
+    outline: none;
+    font-size: 19px;
+    height: 50px;
+    box-shadow: 0px 0px 5px 1px;
+    background-color: #c8d6e5;
+    padding-left: 30px;
+    margin-left: 20px;
+}
+
+.ac-createGroup-popUp-body-description {
+    position: absolute;
+    width: 100%;
+    box-shadow: 2px 7px 12px 3px;
+}
+
+.ac-createGroup-popUp-body-description-input {
+    width: 100%;
+    font-size: 16px;
+    color: white;
+    background-color: #1C2229;
+    border: none;
+    outline: none;
+    height: 40px;
+    padding: 0px 10px;
+}
+
+.ac-createGroup-popUp-body-description-input::placeholder {
+    color: white;
+
 }
 
 
@@ -869,7 +1384,7 @@ input:placeholder-shown {
     width: 100%;
 }
 
-.ac-popUpFail-content{
+.ac-popUpFail-content {
     position: relative;
     margin: auto;
     width: 80%;
@@ -918,7 +1433,7 @@ input:placeholder-shown {
 \*************/
 
 
-.ac-createEvent-popUp{
+.ac-createEvent-popUp {
     position: fixed;
     z-index: 999;
     padding-top: 100px;
@@ -929,7 +1444,7 @@ input:placeholder-shown {
     overflow: auto;
 }
 
-.ac-createEvent-popUp-content{
+.ac-createEvent-popUp-content {
     position: relative;
     margin: auto;
     width: 80%;
@@ -941,13 +1456,25 @@ input:placeholder-shown {
 }
 
 @-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
 }
 
 @keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
 }
 
 .ac-createEvent-popUp-header-close {
@@ -965,119 +1492,298 @@ input:placeholder-shown {
 }
 
 
-/*************\
- * PopUp fail *
-\*************/
+/*********************************************************************************\
+ *   checkbox nav                                                               *
+\*********************************************************************************/
 
 
-.ac-main-createEvent {
+.ac-main-nav-showEv-container {
+    cursor: pointer;
+    font-size: 22px;
+    display: flex;
+    padding: 10px 0px;
+    word-break: break-all;
     width: 100%;
-    height: calc(100vh - 150px);
-    overflow-y: auto;
-    padding: 20px 10px 10px;
-    box-shadow: inset 0px 0px 0px 1px #fcf8e3;
+    justify-content: space-between;
+    line-height: 30px;
+}
 
+/*cacher checkbox par default */
+.ac-main-nav-showEv-container input {
+    opacity: 0;
+    cursor: pointer;
+    order: 2;
+}
+
+/* custom checkbox */
+.ac-main-nav-showEv-checkmark {
+    height: 30px;
+    width: 30px;
+    border: 3px solid #1C2229;
+    border-radius: 8px;
+    cursor: pointer;
+
+}
+
+.ac-main-nav-showEv-container:hover input ~ .ac-main-nav-showEv-checkmark {
+    background-color: #1C2229;
+}
+
+/* checked, then background-color */
+.ac-main-nav-showEv-container input:checked ~ .ac-main-nav-showEv-checkmark {
+    background-color: #1C2229;
+}
+
+.ac-main-nav-showEv-checkmark:after {
+    content: "";
+    display: none;
+}
+
+.ac-main-nav-showEv-container input:checked ~ .ac-main-nav-showEv-checkmark:after {
+    display: block;
+}
+
+.ac-main-nav-showEv-container .ac-main-nav-showEv-checkmark:after {
+    width: 6px;
+    height: 16px;
+    margin: 0px 0px 0px 7px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 
 /*********************************************************************************\
- *   Calendrier                                                                  *
+ *   checkbox popup   CreeEvent                                                            *
 \*********************************************************************************/
 
-.fc-scroller.fc-day-grid-container {
-    height: calc(100vh - 200px) !important;
-    overflow-y: auto;
-}
 
-.fc-toolbar {
-    padding: 0px;
-    background-color: #1B2129;
-}
-
-.fc-toolbar h2 {
-    text-align: center;
-    line-height: 30px;
-}
-
-.fc-view {
-    z-index: 0;
-}
-
-.fc-view-container {
-}
-
-.fc-button-group {
+.ac-createEvent-popUp-checkbox-container {
+    cursor: pointer;
+    font-size: 22px;
+    display: flex;
+    padding: 5px;
+    word-break: break-all;
     width: 100%;
+    justify-content: space-between;
 }
 
-.fc-left {
-    width: 50%;
+/*cacher checkbox par default */
+.ac-createEvent-popUp-checkbox-container input {
+    opacity: 0;
+    cursor: pointer;
 }
 
-.fc-center {
-    text-transform: uppercase;
-    height: 30px;
-    margin: 0;
-    padding: 0px;
-    float: left;
-    position: absolute;
-    top: 20px;
-    left: 90px;
-    color: #fff;
+/* custom checkbox */
+.ac-createEvent-popUp-checkbox-container-checkmark {
+    height: 24px;
+    width: 24px;
+    border: 3px solid #1c2229;
+    border-radius: 5px;
+    cursor: pointer;
+
 }
 
-.fc-right {
-    width: 50%;
+.ac-createEvent-popUp-checkbox-container:hover input ~ .ac-createEvent-popUp-checkbox-container-checkmark {
+    background-color: #efefef;
 }
 
-.fc button {
-    width: 50%;
-    background-color: #1C2229;
-    background-image: none;
-    color: #fff;
-    box-shadow: none;
-    line-height: 20px;
-    font-size: 20px;
-    text-shadow: none;
+/* checked, then background-color */
+.ac-createEvent-popUp-checkbox-container input:checked ~ .ac-createEvent-popUp-checkbox-container-checkmark {
+    background-color: #1c2229;
 }
 
-.fc button:hover {
-    background-color: #576574;
+.ac-createEvent-popUp-checkbox-container-checkmark:after {
+    content: "";
+    display: none;
 }
 
-.fc button:active {
-    background-color: #8395a7;
+.ac-createEvent-popUp-checkbox-container input:checked ~ .ac-createEvent-popUp-checkbox-container-checkmark:after {
+    display: block;
 }
 
-.fc-button-group button {
-    border-radius: 0px 0px 0px 0px!important;
+.ac-createEvent-popUp-checkbox-container .ac-createEvent-popUp-checkbox-container-checkmark:after {
+    width: 5px;
+    height: 12px;
+    margin-left: 5px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
-button.fc-today-button.fc-button.fc-state-default.fc-corner-right {
+.ac-createEvent-popUp-creneaux-checkbox-container {
+    cursor: pointer;
+    font-size: 23px;
+    display: flex;
+    margin-left: 85px;
+    word-break: break-all;
+    width: 220px;
+}
+
+/*cacher checkbox par default */
+.ac-createEvent-popUp-creneaux-checkbox-container input {
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* custom checkbox */
+.ac-createEvent-popUp-creneaux-checkbox-container-checkmark {
+    height: 24px;
+    width: 24px;
+    border: 3px solid #1c2229;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 12px;
+}
+
+.ac-createEvent-popUp-creneaux-checkbox-container:hover input ~ .ac-createEvent-popUp-creneaux-checkbox-container-checkmark {
+    background-color: #efefef;
+}
+
+/* checked, then background-color */
+.ac-createEvent-popUp-creneaux-checkbox-container input:checked ~ .ac-createEvent-popUp-creneaux-checkbox-container-checkmark {
+    background-color: #1c2229;
+}
+
+.ac-createEvent-popUp-creneaux-checkbox-container-checkmark:after {
+    content: "";
+    display: none;
+}
+
+.ac-createEvent-popUp-creneaux-checkbox-container input:checked ~ .ac-createEvent-popUp-creneaux-checkbox-container-checkmark:after {
+    display: block;
+}
+
+.ac-createEvent-popUp-creneaux-checkbox-container .ac-createEvent-popUp-creneaux-checkbox-container-checkmark:after {
+    width: 5px;
+    height: 12px;
+    margin-left: 5px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+/*********************************************************************************\
+ *   checkbox popup  Cree Groupe                                                             *
+\*********************************************************************************/
+
+
+.ac-createGroup-popUp-checkbox-container {
+    cursor: pointer;
+    font-size: 22px;
+    display: flex;
+    padding: 5px;
+    word-break: break-all;
     width: 100%;
+    justify-content: space-between;
 }
 
-button.fc-today-button.fc-button.fc-state-default.fc-corner-right.fc-state-disabled {
-    width: 100%;
+/*cacher checkbox par default */
+.ac-createGroup-popUp-checkbox-container input {
+    opacity: 0;
+    cursor: pointer;
 }
 
-.fc .fc-button-group > * {
-    margin: 0 0 0 0px;
+/* custom checkbox */
+.ac-createGroup-popUp-checkbox-container-checkmark {
+    height: 24px;
+    width: 24px;
+    border: 3px solid #1c2229;
+    border-radius: 5px;
+    cursor: pointer;
+
 }
 
-.fc-scroller.fc-time-grid-container {
-    height: calc(100vh - 230px)!important;
+.ac-createGroup-popUp-checkbox-container:hover input ~ .ac-createGroup-popUp-checkbox-container-checkmark {
+    background-color: #efefef;
 }
 
-th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
-    line-height: 30px;
-    font-size: 18px;
-    text-transform: uppercase;
+/* checked, then background-color */
+.ac-createGroup-popUp-checkbox-container input:checked ~ .ac-createGroup-popUp-checkbox-container-checkmark {
+    background-color: #1c2229;
 }
 
-.fc-view.fc-month-view.fc-basic-view table tbody tr td div div .fc-row.fc-week.fc-widget-content {
-    height: calc((100vh - 160px) / 6)!important;
+.ac-createGroup-popUp-checkbox-container-checkmark:after {
+    content: "";
+    display: none;
 }
+
+.ac-createGroup-popUp-checkbox-container input:checked ~ .ac-createGroup-popUp-checkbox-container-checkmark:after {
+    display: block;
+}
+
+.ac-createGroup-popUp-checkbox-container .ac-createGroup-popUp-checkbox-container-checkmark:after {
+    width: 5px;
+    height: 12px;
+    margin-left: 5px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.ac-createGroup-popUp-creneaux-checkbox-container {
+    cursor: pointer;
+    font-size: 23px;
+    display: flex;
+    margin-left: 85px;
+    word-break: break-all;
+    width: 220px;
+}
+
+/*cacher checkbox par default */
+.ac-createGroup-popUp-creneaux-checkbox-container input {
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* custom checkbox */
+.ac-createGroup-popUp-creneaux-checkbox-container-checkmark {
+    height: 24px;
+    width: 24px;
+    border: 3px solid #1c2229;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 12px;
+}
+
+.ac-createGroup-popUp-creneaux-checkbox-container:hover input ~ .ac-createGroup-popUp-creneaux-checkbox-container-checkmark {
+    background-color: #efefef;
+}
+
+/* checked, then background-color */
+.ac-createGroup-popUp-creneaux-checkbox-container input:checked ~ .ac-createGroup-popUp-creneaux-checkbox-container-checkmark {
+    background-color: #1c2229;
+}
+
+.ac-createGroup-popUp-creneaux-checkbox-container-checkmark:after {
+    content: "";
+    display: none;
+}
+
+.ac-createGroup-popUp-creneaux-checkbox-container input:checked ~ .ac-createGroup-popUp-creneaux-checkbox-container-checkmark:after {
+    display: block;
+}
+
+.ac-createGroup-popUp-creneaux-checkbox-container .ac-createGroup-popUp-creneaux-checkbox-container-checkmark:after {
+    width: 5px;
+    height: 12px;
+    margin-left: 5px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
 
 /*********************************************************************************\
  *   Footer                                                                      *
@@ -1129,9 +1835,14 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
  *   Media screen                                                                *
 \*********************************************************************************/
 
-@media only screen and (max-width: 1150px){
+
+@media only screen and (max-width: 1150px) {
     .ac-createEvent-popUp {
-        display: none!important;
+        display: none !important;
+    }
+
+    .ac-createGroup-popUp {
+        display: none !important;
     }
 }
 
@@ -1178,190 +1889,15 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
     }
 
     .ac-createEvent {
-        display: none!important;
+        display: none !important;
+    }
+
+    .ac-createGroup {
+        display: none !important;
     }
 
     .ac-popUpFail-content {
         width: 45%;
     }
 
-}
-
-
-
-/*********************************************************************************\
- *   checkbox                                                               *
-\*********************************************************************************/
-
-.container {
-    cursor: pointer;
-    font-size: 22px;
-    display: flex;
-    padding: 20px 0px 0px;
-    word-break: break-all;
-    width: 100%;
-    justify-content: space-between;
-}
-
-
-
-/*cacher checkbox par default */
-.container input {
-    opacity: 0;
-    cursor: pointer;
-}
-
-/* custom checkbox */
-.checkmark {
-    height: 25px;
-    width: 25px;
-    border: 3px solid #3b9f97;
-    border-radius: 8px;
-    cursor: pointer;
-
-}
-
-.container:hover input ~ .checkmark {
-    background-color: #efefef;
-}
-
-/* checked, then background-color */
-.container input:checked ~ .checkmark {
-    background-color: #3b9f97;
-}
-
-.checkmark:after {
-    content: "";
-    display: none;
-}
-
-.container input:checked ~ .checkmark:after {
-    display: block;
-}
-
-.container .checkmark:after {
-    width: 5px;
-    height: 12px;
-    margin-left: 5px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-
-/*********************************************************************************\
- *   checkbox popup                                                               *
-\*********************************************************************************/
-
-.ac-createEvent-popUp-checkbox-container {
-    cursor: pointer;
-    font-size: 22px;
-    display: flex;
-    padding: 5px;
-    word-break: break-all;
-    width: 100%;
-    justify-content: space-between;
-}
-
-
-/*cacher checkbox par default */
-.ac-createEvent-popUp-checkbox-container input {
-    opacity: 0;
-    cursor: pointer;
-}
-
-/* custom checkbox */
-.ac-createEvent-popUp-checkbox-container-checkmark {
-    height: 24px;
-    width: 24px;
-    border: 3px solid #1c2229;
-    border-radius: 5px;
-    cursor: pointer;
-
-}
-
-.ac-createEvent-popUp-checkbox-container:hover input ~ .ac-createEvent-popUp-checkbox-container-checkmark {
-    background-color: #efefef;
-}
-
-/* checked, then background-color */
-.ac-createEvent-popUp-checkbox-container input:checked ~ .ac-createEvent-popUp-checkbox-container-checkmark {
-    background-color: #1c2229;
-}
-
-.ac-createEvent-popUp-checkbox-container-checkmark:after {
-    content: "";
-    display: none;
-}
-
-.ac-createEvent-popUp-checkbox-container input:checked ~ .ac-createEvent-popUp-checkbox-container-checkmark:after {
-    display: block;
-}
-
-.ac-createEvent-popUp-checkbox-container .ac-createEvent-popUp-checkbox-container-checkmark:after {
-    width: 5px;
-    height: 12px;
-    margin-left: 5px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-
-
-.ac-createEvent-popUp-creneaux-checkbox-container {
-    cursor: pointer;
-    font-size: 23px;
-    display: flex;
-    margin-left: 85px;
-    word-break: break-all;
-    width: 220px;
-}
-
-
-/*cacher checkbox par default */
-.ac-createEvent-popUp-creneaux-checkbox-container input {
-    opacity: 0;
-    cursor: pointer;
-}
-
-/* custom checkbox */
-.ac-createEvent-popUp-creneaux-checkbox-container-checkmark {
-    height: 24px;
-    width: 24px;
-    border: 3px solid #1c2229;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-left: 12px;
-}
-
-.ac-createEvent-popUp-creneaux-checkbox-container:hover input ~ .ac-createEvent-popUp-creneaux-checkbox-container-checkmark {
-    background-color: #efefef;
-}
-
-/* checked, then background-color */
-.ac-createEvent-popUp-creneaux-checkbox-container input:checked ~ .ac-createEvent-popUp-creneaux-checkbox-container-checkmark {
-    background-color: #1c2229;
-}
-
-.ac-createEvent-popUp-creneaux-checkbox-container-checkmark:after {
-    content: "";
-    display: none;
-}
-
-.ac-createEvent-popUp-creneaux-checkbox-container input:checked ~ .ac-createEvent-popUp-creneaux-checkbox-container-checkmark:after {
-    display: block;
-}
-
-.ac-createEvent-popUp-creneaux-checkbox-container .ac-createEvent-popUp-creneaux-checkbox-container-checkmark:after {
-    width: 5px;
-    height: 12px;
-    margin-left: 5px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
 }
