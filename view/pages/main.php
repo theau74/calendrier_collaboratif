@@ -143,15 +143,19 @@
 
                 <div class="ac-createEvent-body-creneaux">
 
-                    <label class="container">
+                    <h1 class="ac-createEvent-body-creneaux-title">
+                        Date et horaires
+                    </h1>
 
-                        <p id="checkbox-container">
+                    <label class="ac-createEvent-body-item">
+
+                        <p class="ac-createEvent-body-item-fullDay" id="checkbox-container">
                             Toute la journée
                         </p>
 
                         <input type="checkbox">
 
-                        <span class="checkmark">
+                        <span class="ac-createEvent-body-item-checkmark">
 
                         </span>
 
@@ -189,24 +193,33 @@
                            name="description" required>
                 </div>
 
-                <?php
-                foreach ($users_list as $user) {
-                    echo '<label class="container">';
-                    echo '<span class="name">' . $user['Fname'] . '</span>';
-                    echo '<span class="lname">' . $user['Lname'] . '</span>';
-                    echo '<input class="" type="checkbox" name="users-choice[]" value="' . $user['id'] . '">';
-                    echo '<span class="checkmark"></span>';
-                    echo "</label>";
-                }
-                foreach ($groups_list as $group) {
-                    echo '<label class="container">';
-                    echo '<span class="name">' . $group['nom'] . '</span>';
-                    echo '<span class="lname">' . $group['description'] . '</span>';
-                    echo '<input class="of-main-block-salle-radio" type="checkbox" name="groups-choice[]" value="' . $group['id'] . '">';
-                    echo '<span class="checkmark"></span>';
-                    echo '</label>';
-                }
-                ?>
+                <div class="ac-createEvent-body-invitation">
+
+                    <h1 class="ac-createEvent-body-invitation-title">
+                        Invités
+                    </h1>
+
+                    <?php
+                    echo '<h2 class="ac-createEvent-body-invitation-users">Utilisateurs</h2>';
+                    foreach ($users_list as $user) {
+                        echo '<label class="ac-createEvent-body-item">';
+                        echo '<span class="ac-createEvent-body-item-name">' . $user['Fname'] . '</span>';
+                        echo '<span class="ac-createEvent-body-item-lname">' . $user['Lname'] . '</span>';
+                        echo '<input type="checkbox" name="users-choice[]" value="' . $user['id'] . '">';
+                        echo '<span class="ac-createEvent-body-item-checkmark"></span>';
+                        echo "</label>";
+                    }
+                    echo '<h2 class="ac-createEvent-body-invitation-groups">Groupes</h2>';
+                    foreach ($groups_list as $group) {
+                        echo '<label class="ac-createEvent-body-item">';
+                        echo '<span class="ac-createEvent-body-item-name">' . $group['nom'] . '</span>';
+                        echo '<span class="ac-createEvent-body-item-lname">' . $group['description'] . '</span>';
+                        echo '<input type="checkbox" name="groups-choice[]" value="' . $group['id'] . '">';
+                        echo '<span class="ac-createEvent-body-item-checkmark"></span>';
+                        echo '</label>';
+                    }
+                    ?>
+                </div>
 
             </div>
 
@@ -238,7 +251,9 @@
 
                     <div class="ac-createEvent-popUp-body-creneaux">
 
-                        <h1 class="ac-createEvent-popUp-body-creneaux-title">Date et horaires</h1>
+                        <h1 class="ac-createEvent-popUp-body-creneaux-title">
+                            Date et horaires
+                        </h1>
 
                         <div class="ac-createEvent-popUp-body-creneaux-first">
 
@@ -285,7 +300,9 @@
                     </div>
                     <div class="ac-createEvent-popUp-body-invitation">
 
-                        <h1 class="ac-createEvent-popUp-body-invitation-title">Invités</h1>
+                        <h1 class="ac-createEvent-popUp-body-invitation-title">
+                            Invités
+                        </h1>
 
                         <?php
                         echo '<h2 class="ac-createEvent-popUp-body-invitation-users">Utilisateurs</h2>';

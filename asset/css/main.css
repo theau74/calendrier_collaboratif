@@ -631,6 +631,10 @@ input:placeholder-shown {
     padding: 0px 10px;
 }
 
+.ac-createEvent-header-item-checkmark {
+
+}
+
 .ac-createEvent-body {
     width: 100%;
     height: calc(100vh - 80px);
@@ -641,43 +645,91 @@ input:placeholder-shown {
 }
 
 .ac-createEvent-body-creneaux {
-    border-bottom: 1px solid #dfe6e9;
     margin-top: 10px;
+}
+
+.ac-createEvent-body-creneaux-title {
+    margin-bottom: 15px;
+    width: 100%;
+    font-size: 35px;
+    text-align: center;
+    cursor: default;
+}
+
+.ac-createEvent-body-invitation {
+
+}
+
+.ac-createEvent-body-invitation-title {
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: 35px;
+    text-align: center;
+    cursor: default;
+    padding-top: 10px;
+}
+
+.ac-createEvent-body-invitation-users {
+    cursor: default;
+    font-size: 21px;
+    background-color: #1C2229;
+    color: #FFF;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.ac-createEvent-body-invitation-groups {
+    cursor: default;
+    font-size: 21px;
+    background-color: #1C2229;
+    color: #FFF;
+    text-align: center;
+    padding: 5px 0;
+    margin-top: 30px;
 }
 
 .ac-createEvent-body-creneaux-first {
     display: flex;
-    justify-content: space-between;
-    height: 100px;
+    justify-content: space-around;
+    height: 50px;
+    margin-top: 30px;
 }
 
 .ac-createEvent-body-creneaux-second {
     display: flex;
-    justify-content: space-between;
-    height: 100px;
+    justify-content: space-around;
+    height: 50px;
+    margin-top: 30px;
 }
 
 .ac-createEvent-body-creneaux-crenTxt {
     display: inline-block;
-    width: 20%;
     border: none;
     outline: none;
-    padding: 10px 10px;
     font: normal normal normal 30px/1 FontAwesome;
 }
 
 .ac-createEvent-body-creneaux-dateEv {
     font-size: 17px;
-    line-height: 98px;
+    height: 50px;
+    padding-left: 65px;
+    background-color: #c8d6e5;
+    border: none;
+    box-shadow: 0px 0px 5px 1px;
 }
 
 .ac-createEvent-body-creneaux-hoursEv {
-    width: 23%;
     border: none;
     outline: none;
-    font-size: 17px;
-    line-height: 98px;
-    padding-left: 10px;
+    font-size: 19px;
+    height: 50px;
+    box-shadow: 0px 0px 5px 1px;
+    background-color: #c8d6e5;
+    padding-left: 30px;
+}
+
+.ac-createEvent-body-description {
+    margin-top: 30px;
 }
 
 .ac-createEvent-body-description-input {
@@ -694,6 +746,100 @@ input:placeholder-shown {
 .ac-createEvent-body-description-input::placeholder {
     color: white;
 
+}
+
+.ac-createEvent-body-item {
+    display: flex;
+    height: 30px;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.ac-createEvent-body-item-fullDay {
+    text-align: left;
+    line-height: 30px;
+    padding-left: 10px;
+    font-size: 24px;
+}
+
+.ac-createEvent-body-item-name {
+    width: 30%;
+    text-align: left;
+    line-height: 30px;
+    padding-left: 10px;
+    font-size: 28px;
+}
+
+.ac-createEvent-body-item-lname {
+    width: 30%;
+    text-align: left;
+    line-height: 30px;
+    padding-left: 10px;
+    font-size: 28px;
+}
+
+.ac-createEvent-body-item-select {
+    height: 40px;
+    background-color: red;
+    border: none;
+    border-radius: 0px;
+    width: 30%;
+    float: right;
+    display: block;
+}
+
+.ac-createEvent-body-item-checkbox {
+    width: 15%;
+    height: 40px;
+    margin: 0;
+}
+
+.ac-createEvent-body-item-descriptionGroup {
+
+}
+
+/*cacher checkbox par default */
+.ac-createEvent-body-item input {
+    opacity: 0;
+    cursor: pointer;
+    order: 2;
+}
+
+.ac-createEvent-body-item:hover input ~ .ac-createEvent-body-item-checkmark {
+    background-color: transparent;
+}
+
+/* checked, then background-color */
+.ac-createEvent-body-item input:checked ~ .ac-createEvent-body-item-checkmark {
+    background-color: #1C2229;
+}
+
+.ac-createEvent-body-item-checkmark {
+    height: 30px;
+    width: 30px;
+    border: 3px solid #1C2229;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.ac-createEvent-body-item-checkmark:after {
+    content: "";
+    display: none;
+}
+
+.ac-createEvent-body-item input:checked ~ .ac-createEvent-body-item-checkmark:after {
+    display: block;
+}
+
+.ac-createEvent-body-item-checkmark:after {
+    width: 6px;
+    height: 16px;
+    margin: 0px 0px 0px 7px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 .ac-createEvent-footer {
@@ -878,8 +1024,68 @@ input:placeholder-shown {
     margin: 0;
 }
 
-.ac-createGroup-body-item-descriptionGroup {
 
+.ac-container {
+    cursor: pointer;
+    font-size: 22px;
+    display: flex;
+    padding: 10px 0px;
+    word-break: break-all;
+    width: 100%;
+    justify-content: space-between;
+    line-height: 30px;
+}
+
+/*cacher checkbox par default */
+.ac-container input {
+    opacity: 0;
+    cursor: pointer;
+    order: 2;
+}
+
+/* custom checkbox */
+.ac-checkmark {
+    height: 30px;
+    width: 30px;
+    border: 3px solid #1C2229;
+    border-radius: 8px;
+    cursor: pointer;
+
+}
+
+.ac-container:hover input ~ .ac-checkmark {
+    background-color: #1C2229;
+}
+
+/* checked, then background-color */
+.ac-container input:checked ~ .ac-checkmark {
+    background-color: #1C2229;
+}
+
+.ac-createGroup-body-item-checkmark {
+    width: 15%;
+    height: 40px;
+    margin: 0;
+}
+
+.ac-createGroup-body-item-checkmark:after {
+    content: "";
+    display: none;
+}
+
+.ac-createGroup-body-item input:checked ~ .ac-createGroup-body-item-checkmark:after {
+    display: block;
+}
+
+.ac-createGroup-body-item-container .ac-createGroup-body-item-checkmark:after {
+    width: 6px;
+    height: 16px;
+    margin: 0px 0px 0px 7px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 .ac-createGroup-footer {
@@ -987,9 +1193,7 @@ button.fc-today-button.fc-button.fc-state-default.fc-corner-right.fc-state-disab
     margin: 0 0 0 0px;
 }
 
-.fc-scroller.fc-time-grid-container {
-    height: calc(100vh - 230px) !important;
-}
+
 
 th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
     line-height: 30px;
@@ -997,9 +1201,30 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
     text-transform: uppercase;
 }
 
-.fc-view.fc-month-view.fc-basic-view table tbody tr td div div .fc-row.fc-week.fc-widget-content {
-    height: calc((100vh - 160px) / 6) !important;
+.fc-view.fc-month-view.fc-basic-view table tbody tr td .fc-scroller {
+    height: calc(100vh - 177px) !important;
 }
+
+.fc-view.fc-month-view.fc-basic-view table tbody tr td div div .fc-row.fc-week.fc-widget-content {
+    height: calc((100vh - 177px) / 6) !important;
+}
+
+.fc-view.fc-agendaDay-view.fc-agenda-view table tbody tr td .fc-scroller {
+    height: calc(100vh - 226px) !important;
+}
+
+.fc-view.fc-agendaWeek-view.fc-agenda-view table tbody tr td .fc-scroller {
+    height: calc(100vh - 246px) !important;
+}
+
+.fc-view.fc-listWeek-view.fc-list-view.fc-widget-content .fc-scroller {
+    height: calc(100vh - 156px) !important;
+}
+
+.fc-unthemed .fc-divider, .fc-unthemed .fc-popover .fc-header, .fc-unthemed .fc-list-heading td {
+    background-color: #1B2129;
+}
+
 
 .fc-unthemed th,
 .fc-unthemed td,
@@ -1032,6 +1257,7 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
 a[data-goto] {
     color: #fff;
 }
+
 
 /*********************************************************************************\
  *   PopUp                                                                       *
@@ -1493,6 +1719,69 @@ a[data-goto] {
 
 
 /*********************************************************************************\
+ *   checkbox standar                                                               *
+\*********************************************************************************/
+
+
+.ac-container {
+    cursor: pointer;
+    font-size: 22px;
+    display: flex;
+    padding: 10px 0px;
+    word-break: break-all;
+    width: 100%;
+    justify-content: space-between;
+    line-height: 30px;
+}
+
+/*cacher checkbox par default */
+.ac-container input {
+    opacity: 0;
+    cursor: pointer;
+    order: 2;
+}
+
+/* custom checkbox */
+.ac-checkmark {
+    height: 30px;
+    width: 30px;
+    border: 3px solid #1C2229;
+    border-radius: 8px;
+    cursor: pointer;
+
+}
+
+.ac-container:hover input ~ .ac-checkmark {
+    background-color: #1C2229;
+}
+
+/* checked, then background-color */
+.ac-container input:checked ~ .ac-checkmark {
+    background-color: #1C2229;
+}
+
+.ac-checkmark:after {
+    content: "";
+    display: none;
+}
+
+.ac-container input:checked ~ .ac-checkmark:after {
+    display: block;
+}
+
+.ac-container .ac-checkmark:after {
+    width: 6px;
+    height: 16px;
+    margin: 0px 0px 0px 7px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+/*********************************************************************************\
  *   checkbox nav                                                               *
 \*********************************************************************************/
 
@@ -1568,6 +1857,11 @@ a[data-goto] {
     word-break: break-all;
     width: 100%;
     justify-content: space-between;
+}
+
+.ac-createEvent-popUp-checkbox-container span:nth-child(1),
+.ac-createEvent-popUp-checkbox-container span:nth-child(2) {
+    width: 40%;
 }
 
 /*cacher checkbox par default */
@@ -1898,6 +2192,18 @@ a[data-goto] {
 
     .ac-popUpFail-content {
         width: 45%;
+    }
+
+    .ac-createEvent-body-item:hover input ~ .ac-createEvent-body-item-checkmark {
+        background-color: #1C2229;
+    }
+
+    .fc-scroller.fc-time-grid-container {
+        height: calc(100vh - 226px) !important;
+    }
+
+    .fc-view.fc-agendaWeek-view.fc-agenda-view table tbody tr td .fc-scroller {
+        height: calc(100vh - 226px) !important;
     }
 
 }
