@@ -363,7 +363,6 @@ input:placeholder-shown {
     height: 50px;
     width: 50px;
     line-height: 30px;
-    padding-bottom: 5px;
     background-color: #1C2229;
     box-shadow: 2px 2px 8px 0 #000;
     bottom: 20px;
@@ -683,22 +682,56 @@ input:placeholder-shown {
 
 }
 
+.ac-createEvent-popUp-body-creneaux-title{
+    margin-bottom: 15px;
+    width: 100%;
+    font-size: 35px;
+    text-align: center;
+    cursor: default;
+}
+
 .ac-createEvent-popUp-body-creneaux {
     width: 50%;
     float: left;
     padding: 10px;
     border-right: 1px solid #000;
-    height: 220px;
+    height: 100%;
 }
 
 .ac-createEvent-popUp-body-invitation{
     width: 50%;
     float: right;
-    padding: 10px;
-    height: 220px;
+    height: 100%;
     overflow-y: scroll;
 
 }
+
+.ac-createEvent-popUp-body-invitation-title{
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: 35px;
+    text-align: center;
+    cursor: default;
+    padding-top: 10px;
+}
+.ac-createEvent-popUp-body-invitation-users{
+    cursor: default;
+    font-size: 21px;
+    background-color: #1C2229;
+    color: #FFF;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.ac-createEvent-popUp-body-invitation-groups{
+    cursor: default;
+    font-size: 21px;
+    background-color: #1C2229;
+    color: #FFF;
+    text-align: center;
+    padding: 5px 0;
+}
+
 .ac-createEvent-body-creneaux-first {
     display: flex;
     justify-content: space-between;
@@ -707,8 +740,8 @@ input:placeholder-shown {
 
 .ac-createEvent-popUp-body-creneaux-first {
     display: flex;
-    justify-content: space-between;
     height: 70px;
+    margin-top: 30px;
 }
 
 .ac-createEvent-body-creneaux-second {
@@ -719,7 +752,6 @@ input:placeholder-shown {
 
 .ac-createEvent-popUp-body-creneaux-second {
     display: flex;
-    justify-content: space-between;
     height: 70px;
 }
 
@@ -777,8 +809,8 @@ input:placeholder-shown {
 
 .ac-createEvent-popUp-body-description {
     position: absolute;
-    margin-top: 220px;
     width: 100%;
+    box-shadow: 2px 7px 12px 3px;
 }
 
 .ac-createEvent-body-description-input {
@@ -1158,7 +1190,7 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
 
 
 /*********************************************************************************\
- *   Arnaud                                                               *
+ *   checkbox                                                               *
 \*********************************************************************************/
 
 .container {
@@ -1218,11 +1250,15 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
     transform: rotate(45deg);
 }
 
+/*********************************************************************************\
+ *   checkbox popup                                                               *
+\*********************************************************************************/
+
 .ac-createEvent-popUp-checkbox-container {
     cursor: pointer;
     font-size: 22px;
     display: flex;
-    padding: 20px 0px 0px;
+    padding: 5px;
     word-break: break-all;
     width: 100%;
     justify-content: space-between;
@@ -1237,10 +1273,10 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
 
 /* custom checkbox */
 .ac-createEvent-popUp-checkbox-container-checkmark {
-    height: 25px;
-    width: 25px;
-    border: 3px solid #3b9f97;
-    border-radius: 8px;
+    height: 24px;
+    width: 24px;
+    border: 3px solid #1c2229;
+    border-radius: 5px;
     cursor: pointer;
 
 }
@@ -1251,7 +1287,7 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
 
 /* checked, then background-color */
 .ac-createEvent-popUp-checkbox-container input:checked ~ .ac-createEvent-popUp-checkbox-container-checkmark {
-    background-color: #3b9f97;
+    background-color: #1c2229;
 }
 
 .ac-createEvent-popUp-checkbox-container-checkmark:after {
@@ -1264,6 +1300,62 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
 }
 
 .ac-createEvent-popUp-checkbox-container .ac-createEvent-popUp-checkbox-container-checkmark:after {
+    width: 5px;
+    height: 12px;
+    margin-left: 5px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+.ac-createEvent-popUp-creneaux-checkbox-container {
+    cursor: pointer;
+    font-size: 23px;
+    display: flex;
+    margin-left: 85px;
+    word-break: break-all;
+    width: 220px;
+}
+
+
+/*cacher checkbox par default */
+.ac-createEvent-popUp-creneaux-checkbox-container input {
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* custom checkbox */
+.ac-createEvent-popUp-creneaux-checkbox-container-checkmark {
+    height: 24px;
+    width: 24px;
+    border: 3px solid #1c2229;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 12px;
+}
+
+.ac-createEvent-popUp-creneaux-checkbox-container:hover input ~ .ac-createEvent-popUp-creneaux-checkbox-container-checkmark {
+    background-color: #efefef;
+}
+
+/* checked, then background-color */
+.ac-createEvent-popUp-creneaux-checkbox-container input:checked ~ .ac-createEvent-popUp-creneaux-checkbox-container-checkmark {
+    background-color: #1c2229;
+}
+
+.ac-createEvent-popUp-creneaux-checkbox-container-checkmark:after {
+    content: "";
+    display: none;
+}
+
+.ac-createEvent-popUp-creneaux-checkbox-container input:checked ~ .ac-createEvent-popUp-creneaux-checkbox-container-checkmark:after {
+    display: block;
+}
+
+.ac-createEvent-popUp-creneaux-checkbox-container .ac-createEvent-popUp-creneaux-checkbox-container-checkmark:after {
     width: 5px;
     height: 12px;
     margin-left: 5px;

@@ -234,19 +234,7 @@
 
                     <div class="ac-createEvent-popUp-body-creneaux">
 
-                        <label class="ac-createEvent-popUp-checkbox-container">
-
-                            <p id="ac-createEvent-popUp-checkbox-container-name">
-                                Toute la journée
-                            </p>
-
-                            <input type="checkbox">
-
-                            <span class="ac-createEvent-popUp-checkbox-container-checkmark">
-
-                            </span>
-
-                        </label>
+                        <h1 class="ac-createEvent-popUp-body-creneaux-title">Date et horaires</h1>
 
                         <div class="ac-createEvent-popUp-body-creneaux-first">
 
@@ -276,10 +264,27 @@
 
                         </div>
 
+                        <label class="ac-createEvent-popUp-creneaux-checkbox-container">
+
+                            <p id="ac-createEvent-popUp-creneaux-checkbox-container-name">
+                                Toute la journée
+                            </p>
+
+                            <input type="checkbox">
+
+                            <span class="ac-createEvent-popUp-creneaux-checkbox-container-checkmark">
+
+                            </span>
+
+                        </label>
+
                     </div>
                     <div class="ac-createEvent-popUp-body-invitation">
 
+                        <h1 class="ac-createEvent-popUp-body-invitation-title">Invités</h1>
+
                         <?php
+                        echo '<h2 class="ac-createEvent-popUp-body-invitation-users">Utilisateurs</h2>';
                         foreach ($users_list as $user) {
                             echo '<label class="ac-createEvent-popUp-checkbox-container">';
                             echo '<span class="name">' . $user['Fname'] . '</span>';
@@ -288,6 +293,7 @@
                             echo '<span class="ac-createEvent-popUp-checkbox-container-checkmark"></span>';
                             echo "</label>";
                         }
+                        echo '<h2 class="ac-createEvent-popUp-body-invitation-groups">Groupes</h2>';
                         foreach ($groups_list as $group) {
                             echo '<label class="ac-createEvent-popUp-checkbox-container">';
                             echo '<span class="name">' . $group['nom'] . '</span>';
@@ -298,13 +304,18 @@
                         }
                         ?>
                     </div>
-                    <div class="ac-createEvent-popUp-body-description">
-                        <input class="ac-createEvent-popUp-body-description-input" type="text" placeholder="Description ..."
-                               name="description" required>
-                    </div>
+
                 </div>
+
+                <div class="ac-createEvent-popUp-body-description">
+                    <input class="ac-createEvent-popUp-body-description-input" type="text" placeholder="Description ..."
+                           name="description" required>
+                </div>
+
             </div>
+
         </form>
+
     </div>
 
     <div class="ac-createGroup" style="display:none;" id="createGroup">
