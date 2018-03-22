@@ -3,7 +3,6 @@
 if ($page == "home") {
     display_home();
 }
-
 elseif ($page == "main") {
     display_main($event_list,$pending_invitation_list, $groups_list, $users_list);
 }
@@ -67,6 +66,9 @@ elseif (($page == "list_event")){
 
 elseif (($page == "create-group")) {
     display_create_group($users_list);
+}
+elseif (($page == "erreur404")) {
+    display_error404();
 }
 
 

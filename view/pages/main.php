@@ -416,14 +416,18 @@
                 echo "<div class='ac-main-nav-invit-item-boutton'>";
 
                 echo '<form  action="index.php" method="post">
-                                <input class="ac-main-nav-invit-item-boutton-valider" type="submit"  name="action" value="valid-invit">
+                                <button type="submit" class="" id="saveEvent"  name="action" value="valid_event_invit">
+                                    valider
+                                </button>
                                 <input type="hidden" value="' . $invitation['id_user'] . '" name="id_user">
                                 <input type="hidden" value="' . $invitation['id_event'] . '" name="id_event">
                                 <input type="hidden" value="true" name="response">
                             </form>';
 
                 echo '<form  action="index.php" method="post">
-                                <input class="ac-main-nav-invit-item-boutton-refuser" type="submit"  name="action" value="deny-invit" >
+                                <button type="submit" class="" id="saveEvent"  name="action" value="deny_event_invit">
+                                    refuser
+                                </button>
                                 <input type="hidden" value="' . $invitation['id_user'] . '" name="id_user">
                                 <input type="hidden" value="' . $invitation['id_event'] . '" name="id_event">
                                 <input type="hidden" value="false" name="response">

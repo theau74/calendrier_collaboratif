@@ -1,6 +1,6 @@
 <?php
 //direction de base
-$page = "home";
+$page = "erreur404";
 if (empty($_POST) && empty($_GET)) {
 // Vérification si l'user est enregisté
     if (isset($_SESSION['stats']) and $page != "connection_failed" and $page != "sub_failed") {
@@ -20,7 +20,6 @@ if (empty($_POST) && empty($_GET)) {
 //script de connection et l'inscription
     if (isset($_POST["action"])) {
         if ($_POST["action"] == "signin") {
-
             if (user_signin($_POST["pseudo"], $_POST["password"], $c, $encryption_key)) {
                 header('Location: index.php');
             } else {
@@ -48,7 +47,7 @@ if (empty($_POST) && empty($_GET)) {
         if ($_POST["action"] == "create-event") {
             if (verify_user_list_disponibility($_POST['start_date'], $_POST['start_time'], $_POST['end_date'], $_POST['end_time'], $_POST['users-choice'], $c)) {
                 if (create_event($_POST['nom'], $_POST['description'], $_SESSION['id'], $_POST['start_date'], $_POST['start_time'], $_POST['end_date'], $_POST['end_time'], $c, $encryption_key)) {
-                    if(!empty($_POST['users-choice']) && !empty($_POST['groups-choice'])){
+                    if(!empty($_POST['users-choice']) || !empty($_POST['groups-choice'])){
                         if (create_invitation($_POST['users-choice'], $_POST['groups-choice'], $_SESSION['id'], $c, $encryption_key)) {
                             header('Location: index.php');
 
@@ -82,15 +81,21 @@ if (empty($_POST) && empty($_GET)) {
                 $page ="creation_failed";
             }
         }
-        //Valider ou refuser une invitation d'event
-        if ($_POST["action"] == "set-invitation") {
-            if (set_invitation($_POST["id_user"], $_POST["id_event"], $_POST["response"], $c)) {
+        //Valider une invitation d'event
+        if ($_POST["action"] == "valid_event_invit") {
+            if (set_invitation($_POST["id_user"], $_POST["id_event"], "true", $c)) {
                 header('Location: index.php');
             } else {
                 echo "set_failed";
             }
-
-
+        }
+        //refuser une invitation d'event
+        if ($_POST["action"] == "deny_event_invit") {
+            if (set_invitation($_POST["id_user"], $_POST["id_event"], "false", $c)) {
+                header('Location: index.php');
+            } else {
+                echo "set_failed";
+            }
         }
         //Valider ou refuser une invitation de groupe
         if ($_POST["action"] == "set-group-invitation") {

@@ -101,3 +101,8 @@ function display_create_group($users_list){
     require ("pages/create_group.php");
 
 }
+function display_error404(){
+
+    require ("pages/error404.php");
+
+}
