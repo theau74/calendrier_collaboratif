@@ -27,19 +27,25 @@ function afficheNav() {
     }
 
 
+
 }
+
+
 
 $("#bouttonCreeEvent").click(function(){
     $("#createEvent").css("display","block");
     $("#createEvent-Deskstop").css("display","block");
+    $("#fondGris").css("opacity","1");
 });
 
 $("#closeEvent").click(function(){
     $("#createEvent").css("display","none");
+    $("#fondGris").css("opacity","0");
 });
 
 $("#closeEventPopUp").click(function(){
     $("#createEvent-Deskstop").css("display","none");
+    $("#fondGris").css("opacity","0");
 });
 
 $("#bouttonCreeGroup").click(function(){

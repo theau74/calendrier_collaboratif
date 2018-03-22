@@ -215,95 +215,93 @@
         <form action="index.php" method="post">
             <div class="ac-createEvent-popUp-content">
 
-                <div class="ac-createEvent-header">
+                <div class="ac-createEvent-popUp-header">
 
                     <div class="ac-createEvent-popUp-header-close" id="closeEventPopUp">
                         &#xf00d;
                     </div>
 
-                    <button type="submit" class="ac-createEvent-header-save" id="savePopup"  name="action" value="create-event">
+                    <button type="submit" class="ac-createEvent-popUp-header-save" id="savePopup"  name="action" value="create-event">
                         Enregistrer
                     </button>
 
-                    <input class="ac-createEvent-header-title" type="text" placeholder="Titre de l'événement... " name="nom" required>
+                    <input class="ac-createEvent-popUp-header-title" type="text" placeholder="Titre de l'événement... " name="nom" required>
 
                 </div>
 
                 <div class="ac-createEvent-popUp-body">
 
-                    <div class="ac-createEvent-body-creneaux">
+                    <div class="ac-createEvent-popUp-body-creneaux">
 
-                        <label class="container">
+                        <label class="ac-createEvent-popUp-checkbox-container">
 
-                            <p id="checkbox-container">
+                            <p id="ac-createEvent-popUp-checkbox-container-name">
                                 Toute la journée
                             </p>
 
                             <input type="checkbox">
 
-                            <span class="checkmark">
+                            <span class="ac-createEvent-popUp-checkbox-container-checkmark">
 
                             </span>
 
                         </label>
 
-                        <div class="ac-createEvent-body-creneaux-first">
+                        <div class="ac-createEvent-popUp-body-creneaux-first">
 
-                            <i class="ac-createEvent-body-creneaux-crenTxt">
+                            <i class="ac-createEvent-popUp-body-creneaux-crenTxt">
                                 &#xf017;
                             </i>
 
-                            <input class="ac-createEvent-body-creneaux-dateEv" type="Date" placeholder="type"
+                            <input class="ac-createEvent-popUp-body-creneaux-dateEv" type="Date" placeholder="type"
                                    name="start_date" required>
 
-                            <input class="ac-createEvent-body-creneaux-hoursEv" type="time" placeholder="type"
+                            <input class="ac-createEvent-popUp-body-creneaux-hoursEv" type="time" placeholder="type"
                                    name="start_time" required>
 
                         </div>
 
-                        <div class="ac-createEvent-body-creneaux-second">
+                        <div class="ac-createEvent-popUp-body-creneaux-second">
 
-                            <i class="ac-createEvent-body-creneaux-crenTxt">
+                            <i class="ac-createEvent-popUp-body-creneaux-crenTxt">
                                 &#xf017;
                             </i>
 
-                            <input class="ac-createEvent-body-creneaux-dateEv" type="Date" placeholder="type"
+                            <input class="ac-createEvent-popUp-body-creneaux-dateEv" type="Date" placeholder="type"
                                    name="end_date" required>
 
-                            <input class="ac-createEvent-body-creneaux-hoursEv" type="time" placeholder=type
+                            <input class="ac-createEvent-popUp-body-creneaux-hoursEv" type="time" placeholder=type
                                    name="end_time" required>
 
                         </div>
 
                     </div>
+                    <div class="ac-createEvent-popUp-body-invitation">
 
-
+                        <?php
+                        foreach ($users_list as $user) {
+                            echo '<label class="ac-createEvent-popUp-checkbox-container">';
+                            echo '<span class="name">' . $user['Fname'] . '</span>';
+                            echo '<span class="lname">' . $user['Lname'] . '</span>';
+                            echo '<input class="" type="checkbox" name="users-choice[]" value="' . $user['id'] . '">';
+                            echo '<span class="ac-createEvent-popUp-checkbox-container-checkmark"></span>';
+                            echo "</label>";
+                        }
+                        foreach ($groups_list as $group) {
+                            echo '<label class="ac-createEvent-popUp-checkbox-container">';
+                            echo '<span class="name">' . $group['nom'] . '</span>';
+                            echo '<span class="lname">' . $group['description'] . '</span>';
+                            echo '<input class="of-main-block-salle-radio" type="checkbox" name="groups-choice[]" value="' . $group['id'] . '">';
+                            echo '<span class="ac-createEvent-popUp-checkbox-container-checkmark"></span>';
+                            echo '</label>';
+                        }
+                        ?>
+                    </div>
+                    <div class="ac-createEvent-popUp-body-description">
+                        <input class="ac-createEvent-popUp-body-description-input" type="text" placeholder="Description ..."
+                               name="description" required>
+                    </div>
                 </div>
-
-                <div class="ac-createEvent-body-description">
-                    <input class="ac-createEvent-body-description-input" type="text" placeholder="Description"
-                           name="description" required>
-                </div>
-
-                <?php
-                foreach ($users_list as $user) {
-                    echo '<label class="container">';
-                    echo '<span class="name">' . $user['Fname'] . '</span>';
-                    echo '<span class="lname">' . $user['Lname'] . '</span>';
-                    echo '<input class="" type="checkbox" name="users-choice[]" value="' . $user['id'] . '">';
-                    echo '<span class="checkmark"></span>';
-                    echo "</label>";
-                }
-                foreach ($groups_list as $group) {
-                    echo '<label class="container">';
-                    echo '<span class="name">' . $group['nom'] . '</span>';
-                    echo '<span class="lname">' . $group['description'] . '</span>';
-                    echo '<input class="of-main-block-salle-radio" type="checkbox" name="groups-choice[]" value="' . $group['id'] . '">';
-                    echo '<span class="checkmark"></span>';
-                    echo '</label>';
-                }
-                ?>
-
             </div>
         </form>
     </div>
@@ -328,43 +326,43 @@
 
             <ul>
 
-                    <li class="ac-home-sign-item">
-                        <input type="text" class="ac-home-sign-item-input" name="nom" placeholder="nom">
-                    </li>
+                <li class="ac-home-sign-item">
+                    <input type="text" class="ac-home-sign-item-input" name="nom" placeholder="nom">
+                </li>
 
-                    <li class="ac-home-sign-item">
-                        <input type="text" class="ac-home-sign-item-input" name="description" placeholder="description">
-                    </li>
+                <li class="ac-home-sign-item">
+                    <input type="text" class="ac-home-sign-item-input" name="description" placeholder="description">
+                </li>
 
-                    <?php
-                    echo'<form action="index.php?ac=create-invitation" method="post">';
-                    foreach ($users_list as $user) {
-                        echo"<div>";
-                        echo $user['Fname'];
-                        echo $user['Lname'];
-                        echo"<select name='user_right[]'>
+                <?php
+                echo'<form action="index.php?ac=create-invitation" method="post">';
+                foreach ($users_list as $user) {
+                    echo"<div>";
+                    echo $user['Fname'];
+                    echo $user['Lname'];
+                    echo"<select name='user_right[]'>
                                  <option value='3'>utilisateur</option>
                                  <option value='2'>admin</option>
                             </select>";
-                        echo '<input class="of-main-block-salle-radio" type="checkbox" name="users-choice[]" value="' . $user['id'] . '">';
-                        echo "</div>";
-                    }
-                    ?>
+                    echo '<input class="of-main-block-salle-radio" type="checkbox" name="users-choice[]" value="' . $user['id'] . '">';
+                    echo "</div>";
+                }
+                ?>
 
-                    <li class="ac-home-sign-allBoutton">
-                        <ul>
+                <li class="ac-home-sign-allBoutton">
+                    <ul>
 
-                            <li class="ac-home-sign-item-boutton-left">
-                                <button type="submit" class="ac-home-sign-item-boutton-log" name="subscribe">
-                                    valider
-                                </button>
-                            </li>
+                        <li class="ac-home-sign-item-boutton-left">
+                            <button type="submit" class="ac-home-sign-item-boutton-log" name="subscribe">
+                                valider
+                            </button>
+                        </li>
 
 
-                        </ul>
-                    </li>
+                    </ul>
+                </li>
 
-                </ul>
+            </ul>
 
         </form>
 
