@@ -1,8 +1,7 @@
 <?php
 //creation d'évenemenent dans la base
-function create_invitation($user_list, $creator, $c, $encryption_key) {
+function create_invitation($user_list, $groups_choice , $creator, $c) {
     $loop = 0;
-    $creator = $_SESSION['id'];
     $id_event = get_last_event_by_user_id($_SESSION['id'], $c);
     //insertion des valeurs dans la bdd
     $sql = ("INSERT INTO invitation (`id_event`, `id_user`, `id_group`, `etat`, `creator`) VALUES");
@@ -21,9 +20,9 @@ function create_invitation($user_list, $creator, $c, $encryption_key) {
     }
 
     //invitation par groupe
-    if(!empty($_POST['groups-choice'])) {
+    if(!empty($groups_choice)) {
 
-        foreach ($_POST['groups-choice'] as $group) {
+        foreach ($groups_choice as $group) {
 
             $users_list_by_group = get_users_id_by_group_id($group, $c);
             if(isset($users_list_by_group)) {
