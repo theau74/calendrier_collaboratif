@@ -1,1 +1,1 @@
-<p>l'inscription n'a pas fonctionné.</p>
+<p>l'inscription n'a pas fonctionnée.</p>

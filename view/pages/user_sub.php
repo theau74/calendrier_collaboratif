@@ -21,7 +21,7 @@
                     </h2>
 
                     <p class="ac-home-sign-item-subtitle">
-                        Et découvré notre agenda collaboratif.
+                        Et découvrez notre agenda collaboratif.
                     </p>
 
                 </li>
@@ -55,7 +55,7 @@
 
                         <li class="ac-home-sign-item-boutton-left">
                             <button type="submit" class="ac-home-sign-item-boutton-log" name="action" value="signup">
-                                Validé
+                                Valider
                             </button>
                         </li>
 
