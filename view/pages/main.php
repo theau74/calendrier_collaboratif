@@ -54,7 +54,7 @@
             },
             editable: true,
             eventDrop: function (event, delta, revertFunc) {
-                if (!confirm(event.title + " commence maitenant a : " + event.start.format() + " ete vous sure de ce changement? ")) {
+                if (!confirm(event.title + " commence maintenant à : " + event.start.format() + " êtes-vous sûr de ce changement? ")) {
                     revertFunc();
                 } else {
 

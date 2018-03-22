@@ -12,7 +12,7 @@
 
 
     </div>
-    creneau deja pris, veuillez en choisir un autre
+    creneaux déjà pris, veuillez en choisir un autre
     <form action="index.php" method="post">
         <input type="hidden" id="addEventTitle" name="nom" value="<?php echo$post['nom']; ?>">
         <input type="hidden" placeholder="Description" name="description" value="<?php echo$post['description']; ?>">
