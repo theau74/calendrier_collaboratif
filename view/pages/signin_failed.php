@@ -1,27 +1,22 @@
-<div class="ac-home-header">
+<div class="ac-popUpFail" id="popUpFail">
 
-    <h1 class="ac-home-header-title">
-        Agenda Collaboratif
-    </h1>
+    <div class="ac-popUpFail-content">
 
-</div>
+        <div class="ac-popUpFail-header">
 
-<div class="ac-home-container ac-home-signin">
+            <p class="ac-popUpFail-text">
+                Connection refusé !
+            </p>
 
-    <div class="ac-home">
+            <p class="ac-popUpFail-text">
+                Identifiant ou mot de passe incorrect !
+            </p>
 
-        <p class="ac-home-signin-text">
-            Connection refusé !
-        </p>
+            <div class="ac-popUp-header-close" id="closeFail">
+                Retour
+            </div>
 
-        <p class="ac-home-signin-text">
-            Identifiant ou mot de passe incorrect !
-        </p>
-
-
-        <a href='index.php' class="ac-home-signin-continue">
-            Retour
-        </a>
+        </div>
 
     </div>
 

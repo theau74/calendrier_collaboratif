@@ -217,7 +217,7 @@
 
                 <div class="ac-createEvent-header">
 
-                    <div class="ac-createEvent-popUp-header-close" id="closePopup">
+                    <div class="ac-createEvent-popUp-header-close" id="closeEventPopUp">
                         &#xf00d;
                     </div>
 
@@ -309,7 +309,9 @@
     </div>
 
     <div class="ac-createGroup" style="display:none;" id="createGroup">
+
         <form action="index.php" method="post">
+
             <div class="ac-createEvent-header">
 
                 <div class="ac-createEvent-header-close" id="closeGroup">
@@ -324,101 +326,47 @@
 
             </div>
 
-            <div class="ac-createEvent-body">
+            <ul>
 
-                <div class="ac-createEvent-body-creneaux">
+                    <li class="ac-home-sign-item">
+                        <input type="text" class="ac-home-sign-item-input" name="nom" placeholder="nom">
+                    </li>
 
-                    <label class="container">
+                    <li class="ac-home-sign-item">
+                        <input type="text" class="ac-home-sign-item-input" name="description" placeholder="description">
+                    </li>
 
-                        <p id="checkbox-container">
-                            Toute la journée
-                        </p>
+                    <?php
+                    echo'<form action="index.php?ac=create-invitation" method="post">';
+                    foreach ($users_list as $user) {
+                        echo"<div>";
+                        echo $user['Fname'];
+                        echo $user['Lname'];
+                        echo"<select name='user_right[]'>
+                                 <option value='3'>utilisateur</option>
+                                 <option value='2'>admin</option>
+                            </select>";
+                        echo '<input class="of-main-block-salle-radio" type="checkbox" name="users-choice[]" value="' . $user['id'] . '">';
+                        echo "</div>";
+                    }
+                    ?>
 
-                        <input type="checkbox">
+                    <li class="ac-home-sign-allBoutton">
+                        <ul>
 
-                        <span class="checkmark">
-
-                        </span>
-
-                    </label>
-
-                    <div class="ac-createEvent-body-creneaux-first">
-
-                        <i class="ac-createEvent-body-creneaux-crenTxt">
-                            &#xf017;
-                        </i>
-
-                        <input class="ac-createEvent-body-creneaux-dateEv" type="Date" placeholder="type" name="start_date">
-
-                        <input class="ac-createEvent-body-creneaux-hoursEv" type="time" placeholder="type"
-                               name="start_time">
-
-                    </div>
-
-                    <div class="ac-createEvent-body-creneaux-second">
-
-                        <i class="ac-createEvent-body-creneaux-crenTxt">
-                            &#xf017;
-                        </i>
-
-                        <input class="ac-createEvent-body-creneaux-dateEv" type="Date" placeholder="type" name="end_date">
-
-                        <input class="ac-createEvent-body-creneaux-hoursEv" type="time" placeholder=type name="end_time">
-
-                    </div>
-
-                </div>
-
-                <div class="ac-createEvent-body-description">
-                    <input class="ac-createEvent-body-description-input" type="text" placeholder="Description"
-                           name="description">
-                </div>
+                            <li class="ac-home-sign-item-boutton-left">
+                                <button type="submit" class="ac-home-sign-item-boutton-log" name="subscribe">
+                                    valider
+                                </button>
+                            </li>
 
 
-                <label class="container">
+                        </ul>
+                    </li>
 
-                    <p id="checkbox-container">
-                        Meeting
-                    </p>
+                </ul>
 
-                    <input type="checkbox">
-
-                    <span class="checkmark">
-
-                        </span>
-
-                </label>
-
-                <label class="container">
-
-                    <p id="checkbox-container">
-                        Brainstorming
-                    </p>
-
-                    <input type="checkbox">
-
-                    <span class="checkmark">
-
-                        </span>
-
-                </label>
-
-                <label class="container">
-
-                    <p id="checkbox-container">
-                        Panel
-                    </p>
-
-                    <input type="checkbox">
-
-                    <span class="checkmark">
-
-                        </span>
-
-                </label>
-
-
-            </div>
+        </form>
 
     </div>
 
@@ -516,4 +464,5 @@
         </button>
 
     </div>
+
 </div>

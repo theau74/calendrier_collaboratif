@@ -66,7 +66,6 @@ if (empty($_POST) && empty($_GET)) {
         if ($_POST["action"] == "create-invitation") {
             if (create_invitation($_SESSION['id'], $c, $encryption_key)) {
                 header('Location: index.php');
-
             } else {
                 echo "creation_failed";
             }
@@ -81,10 +80,7 @@ if (empty($_POST) && empty($_GET)) {
         //Valider ou refuser une invitation d'event
         if ($_POST["action"] == "set-invitation") {
             if (set_invitation($_POST["id_user"], $_POST["id_event"], $_POST["response"], $c)) {
-                $event_list = get_event_by_user_id($_SESSION['id'], $c);
-                $pending_invitation_list = get_pending_invitation_by_id_user($_SESSION['id'], $c);
                 header('Location: index.php');
-
             } else {
                 echo "set_failed";
             }

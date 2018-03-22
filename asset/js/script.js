@@ -4,7 +4,6 @@ function afficheNav() {
     var z = document.getElementById('fondGris');
     var h = document.getElementById('mainHeader');
 
-
     if (x.className === "ac-main-nav") {
         x.className += " responsive-nav-bar";
         h.style.zIndex = "2";
@@ -21,63 +20,40 @@ function afficheNav() {
 
     if (x.className === "ac-main-nav responsive-nav-bar") {
         z.style.opacity = "1";
+        z.style.pointerEvents = "auto";
     } else {
         z.style.opacity = "0";
+        z.style.pointerEvents = "none";
     }
 
 
 }
 
+$("#bouttonCreeEvent").click(function(){
+    $("#createEvent").css("display","block");
+    $("#createEvent-Deskstop").css("display","block");
+});
 
-var creeEvent           = document.getElementById("createEvent");                              // variable fenetre
-var bouttonCreeEvent    = document.getElementById("bouttonCreeEvent");                              // variable bouton qui ouvre fenetre
-var saveEvent           = document.getElementById("saveEvent");                                     // quand click sur bouton, ouvre la fenetre
-var closeEvent          = document.getElementById("closeEvent");   // variable pour close la fenetre
+$("#closeEvent").click(function(){
+    $("#createEvent").css("display","none");
+});
 
-var popupEvent          = document.getElementById("createEvent-Deskstop");
-var savePopup           = document.getElementById("savePopup");
-var closePopup          = document.getElementById("closePopup");
+$("#closeEventPopUp").click(function(){
+    $("#createEvent-Deskstop").css("display","none");
+});
 
-var bouttonCreeGroup    = document.getElementById("bouttonCreeGroup");                              // variable bouton qui ouvre fenetre
-var creeGroup           = document.getElementById("createGroup");                              // variable fenetre
-var saveGroup           = document.getElementById("saveGroup");                                     // quand click sur bouton, ouvre la fenetre
-var closeGroup          = document.getElementById("closeGroup");   // variable pour close la fenetre
+$("#bouttonCreeGroup").click(function(){
+    $("#createGroup").css("display","block");
+});
 
+$("#closeGroup").click(function(){
+    $("#createGroup").css("display","none");
+});
 
+$("#bouttonCreeEvent").click(function(){
+    $("#createEvent").css("display","block");
+});
 
-bouttonCreeEvent.onclick = function() {
-    creeEvent.style.display = "block";
-    popupEvent.style.display = "block";
-}
-
-saveEvent.onclick = function() {
-    creeEvent.style.display = "none";
-}
-
-closeEvent.onclick = function() {
-    creeEvent.style.display = "none";
-}
-
-
-
-
-
-
-closePopup.onclick = function() {
-    popupEvent.style.display = "none";
-}
-
-
-
-
-bouttonCreeGroup.onclick = function() {
-    creeGroup.style.display = "block";
-}
-
-saveGroup.onclick = function() {
-    creeGroup.style.display = "none";
-}
-
-closeGroup.onclick = function() {
-    creeGroup.style.display = "none";
-}
+$("#closeFail").click(function(){
+    $("#popUpFail").css("display","none");
+});

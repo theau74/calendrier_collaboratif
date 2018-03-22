@@ -18,12 +18,9 @@
 
 body {
     font-family: 'Roboto','PT Sans', sans-serif;
-    background: url("../img/Bgc_home_petite.png") no-repeat;
+  /*  background: url("../img/Bgc_home_petite.png") no-repeat;*/
     background-size: cover;
-/*    background: rgb(4,73,153);
-    background: -moz-linear-gradient(-45deg, rgba(4,73,153,1) 0%, rgba(134,99,204,1) 100%);
-    background: -webkit-linear-gradient(-45deg, rgba(4,73,153,1) 0%,rgba(134,99,204,1) 100%);
-    background: linear-gradient(135deg, rgba(4,73,153,1) 0%,rgba(134,99,204,1) 100%); */
+    background: #1B2129;
     font-size: 15px;
     height: calc(100vh - 25px);
 }
@@ -74,6 +71,8 @@ input:placeholder-shown {
 .ac-home-header-title {
     font-size: 30px;
     color: #FFF;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 
@@ -86,8 +85,7 @@ input:placeholder-shown {
     max-width: 500px;
     border-radius: 5px;
     padding: 10px 25px;
-    /*box-shadow: 4px 4px 10px 0px #000;*/
-    margin: 40px auto;
+    margin: 20px auto;
 }
 
 .ac-home-signin {
@@ -100,28 +98,35 @@ input:placeholder-shown {
 
 .ac-home-sign-item {
     padding: 8px 10px;
-    box-shadow: 2px 3px 20px -4px #000;
-    border-radius: 5px;
-    margin: 7px 0px;
+    box-shadow: 2px 3px 20px -2px #000;
+    border-radius: 3px;
+    margin-top: 20px;
+    background-color: #718093;
 }
 
 .ac-home-sign-item-connec {
-    width: fit-content;
-    margin: 7px 0px 7px auto;
+    padding: 10px;
 }
 
 .ac-home-sign-item-inscrip {
-    width: fit-content;
-    margin: 7px auto 7px 0px;
 }
 
 .ac-home-sign-item-h2 {
     color: #fff;
-    line-height: 30px;
-    font-size: 18px;
-    text-align: left;
+    line-height: 40px;
+    font-size: 30px;
+    text-align: center;
     text-transform: uppercase;
+    padding-top: 20px;
 }
+
+.ac-home-sign-item-subtitle {
+    color: #fff;
+    font-size: 13px;
+    text-align: center;
+    font-style: italic;
+}
+
 .ac-home-sign-item-input {
     color: #fff;
     width: 100%;
@@ -138,7 +143,7 @@ input:placeholder-shown {
 .ac-home-sign-allBoutton {
     display: inline-block;
     width: 100%;
-    padding: 10px 20px;
+    padding: 10px 40px;
     margin-top: 20px;
 }
 
@@ -152,7 +157,7 @@ input:placeholder-shown {
 
 .ac-home-sign-item-boutton-log {
     border-color: transparent;
-    border-radius: 5px;
+    border-radius: 3px;
     text-transform: uppercase;
     font-family: "PT Sans", sans-serif;
     font-weight: 700;
@@ -187,7 +192,7 @@ input:placeholder-shown {
 
 .ac-home-sign-item-boutton-sign {
     border-color: transparent;
-    border-radius: 5px;
+    border-radius: 3px;
     text-transform: uppercase;
     text-align: center;
     font-weight: 700;
@@ -201,7 +206,7 @@ input:placeholder-shown {
     color: #fff;
     cursor: pointer;
     display: block;
-    background-color: #16EAA8;
+    background-color: #453963;
     box-shadow: 4px 4px 20px -4px #000;
 
 
@@ -261,28 +266,6 @@ input:placeholder-shown {
 \*********************************************************************************/
 
 
-/*************\
- *   Footer  *
-\*************/
-
-.ac-fontGris {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    bottom: -70px;
-    right: 0;
-    background-color: rgba(0,0,0,0.38);
-    z-index: 1;
-    pointer-events: none;
-    -webkit-transition: opacity 200ms ease-in-out;
-    transition: opacity 200ms ease-in-out;
-    opacity: 0;
-}
-
-
-/*************\
-\*************/
-
 .ac-main {
 
 }
@@ -291,7 +274,7 @@ input:placeholder-shown {
     width: 100%;
     height: 70px;
     position: relative;
-    background-color: #fcf8e3;
+    background-color: #1C2229;
     box-shadow: inset 0px 0px 6px -2px #000000;
     z-index: 0;
 }
@@ -310,10 +293,15 @@ input:placeholder-shown {
     background-color: transparent;
     font-family: 'Roboto';
     font-size: 16px;
+    color: #fff;
 }
 
 .ac-main-header-logout:hover {
-    background-color: grey;
+    background-color: #576574;
+}
+
+.ac-main-header-logout:active {
+    background-color: #8395a7;
 }
 
 .ac-main-header-menue-sandwish {
@@ -323,11 +311,16 @@ input:placeholder-shown {
     width: 50px;
     padding: 10px 10px;
     text-align: center;
-    font-size: 15px;
+    font-size: 30px;
+    color: #fff;
+}
+
+.ac-main-header-menue-sandwish:hover {
+    background-color: #576574;
 }
 
 .ac-main-header-menue-sandwish:active {
-    background-color: grey;
+    background-color: #8395a7;
 }
 
 .ac-main-header-createGroup {
@@ -343,7 +336,16 @@ input:placeholder-shown {
     padding: 10px 20px;
     cursor: pointer;
     background-color: transparent;
-    font-size: 16px;
+    font-size: 40px;
+    color: #fff;
+}
+
+.ac-main-header-createGroup:hover {
+    background-color: #576574;
+}
+
+.ac-main-header-createGroup:active {
+    background-color: #8395a7;
 }
 
 .ac-main-calendrier {
@@ -361,7 +363,7 @@ input:placeholder-shown {
     width: 50px;
     line-height: 30px;
     padding-bottom: 5px;
-    background-color: #3b9f97;
+    background-color: #1C2229;
     box-shadow: 2px 2px 8px 0 #000;
     bottom: 20px;
     right: 20px;
@@ -373,6 +375,15 @@ input:placeholder-shown {
     cursor: pointer;
     color: white;
     font-size: 30px;
+}
+
+.ac-main-calendrier-createEvent:hover {
+    background-color: #576574;
+}
+
+.ac-main-calendrier-createEvent:active {
+    background-color: #8395a7;
+
 }
 
 .ac-main-nav {
@@ -387,18 +398,18 @@ input:placeholder-shown {
 .ac-main-nav-invit {
     display: block;
     height: 50%;
-    background-color: #dbc762;
-    box-shadow: inset -5px 5px 9px -5px #000;
+    background-color: #576574;
+    box-shadow: inset -6px 0px 9px -5px #000;
     overflow-y: scroll;
-    border-radius: 5px;
 }
 
 .ac-main-nav-invit-item {
     margin: 15px;
-    height: 80px;
+    height: 82px;
     display: flex;
     box-shadow: 2px 3px 20px -4px #000;
     border-radius: 5px;
+    border: 1px solid;
 }
 
 /*************\
@@ -409,10 +420,10 @@ input:placeholder-shown {
     width: 70%;
     display: inline-block;
     border-radius: 5px 0px 0px 5px;
+    background-color: #c8d6e5;
 }
 
 .ac-main-nav-invit-item-description li {
-    width: 50%;
     display: inline-block;
     line-height: 20px;
     text-transform: uppercase;
@@ -420,28 +431,32 @@ input:placeholder-shown {
 }
 
 .ac-main-nav-invit-item-description-name {
-    width: 100% !important;
+    width: 100%;
     border-bottom: 1px solid;
     padding: 0px 20px;
-    text-align: left !important;
+    text-align: left;
 }
 
 .ac-main-nav-invit-item-description-jourStart {
+    width: 70%;
 }
 
 .ac-main-nav-invit-item-description-heureStart {
+    width: 30%;
     border-left: 1px solid;
 }
 
 .ac-main-nav-invit-item-description-jourFin {
+    width: 70%;
 }
 
 .ac-main-nav-invit-item-description-heureFin {
+    width: 30%;
     border-left: 1px solid;
 }
 
 .ac-main-nav-invit-item-description-nonGroupe {
-    width: 100% !important;
+    width: 100%;
     border-top: 1px solid;
     text-align: center;
 }
@@ -509,10 +524,30 @@ input:placeholder-shown {
 .ac-main-nav-accDec{
     display: block;
     height: 20%;
-    background-color: #dbc762;
+    background-color: #576574;
     padding: 20px;
     box-shadow: inset -5px 5px 9px -5px #000;
     overflow-y: scroll;
+}
+
+
+/*********************************************************************************\
+ *   Font Gris                                                                   *
+\*********************************************************************************/
+
+
+.ac-fontGris {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    bottom: -70px;
+    right: 0;
+    background-color: rgba(0,0,0,0.38);
+    z-index: 1;
+    pointer-events: none;
+    -webkit-transition: opacity 200ms ease-in-out;
+    transition: opacity 200ms ease-in-out;
+    opacity: 0;
 }
 
 
@@ -529,15 +564,12 @@ input:placeholder-shown {
     top: 0;
 }
 
-.ac-createEvent-popUp-body{
-
-}
 .ac-createEvent-header {
     width: 100%;
     height: 80px;
     word-wrap: break-word;
     padding: 0px;
-    background-color: #3b9f97;
+    background-color: #1C2229;
     color: white;
 }
 
@@ -545,20 +577,21 @@ input:placeholder-shown {
     color: white;
     float: left;
     cursor: pointer;
-    padding: 15px 0px 0px 15px;
+    padding: 15px 15px 0px 15px;
     font: normal normal normal 20px/1 FontAwesome;
 }
 
-.ac-createEvent-header-close:hover,
-.ac-createEvent-header-close:focus {
-    color: #000;
-    text-decoration: none;
+.ac-createEvent-header-close:hover {
+    transform: scale(1.1);
 }
 
+.ac-createEvent-header-close:active {
+    transform: scale(.9);
+}
 
 .ac-createEvent-header-save {
     color: white;
-    background-color: #3b9f97;
+    background-color: #1C2229;
     outline: none;
     font-size: 14px;
     border: none;
@@ -566,23 +599,22 @@ input:placeholder-shown {
     line-height: 20px;
     padding: 10px 15px;
     text-transform: uppercase;
-}
-
-
-
-.ac-createEvent-header-save:hover{
-    background-color: #238c83;
     cursor: pointer;
 }
+
+.ac-createEvent-header-save:hover{
+    background-color: #576574;
+}
+
 .ac-createEvent-header-save:active{
-    transform: scale(0.95);
+    background-color: #8395a7;
 }
 
 .ac-createEvent-header-title {
     width: 100%;
     font-size: 16px;
     color: white;
-    background-color: #3b9f97;
+    background-color: #1C2229;
     border: none;
     outline: none;
     height: 40px;
@@ -658,15 +690,6 @@ input:placeholder-shown {
 
 }
 
-
-
-
-
-
-
-
-
-
 .ac-createEvent-footer {
     width: 100%;
     height: 15%;
@@ -675,6 +698,122 @@ input:placeholder-shown {
     background-color: #3b9f97;
     color: white;
 }
+
+
+/*************\
+ * PopUpFail *
+\*************/
+
+
+.ac-popUpFail {
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 300px;
+    width: 100%;
+}
+
+.ac-popUpFail-content{
+    position: relative;
+    margin: auto;
+    width: 80%;
+    box-shadow: 3px 3px 15px 2px;
+}
+
+.ac-popUpFail-header {
+    width: 100%;
+    height: 300px;
+    word-wrap: break-word;
+    padding: 0px;
+    background-color: #3b9f97;
+    color: white;
+    border-radius: 3px;
+}
+
+.ac-popUpFail-text {
+    color: #fff;
+    text-align: center;
+    line-height: 70px;
+    font-size: 20px;
+}
+
+.ac-popUp-header-close {
+    color: white;
+    cursor: pointer;
+    width: 150px;
+    margin: 65px auto;
+    text-align: center;
+    line-height: 30px;
+    font-size: 20px;
+    border-radius: 3px;
+    box-shadow: 4px 4px 20px -5px #000;
+}
+
+.ac-popUp-header-close:hover,
+.ac-popUp-header-close:focus {
+    text-decoration: none;
+    box-shadow: 4px 4px 20px -3px #000;
+    background-color: #409E83;
+}
+
+
+/*************\
+ * PopUpEvent *
+\*************/
+
+
+.ac-createEvent-popUp{
+    position: fixed;
+    z-index: 999;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.ac-createEvent-popUp-content{
+    position: relative;
+    margin: auto;
+    width: 80%;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    box-shadow: 3px 3px 15px 2px;
+}
+
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+.ac-createEvent-popUp-header-close {
+    color: white;
+    float: left;
+    cursor: pointer;
+    padding: 15px 0px 0px 15px;
+    font: normal normal normal 20px/1 FontAwesome;
+}
+
+.ac-createEvent-popUp-header-close:hover,
+.ac-createEvent-popUp-header-close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+
+/*************\
+ * PopUp fail *
+\*************/
+
 
 .ac-main-createEvent {
     width: 100%;
@@ -727,10 +866,6 @@ input:placeholder-shown {
     width: 100%;
 }
 
-.fc-right {
-    width: 50%;
-}
-
 .fc-left {
     width: 50%;
 }
@@ -744,10 +879,30 @@ input:placeholder-shown {
     position: absolute;
     top: 20px;
     left: 90px;
+    color: #fff;
+}
+
+.fc-right {
+    width: 50%;
 }
 
 .fc button {
     width: 50%;
+    background-color: #1C2229;
+    background-image: none;
+    color: #fff;
+    box-shadow: none;
+    line-height: 20px;
+    font-size: 20px;
+    text-shadow: none;
+}
+
+.fc button:hover {
+    background-color: #576574;
+}
+
+.fc button:active {
+    background-color: #8395a7;
 }
 
 .fc-button-group button {
@@ -818,15 +973,11 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
     float: left;
     display: flex;
     flex-direction: column;
-    background-color: #fcf8e3;
+    background-color: #c8d6e5;
     overflow-y: scroll;
     box-shadow: inset -2px 2px 10px -1px #000;
     position: absolute;
     z-index: 2;
-}
-
-.responsive-calendrier {
-
 }
 
 
@@ -851,6 +1002,10 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
 
     .ac-main-footer {
         border-top: none;
+    }
+
+    .ac-popUpFail-content {
+        width: 60%;
     }
 }
 
@@ -882,60 +1037,9 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
         display: none!important;
     }
 
-
-
-
-
-
-    .ac-createEvent-popUp{
-        display: block;
-        position: fixed;
-        z-index: 999;
-        padding-top: 100px;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
+    .ac-popUpFail-content {
+        width: 45%;
     }
-    .ac-createEvent-popUp-content{
-        position: relative;
-        margin: auto;
-        padding: 0;
-        background-color: #fff;
-        width: 80%;
-        -webkit-animation-name: animatetop;
-        -webkit-animation-duration: 0.4s;
-        animation-name: animatetop;
-        animation-duration: 0.4s
-        box-shadow: 3px 3px 15px 2px;
-    }
-    @-webkit-keyframes animatetop {
-        from {top:-300px; opacity:0}
-        to {top:0; opacity:1}
-    }
-
-    @keyframes animatetop {
-        from {top:-300px; opacity:0}
-        to {top:0; opacity:1}
-    }
-
-
-    .ac-createEvent-popUp-header-close {
-        color: white;
-        float: left;
-        cursor: pointer;
-        padding: 15px 0px 0px 15px;
-        font: normal normal normal 20px/1 FontAwesome;
-    }
-
-    .ac-createEvent-popUp-header-close:hover,
-    .ac-createEvent-popUp-header-close:focus {
-        color: #000;
-        text-decoration: none;
-    }
-
-
 
 }
 

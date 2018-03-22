@@ -14,10 +14,16 @@
 
             <ul>
 
-                <li class="ac-home-sign-item ac-home-sign-item-connec">
+                <li class="ac-home-sign-item-connec">
+
                     <h2 class="ac-home-sign-item-h2">
-                        Connexion
+                        Bienvenue
                     </h2>
+
+                    <p class="ac-home-sign-item-subtitle">
+                        Veuillez-vous connecter pour accéder à votre agenda.
+                    </p>
+
                 </li>
 
                 <li class="ac-home-sign-item">
@@ -32,7 +38,7 @@
                     <ul>
 
                         <li class="ac-home-sign-item-boutton-right">
-                            <button type="submit" class="ac-home-sign-item-boutton-sign" id="savePopup"  name="action" value="signin">
+                            <button type="submit" class="ac-home-sign-item-boutton-log" id="savePopup"  name="action" value="signin">
                                 connection
                             </button>
                         </li>

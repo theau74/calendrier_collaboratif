@@ -3,6 +3,8 @@
 function display_user_sub() {
 
     require("pages/user_sub.php");
+    include ("footer_home.php");
+
 
 }
 

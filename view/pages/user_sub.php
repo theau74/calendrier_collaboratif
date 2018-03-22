@@ -1,6 +1,8 @@
 <div class="ac-home-header">
 
-    <h1 class="ac-home-header-title">Agenda Collaboratif</h1>
+    <h1 class="ac-home-header-title">
+        Agenda Collaboratif
+    </h1>
 
 </div>
 
@@ -12,10 +14,16 @@
 
             <ul>
 
-                <li class="ac-home-sign-item ac-home-sign-item-inscrip">
+                <li class="ac-home-sign-item-inscrip">
+
                     <h2 class="ac-home-sign-item-h2">
-                        Inscription
+                        Créez vous un compte !
                     </h2>
+
+                    <p class="ac-home-sign-item-subtitle">
+                        Et découvré notre agenda collaboratif.
+                    </p>
+
                 </li>
 
                 <li class="ac-home-sign-item">
