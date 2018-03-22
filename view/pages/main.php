@@ -1,3 +1,4 @@
+
 <script>
     $(document).ready(function () {
 
@@ -30,10 +31,10 @@
                         echo 'type : "' . $events['type'] . '",';
                     }
                     if (!empty($events['start'])) {
-                        echo 'start : "' . $events['start'] . '",';
+                        echo 'start : "' . $events['start'] . 'T'.$events['start_hour'].'",';
                     }
                     if (!empty($events['end'])) {
-                        echo 'end : "' . $events['end'] . '",';
+                        echo 'end : "' . $events['end'] . 'T'.$events['end_hour'].'",';
                     }
                     echo "},";
                 }
@@ -380,7 +381,6 @@
 
             foreach ($pending_invitation_list as $invitation) {
                 echo "<div class='ac-main-nav-invit-item'>";
-
                 echo "<ul class='ac-main-nav-invit-item-description'>";
                 if (!empty($invitation['event_name'])) {
                     echo "<li class='ac-main-nav-invit-item-description-name'>" . $invitation['event_name'] . '</li>';

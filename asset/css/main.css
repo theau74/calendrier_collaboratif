@@ -338,6 +338,7 @@ input:placeholder-shown {
     background-color: transparent;
     font-size: 40px;
     color: #fff;
+    line-height: 50px;
 }
 
 .ac-main-header-createGroup:hover {
@@ -420,7 +421,7 @@ input:placeholder-shown {
     width: 70%;
     display: inline-block;
     border-radius: 5px 0px 0px 5px;
-    background-color: #c8d6e5;
+    background-color: #1B2129;
 }
 
 .ac-main-nav-invit-item-description li {
@@ -428,6 +429,7 @@ input:placeholder-shown {
     line-height: 20px;
     text-transform: uppercase;
     text-align: center;
+    color: #fff;
 }
 
 .ac-main-nav-invit-item-description-name {
@@ -947,19 +949,6 @@ input:placeholder-shown {
 
 
 /*********************************************************************************\
- *   Mini Calendrier                                                             *
-\*********************************************************************************/
-
-
-.ac-main-nav-miniCalendrier {
-    display: block;
-    height: 250px;
-    background-color: #ff6655;
-    padding: 5px;
-}
-
-
-/*********************************************************************************\
  *   Calendrier                                                                  *
 \*********************************************************************************/
 
@@ -970,6 +959,7 @@ input:placeholder-shown {
 
 .fc-toolbar {
     padding: 0px;
+    background-color: #1B2129;
 }
 
 .fc-toolbar h2 {
