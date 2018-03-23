@@ -5,7 +5,7 @@
         <div class="ac-popUpFail-header">
 
             <p class="ac-popUpFail-text">
-                Connection refusé !
+                Connection refusée !
             </p>
 
             <p class="ac-popUpFail-text">
