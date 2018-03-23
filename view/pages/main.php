@@ -328,7 +328,7 @@
                     &#xf00d;
                 </div>
 
-                <button type="submit" class="ac-createEvent-header-save" id="saveGroup"  name="action" value="create-event">
+                <button type="submit" class="ac-createEvent-header-save" id="saveGroup"  name="action" value="create-group">
                     Enregistrer
                 </button>
 
@@ -347,7 +347,6 @@
                 </li>
 
                 <?php
-                echo'<form action="index.php?ac=create-invitation" method="post">';
                 foreach ($users_list as $user) {
                     echo"<div>";
                     echo $user['Fname'];

@@ -37,7 +37,7 @@ elseif (($page == "create-event")) {
 }
 
 elseif (($page == "select-slot")) {
-    display_select_slot($_POST);
+    display_select_slot($_POST, $free_slot_list);
 }
 
 elseif (($page == "set_event_visibility")) {

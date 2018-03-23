@@ -5,34 +5,31 @@
             &#xf00d;
         </a>
 
-        <button type="submit" id="save" name="create">
-            Enregistrer
-        </button>
+
 
 
 
     </div>
-    creneau deja pris, veuillez en choisir un autre
-    <form action="index.php" method="post">
-        <input type="hidden" id="addEventTitle" name="nom" value="<?php echo$post['nom']; ?>">
-        <input type="hidden" placeholder="Description" name="description" value="<?php echo$post['description']; ?>">
-        <?php
-        if(isset($post['users-choice'])) {
-            foreach ($post['users-choice'] as $user) {
-                echo '<input type="hidden" name="users-choice[]" value="' . $user . '">';
-            }
-        }
-        if(isset($post['groups-choice'])) {
-            foreach ($post['groups-choice'] as $group) {
-                echo '<input type="hidden" name="users-choice[]" value="' . $group . '">';
-            }
-        }
-        ?>
+
         <div class="ac-createEvent-body">
 
             <div class="ac-createEvent-body-creneaux">
-
-                <div class="ac-createEvent-body-creneaux-first">
+                <form action="index.php" method="post">
+                    <input type="hidden" id="addEventTitle" name="nom" value="<?php echo$post['nom']; ?>">
+                    <input type="hidden" placeholder="Description" name="description" value="<?php echo$post['description']; ?>">
+                    <?php
+                    if(isset($post['users-choice'])) {
+                        foreach ($post['users-choice'] as $user) {
+                            echo '<input type="hidden" name="users-choice[]" value="' . $user . '">';
+                        }
+                    }
+                    if(isset($post['groups-choice'])) {
+                        foreach ($post['groups-choice'] as $group) {
+                            echo '<input type="hidden" name="users-choice[]" value="' . $group . '">';
+                        }
+                    }
+                    ?>
+                    <div class="ac-createEvent-body-creneaux-first">
 
                     <i class="ac-createEvent-body-creneaux-crenTxt">
                         &#xf017;
@@ -42,9 +39,9 @@
 
                     <input class="ac-createEvent-body-creneaux-hoursEv" type="time" placeholder="type" name="start_time" required>
 
-                </div>
+                     </div>
 
-                <div class="ac-createEvent-body-creneaux-second">
+                     <div class="ac-createEvent-body-creneaux-second">
 
                     <i class="ac-createEvent-body-creneaux-crenTxt">
                         &#xf017;
@@ -55,18 +52,50 @@
                     <input class="ac-createEvent-body-creneaux-hoursEv" type="time" placeholder=type name="end_time" required>
 
                 </div>
+                <button type="submit" class="ac-createEvent-header-save" id="saveEvent"  name="action" value="create-event">
+                    enregistrer
+                </button>
+                </form>
+                <form action="index.php" method="post" >
+                    <input type="hidden" id="addEventTitle" name="nom" value="<?php echo$post['nom']; ?>">
+                    <input type="hidden" placeholder="Description" name="description" value="<?php echo$post['description']; ?>">
+                    <?php
+                    if(isset($post['users-choice'])) {
+                        foreach ($post['users-choice'] as $user) {
+                            echo '<input type="hidden" name="users-choice[]" value="' . $user . '">';
+                        }
+                    }
+                    if(isset($post['groups-choice'])) {
+                        foreach ($post['groups-choice'] as $group) {
+                            echo '<input type="hidden" name="users-choice[]" value="' . $group . '">';
+                        }
+                    }
+                    ?>
+                    <input type="hidden" id="addEventTitle" name="nom" value="<?php echo$post['nom']; ?>">
+                    <input type="hidden" placeholder="Description" name="description" value="<?php echo$post['description']; ?>">
+                    <div class="ac-createEvent-body-description">
+                        <?php
+                        echo"<select name='slot_list' >";
+                        foreach ($free_slot_list as $free_slot){
+                            echo'<option value="'.$free_slot[1].','.$free_slot[2].','.$free_slot[3].','.$free_slot[4].'">'.$free_slot[1].','.$free_slot[2].','.$free_slot[3].','.$free_slot[4].'</option> ';
+                        }
+                        echo"</select>";
+                        ?>
+                        <button type="submit" class="ac-createEvent-header-save" id="saveEvent" name="action" value="create-event-by-slot-generator">
+                            valider
+                        </button>
+                    </div>
 
+                </form>
             </div>
 
-            <div class="ac-createEvent-body-description">
 
-            </div>
 
-            <button type="submit" class="ac-createEvent-header-save" id="saveEvent"  name="action" value="create-event">
-                enregistrer
-            </button>
+
         </div>
-    </form>
+
+
+
 
 </div>
 

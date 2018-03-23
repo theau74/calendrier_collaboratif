@@ -61,7 +61,7 @@ function display_create_event($groups_list, $users_list){
     require ("pages/create_event.php");
 
 }
-function display_select_slot($post){
+function display_select_slot($post, $free_slot_list){
 
     require ("pages/select_slot.php");
 
