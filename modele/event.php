@@ -15,6 +15,22 @@ GROUP BY I.id_event");
     }
     return $event_list;
 }
+function get_accepeted_event_by_user_id($id, $c){
+    $sql = ("SELECT *
+FROM events E
+INNER JOIN invitation I ON E.id = I.id_event
+WHERE I.id_user ='$id' AND I.etat ='valider'
+GROUP BY I.id_event");
+    $result = mysqli_query($c,$sql);
+    $event_list= array ();
+    $loop = 0;
+    while ($donnees = mysqli_fetch_assoc($result))
+    {
+        $event_list[$loop]= $donnees;
+        $loop++;
+    }
+    return $event_list;
+}
 
 //creation d'évenemenent dans la base
 function create_event($nom, $description, $idcreator, $start, $start_hour, $end, $end_hour, $c, $encryption_key) {
