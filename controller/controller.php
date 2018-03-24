@@ -62,6 +62,30 @@ if (empty($_POST) && empty($_GET)) {
                     echo "creation_failed";
                 }
             } else {
+                $free_slot_list = search_next_free_slot($_POST['start_date'], $_POST['start_time'], $_POST['end_date'], $_POST['end_time'], $_POST['users-choice'], 8, 17, 20, 200, $c);
+                $page = "select-slot";
+            }
+        }
+        if ($_POST["action"] == "create-event-by-slot-generator") {
+            $slot = explode(",",$_POST['slot_list']);
+            if (verify_user_list_disponibility($slot[0], $slot[1], $slot[2], $slot[3], $_POST['users-choice'], $c)) {
+                if (create_event($_POST['nom'], $_POST['description'], $_SESSION['id'], $slot[0], $slot[1], $slot[2], $slot[3], $c, $encryption_key)) {
+                    if(!empty($_POST['users-choice']) || !empty($_POST['groups-choice'])){
+                        if (create_invitation($_POST['users-choice'], $_POST['groups-choice'], $_SESSION['id'], $c, $encryption_key)) {
+                            header('Location: index.php');
+
+                        } else {
+                            echo "creation_failed";
+                        }
+                    }
+                    else{
+                        header('Location: index.php');
+                    }
+                } else {
+                    echo "creation_failed";
+                }
+            } else {
+                $free_slot_list = search_next_free_slot($_POST['start_date'], $_POST['start_time'], $_POST['end_date'], $_POST['end_time'], $_POST['users-choice'], 8, 17, 20, 200, $c);
                 $page = "select-slot";
             }
         }
