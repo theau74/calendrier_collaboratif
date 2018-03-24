@@ -408,25 +408,27 @@
 
                 </div>
 
-                <div class="ac-createGroup-body">
+                <div class="ac-createGroup-popUp-body">
                     <h1 class="ac-createGroup-popUp-body-addTitle">Ajouter des membres</h1>
-                    <ul>
-                        <li>
-                            <h2>Prénom</h2>
-                            <h2>Nom</h2>
-                            <h2>Rang</h2>
+                    <ul class="ac-createGroup-popUp-body-ul">
+                        <li class="ac-createGroup-popUp-body-columns">
+                            <h2 class="ac-createGroup-popUp-body-h2">Prénom</h2>
+                            <h2 class="ac-createGroup-popUp-body-h2">Nom</h2>
+                            <h2 class="ac-createGroup-popUp-body-h2">Rang</h2>
                         </li>
                         <?php
                         foreach ($users_list as $user) {
                             echo"<li class='ac-createGroup-body-item'>";
-                            echo "<p class='ac-createGroup-body-item-name'>" . $user['Fname'] . "</p>";
-                            echo "<p class='ac-createGroup-body-item-lname'>" . $user['Lname'] . "</p>";
-                            echo"<select class='ac-createGroup-popUp-body-item-select' name='user_right[]'>
+                            echo "<p class='ac-createGroup-popUp-body-item-name'>" . $user['Fname'] . "</p>";
+                            echo "<p class='ac-createGroup-popUp-body-item-lname'>" . $user['Lname'] . "</p>";
+                            echo"<select class='ac-createGroup-body-item-select' name='user_right[]'>
                                      <option value='3'>Utilisateur</option>
                                      <option value='2'>Administrateur</option>
                                 </select>";
-                            echo '<input class="ac-createGroup-body-item-checkbox" type="checkbox" name="users-choice[]" value="' . $user['id'] . '">';
-
+                            echo "<label class='ac-createGroup-popUp-checkbox-container'>";
+                            echo '<input class="ac-container" type="checkbox" name="users-choice[]" value="' . $user['id'] . '">';
+                            echo "<span class='ac-createGroup-popUp-checkbox-container-checkmark'></span>";
+                            echo "</label>";
                             echo "</li>";
                         }
                         ?>
