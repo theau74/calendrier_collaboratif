@@ -434,7 +434,7 @@
                             echo"<li class='ac-createGroup-body-item'>";
                             echo "<p class='ac-createGroup-popUp-body-item-name'>" . $user['Fname'] . "</p>";
                             echo "<p class='ac-createGroup-popUp-body-item-lname'>" . $user['Lname'] . "</p>";
-                            echo"<select class='ac-createGroup-body-item-select' name='user_right[]'>
+                            echo"<select class='ac-createGroup-popUp-body-item-select' name='user_right[]'>
                                      <option value='3'>Utilisateur</option>
                                      <option value='2'>Administrateur</option>
                                 </select>";
@@ -446,12 +446,11 @@
                         }
                         ?>
 
-                        <li class="ac-createGroup-body-item">
-                            <input type="text" class="ac-createGroup-body-item-descriptionGroup" name="description" placeholder="description">
-                        </li>
-
                     </ul>
 
+                </div>
+                <div class="ac-createGroup-popUp-body-description">
+                    <input type="text" class="ac-createGroup-popUp-body-description-input" name="description" placeholder="Description ...">
                 </div>
             </div>
         </form>
