@@ -63,7 +63,9 @@ elseif (($page == "list_invitation_gr")){
 elseif (($page == "list_event")){
     display_list_event($event_list);
 }
-
+elseif (($page == "list_group")){
+    display_list_group($groups_list_by_id_user);
+}
 elseif (($page == "create-group")) {
     display_create_group($users_list);
 }

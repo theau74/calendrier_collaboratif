@@ -12,6 +12,46 @@ function get_groups_list($c){
     return $groups_list;
 }
 
+function get_groups_by_id_user($id_user,$c){
+    $sql = ("SELECT U.level, U.id_users, U.id_groups, U.etat, G.id, G.nom, G.description FROM users_groups U INNER JOIN groups G ON U.id_groups = G.id WHERE U.id_users ='$id_user'");
+    $result = mysqli_query($c,$sql);
+    $groups_list_by_id_user = array ();
+    $loop = 0;
+    while ($donnees = mysqli_fetch_assoc($result))
+    {
+        $groups_list_by_id_user[$loop]= $donnees;
+        $loop++;
+    }
+    return $groups_list_by_id_user;
+}
+function delete_groups_by_id($id_users,$id_groups,$c){
+    $sql_groups = ("DELETE FROM groups 
+    WHERE groups.id ='$id_groups'");
+    $sql_users_groups= ("DELETE FROM users_groups
+    WHERE users_groups.id_users='$id_users' AND users_groups.id_groups='$id_groups'");
+    if(mysqli_query($c,$sql_users_groups)){
+        if(mysqli_query($c,$sql_groups)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    else{
+        return false;
+    }
+}
+function update_groups_by_id($id_groups,$nom,$description,$c){
+    $sql = ("UPDATE groups SET nom = '$nom', description = '$description' WHERE id = '$id_groups'");
+    if(mysqli_query($c,$sql)){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+
 //obtient l'id du dernier groupe créé par un utilisateur
 function get_last_group_by_user_id($id, $c) {
     $sql = ("SELECT id FROM groups 

@@ -153,6 +153,22 @@ if (empty($_POST) && empty($_GET)) {
 
 
         }
+        //suppression de groupe
+        if ($_POST["action"] == "delete-group"){
+            if(delete_groups_by_id($_POST["id_users"], $_POST["id_groups"],$c)){
+                header('Location: index.php');
+            } else{
+                echo "delete_failed";
+            }
+        }
+        //modification de groupe
+        if ($_POST["action"] == "set-group"){
+            if( update_groups_by_id($_POST["id_groups"],$_POST["nom"],$_POST["description"],$c)){
+                header('Location: index.php');
+            } else {
+                echo "update_failed";
+            }
+        }
     }
     else{
         //formulaire d'incription
@@ -195,12 +211,16 @@ if (empty($_POST) && empty($_GET)) {
             }
 
 
-            //Page liste des evenenment
+            //Page liste des evenenments
             if (isset($_GET["list_event"])) {
                 $event_list = get_event_by_user_id($_SESSION['id'], $c);
                 $page = "list_event";
             }
-
+            //Page liste des groupes
+            if (isset($_GET["list_group"])) {
+                $groups_list_by_id_user = get_groups_by_id_user($_SESSION['id'],$c);
+                $page = "list_group";
+            }
 
             //formulaire de modification d'information
             if (isset($_GET["infoform"])) {
