@@ -207,6 +207,10 @@
                         echo '<span class="ac-createEvent-body-item-name">' . $user['Fname'] . '</span>';
                         echo '<span class="ac-createEvent-body-item-lname">' . $user['Lname'] . '</span>';
                         echo '<input type="checkbox" name="users-choice[]" value="' . $user['id'] . '">';
+                        echo"<select name='user_right[]'>
+                             <option value='3'>utilisateur</option>
+                             <option value='2'>admin</option>
+                        </select>";
                         echo '<span class="ac-createEvent-body-item-checkmark"></span>';
                         echo "</label>";
                     }
@@ -312,6 +316,10 @@
                             echo '<span class="name">' . $user['Fname'] . '</span>';
                             echo '<span class="lname">' . $user['Lname'] . '</span>';
                             echo '<input class="" type="checkbox" name="users-choice[]" value="' . $user['id'] . '">';
+                            echo"<select name='user_right[]'>
+                             <option value='3'>utilisateur</option>
+                             <option value='2'>admin</option>
+                        </select>";
                             echo '<span class="ac-createEvent-popUp-checkbox-container-checkmark"></span>';
                             echo "</label>";
                         }

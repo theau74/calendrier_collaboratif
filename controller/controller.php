@@ -48,7 +48,7 @@ if (empty($_POST) && empty($_GET)) {
             if (verify_user_list_disponibility($_POST['start_date'], $_POST['start_time'], $_POST['end_date'], $_POST['end_time'], $_POST['users-choice'], $c)) {
                 if (create_event($_POST['nom'], $_POST['description'], $_SESSION['id'], $_POST['start_date'], $_POST['start_time'], $_POST['end_date'], $_POST['end_time'], $c, $encryption_key)) {
                     if(!empty($_POST['users-choice']) || !empty($_POST['groups-choice'])){
-                        if (create_invitation($_POST['users-choice'], $_POST['groups-choice'], $_SESSION['id'], $c, $encryption_key)) {
+                        if (create_invitation($_POST['users-choice'], $_POST['groups-choice'], $_POST['groups-choice'], $_SESSION['id'], $c, $encryption_key)) {
                             header('Location: index.php');
 
                         } else {
@@ -67,11 +67,15 @@ if (empty($_POST) && empty($_GET)) {
             }
         }
         if ($_POST["action"] == "create-event-by-slot-generator") {
+
             $slot = explode(",",$_POST['slot_list']);
+            var_dump($_POST);
+            exit;
+
             if (verify_user_list_disponibility($slot[0], $slot[1], $slot[2], $slot[3], $_POST['users-choice'], $c)) {
                 if (create_event($_POST['nom'], $_POST['description'], $_SESSION['id'], $slot[0], $slot[1], $slot[2], $slot[3], $c, $encryption_key)) {
                     if(!empty($_POST['users-choice']) || !empty($_POST['groups-choice'])){
-                        if (create_invitation($_POST['users-choice'], $_POST['groups-choice'], $_SESSION['id'], $c, $encryption_key)) {
+                        if (create_invitation($_POST['users-choice'], $_POST['groups-choice'], $_POST['groups-choice'], $_SESSION['id'], $c, $encryption_key)) {
                             header('Location: index.php');
 
                         } else {

@@ -65,6 +65,12 @@
                             echo '<input type="hidden" name="users-choice[]" value="' . $user . '">';
                         }
                     }
+
+                    if(isset($post['user_right'])) {
+                        foreach ($post['users-choice'] as $right) {
+                            echo '<input type="hidden" name="users-right[]" value="' . $right . '">';
+                        }
+                    }
                     if(isset($post['groups-choice'])) {
                         foreach ($post['groups-choice'] as $group) {
                             echo '<input type="hidden" name="users-choice[]" value="' . $group . '">';
@@ -75,11 +81,9 @@
                     <input type="hidden" placeholder="Description" name="description" value="<?php echo$post['description']; ?>">
                     <div class="ac-createEvent-body-description">
                         <?php
-                        echo"<select name='slot_list' >";
                         foreach ($free_slot_list as $free_slot){
-                            echo'<option value="'.$free_slot[1].','.$free_slot[2].','.$free_slot[3].','.$free_slot[4].'">'.$free_slot[1].','.$free_slot[2].','.$free_slot[3].','.$free_slot[4].'</option> ';
+                            echo'<input type ="radio" name="slot_list" value="'.$free_slot[1].','.$free_slot[2].','.$free_slot[3].','.$free_slot[4].'">'.$free_slot[1].','.$free_slot[2].','.$free_slot[3].','.$free_slot[4].' ';
                         }
-                        echo"</select>";
                         ?>
                         <button type="submit" class="ac-createEvent-header-save" id="saveEvent" name="action" value="create-event-by-slot-generator">
                             valider
