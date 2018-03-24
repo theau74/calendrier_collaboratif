@@ -69,8 +69,6 @@ if (empty($_POST) && empty($_GET)) {
         if ($_POST["action"] == "create-event-by-slot-generator") {
 
             $slot = explode(",",$_POST['slot_list']);
-            var_dump($_POST);
-            exit;
 
             if (verify_user_list_disponibility($slot[0], $slot[1], $slot[2], $slot[3], $_POST['users-choice'], $c)) {
                 if (create_event($_POST['nom'], $_POST['description'], $_SESSION['id'], $slot[0], $slot[1], $slot[2], $slot[3], $c, $encryption_key)) {
