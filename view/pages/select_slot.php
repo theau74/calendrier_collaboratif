@@ -18,15 +18,24 @@
                     <input type="hidden" id="addEventTitle" name="nom" value="<?php echo$post['nom']; ?>">
                     <input type="hidden" placeholder="Description" name="description" value="<?php echo$post['description']; ?>">
                     <?php
-                    if(isset($post['users-choice'])) {
-                        foreach ($post['users-choice'] as $user) {
-                            echo '<input type="hidden" name="users-choice[]" value="' . $user . '">';
+                    if(isset($users_choice_list)) {
+                        foreach ($users_choice_list as $user) {
+                            if(isset($user['right'])) {
+                                echo '<input type="hidden" name="users-choice[]" value="' . $user['id'] . '">';
+                            }
+
+                        }foreach ($users_choice_list as $user) {
+                            if(isset($user['right'])) {
+                                echo '<input type="hidden" name="user_right[]" value="' . $user['right'] . '">';
+                            }
                         }
-                    }
-                    if(isset($post['groups-choice'])) {
-                        foreach ($post['groups-choice'] as $group) {
-                            echo '<input type="hidden" name="users-choice[]" value="' . $group . '">';
+
+                        foreach(array_filter(array_unique(array_column($users_choice_list, "id_group"), null)) as $user) {
+                            if(isset($user)) {
+                                echo '<input type="hidden" name="groups-choice[]" value="' . $user . '">';
+                            }
                         }
+
                     }
                     ?>
                     <div class="ac-createEvent-body-creneaux-first">
@@ -60,22 +69,27 @@
                     <input type="hidden" id="addEventTitle" name="nom" value="<?php echo$post['nom']; ?>">
                     <input type="hidden" placeholder="Description" name="description" value="<?php echo$post['description']; ?>">
                     <?php
-                    if(isset($post['users-choice'])) {
-                        foreach ($post['users-choice'] as $user) {
-                            echo '<input type="hidden" name="users-choice[]" value="' . $user . '">';
+
+                    if(isset($users_choice_list)) {
+                        foreach ($users_choice_list as $user) {
+                            if(isset($user['right'])) {
+                                echo '<input type="hidden" name="users-choice[]" value="' . $user['id'] . '">';
+                            }
+
+                        }foreach ($users_choice_list as $user) {
+                            if(isset($user['right'])) {
+                                echo '<input type="hidden" name="user_right[]" value="' . $user['right'] . '">';
+                            }
                         }
+
+                        foreach(array_filter(array_unique(array_column($users_choice_list, "id_group"), null)) as $user) {
+                            if(isset($user)) {
+                                echo '<input type="hidden" name="groups-choice[]" value="' . $user . '">';
+                            }
+                        }
+
                     }
 
-                    if(isset($post['user_right'])) {
-                        foreach ($post['users-choice'] as $right) {
-                            echo '<input type="hidden" name="users-right[]" value="' . $right . '">';
-                        }
-                    }
-                    if(isset($post['groups-choice'])) {
-                        foreach ($post['groups-choice'] as $group) {
-                            echo '<input type="hidden" name="users-choice[]" value="' . $group . '">';
-                        }
-                    }
                     ?>
                     <input type="hidden" id="addEventTitle" name="nom" value="<?php echo$post['nom']; ?>">
                     <input type="hidden" placeholder="Description" name="description" value="<?php echo$post['description']; ?>">

@@ -50,7 +50,9 @@ function get_last_event_by_user_id($id, $c) {
 WHERE creator ='$id'
 ORDER BY id DESC 
 LIMIT 1");
-    $result = mysqli_query($c,$sql);
+    var_dump($c);
+    $result = mysqli_query($c, $sql);
+
     //test des résultat
     if($row = mysqli_fetch_row($result)){
         if (isset($row[0])) {

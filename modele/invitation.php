@@ -1,6 +1,6 @@
 <?php
 //creation d'évenemenent dans la base
-function create_invitation($user_list, $user_right, $creator, $c)
+function create_invitation($user_list, $creator, $c)
 {
     $loop = 0;
     $id_event = get_last_event_by_user_id($_SESSION['id'], $c);
@@ -9,38 +9,29 @@ function create_invitation($user_list, $user_right, $creator, $c)
     //invitation des utilisateurs sans groupe
     if (!empty($user_list)) {
         foreach ($user_list as $user) {
-            $id_user = $user;
+            $id_user = $user['id'];
+            $id_group = $user['id_group'];
+
+            if(isset($user['right'])){
+                $right = $user['right'];
+            }
+            else{
+                $right = "null";
+            }
             if ($loop == 0) {
-                $sql2 = (" ('$id_event', '$id_user', '0', 'envoie', '$creator', '$user_right[$loop]')");
+                $sql2 = (" ('$id_event', '$id_user', '$id_group', 'envoie', '$creator', '$right')");
                 $loop++;
             } else {
-                $sql2 .= (", ('$id_event', '$id_user', '0', 'envoie', '$creator', null)");
+                $sql2 .= (", ('$id_event', '$id_user', '$id_group', 'envoie', '$creator', $right)");
             }
         }
     }
 
-    //invitation par groupe
-    if (!empty($groups_choice)) {
 
-        foreach ($groups_choice as $group) {
-
-            $users_list_by_group = get_users_id_by_group_id($group, $c);
-            if (isset($users_list_by_group)) {
-                foreach ($users_list_by_group as $user) {
-                    $id_user = $user['id_users'];
-                    if ($loop == 0) {
-                        $sql2 = ("('$id_event', '$id_user', '$group', 'envoie', '$creator')");
-                        $loop++;
-                    } else {
-                        $sql2 .= (", ('$id_event', '$id_user', '$group', 'envoie', '$creator')");
-                    }
-                }
-            }
-        }
-    }
 
     if (isset($sql2)) {
         $sql .= $sql2;
+
         if (mysqli_query($c, $sql)) {
             return true;
         } else {
