@@ -101,6 +101,7 @@
 
 <div class="ac-main-header" id="mainHeader">
 
+
     <a href="javascript:void(0);" class="ac-main-header-menue-sandwish" onclick="afficheNav()">
         &#9776;
     </a>
@@ -112,7 +113,7 @@
     <form action="index.php?logout" method="post">
 
         <button type="submit" class="ac-main-header-logout" name="logout">
-            Déconnexion
+            &#xf011;
         </button>
 
     </form>

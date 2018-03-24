@@ -39,6 +39,17 @@ input:placeholder-shown {
     color: #fff;
 }
 
+@supports (pointer-events: none) and
+      ((-webkit-appearance: none) or
+      (-moz-appearance: none) or
+      (appearance: none)) {
+
+    option {
+        background-color: #000;
+    }
+
+}
+
 
 /*********************************************************************************\
  *   Container                                                                   *
@@ -71,7 +82,7 @@ input:placeholder-shown {
 
 .ac-home-header-title {
     font-size: 30px;
-    color: #FFF;
+    color: #FC8;
     text-transform: uppercase;
     text-align: center;
 }
@@ -274,6 +285,8 @@ input:placeholder-shown {
     background-color: #1C2229;
     box-shadow: inset 0px 0px 6px -2px #000000;
     z-index: 0;
+    display: flex;
+    justify-content: space-between;
 }
 
 .ac-main-header-create:hover {
@@ -288,8 +301,8 @@ input:placeholder-shown {
     cursor: pointer;
     text-transform: uppercase;
     background-color: transparent;
-    font-family: 'Roboto';
-    font-size: 16px;
+    font-family: FontAwesome;
+    font-size: 30px;
     color: #fff;
 }
 
@@ -1116,6 +1129,8 @@ input:placeholder-shown {
 .fc-toolbar h2 {
     text-align: center;
     line-height: 30px;
+    margin: 0 auto;
+    display: contents;
 }
 
 .fc-view {
@@ -1149,9 +1164,11 @@ input:placeholder-shown {
     padding: 0px;
     float: left;
     position: absolute;
-    top: 20px;
-    left: 90px;
+    top: 70px;
+    left: 0;
     color: #fff;
+    width: 100%;
+    background-color: #1C2229;
 }
 
 .fc-right {
@@ -1193,7 +1210,9 @@ button.fc-today-button.fc-button.fc-state-default.fc-corner-right.fc-state-disab
     margin: 0 0 0 0px;
 }
 
-
+.fc-state-hover, .fc-state-down, .fc-state-active, .fc-state-disabled {
+    background-color: #fff;
+}
 
 th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
     line-height: 30px;
@@ -1202,23 +1221,23 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
 }
 
 .fc-view.fc-month-view.fc-basic-view table tbody tr td .fc-scroller {
-    height: calc(100vh - 177px) !important;
+    height: calc(100vh - 207px) !important;
 }
 
 .fc-view.fc-month-view.fc-basic-view table tbody tr td div div .fc-row.fc-week.fc-widget-content {
-    height: calc((100vh - 177px) / 6) !important;
+    height: calc((100vh - 207px) / 6) !important;
 }
 
 .fc-view.fc-agendaDay-view.fc-agenda-view table tbody tr td .fc-scroller {
-    height: calc(100vh - 226px) !important;
+    height: calc(100vh - 256px) !important;
 }
 
 .fc-view.fc-agendaWeek-view.fc-agenda-view table tbody tr td .fc-scroller {
-    height: calc(100vh - 246px) !important;
+    height: calc(100vh - 276px) !important;
 }
 
 .fc-view.fc-listWeek-view.fc-list-view.fc-widget-content .fc-scroller {
-    height: calc(100vh - 156px) !important;
+    height: calc(100vh - 186px) !important;
 }
 
 .fc-unthemed .fc-divider, .fc-unthemed .fc-popover .fc-header, .fc-unthemed .fc-list-heading td {
@@ -1252,6 +1271,7 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
 
 .fc-toolbar.fc-header-toolbar {
     margin-bottom: 0px;
+    margin-top: 30px;
 }
 
 a[data-goto] {
@@ -2205,7 +2225,8 @@ a[data-goto] {
     }
 
     .fc-center {
-        left: 400px;
+        left: 250px;
+        width: calc(100% - 250px);
     }
 
     .ac-main-header-menue-sandwish {
