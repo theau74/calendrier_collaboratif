@@ -45,7 +45,7 @@ input:placeholder-shown {
       (appearance: none)) {
 
     option {
-        background-color: #000;
+        background-color: #c8d6e5;
     }
 
 }
@@ -1547,12 +1547,12 @@ a[data-goto] {
 }
 
 .ac-createGroup-popUp-body-item-name{
-    width: 30%;
+    width: 25%;
     text-align: center;
     line-height: 40px;
     box-shadow: 0px 0px 5px 1px;
     background-color: #c8d6e5;
-    margin: 0 30px;
+    margin-left: 28px;
     overflow-x: scroll;
     cursor: default;
     font-size: 18px;
@@ -1560,20 +1560,33 @@ a[data-goto] {
 }
 
 .ac-createGroup-popUp-body-item-lname{
-    width: 30%;
+    width: 25%;
     text-align: center;
     line-height: 40px;
     box-shadow: 0px 0px 5px 1px;
     background-color: #c8d6e5;
-    margin: 0 30px;
+    margin-left: 45px;
     overflow-x: scroll;
     cursor: default;
     font-size: 18px;
     font-weight: bold;
 }
 
+.ac-createGroup-popUp-body-item-select{
+    height: 40px;
+    border: none;
+    box-shadow: 0px 0px 5px 1px;
+    background-color: #c8d6e5;
+    width: 25%;
+    margin-left: 45px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
 .ac-createGroup-popUp-body-columns{
     display: flex;
+    width: 93%;
+    margin-left: 27px;
 }
 
 .ac-createGroup-popUp-body-ul{
@@ -1587,9 +1600,9 @@ a[data-goto] {
     line-height: 40px;
     box-shadow: 5px 5px 3px 1px #000;
     background-color: #1C2229;
-    margin: 10px 30px 0;
+    margin: 10px 47px 0 0;
     color: white;
-    width: 30%;
+    width: 200px;
     font-size: 23px;
     cursor: default;
 }
@@ -1603,14 +1616,6 @@ a[data-goto] {
     padding: 5px 0;
 }
 
-.ac-createGroup-popUp-body-invitation-groups {
-    cursor: default;
-    font-size: 21px;
-    background-color: #1C2229;
-    color: #FFF;
-    text-align: center;
-    padding: 5px 0;
-}
 
 
 .ac-createGroup-popUp-body-description {
@@ -2011,7 +2016,7 @@ a[data-goto] {
 .ac-createGroup-popUp-checkbox-container {
     cursor: pointer;
     display: flex;
-    width: 100%;
+    margin: 0 18px;
 }
 
 /*cacher checkbox par default */
@@ -2022,8 +2027,8 @@ a[data-goto] {
 
 /* custom checkbox */
 .ac-createGroup-popUp-checkbox-container-checkmark {
-    height: 24px;
-    width: 24px;
+    height: 40px;
+    min-width: 40px;
     border: 3px solid #1c2229;
     border-radius: 5px;
     cursor: pointer;
@@ -2049,9 +2054,9 @@ a[data-goto] {
 }
 
 .ac-createGroup-popUp-checkbox-container .ac-createGroup-popUp-checkbox-container-checkmark:after {
-    width: 5px;
-    height: 12px;
-    margin-left: 5px;
+    width: 10px;
+    height: 23px;
+    margin-left: 10px;
     border: solid white;
     border-width: 0 3px 3px 0;
     -webkit-transform: rotate(45deg);
