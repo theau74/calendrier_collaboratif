@@ -106,17 +106,22 @@
         &#9776;
     </a>
 
-    <button id="bouttonCreeGroup" type="submit" class="ac-main-header-createGroup"  name="action" value="create-grp">
+    <div id="bouttonCreeGroup" type="submit" class="ac-main-header-createGroup"  name="action" value="create-grp">
         &#xe7f0;
-    </button>
+    </div>
 
-    <form action="index.php?logout" method="post">
+    <div id="bouttonVoirAllGroup" type="submit" class="ac-main-header-allGroup"  name="action" value="voir-grp">
+        &#xf0c0;
+    </div>
 
-        <button type="submit" class="ac-main-header-logout" name="logout">
-            &#xf011;
-        </button>
+    <div id="bouttonVoirAllEvent" type="submit" class="ac-main-header-allEvent" name="logout">
+        &#xe878;
+    </div>
 
-    </form>
+    <div href="index.php?logout" type="submit" class="ac-main-header-logout" name="logout">
+        &#xf011;
+    </div>
+
 
 </div>
 

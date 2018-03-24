@@ -62,7 +62,7 @@ if (empty($_POST) && empty($_GET)) {
                     echo "creation_failed";
                 }
             } else {
-                $free_slot_list = search_next_free_slot($_POST['start_date'], $_POST['start_time'], $_POST['end_date'], $_POST['end_time'], $_POST['users-choice'], 8, 17, 20, 200, $c);
+                $free_slot_list = search_next_free_slot($_POST['start_date'], $_POST['start_time'], $_POST['end_date'], $_POST['end_time'], $_POST['users-choice'], 8, 17, 5, 100, $c);
                 $page = "select-slot";
             }
         }
@@ -89,7 +89,7 @@ if (empty($_POST) && empty($_GET)) {
                     echo "creation_failed";
                 }
             } else {
-                $free_slot_list = search_next_free_slot($_POST['start_date'], $_POST['start_time'], $_POST['end_date'], $_POST['end_time'], $_POST['users-choice'], 8, 17, 20, 200, $c);
+                $free_slot_list = search_next_free_slot($_POST['start_date'], $_POST['start_time'], $_POST['end_date'], $_POST['end_time'], $_POST['users-choice'], 8, 17, 5, 100, $c);
                 $page = "select-slot";
             }
         }
