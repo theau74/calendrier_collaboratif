@@ -48,18 +48,26 @@ $("#closeEventPopUp").click(function(){
     $("#fondGris").css("opacity","0");
 });
 
-$("#bouttonCreeGroup").click(function(){
-    $("#createGroup").css("display","block");
-});
-
-$("#closeGroup").click(function(){
-    $("#createGroup").css("display","none");
-});
-
 $("#bouttonCreeEvent").click(function(){
     $("#createEvent").css("display","block");
 });
 
 $("#closeFail").click(function(){
     $("#popUpFail").css("display","none");
+});
+
+$("#bouttonCreeGroup").click(function(){
+    $("#createGroup").css("display","block");
+    $("#createGroup-popUp").css("display","block");
+    $("#fondGris").css("opacity","1");
+});
+
+$("#closeGroup").click(function(){
+    $("#createGroup").css("display","none");
+    $("#fondGris").css("opacity","0");
+});
+
+$("#closeGroup-popUp").click(function(){
+    $("#createGroup-popUp").css("display","none");
+    $("#fondGris").css("opacity","0");
 });

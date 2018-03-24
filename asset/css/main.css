@@ -1661,7 +1661,7 @@ a[data-goto] {
 
 .ac-createEvent-popUp {
     position: fixed;
-    z-index: 999;
+    z-index: 2;
     padding-top: 100px;
     left: 0;
     top: 0;
@@ -1717,7 +1717,37 @@ a[data-goto] {
     text-decoration: none;
 }
 
+/*********************************************************************************\
+ *   PopUpGroup                                                               *
+\*********************************************************************************/
 
+.ac-createGroup-popUp{
+    position: fixed;
+    z-index: 2;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.ac-createGroup-popUp-content {
+    position: relative;
+    margin: auto;
+    width: 80%;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    box-shadow: 3px 3px 15px 2px;
+}
+
+.ac-createGroup-popUp-body-addTitle{
+    font-size: 30px;
+    text-align: center;
+    width: 100%;
+}
 /*********************************************************************************\
  *   checkbox standar                                                               *
 \*********************************************************************************/
