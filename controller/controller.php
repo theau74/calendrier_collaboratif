@@ -45,7 +45,7 @@ if (empty($_POST) && empty($_GET)) {
 
         //creation d'éveneement
         if ($_POST["action"] == "create-event") {
-            if (verify_user_list_disponibility(protect($_POST['start_date']), protect($_POST['start_time']), protect($_POST['end_date']), protect($_POST['end_time']), protect($_POST['users-choice']), $c)) {
+            if (verify_user_list_disponibility(protect($_POST['start_date']), protect($_POST['start_time']), protect($_POST['end_date']), protect($_POST['end_time']), $_POST['users-choice'], $c)) {
                 if (create_event(protect($_POST['nom']), protect($_POST['description']), protect($_SESSION['id']), protect($_POST['start_date']), protect($_POST['start_time']), protect($_POST['end_date']), protect($_POST['end_time']), $c, $encryption_key)) {
                     if(!empty($_POST['users-choice']) || !empty($_POST['groups-choice'])){
                         if (create_invitation($_POST['users-choice'], $_POST['groups-choice'], $_POST['groups-choice'], $_SESSION['id'], $c, $encryption_key)) {
@@ -87,7 +87,7 @@ if (empty($_POST) && empty($_GET)) {
                     echo "creation_failed";
                 }
             } else {
-                $free_slot_list = search_next_free_slot($_POST['start_date'], $_POST['start_time'], $_POST['end_date'], $_POST['end_time'], $_POST['users-choice'], 8, 17, 5, 100, $c);
+                $free_slot_list = search_next_free_slot(protect($_POST['start_date']), protect($_POST['start_time']), protect($_POST['end_date']), protect($_POST['end_time']), protect($_POST['users-choice']), 8, 17, 5, 100, $c);
                 $page = "select-slot";
             }
         }
@@ -102,6 +102,7 @@ if (empty($_POST) && empty($_GET)) {
         }
         if ($_POST["action"] == "create-group") {
             if (create_group($_POST['nom'], $_POST['description'], $_SESSION['id'], $_POST['users-choice'], $c, $encryption_key)) {
+                //$nom, $description, $creator, $users_choice, $c, $encryption_key
                 header('Location: index.php');
             } else {
                 $page ="creation_failed";
