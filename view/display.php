@@ -100,6 +100,12 @@ function display_list_group($groups_list_by_id_user){
     require("pages/list_group.php");
 
 }
+function display_set_group($one_group){
+    require("pages/set_group.php");
+}
+function display_set_event($one_event){
+    require("pages/set_event.php");
+}
 function display_create_group($users_list){
 
     require ("pages/create_group.php");

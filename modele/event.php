@@ -15,6 +15,15 @@ GROUP BY I.id_event");
     }
     return $event_list;
 }
+function get_one_event_by_id($id_event, $c){
+    $sql = ("SELECT id, nom, start,start_hour,end,end_hour FROM events WHERE id='$id_event'");
+    $result = mysqli_query($c,$sql);
+    $one_event = array ();
+    if($row = mysqli_fetch_row($result)){
+        $one_event= $row;
+    }
+    return $one_event;
+}
 function get_accepeted_event_by_user_id($id, $c){
     $sql = ("SELECT *
 FROM events E
