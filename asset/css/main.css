@@ -1455,84 +1455,91 @@ a[data-goto] {
 \*************/
 
 
-.ac-createGroup-popUp-header {
+.ac-createGroup-popUp{
+    position: fixed;
+    z-index: 2;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
     width: 100%;
-    height: 80px;
-    word-wrap: break-word;
-    padding: 0px;
-    background-color: #1C2229;
-    color: white;
+    height: 100%;
+    overflow: auto;
 }
 
-.ac-createGroup-popUp-header-save {
-    color: white;
-    background-color: #1C2229;
-    outline: none;
-    font-size: 14px;
-    border: none;
-    float: right;
-    line-height: 20px;
-    padding: 10px 15px;
-    text-transform: uppercase;
-    cursor: pointer;
+.ac-createGroup-popUp-content {
+    position: relative;
+    margin: auto;
+    width: 60%;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    box-shadow: 3px 3px 15px 2px;
 }
 
-.ac-createGroup-popUp-header-save:hover {
-    background-color: #576574;
-}
-
-.ac-createGroup-popUp-header-save:active {
-    background-color: #8395a7;
-}
-
-.ac-createGroup-popUp-header-title {
+.ac-createGroup-popUp-body-addTitle{
+    margin-bottom: 10px;
     width: 100%;
-    font-size: 16px;
-    color: white;
-    background-color: #1C2229;
-    border: none;
-    outline: none;
-    height: 40px;
-    padding: 0px 10px;
+    font-size: 30px;
+    text-align: center;
+    cursor: default;
+    padding-top: 10px;
+    font-weight: bold;
 }
 
 .ac-createGroup-popUp-body {
     background-color: #fff;
-    height: 260px;
-
-}
-
-.ac-createGroup-popUp-body-creneaux-title {
-    margin-bottom: 15px;
-    width: 100%;
-    font-size: 35px;
-    text-align: center;
-    cursor: default;
-}
-
-.ac-createGroup-popUp-body-creneaux {
-    width: 50%;
-    float: left;
-    padding: 10px;
-    border-right: 1px solid #000;
-    height: 100%;
-}
-
-.ac-createGroup-popUp-body-invitation {
-    width: 50%;
-    float: right;
-    height: 100%;
+    height: calc(60vh - 80px);
     overflow-y: scroll;
 
 }
 
-.ac-createGroup-popUp-body-invitation-title {
-    margin-bottom: 10px;
-    width: 100%;
-    font-size: 35px;
+.ac-createGroup-popUp-body-item-name{
+    width: 30%;
     text-align: center;
+    line-height: 40px;
+    box-shadow: 0px 0px 5px 1px;
+    background-color: #c8d6e5;
+    margin: 0 30px;
+    overflow-x: scroll;
     cursor: default;
-    padding-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.ac-createGroup-popUp-body-item-lname{
+    width: 30%;
+    text-align: center;
+    line-height: 40px;
+    box-shadow: 0px 0px 5px 1px;
+    background-color: #c8d6e5;
+    margin: 0 30px;
+    overflow-x: scroll;
+    cursor: default;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.ac-createGroup-popUp-body-columns{
+    display: flex;
+}
+
+.ac-createGroup-popUp-body-ul{
+    background-color: #c8d6e5;
+    box-shadow: 0 0 5px 2px;
+    margin: 0 5px 5px;
+}
+
+.ac-createGroup-popUp-body-h2{
+    text-align: center;
+    line-height: 40px;
+    box-shadow: 5px 5px 3px 1px #000;
+    background-color: #1C2229;
+    margin: 10px 30px 0;
+    color: white;
+    width: 30%;
+    font-size: 23px;
+    cursor: default;
 }
 
 .ac-createGroup-popUp-body-invitation-users {
@@ -1553,45 +1560,6 @@ a[data-goto] {
     padding: 5px 0;
 }
 
-.ac-createGroup-popUp-body-creneaux-first {
-    display: flex;
-    height: 70px;
-    margin-top: 30px;
-}
-
-.ac-createGroup-popUp-body-creneaux-second {
-    display: flex;
-    height: 70px;
-}
-
-.ac-createGroup-popUp-body-creneaux-crenTxt {
-    display: inline-block;
-    border: none;
-    outline: none;
-    padding: 10px 10px;
-    font: normal normal normal 30px/1 FontAwesome;
-}
-
-.ac-createGroup-popUp-body-creneaux-dateEv {
-    font-size: 17px;
-    height: 50px;
-    padding-left: 65px;
-    background-color: #c8d6e5;
-    border: none;
-    box-shadow: 0px 0px 5px 1px;
-    margin: 0 40px;
-}
-
-.ac-createGroup-popUp-body-creneaux-hoursEv {
-    border: none;
-    outline: none;
-    font-size: 19px;
-    height: 50px;
-    box-shadow: 0px 0px 5px 1px;
-    background-color: #c8d6e5;
-    padding-left: 30px;
-    margin-left: 20px;
-}
 
 .ac-createGroup-popUp-body-description {
     position: absolute;
@@ -1737,37 +1705,6 @@ a[data-goto] {
     text-decoration: none;
 }
 
-/*********************************************************************************\
- *   PopUpGroup                                                               *
-\*********************************************************************************/
-
-.ac-createGroup-popUp{
-    position: fixed;
-    z-index: 2;
-    padding-top: 100px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-}
-
-.ac-createGroup-popUp-content {
-    position: relative;
-    margin: auto;
-    width: 80%;
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s;
-    box-shadow: 3px 3px 15px 2px;
-}
-
-.ac-createGroup-popUp-body-addTitle{
-    font-size: 30px;
-    text-align: center;
-    width: 100%;
-}
 /*********************************************************************************\
  *   checkbox standar                                                               *
 \*********************************************************************************/
@@ -2021,12 +1958,8 @@ a[data-goto] {
 
 .ac-createGroup-popUp-checkbox-container {
     cursor: pointer;
-    font-size: 22px;
     display: flex;
-    padding: 5px;
-    word-break: break-all;
     width: 100%;
-    justify-content: space-between;
 }
 
 /*cacher checkbox par default */
@@ -2073,61 +2006,6 @@ a[data-goto] {
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
-
-.ac-createGroup-popUp-creneaux-checkbox-container {
-    cursor: pointer;
-    font-size: 23px;
-    display: flex;
-    margin-left: 85px;
-    word-break: break-all;
-    width: 220px;
-}
-
-/*cacher checkbox par default */
-.ac-createGroup-popUp-creneaux-checkbox-container input {
-    opacity: 0;
-    cursor: pointer;
-}
-
-/* custom checkbox */
-.ac-createGroup-popUp-creneaux-checkbox-container-checkmark {
-    height: 24px;
-    width: 24px;
-    border: 3px solid #1c2229;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-left: 12px;
-}
-
-.ac-createGroup-popUp-creneaux-checkbox-container:hover input ~ .ac-createGroup-popUp-creneaux-checkbox-container-checkmark {
-    background-color: #efefef;
-}
-
-/* checked, then background-color */
-.ac-createGroup-popUp-creneaux-checkbox-container input:checked ~ .ac-createGroup-popUp-creneaux-checkbox-container-checkmark {
-    background-color: #1c2229;
-}
-
-.ac-createGroup-popUp-creneaux-checkbox-container-checkmark:after {
-    content: "";
-    display: none;
-}
-
-.ac-createGroup-popUp-creneaux-checkbox-container input:checked ~ .ac-createGroup-popUp-creneaux-checkbox-container-checkmark:after {
-    display: block;
-}
-
-.ac-createGroup-popUp-creneaux-checkbox-container .ac-createGroup-popUp-creneaux-checkbox-container-checkmark:after {
-    width: 5px;
-    height: 12px;
-    margin-left: 5px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-
 
 /*********************************************************************************\
  *   Footer                                                                      *
