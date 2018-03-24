@@ -17,20 +17,15 @@ foreach ($groups_list_by_id_user as $groups) {
     if (!empty($groups['description'])) {
         echo '<li>description : ' . $groups['description'].'</li>';
     }
-    echo"</ul>";
-    echo'<form  action="index.php" method="post">
-       <button type="submit" class="" id="saveEvent"  name="action" value="delete-group">
-                    supprimer
-                </button>
-        <input type="hidden" value="'.$groups['id_users'].'" name="id_users">
-        <input type="hidden" value="'.$groups['id_groups'].'" name="id_groups">
-        </form>';
-    echo'<form  action="index.php" method="post">
-        <button type="submit" class="" id="saveEvent"  name="action" value="set-group">
-                    modifier
-                </button>
-         <input type="text" value="'.$groups['nom'].'" name="nom"> 
-         <input type="text" value="'.$groups['description'].'" name="description"> 
-         <input type="hidden" value="'.$groups['id_groups'].'" name="id_groups">
-         </form>';
+    echo'</ul>';
+    if (!empty($groups['level'])){
+        if($groups['level'] == "1" || $groups['level'] == "2"){
+            echo'<form  action="index.php" method="post">
+                   <button type="submit" class="" id="saveGroup"  name="view" value="set_group">
+                        Modifier
+                   </button>
+                   <input type="hidden" value="'.$groups['id_groups'].'" name="id_groups">  
+                 </form>';
+        }
+    }
 }

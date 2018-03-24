@@ -155,7 +155,7 @@ if (empty($_POST) && empty($_GET)) {
         }
         //suppression de groupe
         if ($_POST["action"] == "delete-group"){
-            if(delete_groups_by_id($_POST["id_users"], $_POST["id_groups"],$c)){
+            if(delete_groups_by_id($_POST["id_groups"],$c)){
                 header('Location: index.php');
             } else{
                 echo "delete_failed";
@@ -168,6 +168,20 @@ if (empty($_POST) && empty($_GET)) {
             } else {
                 echo "update_failed";
             }
+        }
+    }
+    elseif (isset($_POST["view"])) {
+        if ($_POST["view"] == "set_group"){
+                $one_group = get_one_group_by_id($_POST["id_groups"],$c);
+                var_dump($one_group);
+                $page ="set_group";
+
+        }
+        if ($_POST["view"] == "set_event"){
+            $one_event = get_one_event_by_id($_POST["id_event"],$c);
+            var_dump($one_event);
+            $page ="set_event";
+
         }
     }
     else{

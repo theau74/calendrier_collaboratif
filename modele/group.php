@@ -24,11 +24,23 @@ function get_groups_by_id_user($id_user,$c){
     }
     return $groups_list_by_id_user;
 }
-function delete_groups_by_id($id_users,$id_groups,$c){
+function get_one_group_by_id($id_group,$c){
+    $sql = ("SELECT id, nom, description FROM groups WHERE id='$id_group'");
+    $result = mysqli_query($c,$sql);
+    $one_group = array ();
+    if($row = mysqli_fetch_row($result)){
+        $one_group= $row;
+    }
+    return $one_group;
+
+
+
+}
+function delete_groups_by_id($id_groups,$c){
     $sql_groups = ("DELETE FROM groups 
     WHERE groups.id ='$id_groups'");
     $sql_users_groups= ("DELETE FROM users_groups
-    WHERE users_groups.id_users='$id_users' AND users_groups.id_groups='$id_groups'");
+    WHERE users_groups.id_groups='$id_groups'");
     if(mysqli_query($c,$sql_users_groups)){
         if(mysqli_query($c,$sql_groups)){
             return true;
