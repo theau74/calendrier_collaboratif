@@ -72,18 +72,17 @@ LIMIT 1");
 }
 
 //creation de groupe dans la base
-function create_group($idcreator, $c, $encryption_key) {
-    $nom = $_POST["nom"];
-    $description = $_POST["description"];
+function create_group($nom, $description, $creator, $users_choice, $c, $encryption_key) {
     //insertion des valeurs dans la bdd
-    $sql = ("INSERT INTO groups(nom, description, creator) VALUES('$nom', '$description', '$idcreator')");
+    var_dump($creator);
+    var_dump($description);
+    $sql = ("INSERT INTO groups(nom, description, creator) VALUES('$nom', '$description', '$creator')");
     if(mysqli_query($c,$sql)){
-        $id_group = get_last_group_by_user_id($idcreator, $c);
+        $id_group = get_last_group_by_user_id($creator, $c);
         $loop = 0;
-        $creator = $_SESSION['id'];
-        if(!empty($_POST['users-choice'])) {
+        if(!empty($users_choice)) {
             $sql2 = ("INSERT INTO users_groups (`id_users`, `id_groups`, `creator`, `etat`, `level`) VALUES");
-            foreach ($_POST['users-choice'] as $user) {
+            foreach ($users_choice as $user) {
                 $id_user = $user;
                 $user_right = $_POST['user_right'][$loop];
                 if ($loop == 0) {
