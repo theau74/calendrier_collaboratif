@@ -45,10 +45,25 @@ if (empty($_POST) && empty($_GET)) {
 
         //creation d'éveneement
         if ($_POST["action"] == "create-event") {
-            if (verify_user_list_disponibility(protect($_POST['start_date']), protect($_POST['start_time']), protect($_POST['end_date']), protect($_POST['end_time']), $_POST['users-choice'], $c)) {
+            $users_choice_list = array();
+            if(!empty($_POST['users-choice'])){
+                foreach ($_POST['users-choice'] as $user_choice){
+                    $users_choice_list[count($users_choice_list)] = $user_choice;
+                }
+            }
+
+            if(!empty($_POST['groups-choice'])){
+                foreach ($_POST['groups-choice'] as $group){
+                    foreach(get_users_by_id_group($group, $c) as $user) {
+                        $users_choice_list[count($users_choice_list)] = $user['id_users'];
+                    }
+                }
+            }
+
+            if (verify_user_list_disponibility(protect($_POST['start_date']), protect($_POST['start_time']), protect($_POST['end_date']), protect($_POST['end_time']), $users_choice_list, $c)) {
                 if (create_event(protect($_POST['nom']), protect($_POST['description']), protect($_SESSION['id']), protect($_POST['start_date']), protect($_POST['start_time']), protect($_POST['end_date']), protect($_POST['end_time']), $c, $encryption_key)) {
                     if(!empty($_POST['users-choice']) || !empty($_POST['groups-choice'])){
-                        if (create_invitation($_POST['users-choice'], $_POST['groups-choice'], $_POST['groups-choice'], $_SESSION['id'], $c, $encryption_key)) {
+                        if (create_invitation($users_choice_list, $_POST['groups-choice'], $_SESSION['id'], $c, $encryption_key)) {
                             header('Location: index.php');
 
                         } else {

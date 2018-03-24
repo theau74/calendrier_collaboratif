@@ -24,8 +24,8 @@ foreach ($groups_list_by_id_user as $groups) {
                 </button>
         <input type="hidden" value="'.$groups['id_users'].'" name="id_users">
         <input type="hidden" value="'.$groups['id_groups'].'" name="id_groups">
-        </form>';
-    echo'<form  action="index.php" method="post">
+        ';
+    echo'
         <button type="submit" class="" id="saveEvent"  name="action" value="set-group">
                     modifier
                 </button>
