@@ -65,6 +65,7 @@ $("#closeGroup-popUp").click(function(){
     $("#createGroup-popUp").css("display","none");
     $("#fondGris").css("opacity","0");
 });
+
 function hide_envent_popup(id) {
     if(document.getElementById("popup_stat").value == "display") {
         document.getElementById('event_' + id).style.display = "none";

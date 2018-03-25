@@ -1092,12 +1092,13 @@ input:placeholder-shown {
 }
 
 .ac-createGroup-body-item-select {
-    height: 30px;
-    border: 1px solid grey;
-    border-radius: 3px;
-    width: 20%;
-    float: right;
-    display: block;
+    height: 40px;
+    border: none;
+    box-shadow: 0px 0px 5px 1px;
+    background-color: #c8d6e5;
+    width: 25%;
+    margin-left: 45px;
+    font-size: 17px;
 }
 
 .ac-createGroup-body-item-checkbox {
@@ -1521,9 +1522,52 @@ a[data-goto] {
 
 
 /*************\
- *   Event   *
+ * CreeEvent *
 \*************/
 
+.ac-createEvent-popUp {
+    position: fixed;
+    z-index: 2;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.ac-createEvent-popUp-content {
+    position: relative;
+    margin: auto;
+    width: 80%;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    box-shadow: 3px 3px 15px 2px;
+}
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
 
 .ac-createEvent-popUp-header {
     width: 100%;
@@ -1553,6 +1597,20 @@ a[data-goto] {
 
 .ac-createEvent-popUp-header-save:active {
     background-color: #8395a7;
+}
+
+.ac-createEvent-popUp-header-close {
+    color: white;
+    float: left;
+    cursor: pointer;
+    padding: 15px 0px 0px 15px;
+    font: normal normal normal 20px/1 FontAwesome;
+}
+
+.ac-createEvent-popUp-header-close:hover,
+.ac-createEvent-popUp-header-close:focus {
+    color: #000;
+    text-decoration: none;
 }
 
 .ac-createEvent-popUp-header-title {
@@ -1686,9 +1744,9 @@ a[data-goto] {
 }
 
 
-/*************\
- *   Groupe  *
-\*************/
+/**************\
+ * CreeGroupe *
+\**************/
 
 
 .ac-createGroup-popUp{
@@ -1713,6 +1771,13 @@ a[data-goto] {
     box-shadow: 3px 3px 15px 2px;
 }
 
+.ac-createGroup-popUp-body {
+    background-color: #fff;
+    height: calc(60vh - 80px);
+    overflow-y: scroll;
+
+}
+
 .ac-createGroup-popUp-body-addTitle{
     margin-bottom: 10px;
     width: 100%;
@@ -1721,13 +1786,6 @@ a[data-goto] {
     cursor: default;
     padding-top: 10px;
     font-weight: bold;
-}
-
-.ac-createGroup-popUp-body {
-    background-color: #fff;
-    height: calc(60vh - 80px);
-    overflow-y: scroll;
-
 }
 
 .ac-createGroup-popUp-body-item-name{
@@ -1776,7 +1834,8 @@ a[data-goto] {
 .ac-createGroup-popUp-body-ul{
     background-color: #c8d6e5;
     box-shadow: 0 0 5px 2px;
-    margin: 0 5px 5px;
+    margin: 5px;
+    padding: 5px;
 }
 
 .ac-createGroup-popUp-body-h2{
@@ -1824,7 +1883,7 @@ a[data-goto] {
 
 
 /*************\
- * PopUpFail *
+ *   Fail    *
 \*************/
 
 
@@ -1854,14 +1913,14 @@ a[data-goto] {
     border-radius: 3px;
 }
 
-.ac-popUpFail-text {
+.ac-popUpFail-header-text {
     color: #fff;
     text-align: center;
     line-height: 70px;
     font-size: 20px;
 }
 
-.ac-popUp-header-close {
+.ac-popUpFail-header-close {
     color: white;
     cursor: pointer;
     width: 150px;
@@ -1873,77 +1932,88 @@ a[data-goto] {
     box-shadow: 4px 4px 20px -5px #000;
 }
 
-.ac-popUp-header-close:hover,
-.ac-popUp-header-close:focus {
+.ac-popUpFail-header-close:hover,
+.ac-popUpFail-header-close:focus {
     text-decoration: none;
     box-shadow: 4px 4px 20px -3px #000;
     background-color: #409E83;
 }
 
 
-/*************\
- * PopUpEvent *
-\*************/
+/**************\
+ *    Event   *
+\**************/
 
 
-.ac-createEvent-popUp {
+.ac-popUpEvent {
+    display: block;
     position: fixed;
-    z-index: 2;
-    padding-top: 100px;
+    z-index: 1000;
     left: 0;
-    top: 0;
+    top: 200px;
     width: 100%;
-    height: 100%;
-    overflow: auto;
 }
 
-.ac-createEvent-popUp-content {
+.ac-popUpEvent-content {
     position: relative;
     margin: auto;
-    width: 80%;
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s;
+    width: 250px;
     box-shadow: 3px 3px 15px 2px;
 }
 
-@-webkit-keyframes animatetop {
-    from {
-        top: -300px;
-        opacity: 0
-    }
-    to {
-        top: 0;
-        opacity: 1
-    }
-}
-
-@keyframes animatetop {
-    from {
-        top: -300px;
-        opacity: 0
-    }
-    to {
-        top: 0;
-        opacity: 1
-    }
-}
-
-.ac-createEvent-popUp-header-close {
+.ac-popUpEvent-header {
+    width: 100%;
+    height: 250px;
+    word-wrap: break-word;
+    background-color: #1D2329;
     color: white;
-    float: left;
+    border-radius: 3px;
+    padding: 30px;
+}
+
+.ac-popUpEvent-header-text {
+    color: #fff;
+    text-align: center;
+    line-height: 70px;
+    font-size: 20px;
+}
+
+.ac-popUpEvent-header-close {
     cursor: pointer;
-    padding: 15px 0px 0px 15px;
-    font: normal normal normal 20px/1 FontAwesome;
+    width: 150px;
+    display: block;
+    margin: 30px auto 0px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 20px;
+    border-radius: 3px;
+    box-shadow: 4px 4px 20px -5px #000;
 }
 
-.ac-createEvent-popUp-header-close:hover,
-.ac-createEvent-popUp-header-close:focus {
-    color: #000;
+.ac-popUpEvent-header-close:hover,
+.ac-popUpEvent-header-close:focus {
     text-decoration: none;
+    box-shadow: 4px 4px 20px -3px #000;
+    background-color: #409E83;
 }
 
+.ac-popUpEvent-header-item {
+    line-height: 20px;
+    text-align: center;
+    width: 50%;
+    display: inline-block;
+}
+
+.ac-popUpEvent-header-item-nom {
+    width: 100%;
+    line-height: 30px;
+    font-size: 20px;
+}
+
+.ac-popUpEvent-header-item-description {
+    width: 100%;
+    font-size: 14px;
+}
 
 /*********************************************************************************\
  *   checkbox standar                                                               *
