@@ -22,7 +22,7 @@ function create_invitation($user_list, $creator, $c)
                     $sql2 = (" ('$id_event', '$id_user', '$id_group', 'valider', '$creator', '$right')");
                 }
                 else{
-                    $sql2 = (" ('$id_event', '$id_user', '$id_group', 'envoie', '$creator', '$right')");
+                    $sql2 .= (" ('$id_event', '$id_user', '$id_group', 'envoie', '$creator', '$right')");
                 }
                 $loop++;
             } else {
@@ -30,7 +30,7 @@ function create_invitation($user_list, $creator, $c)
                     $sql2 = (", ('$id_event', '$id_user', '$id_group', 'valider', '$creator', '$right')");
                 }
                 else{
-                    $sql2 = (", ('$id_event', '$id_user', '$id_group', 'envoie', '$creator', '$right')");
+                    $sql2 .= (", ('$id_event', '$id_user', '$id_group', 'envoie', '$creator', '$right')");
                 }
             }
         }
@@ -39,7 +39,6 @@ function create_invitation($user_list, $creator, $c)
 
     if (isset($sql2)) {
         $sql .= $sql2;
-
         if (mysqli_query($c, $sql)) {
             return true;
         } else {

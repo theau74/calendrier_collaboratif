@@ -46,6 +46,7 @@ GROUP BY I.id_event");
 function create_event($nom, $description, $idcreator, $start, $start_hour, $end, $end_hour, $c, $encryption_key) {
     //insertion des valeurs dans la bdd
     $sql = ("INSERT INTO events(nom, creator, description, start, start_hour, end, end_hour) VALUES('$nom', '$idcreator', '$description', '$start', '$start_hour', '$end', '$end_hour')");
+
     if(mysqli_query($c,$sql)){
         return true;
     }
