@@ -14,9 +14,10 @@
 
     <div class="ac-listEvent-body">
 
+        <h1>liste des events</h1>
+
         <?php
         foreach ($event_list as $events) {
-            echo"<h1>liste des events</h1>";
             echo"<ul>";
             if (!empty($events['id_event'])) {
                 echo '<li>id : '. $events['id_event'].'</li>';

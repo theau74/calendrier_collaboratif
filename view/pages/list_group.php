@@ -53,69 +53,35 @@
 
         <div class="ac-listGroup-body-invitation">
 
-            <div class="ac-listGroup-body-invitation-item ac-listGroup-body-invitation-refuse">
-
-                <h1> Liste des invitations de groupe refuser : </h1>
-
-                <?php
-                foreach ($invitation_group_list as $invitation_group){
-                        if($invitation_group['etat']=='refuser'){
-                            echo "<div>";
-                            echo "<ul>";
-                            if(!empty($invitation_group['nom'])){
-                                echo"<li>".$invitation_group['nom'].'</li>';
-                            }if(!empty($invitation_group['description'])){
-                                echo"<li>".$invitation_group['description'].'</li>';
-                            }
-                            echo"<li>";
-                            echo'<form  action="index.php" method="post">
-                            <button type="submit" class="ac-listGroupModif-body-block-boutton"   name="action" value="set-group-invitation">
-                            Valider
-                            </button>
-                            <input type="hidden" value="'.$invitation_group['id_users'].'" name="id_users">
-                            <input type="hidden" value="'.$invitation_group['id_groups'].'" name="id_groups">
-                            <input type="hidden" value="true" name="response">
-                            </form>';
-                            echo"</li>";
-                            echo"</ul>";
-                            echo "</div>";
-
-                        }
-
-                    }
-                ?>
-
-            </div>
-
             <div class="ac-listGroup-body-invitation-item ac-listGroup-body-invitation-accepte">
 
                 <h1> Liste des invitations de groupe accepter : </h1>
 
                 <?php
 
-                    foreach ($invitation_group_list as $invitation_group) {
-                        if ($invitation_group['etat'] == "valider") {
-                            echo "<ul>";
-                            if (!empty($invitation_group['nom'])) {
-                                echo "<li>nom du groupe : " . $invitation_group['nom'] . '</li>';
-                            }
-                            if (!empty($invitation_group['description'])) {
-                                echo "<li>description du groupe : " . $invitation_group['description'] . '</li>';
-                            }
-                            echo"<li>";
-                            echo'<form  action="index.php" method="post">
-                           <button type="submit" class="ac-listGroupModif-body-block-boutton"   name="action" value="set-group-invitation">
-                            Refuser
-                            </button>
-                            <input type="hidden" value="'.$invitation_group['id_users'].'" name="id_users">
-                            <input type="hidden" value="'.$invitation_group['id_groups'].'" name="id_groups">
-                            <input type="hidden" value="false" name="response">
-                            </form>';
-                            echo"</li>";
-                            echo"</ul>";
+                foreach ($invitation_group_list as $invitation_group) {
+                    if ($invitation_group['etat'] == "valider") {
+                        echo "<ul class='ac-listGroup-body-invitation-item-ul'>";
+                        if (!empty($invitation_group['nom'])) {
+                            echo "<li class='ac-listGroup-body-invitation-item-li'>nom du groupe : " . $invitation_group['nom'] . '</li>';
                         }
-
+                        if (!empty($invitation_group['description'])) {
+                            echo "<li class='ac-listGroup-body-invitation-item-li'>description du groupe : " . $invitation_group['description'] . '</li>';
+                        }
+                        echo"<li class='ac-listGroup-body-invitation-item-li ac-listGroup-body-invitation-item-li-boutton ac-listGroup-body-invitation-item-li-boutton-solo'>";
+                        echo'<form  action="index.php" method="post">
+                                            <button type="submit" class="ac-listGroupModif-body-block-boutton ac-listGroup-body-invitation-item-li-boutton-solo-item"   name="action" value="set-group-invitation">
+                                                Refuser
+                                            </button>
+                                            <input type="hidden" value="'.$invitation_group['id_users'].'" name="id_users">
+                                            <input type="hidden" value="'.$invitation_group['id_groups'].'" name="id_groups">
+                                            <input type="hidden" value="false" name="response">
+                                        </form>';
+                        echo"</li>";
+                        echo"</ul>";
                     }
+
+                }
                 ?>
 
             </div>
@@ -127,39 +93,73 @@
                 <?php
                 foreach ($invitation_group_list as $invitation_group) {
                     if ($invitation_group['etat'] == "envoie") {
-                        echo "<ul>";
+                        echo "<ul class='ac-listGroup-body-invitation-item-ul'>";
                         if (!empty($invitation_group['nom'])) {
-                            echo "<li>nom du groupe : " . $invitation_group['nom'] . '</li>';
+                            echo "<li class='ac-listGroup-body-invitation-item-li'>" . $invitation_group['nom'] . '</li>';
                         }
                         if (!empty($invitation_group['description'])) {
-                            echo "<li>description du groupe : " . $invitation_group['description'] . '</li>';
+                            echo "<li class='ac-listGroup-body-invitation-item-li'>" . $invitation_group['description'] . '</li>';
                         }
-                        echo"<li>";
-                        echo'<form  action="index.php" method="post">
-                        <button type="submit" class="ac-listGroupModif-body-block-boutton"   name="action" value="set-group-invitation">
-                            Refuser
-                            </button>
-                        <input type="hidden" value="'.$invitation_group['id_users'].'" name="id_users">
-                        <input type="hidden" value="'.$invitation_group['id_groups'].'" name="id_groups">
-                        <input type="hidden" value="false" name="response">
-                        </form>';
-                        echo"</li>";
-                        echo"<li>";
 
+                        echo"<li class='ac-listGroup-body-invitation-item-li ac-listGroup-body-invitation-item-li-boutton'>";
                         echo'<form  action="index.php" method="post">
-                        <button type="submit" class="ac-listGroupModif-body-block-boutton"   name="action" value="set-group-invitation">
-                            Valider
-                            </button>
-                        <input type="hidden" value="'.$invitation_group['id_users'].'" name="id_users">
-                        <input type="hidden" value="'.$invitation_group['id_groups'].'" name="id_groups">
-                        <input type="hidden" value="true" name="response">
-                        </form>';
+                                    <button type="submit" class="ac-listGroup-body-invitation-item-li-boutton-item"   name="action" value="set-group-invitation">
+                                        Valider
+                                    </button>
+                                    <input type="hidden" value="'.$invitation_group['id_users'].'" name="id_users">
+                                    <input type="hidden" value="'.$invitation_group['id_groups'].'" name="id_groups">
+                                    <input type="hidden" value="true" name="response">
+                                </form>';
                         echo"</li>";
+
+                        echo"<li class='ac-listGroup-body-invitation-item-li ac-listGroup-body-invitation-item-li-boutton'>";
+                        echo'<form  action="index.php" method="post">
+                                    <button type="submit" class="ac-listGroup-body-invitation-item-li-boutton-item"   name="action" value="set-group-invitation">
+                                        Refuser
+                                    </button>
+                                    <input type="hidden" value="'.$invitation_group['id_users'].'" name="id_users">
+                                    <input type="hidden" value="'.$invitation_group['id_groups'].'" name="id_groups">
+                                    <input type="hidden" value="false" name="response">
+                                    </form>';
+                        echo"</li>";
+
                         echo"</ul>";
                     }
 
                 }
-            ?>
+                ?>
+
+            </div>
+
+            <div class="ac-listGroup-body-invitation-item ac-listGroup-body-invitation-refuse">
+
+                <h1> Liste des invitations de groupe refuser : </h1>
+
+                <?php
+                foreach ($invitation_group_list as $invitation_group){
+                    if($invitation_group['etat']=='refuser'){
+                        echo "<ul class='ac-listGroup-body-invitation-item-ul'>";
+                        if(!empty($invitation_group['nom'])){
+                            echo"<li class='ac-listGroup-body-invitation-item-li'>".$invitation_group['nom'].'</li>';
+                        }if(!empty($invitation_group['description'])){
+                            echo"<li class='ac-listGroup-body-invitation-item-li'>".$invitation_group['description'].'</li>';
+                        }
+                        echo"<li class='ac-listGroup-body-invitation-item-li ac-listGroup-body-invitation-item-li-boutton ac-listGroup-body-invitation-item-li-boutton-solo'>";
+                        echo'<form  action="index.php" method="post">
+                                            <button type="submit" class="ac-listGroupModif-body-block-boutton ac-listGroup-body-invitation-item-li-boutton-solo-item"   name="action" value="set-group-invitation">
+                                                Valider
+                                            </button>
+                                            <input type="hidden" value="'.$invitation_group['id_users'].'" name="id_users">
+                                            <input type="hidden" value="'.$invitation_group['id_groups'].'" name="id_groups">
+                                            <input type="hidden" value="true" name="response">
+                                        </form>';
+                        echo"</li>";
+                        echo"</ul>";
+
+                    }
+
+                }
+                ?>
 
             </div>
 
