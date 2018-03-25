@@ -321,12 +321,14 @@ if (empty($_POST) && empty($_GET)) {
             //Page liste des invitation d'evenement
             if (isset($_GET["list_invitation"])) {
                 $invitation_list = get_invitation_by_id_user($_SESSION['id'], $c);
+                $pending_invitation_list = get_pending_invitation_by_id_user($_SESSION['id'], $c);
                 $page = "list_invitation";
 
             }
             //Page liste des invitation de groupe
             if (isset($_GET["list_invitation_gr"])) {
                 $invitation_group_list = get_group_invitation($_SESSION['id'], $c);
+                $pending_invitation_list = get_pending_invitation_by_id_user($_SESSION['id'], $c);
                 $page = "list_invitation_gr";
             }
 
@@ -334,6 +336,7 @@ if (empty($_POST) && empty($_GET)) {
             //Page liste des evenenments
             if (isset($_GET["list_event"])) {
                 $event_list = get_event_by_user_id($_SESSION['id'], $c);
+                $pending_invitation_list = get_pending_invitation_by_id_user($_SESSION['id'], $c);
                 $page = "list_event";
             }
             //Page liste des groupes
