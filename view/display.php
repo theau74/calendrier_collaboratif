@@ -16,7 +16,6 @@ function display_apropos(){
     require ("pages/propos.php");
 
 }
-
 function display_user_session(){
     if(isset($_SESSION['stats'])) {
         if ($_SESSION['stats'] == "login-done") {
@@ -33,13 +32,11 @@ function display_user_session(){
         require("pages/user_session_false.php");
     }
 }
-
 function display_signin_success(){
 
     require ("pages/signin_success.php");
 
 }
-
 function display_signin_failed(){
 
 	require ("pages/signin_failed.php");
@@ -50,7 +47,6 @@ function display_creation_failed(){
 	require ("pages/creation_failed.php");
 
 }
-
 function display_signup_failed(){
 
     require ("pages/signup_failed.php");
@@ -61,7 +57,7 @@ function display_create_event($groups_list, $users_list){
     require ("pages/create_event.php");
 
 }
-function display_select_slot($post, $free_slot_list){
+function display_select_slot($post, $free_slot_list, $users_choice_list){
 
     require ("pages/select_slot.php");
 

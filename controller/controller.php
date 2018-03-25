@@ -45,25 +45,34 @@ if (empty($_POST) && empty($_GET)) {
 
         //creation d'éveneement
         if ($_POST["action"] == "create-event") {
+
+            $loop= 0;
             $users_choice_list = array();
             if(!empty($_POST['users-choice'])){
                 foreach ($_POST['users-choice'] as $user_choice){
-                    $users_choice_list[count($users_choice_list)] = $user_choice;
+
+
+                    $users_choice_list[$loop] = array("id" => $user_choice, "right" => $_POST['user_right'][count($users_choice_list)], "id_group" => Null);
+                    $loop++;
                 }
             }
 
             if(!empty($_POST['groups-choice'])){
                 foreach ($_POST['groups-choice'] as $group){
                     foreach(get_users_by_id_group($group, $c) as $user) {
-                        $users_choice_list[count($users_choice_list)] = $user['id_users'];
+                        $users_choice_list[$loop] = array("id" => $user['id_users'], "right" => null, "id_group" => $group);
+                        $loop++;
                     }
                 }
             }
 
-            if (verify_user_list_disponibility(protect($_POST['start_date']), protect($_POST['start_time']), protect($_POST['end_date']), protect($_POST['end_time']), $users_choice_list, $c)) {
+
+
+            if (verify_user_list_disponibility(protect($_POST['start_date']), protect($_POST['start_time']), protect($_POST['end_date']), protect($_POST['end_time']), array_column($users_choice_list, 'id'), $c)) {
+
                 if (create_event(protect($_POST['nom']), protect($_POST['description']), protect($_SESSION['id']), protect($_POST['start_date']), protect($_POST['start_time']), protect($_POST['end_date']), protect($_POST['end_time']), $c, $encryption_key)) {
-                    if(!empty($_POST['users-choice']) || !empty($_POST['groups-choice'])){
-                        if (create_invitation($users_choice_list, $_POST['groups-choice'], $_SESSION['id'], $c, $encryption_key)) {
+                    if(!empty($users_choice_list)){
+                        if (create_invitation($users_choice_list, $_SESSION['id'], $c)) {
                             header('Location: index.php');
 
                         } else {
@@ -76,19 +85,40 @@ if (empty($_POST) && empty($_GET)) {
                 } else {
                     echo "creation_failed";
                 }
+
             } else {
-                $free_slot_list = search_next_free_slot(protect($_POST['start_date']), protect($_POST['start_time']), protect($_POST['end_date']), protect($_POST['end_time']), $_POST['users-choice'], 8, 17, 5, 100, $c);
+
+                $free_slot_list = search_next_free_slot(protect($_POST['start_date']), protect($_POST['start_time']), protect($_POST['end_date']), protect($_POST['end_time']), array_column($users_choice_list, 'id'), 8, 17, 5, 100, $c);
                 $page = "select-slot";
             }
         }
         if ($_POST["action"] == "create-event-by-slot-generator") {
 
+
+            $loop= 0;
+            $users_choice_list = array();
+            if(!empty($_POST['users-choice'])){
+                foreach ($_POST['users-choice'] as $user_choice){
+                    $users_choice_list[$loop] = array("id" => $user_choice, "right" => $_POST['user_right'][count($users_choice_list)], "id_group" => Null);
+                    $loop++;
+                }
+            }
+
+            if(!empty($_POST['groups-choice'])){
+                foreach ($_POST['groups-choice'] as $group){
+                    foreach(get_users_by_id_group($group, $c) as $user) {
+                        $users_choice_list[$loop] = array("id" => $user['id_users'], "right" => null, "id_group" => $group);
+                        $loop++;
+                    }
+                }
+            }
             $slot = explode(",",$_POST['slot_list']);
 
-            if (verify_user_list_disponibility($slot[0], $slot[1], $slot[2], $slot[3], $_POST['users-choice'], $c)) {
+            if (verify_user_list_disponibility($slot[0], $slot[1], $slot[2], $slot[3], array_column($users_choice_list, 'id'), $c)) {
                 if (create_event($_POST['nom'], $_POST['description'], $_SESSION['id'], $slot[0], $slot[1], $slot[2], $slot[3], $c, $encryption_key)) {
-                    if(!empty($_POST['users-choice']) || !empty($_POST['groups-choice'])){
-                        if (create_invitation($_POST['users-choice'], $_POST['groups-choice'], $_POST['groups-choice'], $_SESSION['id'], $c, $encryption_key)) {
+                    if(!empty($users_choice_list)){
+                        if (create_invitation($users_choice_list, $_SESSION['id'], $c)) {
+                            //($user_list, $user_right, $creator, $c)
                             header('Location: index.php');
 
                         } else {
@@ -102,14 +132,20 @@ if (empty($_POST) && empty($_GET)) {
                     echo "creation_failed";
                 }
             } else {
-                $free_slot_list = search_next_free_slot(protect($_POST['start_date']), protect($_POST['start_time']), protect($_POST['end_date']), protect($_POST['end_time']), protect($_POST['users-choice']), 8, 17, 5, 100, $c);
+                $free_slot_list = search_next_free_slot(protect($_POST['start_date']), protect($_POST['start_time']), protect($_POST['end_date']), protect($_POST['end_time']),array_column($users_choice_list, 'id'), 8, 17, 5, 100, $c);
                 $page = "select-slot";
+
             }
         }
-
+        if ($_POST["action"] == "move-event") {
+            if(move_event($_POST["id"], $_POST["start"], $_POST["end"], $c)) {
+                header('Location: index.php');
+            }
+        }
         //creation des invitation d'évenement
         if ($_POST["action"] == "create-invitation") {
-            if (create_invitation($_SESSION['id'], $c, $encryption_key)) {
+
+            if (create_invitation($_SESSION['id'], $c)) {
                 header('Location: index.php');
             } else {
                 echo "creation_failed";
@@ -193,10 +229,13 @@ if (empty($_POST) && empty($_GET)) {
                 $users_not_in_gr = get_users_list_not_in_group_by_id($_POST["id_groups"],$c);
                 $page ="set_group";
 
+        }
+        if ($_POST["view"] == "set_event"){
+            $one_event = get_one_event_by_id($_POST["id_event"],$c);
+            $page ="set_event";
             }
             if ($_POST["view"] == "set_event"){
                 $one_event = get_one_event_by_id($_POST["id_event"],$c);
-                var_dump($one_event);
                 $page ="set_event";
 
             }

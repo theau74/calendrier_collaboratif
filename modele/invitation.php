@@ -1,6 +1,6 @@
 <?php
 //creation d'évenemenent dans la base
-function create_invitation($user_list, $user_right, $creator, $c)
+function create_invitation($user_list, $creator, $c)
 {
     $loop = 0;
     $id_event = get_last_event_by_user_id($_SESSION['id'], $c);
@@ -9,38 +9,37 @@ function create_invitation($user_list, $user_right, $creator, $c)
     //invitation des utilisateurs sans groupe
     if (!empty($user_list)) {
         foreach ($user_list as $user) {
-            $id_user = $user;
+            $id_user = $user['id'];
+            $id_group = $user['id_group'];
+
+            if (isset($user['right'])) {
+                $right = $user['right'];
+            } else {
+                $right = null;
+            }
             if ($loop == 0) {
-                $sql2 = (" ('$id_event', '$id_user', '0', 'envoie', '$creator', '$user_right[$loop]')");
+                if($id_user== $creator){
+                    $sql2 = (" ('$id_event', '$id_user', '$id_group', 'valider', '$creator', '$right')");
+                }
+                else{
+                    $sql2 = (" ('$id_event', '$id_user', '$id_group', 'envoie', '$creator', '$right')");
+                }
                 $loop++;
             } else {
-                $sql2 .= (", ('$id_event', '$id_user', '0', 'envoie', '$creator', null)");
-            }
-        }
-    }
-
-    //invitation par groupe
-    if (!empty($groups_choice)) {
-
-        foreach ($groups_choice as $group) {
-
-            $users_list_by_group = get_users_id_by_group_id($group, $c);
-            if (isset($users_list_by_group)) {
-                foreach ($users_list_by_group as $user) {
-                    $id_user = $user['id_users'];
-                    if ($loop == 0) {
-                        $sql2 = ("('$id_event', '$id_user', '$group', 'envoie', '$creator')");
-                        $loop++;
-                    } else {
-                        $sql2 .= (", ('$id_event', '$id_user', '$group', 'envoie', '$creator')");
-                    }
+                if($id_user== $creator){
+                    $sql2 = (", ('$id_event', '$id_user', '$id_group', 'valider', '$creator', '$right')");
+                }
+                else{
+                    $sql2 = (", ('$id_event', '$id_user', '$id_group', 'envoie', '$creator', '$right')");
                 }
             }
         }
     }
 
+
     if (isset($sql2)) {
         $sql .= $sql2;
+
         if (mysqli_query($c, $sql)) {
             return true;
         } else {
@@ -142,6 +141,15 @@ function verify_user_disponibility($start, $start_hour, $end, $end_hour, $user_i
     return true;
 }
 
+function valid_invitaiton_by_iduser_and_id_group($id_user, $id_event, $c){
+    $sql = ("UPDATE invitation SET etat = 'valider' WHERE id_event = '$id_event' AND id_user = '$id_user'");
+    if (mysqli_query($c, $sql)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 function verify_user_list_disponibility($start, $start_hour, $end, $end_hour, $user_list, $c)
 {
     $start_timestanp = date_timestamp_get(date_create('' . $start . ' ' . $start_hour . ''));
@@ -179,7 +187,7 @@ function search_next_free_slot($start, $start_hour, $end, $end_hour, $user_list,
     while ($free_slot < $nb_slot && $loop < $max_turn) {
         $loop++;
         if (verify_user_list_disponibility(date_format($start_date, 'Y-m-d'), $start_hour, date_format($end_date, 'Y-m-d'), $end_hour, $user_list, $c)) {
-            $free_slot_list[$free_slot] = array($free_slot, date_format($start_date, 'Y-m-d'), $start_hour, date_format($end_date, 'Y-m-d'),  $end_hour);
+            $free_slot_list[$free_slot] = array($free_slot, date_format($start_date, 'Y-m-d'), $start_hour, date_format($end_date, 'Y-m-d'), $end_hour);
             $free_slot++;
         }
         //incrémentation du créneau
@@ -196,3 +204,14 @@ function search_next_free_slot($start, $start_hour, $end, $end_hour, $user_list,
     }
     return $free_slot_list;
 }
+
+function reset_all_invit_by_id_event($id, $c)
+{
+    $sql = ("UPDATE invitation SET etat = 'envoie' WHERE id_event = '$id'");
+    if (mysqli_query($c, $sql)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
