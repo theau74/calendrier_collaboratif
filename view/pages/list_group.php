@@ -1,26 +1,28 @@
 <div class="ac-main-header" id="mainHeader">
 
+    <div class="fa fa-envelope-o ac-main-header-invitation" onclick="afficheNav()" id="enveloppe">
 
-    <a href="javascript:void(0);" class="ac-main-header-menue-sandwish" onclick="afficheNav()">
-        &#xf003;
-    </a>
+        <span class="ac-main-header-invitation-notif">
+            <?php echo count($pending_invitation_list); ?>
+        </span>
 
-    <div id="bouttonCreeGroup" type="submit" class="ac-main-header-createGroup">
-        &#xe7f0;
+    </div >
+
+    <div id="bouttonCreeGroup" type="submit" class="material-icons ac-main-header-createGroup">
+        group_add
     </div>
 
-    <a id="bouttonVoirAllGroup" type="submit" class="ac-main-header-allGroup" href="index.php?list_group">
-        &#xf0c0;
+    <a id="bouttonVoirAllGroup" type="submit" class="fa fa-group ac-main-header-allGroup" href="index.php?list_group">
+
     </a>
 
-    <a id="bouttonVoirAllEvent" type="submit" class="ac-main-header-allEvent" href="index.php?list_event">
-        &#xe878;
+    <a id="bouttonVoirAllEvent" type="submit" class="material-icons ac-main-header-allEvent" href="index.php?list_event">
+        event
     </a>
 
-    <div href="index.php?logout" type="submit" class="ac-main-header-logout">
-        &#xf011;
-    </div>
+    <a href="index.php?logout" type="submit" class="fa fa-power-off ac-main-header-logout">
 
+    </a>
 
 </div>
 

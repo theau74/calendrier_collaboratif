@@ -479,7 +479,14 @@ input:placeholder-shown {
 
 
 .ac-main-nav {
-    display: none;
+    width: 300px;
+    height: calc(100% - 71px);
+    flex-direction: column;
+    background-color: #c8d6e5;
+    overflow-y: scroll;
+    box-shadow: inset -2px 2px 10px -1px #000;
+    position: absolute;
+    z-index: 2;
 }
 
 
@@ -1344,6 +1351,10 @@ input:placeholder-shown {
 .fc-scroller.fc-day-grid-container {
     height: calc(100vh - 200px) !important;
     overflow-y: auto;
+}
+
+.fc-unthemed .fc-list-empty {
+    background-color: #b2bec3;
 }
 
 .fc-toolbar {
@@ -2269,15 +2280,7 @@ a[data-goto] {
 
 
 .responsive-nav-bar {
-    width: 300px;
-    height: calc(100% - 71px);
-    display: flex;
-    flex-direction: column;
-    background-color: #c8d6e5;
-    overflow-y: scroll;
-    box-shadow: inset -2px 2px 10px -1px #000;
-    position: absolute;
-    z-index: 2;
+    display: flex!important;
 }
 
 
@@ -2334,29 +2337,6 @@ a[data-goto] {
 }
 
 @media only screen and (min-width: 1150px) {
-    .ac-main-calendrier {
-        width: calc(100% - 250px);
-    }
-
-    .ac-main-nav {
-        width: 250px;
-        height: calc(100vh - 70px);
-        float: left;
-        display: flex;
-        flex-direction: column;
-        background-color: #fff;
-        overflow-y: hidden;
-        box-shadow: inset -2px 2px 10px -1px #000;
-    }
-
-    .fc-center {
-        left: 250px;
-        width: calc(100% - 250px);
-    }
-
-    .ac-main-header-menue-sandwish {
-        display: none;
-    }
 
     .ac-createEvent {
         display: none !important;
