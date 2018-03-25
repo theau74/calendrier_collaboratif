@@ -71,7 +71,6 @@ function delete_groups_by_id($id_groups, $c)
     WHERE users_groups.id_groups='$id_groups'");
     echo$sql_groups;
     echo$sql_users_groups;
-    exit;
     if (mysqli_query($c, $sql_users_groups)) {
         if (mysqli_query($c, $sql_groups)) {
             return true;
@@ -117,7 +116,6 @@ LIMIT 1");
 function create_group($nom, $description, $creator, $users_choice, $c, $encryption_key)
 {
     //insertion des valeurs dans la bdd
-    var_dump($description);
     $sql = ("INSERT INTO groups(nom, description, creator) VALUES('$nom', '$description', '$creator')");
     if (mysqli_query($c, $sql)) {
         $id_group = get_last_group_by_user_id($creator, $c);

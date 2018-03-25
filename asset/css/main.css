@@ -1261,9 +1261,10 @@ input:placeholder-shown {
 .ac-listGroup-body {
     width: 100%;
     height: calc(100vh - 150px);
-    background-color: #fff;
+    background-color: #FFE;
     color: #000;
     overflow-y: auto;
+
 }
 
 .ac-listGroup-body-liste {
@@ -1337,8 +1338,10 @@ input:placeholder-shown {
     padding: 0;
     margin: 0 auto;
     border: 1px solid #C9D6E5;
-    border-radius: 4px;
+    border-radius: 5px;
     font-size: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
 }
 
 .ac-listGroupModif-body-block-input {
@@ -1370,19 +1373,65 @@ input:placeholder-shown {
 
 .ac-listGroup-body-invitation-item h1 {
     width: 100%;
-    line-height: 30px;
+    line-height: 40px;
     text-align: center;
     font-size: 16px;
+    height: 40px;
+    background-color: #1D2329;
+    color: #fff;
+}
+
+.ac-listGroup-body-invitation-item-ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+
+.ac-listGroup-body-invitation-item-li {
+    width: 50%;
     height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+    font-size: 15px;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.ac-listGroup-body-invitation-item-li-boutton {
+    padding: 0px 10px;
+    height: 40px;
+}
+
+.ac-listGroup-body-invitation-item-li-boutton-solo {
+    width: 100%;
+}
+
+.ac-listGroup-body-invitation-item-li-boutton-solo-item {
+    width: 100%;
+}
+
+.ac-listGroup-body-invitation-item-li-boutton-item {
+    width: 100%;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    text-transform: uppercase;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .ac-listGroup-body-invitation-accepte {
+
 }
 
 .ac-listGroup-body-invitation-refuse {
+
 }
 
 .ac-listGroup-body-invitation-envoye {
+
 }
 
 
@@ -2648,6 +2697,31 @@ a[data-goto] {
         justify-content: space-around;
     }
 
+    .ac-listGroup-body {
+    }
+
+    .ac-listGroup-body-liste {
+        min-width: 600px;
+        max-width: 600px;
+        margin-top: 10px;
+        border: 2px solid #000;
+    }
+
+    .ac-listGroup-body-invitation {
+        margin: 0px auto;
+        display: flex;
+        justify-content: space-between;
+        min-width: 80%;
+    }
+
+    .ac-listGroup-body-block-item {
+        line-height: 50px;
+        height: 50px;
+    }
+
+    .ac-listGroup-body-invitation-item {
+        min-width: 350px;
+    }
 
 
 }

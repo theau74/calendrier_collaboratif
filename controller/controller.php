@@ -225,7 +225,7 @@ if (empty($_POST) && empty($_GET)) {
         }
         //modification de groupe
         if ($_POST["action"] == "set-group"){
-            if(delete_groups_by_id($_POST['id_groups'],$c) || create_group($_POST['nom'], $_POST['description'], $_SESSION['id'], $_POST['users-choice'], $c, $encryption_key) || header('Location: index.php')) {
+            if(delete_groups_by_id($_POST['id_groups'],$c) && create_group($_POST['nom'], $_POST['description'], $_SESSION['id'], $_POST['users-choice'], $c, $encryption_key) && header('Location: index.php')) {
                 header('Location: index.php');
             }else
             {
