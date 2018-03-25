@@ -39,9 +39,7 @@ elseif ($page == "select_slot_for_modification") {
     select_slot_for_modification($id_event, $free_slot_list, $users_choice_list);
 
 }
-elseif ($page == "select-slot") {
-    display_select_slot($_POST, $free_slot_list, $users_choice_list);
-}
+
 
 elseif ($page == "invitation"){
     display_invitation($invitation_list,$invitation_group_list);
