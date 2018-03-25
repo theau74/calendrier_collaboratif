@@ -59,7 +59,7 @@ input:placeholder-shown {
 .ac-home-container {
     width: 100%;
     padding: 50px;
-    height: calc(100vh - 130px - 80px);
+    height: calc(100vh - 160px);
     overflow-y: auto;
 }
 
@@ -76,7 +76,7 @@ input:placeholder-shown {
 
 .ac-home-header {
     width: 100%;
-    padding: 40px;
+    padding: 20px;
     box-shadow: 0px -2px 20px 0px #000;
 }
 
@@ -85,6 +85,8 @@ input:placeholder-shown {
     color: #FC8;
     text-transform: uppercase;
     text-align: center;
+    width: 280px;
+    margin: 0 auto;
 }
 
 
@@ -94,7 +96,7 @@ input:placeholder-shown {
 
 
 .ac-home {
-    max-width: 500px;
+    max-width: 350px;
     border-radius: 5px;
     padding: 10px 25px;
     margin: 20px auto;
@@ -105,7 +107,7 @@ input:placeholder-shown {
 }
 
 .ac-home-signup {
-    padding: 20px 50px;
+    padding: 0px;
 }
 
 .ac-home-sign-item {
@@ -253,7 +255,7 @@ input:placeholder-shown {
 
 
 .ac-home-footer {
-    padding: 40px;
+    padding: 20px;
     width: 100%;
     background-color: transparent;
     box-shadow: 0px 2px 20px 0px #000;
@@ -600,7 +602,7 @@ input:placeholder-shown {
 }
 
 .ac-main-nav-invit-item-boutton-valider:hover {
-
+    background-color: #b2bec3;
 }
 
 .ac-main-nav-invit-item-boutton-refuser {
@@ -612,7 +614,7 @@ input:placeholder-shown {
 }
 
 .ac-main-nav-invit-item-boutton-refuser:hover {
-
+    background-color: #d63031;
 }
 
 
@@ -1892,25 +1894,26 @@ a[data-goto] {
     position: fixed;
     z-index: 1000;
     left: 0;
-    top: 300px;
+    top: 200px;
     width: 100%;
 }
 
 .ac-popUpFail-content {
     position: relative;
     margin: auto;
-    width: 80%;
+    width: 250px;
     box-shadow: 3px 3px 15px 2px;
 }
 
 .ac-popUpFail-header {
     width: 100%;
-    height: 300px;
+    height: 250px;
     word-wrap: break-word;
     padding: 0px;
-    background-color: #3b9f97;
+    background-color: #1D2329;
     color: white;
     border-radius: 3px;
+    padding: 30px;
 }
 
 .ac-popUpFail-header-text {
@@ -1923,13 +1926,14 @@ a[data-goto] {
 .ac-popUpFail-header-close {
     color: white;
     cursor: pointer;
+    display: block;
     width: 150px;
-    margin: 65px auto;
+    margin: 30px auto 0px;
     text-align: center;
     line-height: 30px;
     font-size: 20px;
     border-radius: 3px;
-    box-shadow: 4px 4px 20px -5px #000;
+    box-shadow: 4px 4px 21px 0px #000;
 }
 
 .ac-popUpFail-header-close:hover,
@@ -2387,25 +2391,6 @@ a[data-goto] {
     }
 }
 
-
-@media only screen and (min-width: 600px) {
-    .ac-home {
-        width: 600px;
-    }
-
-    .ac-header-home {
-        border-bottom: none;
-    }
-
-    .ac-main-footer {
-        border-top: none;
-    }
-
-    .ac-popUpFail-content {
-        width: 60%;
-    }
-}
-
 @media only screen and (min-width: 1150px) {
 
     .ac-createEvent {
@@ -2417,7 +2402,7 @@ a[data-goto] {
     }
 
     .ac-popUpFail-content {
-        width: 45%;
+        width: 400px;
     }
 
     .ac-createEvent-body-item:hover input ~ .ac-createEvent-body-item-checkmark {
