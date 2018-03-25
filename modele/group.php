@@ -13,7 +13,7 @@ function get_groups_list($c){
 }
 
 function get_groups_by_id_user($id_user,$c){
-    $sql = ("SELECT U.level, U.id_users, U.id_groups, U.etat, G.id, G.nom, G.description FROM users_groups U INNER JOIN groups G ON U.id_groups = G.id WHERE U.id_users ='$id_user'");
+    $sql = ("SELECT U.level, U.id_users, U.id_groups, G.id, G.nom, G.description FROM users_groups U INNER JOIN groups G ON U.id_groups = G.id WHERE U.id_users ='$id_user'");
     $result = mysqli_query($c,$sql);
     $groups_list_by_id_user = array ();
     $loop = 0;
@@ -32,8 +32,18 @@ function get_one_group_by_id($id_group,$c){
         $one_group= $row;
     }
     return $one_group;
-
-
+}
+function get_users_in_group_by_id($id_group,$c){
+    $sql = ("SELECT G.id_users,G.level,G.etat,U.id,U.Fname,U.Lname FROM users_groups G INNER JOIN users U ON G.id_users = U.id WHERE G.id_groups ='$id_group'");
+    $result = mysqli_query($c,$sql);
+    $users_in_group = array ();
+    $loop = 0;
+    while ($donnees = mysqli_fetch_assoc($result))
+    {
+        $users_in_group[$loop]= $donnees;
+        $loop++;
+    }
+    return $users_in_group;
 
 }
 function get_users_by_id_group($id_group,$c){
