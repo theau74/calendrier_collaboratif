@@ -1,6 +1,6 @@
 <?php
+echo"<h1>liste des groupes : </h1>";
 foreach ($groups_list_by_id_user as $groups) {
-    echo"<h1>liste des groupes : </h1>";
     echo"<ul>";
     if (!empty($events['id_groups'])) {
         echo '<li>id du groupe : '. $groups['id_groups'].'</li>';
@@ -18,7 +18,7 @@ foreach ($groups_list_by_id_user as $groups) {
         echo '<li>description : ' . $groups['description'].'</li>';
     }
     echo'</ul>';
-    if (!empty($groups['level'])){
+    if (!empty($groups['level'])){}
         if($groups['level'] == "1" || $groups['level'] == "2"){
             echo'<form  action="index.php" method="post">
                    <button type="submit" class="" id="saveGroup"  name="view" value="set_group">
@@ -27,5 +27,4 @@ foreach ($groups_list_by_id_user as $groups) {
                    <input type="hidden" value="'.$groups['id_groups'].'" name="id_groups">  
                  </form>';
         }
-    }
 }

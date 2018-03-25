@@ -179,27 +179,30 @@ if (empty($_POST) && empty($_GET)) {
         }
         //modification de groupe
         if ($_POST["action"] == "set-group"){
-            if( update_groups_by_id($_POST["id_groups"],$_POST["nom"],$_POST["description"],$c)){
+                delete_groups_by_id($_POST['id_groups'],$c);
+                create_group($_POST['nom'], $_POST['description'], $_SESSION['id'], $_POST['users-choice'], $c, $encryption_key);
                 header('Location: index.php');
             } else {
                 echo "update_failed";
             }
         }
-    }
-    elseif (isset($_POST["view"])) {
-        if ($_POST["view"] == "set_group"){
+        elseif(isset($_POST["view"])) {
+            if ($_POST["view"] == "set_group"){
                 $one_group = get_one_group_by_id($_POST["id_groups"],$c);
-                var_dump($one_group);
+                $users_in_gr = get_users_list_in_group_by_id($_POST["id_groups"],$c);
+                $users_not_in_gr = get_users_list_not_in_group_by_id($_POST["id_groups"],$c);
                 $page ="set_group";
 
-        }
-        if ($_POST["view"] == "set_event"){
-            $one_event = get_one_event_by_id($_POST["id_event"],$c);
-            var_dump($one_event);
-            $page ="set_event";
+            }
+            if ($_POST["view"] == "set_event"){
+                $one_event = get_one_event_by_id($_POST["id_event"],$c);
+                var_dump($one_event);
+                $page ="set_event";
 
-        }
+            }
+
     }
+
     else{
         //formulaire d'incription
         if (isset($_GET["subform"])) {

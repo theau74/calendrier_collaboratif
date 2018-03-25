@@ -100,7 +100,7 @@ function display_list_group($groups_list_by_id_user){
     require("pages/list_group.php");
 
 }
-function display_set_group($one_group){
+function display_set_group($one_group, $users_in_gr, $users_not_in_gr){
     require("pages/set_group.php");
 }
 function display_set_event($one_event){
