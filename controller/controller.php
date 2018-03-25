@@ -67,6 +67,7 @@ if (empty($_POST) && empty($_GET)) {
             }
 
 
+            var_dump(protect($_POST['start_date']), protect($_POST['start_time']), protect($_POST['end_date']), protect($_POST['end_time']), array_column($users_choice_list, 'id'));
 
             if (verify_user_list_disponibility(protect($_POST['start_date']), protect($_POST['start_time']), protect($_POST['end_date']), protect($_POST['end_time']), array_column($users_choice_list, 'id'), $c)) {
 
@@ -87,7 +88,8 @@ if (empty($_POST) && empty($_GET)) {
                 }
 
             } else {
-
+                $nom = $_POST['nom'];
+                $description = $_POST['description'];
                 $free_slot_list = search_next_free_slot(protect($_POST['start_date']), protect($_POST['start_time']), protect($_POST['end_date']), protect($_POST['end_time']), array_column($users_choice_list, 'id'), 8, 17, 5, 100, $c);
                 $page = "select-slot";
             }
@@ -133,14 +135,62 @@ if (empty($_POST) && empty($_GET)) {
                 }
             } else {
                 $free_slot_list = search_next_free_slot(protect($_POST['start_date']), protect($_POST['start_time']), protect($_POST['end_date']), protect($_POST['end_time']),array_column($users_choice_list, 'id'), 8, 17, 5, 100, $c);
-                $page = "select-slot";
+                $page = "select_slot";
 
             }
         }
         if ($_POST["action"] == "move-event") {
-            if(move_event($_POST["id"], $_POST["start"], $_POST["end"], $c)) {
-                header('Location: index.php');
+            $users_list = get_users_list_by_event_id($_POST["id"], $c);
+            $id_event = $_POST['id'];
+            $start = explode("T", $_POST['start']);
+            $start[1] = explode(":", $start[1]);
+            $start[1] = "".$start[1][0].":".$start[1][1]."";
+
+            $end = explode("T", $_POST['end']);
+            $end[1] = explode(":", $end[1]);
+            $end[1] = "".$end[1][0].":".$end[1][1]."";
+
+            //verify_user_list_disponibility($start, $start_hour, $end, $end_hour, $user_list, $c)
+
+            if (verify_user_list_disponibility($start[0], $start[1], $end[0], $end[1], array_column($users_list,'id_user'), $c)) {
+                if(reset_all_invit_by_id_event($_POST["id"],$c) && valid_invitaiton_by_iduser_and_id_event($_SESSION['id'], $_POST["id"], $c) && move_event($_POST['id'],$start[0], $start[1], $end[0], $end[1], $c)){
+                    header('Location: index.php');
+                }
+                else{
+                    $page = "creation_failed";
+                }
             }
+            else {
+
+                $free_slot_list = search_next_free_slot($start[0], $start[1], $end[0], $end[1],array_column($users_list, 'id_user'), 8, 17, 5, 100, $c);
+                $page = "select_slot_for_modification";
+            }
+
+        }
+
+
+        if ($_POST["action"] == "move-event-by-slot-generator") {
+            $id_event = $_POST['id_event'];
+            $users_list = get_users_list_by_event_id($id_event, $c);
+            $slot = explode(",",$_POST['slot_list']);
+
+
+            //verify_user_list_disponibility($start, $start_hour, $end, $end_hour, $user_list, $c)
+
+            if (verify_user_list_disponibility($slot[0], $slot[1], $slot[2], $slot[3], array_column($users_list,'id_user'), $c)) {
+                if(reset_all_invit_by_id_event($id_event,$c) && valid_invitaiton_by_iduser_and_id_event($_SESSION['id'], $id_event, $c) && move_event($id_event,$slot[0], $slot[1], $slot[2], $slot[3], $c)){
+                    header('Location: index.php');
+                }
+                else{
+                    $page = "creation_failed";
+                }
+            }
+            else {
+
+                $free_slot_list = search_next_free_slot($start[0], $start[1], $end[0], $end[1],array_column($users_list, 'id_user'), 8, 17, 5, 100, $c);
+                $page = "select_slot_for_modification";
+            }
+
         }
         //creation des invitation d'évenement
         if ($_POST["action"] == "create-invitation") {

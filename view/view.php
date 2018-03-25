@@ -1,5 +1,4 @@
 <?php
-
 if ($page == "home") {
     display_home();
 }
@@ -16,7 +15,6 @@ elseif (($page == "connection_success")) {
 }
 
 elseif (($page == "connection_failed")) {
-    display_home();
     display_signin_failed();
 }
 
@@ -37,7 +35,10 @@ elseif (($page == "create-event")) {
 }
 
 elseif (($page == "select-slot")) {
-    display_select_slot($_POST, $free_slot_list, $users_choice_list);
+    display_select_slot($nom, $description, $free_slot_list, $users_choice_list);
+}
+elseif (($page == "select_slot_for_modification")) {
+    select_slot_for_modification($id_event, $free_slot_list, $users_choice_list);
 }
 
 elseif (($page == "set_event_visibility")) {

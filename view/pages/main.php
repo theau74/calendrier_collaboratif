@@ -5,6 +5,10 @@
 
         $('#calendar').fullCalendar({
 
+
+
+
+
             minTime: "00:00:00",
 
             maxTime: "24:00:00",
@@ -51,6 +55,8 @@
             navLinkDayClick: 'agendaDay',
             eventClick: function (event) {
                 display_event_popup(event.id);
+                var view = $('#calendar').fullCalendar('getView');
+                alert("The view's title is " + view.title);
             },
             editable: true,
             eventDrop: function (event, delta, revertFunc) {
@@ -60,30 +66,100 @@
                 }
             },
 
+
             customButtons: {
                 Mois: {
                     text: 'Mois',
                     click: function () {
-                        $('#calendar').fullCalendar('changeView', 'month')
+                        $('#calendar').fullCalendar('changeView', 'month');
+                        var view = $('#calendar').fullCalendar('getView');
+                        cookieName = "start";
+                        cookieValue = view.start;
+                        document.cookie = cookieName+"="+escape(cookieValue)
+                        cookieName = "type";
+                        cookieValue = view.type;
+                        document.cookie = cookieName+"="+escape(cookieValue)
+
                     }
                 },
                 Semaine: {
                     text: 'Semaine',
                     click: function () {
-                        $('#calendar').fullCalendar('changeView', 'agendaWeek')
+                        $('#calendar').fullCalendar('changeView', 'agendaWeek');
+                        var view = $('#calendar').fullCalendar('getView');
+                        cookieName = "start";
+                        cookieValue = view.start;
+                        document.cookie = cookieName+"="+escape(cookieValue)
+                        cookieName = "type";
+                        cookieValue = view.type;
+                        document.cookie = cookieName+"="+escape(cookieValue)
+
+                    }
+
+                },next: {
+                    text: 'next',
+                    click: function () {
+                        $('#calendar').fullCalendar( 'next' )
+                        var view = $('#calendar').fullCalendar('getView');
+                        cookieName = "start";
+                        cookieValue = view.start;
+                        document.cookie = cookieName+"="+escape(cookieValue)
+                        cookieName = "type";
+                        cookieValue = view.type;
+                        document.cookie = cookieName+"="+escape(cookieValue)
+                    }
+
+                },prev: {
+                    text: 'prev',
+                    click: function () {
+                        $('#calendar').fullCalendar( 'prev' )
+                        var view = $('#calendar').fullCalendar('getView');
+                        cookieName = "start";
+                        cookieValue = view.start;
+                        document.cookie = cookieName+"="+escape(cookieValue)
+                        cookieName = "type";
+                        cookieValue = view.type;
+                        document.cookie = cookieName+"="+escape(cookieValue)
+                    }
+
+                },today: {
+                    text: 'today',
+                    click: function () {
+                        $('#calendar').fullCalendar( 'today' )
+                        var view = $('#calendar').fullCalendar('getView');
+                        cookieName = "start";
+                        cookieValue = view.start;
+                        document.cookie = cookieName+"="+escape(cookieValue)
+                        cookieName = "type";
+                        cookieValue = view.type;
+                        document.cookie = cookieName+"="+escape(cookieValue)
                     }
 
                 },
                 Jour: {
                     text: 'Jour',
                     click: function () {
-                        $('#calendar').fullCalendar('changeView', 'agendaDay')
+                        $('#calendar').fullCalendar('changeView', 'agendaDay');
+                        var view = $('#calendar').fullCalendar('getView');
+                        cookieName = "start";
+                        cookieValue = view.start;
+                        document.cookie = cookieName+"="+escape(cookieValue)
+                        cookieName = "type";
+                        cookieValue = view.type;
+                        document.cookie = cookieName+"="+escape(cookieValue)
                     }
                 },
                 Agenda: {
                     text: 'Agenda',
                     click: function () {
-                        $('#calendar').fullCalendar('changeView', 'listWeek')
+                        $('#calendar').fullCalendar('changeView', 'listWeek');
+                        var view = $('#calendar').fullCalendar('getView');
+                        cookieName = "start";
+                        cookieValue = view.start;
+                        document.cookie = cookieName+"="+escape(cookieValue)
+                        cookieName = "type";
+                        cookieValue = view.type;
+                        document.cookie = cookieName+"="+escape(cookieValue)
                     }
                 }
 
@@ -97,7 +173,29 @@
 
         });
     });
+    <?php
+    if(isset($_COOKIE['start']) && isset($_COOKIE['type'])) {
+        $view_start = explode(" ", $_COOKIE['start']);
+        $start_month = DateTime::createFromFormat('M', $view_start[1]);
+        if($_COOKIE['type']== "month"){
+            $start_month->add(new DateInterval('P1M'));
+        }
+        $start_month = $start_month->format('m');
+        $start = "" . $view_start[3] . "-" . $start_month . "-" . $view_start[2] . "";
+        $type = $_COOKIE['type'];
+    }else{
+        $start = "today";
+        $type = "month";
+    }
+
+    ?>
+    $( window ).ready(function() {
+        $('#calendar').fullCalendar( 'changeView', '<?php echo $type;?>', '<?php echo$start; ?>' )
+
+    });
 </script>
+
+
 <form id="moove-event" action="index.php"  method="post">
     <input type='hidden' name='action' value='move-event'>
     <input type='hidden' name='id' id="id_event" value=''>

@@ -57,9 +57,14 @@ function display_create_event($groups_list, $users_list){
     require ("pages/create_event.php");
 
 }
-function display_select_slot($post, $free_slot_list, $users_choice_list){
+function display_select_slot($nom, $description, $free_slot_list, $users_choice_list){
 
     require ("pages/select_slot.php");
+
+}
+function select_slot_for_modification($id_event, $free_slot_list, $users_choice_list){
+
+    require ("pages/select_slot_for_modification.php");
 
 }
 function display_event_visibility($groups_list, $users_list){

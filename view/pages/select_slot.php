@@ -15,8 +15,8 @@
 
             <div class="ac-createEvent-body-creneaux">
                 <form action="index.php" method="post">
-                    <input type="hidden" id="addEventTitle" name="nom" value="<?php echo$post['nom']; ?>">
-                    <input type="hidden" placeholder="Description" name="description" value="<?php echo$post['description']; ?>">
+                    <input type="hidden" id="addEventTitle" name="nom" value="<?php echo$nom; ?>">
+                    <input type="hidden" placeholder="Description" name="description" value="<?php echo$description; ?>">
                     <?php
                     if(isset($users_choice_list)) {
                         foreach ($users_choice_list as $user) {
@@ -66,8 +66,8 @@
                 </button>
                 </form>
                 <form action="index.php" method="post" >
-                    <input type="hidden" id="addEventTitle" name="nom" value="<?php echo$post['nom']; ?>">
-                    <input type="hidden" placeholder="Description" name="description" value="<?php echo$post['description']; ?>">
+                    <input type="hidden" id="addEventTitle" name="nom" value="<?php echo$nom; ?>">
+                    <input type="hidden" placeholder="Description" name="description" value="<?php echo$description; ?>">
                     <?php
 
                     if(isset($users_choice_list)) {
@@ -91,8 +91,8 @@
                     }
 
                     ?>
-                    <input type="hidden" id="addEventTitle" name="nom" value="<?php echo$post['nom']; ?>">
-                    <input type="hidden" placeholder="Description" name="description" value="<?php echo$post['description']; ?>">
+                    <input type="hidden" id="addEventTitle" name="nom" value="<?php  echo$nom;  ?>">
+                    <input type="hidden" placeholder="Description" name="description" value="<?php echo$description; ?>">
                     <div class="ac-createEvent-body-description">
                         <?php
                         foreach ($free_slot_list as $free_slot){

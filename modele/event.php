@@ -103,13 +103,8 @@ function update_event_by_id($id_event,$nom,$start,$start_hour,$end,$end_hour,$c)
     }
 }
 
-function move_event($id, $start, $end, $c){
-    reset_all_invit_by_id_event($id,$c);
-    valid_invitaiton_by_iduser_and_id_group($_SESSION['id'], $id, $c);
-    $start = explode("T", $start);
-    $end = explode("T", $end);
-    $sql = ("UPDATE events SET start = '$start[0]', start_hour = '$start[1]', end = '$end[0]', end_hour = '$end[1]' WHERE id = '$id'");
-
+function move_event($id, $start, $start_hour, $end, $end_hour, $c){
+    $sql = ("UPDATE events SET start = '$start', start_hour = '$start_hour', end = '$end', end_hour = '$end_hour' WHERE id = '$id'");
     if(mysqli_query($c,$sql)){
         return true;
     }
