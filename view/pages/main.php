@@ -44,12 +44,7 @@
             navLinkWeekClick: 'agendaDay',
             navLinkDayClick: 'agendaDay',
             eventClick: function (event) {
-                if (event.description) {
-                    alert("event : " + event.title + "description : " + event.description);
-                }
-                else {
-                    alert("event : " + event.title);
-                }
+                display_event_popup(event.id);
             },
             editable: true,
             eventDrop: function (event, delta, revertFunc) {
@@ -238,6 +233,57 @@
         </form>
 
     </div>
+
+
+    <div class="ac-popUpFail" id="popup_event" style="display: none;">
+        <input type="hidden" value="hide" id="popup_stat">
+        <div class="ac-popUpFail-content">
+
+
+
+
+
+
+
+                <?php
+                foreach ($event_list as $events) {
+                    echo '<div class="ac-popUpFail-header event_popup" id="event_'.$events['id'].'" style="display: none">';
+                    if (!empty($events['id'])) {
+                        echo 'id : "' . $events['id'] . '",';
+                    }
+                    if (!empty($events['nom'])) {
+                        echo 'title : "' . $events['nom'] . '",';
+                    }
+                    if (!empty($events['description'])) {
+                        echo 'description : "' . $events['description'] . '",';
+                    }
+                    if (!empty($events['type'])) {
+                        echo 'type : "' . $events['type'] . '",';
+                    }
+                    if (!empty($events['start'])) {
+                        echo 'start : "' . $events['start'] . 'T'.$events['start_hour'].'",';
+                    }
+                    if (!empty($events['end'])) {
+                        echo 'end : "' . $events['end'] . 'T'.$events['end_hour'].'",';
+                    }
+                    echo'<input type="button" class="ac-popUp-header-close" id="closeFail" onclick="hide_envent_popup(' . $events['id'] . ')">
+                    Retour
+                </input>';
+                    echo ' </div>';
+
+                }
+                ?>
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+
 
     <div class="ac-createEvent-popUp" style="display: none" id="createEvent-Deskstop">
 

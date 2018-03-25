@@ -45,6 +45,7 @@ if (empty($_POST) && empty($_GET)) {
 
         //creation d'éveneement
         if ($_POST["action"] == "create-event") {
+
             $loop= 0;
             $users_choice_list = array();
             if(!empty($_POST['users-choice'])){
@@ -86,7 +87,8 @@ if (empty($_POST) && empty($_GET)) {
                 }
 
             } else {
-                $free_slot_list = search_next_free_slot(protect($_POST['start_date']), protect($_POST['start_time']), protect($_POST['end_date']), protect($_POST['end_time']), $_POST['users-choice'], 8, 17, 5, 100, $c);
+
+                $free_slot_list = search_next_free_slot(protect($_POST['start_date']), protect($_POST['start_time']), protect($_POST['end_date']), protect($_POST['end_time']), array_column($users_choice_list, 'id'), 8, 17, 5, 100, $c);
                 $page = "select-slot";
             }
         }
@@ -112,7 +114,7 @@ if (empty($_POST) && empty($_GET)) {
             }
             $slot = explode(",",$_POST['slot_list']);
 
-            if (verify_user_list_disponibility($slot[0], $slot[1], $slot[2], $slot[3], $_POST['users-choice'], $c)) {
+            if (verify_user_list_disponibility($slot[0], $slot[1], $slot[2], $slot[3], array_column($users_choice_list, 'id'), $c)) {
                 if (create_event($_POST['nom'], $_POST['description'], $_SESSION['id'], $slot[0], $slot[1], $slot[2], $slot[3], $c, $encryption_key)) {
                     if(!empty($users_choice_list)){
                         if (create_invitation($users_choice_list, $_SESSION['id'], $c)) {
@@ -130,12 +132,14 @@ if (empty($_POST) && empty($_GET)) {
                     echo "creation_failed";
                 }
             } else {
-                $free_slot_list = search_next_free_slot(protect($_POST['start_date']), protect($_POST['start_time']), protect($_POST['end_date']), protect($_POST['end_time']), protect($_POST['users-choice']), 8, 17, 5, 100, $c);
+                $free_slot_list = search_next_free_slot(protect($_POST['start_date']), protect($_POST['start_time']), protect($_POST['end_date']), protect($_POST['end_time']),array_column($users_choice_list, 'id'), 8, 17, 5, 100, $c);
                 $page = "select-slot";
+
             }
         }
         //creation des invitation d'évenement
         if ($_POST["action"] == "create-invitation") {
+
             if (create_invitation($_SESSION['id'], $c)) {
                 header('Location: index.php');
             } else {
@@ -216,13 +220,11 @@ if (empty($_POST) && empty($_GET)) {
     elseif (isset($_POST["view"])) {
         if ($_POST["view"] == "set_group"){
                 $one_group = get_one_group_by_id($_POST["id_groups"],$c);
-                var_dump($one_group);
                 $page ="set_group";
 
         }
         if ($_POST["view"] == "set_event"){
             $one_event = get_one_event_by_id($_POST["id_event"],$c);
-            var_dump($one_event);
             $page ="set_event";
 
         }

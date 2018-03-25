@@ -16,13 +16,13 @@ function create_invitation($user_list, $creator, $c)
                 $right = $user['right'];
             }
             else{
-                $right = "null";
+                $right = null;
             }
             if ($loop == 0) {
                 $sql2 = (" ('$id_event', '$id_user', '$id_group', 'envoie', '$creator', '$right')");
                 $loop++;
             } else {
-                $sql2 .= (", ('$id_event', '$id_user', '$id_group', 'envoie', '$creator', $right)");
+                $sql2 .= (", ('$id_event', '$id_user', '$id_group', 'envoie', '$creator', '$right')");
             }
         }
     }
