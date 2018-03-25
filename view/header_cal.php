@@ -92,3 +92,153 @@
     </div>
 
 </div>
+
+<div class="ac-createGroup" style="display:none;" id="createGroup">
+
+    <form action="index.php" method="post">
+
+        <div class="ac-createGroup-header">
+
+            <div class="ac-createGroup-header-close" id="closeGroup">
+                &#xf00d;
+            </div>
+
+            <button type="submit" class="ac-createEvent-header-save" id="saveGroup"  name="action" value="create-group">
+                Enregistrer
+            </button>
+
+            <input type="text" class="ac-createGroup-header-title" name="nom" placeholder="Nom du Groupe :" required>
+
+        </div>
+
+        <div class="ac-createGroup-body">
+
+            <h1 class="ac-createGroup-body-addTitle">
+                Crez un groupe et ajoutez-y des membres
+            </h1>
+
+            <div class="ac-createGroup-body-item">
+                <input type="text" class="ac-createGroup-body-description-input" name="description" placeholder="Description">
+            </div>
+
+            <ul class="ac-createGroup-body-ul">
+
+                <li class="ac-createGroup-body-columns">
+
+                    <h2 class="ac-createGroup-body-h2">
+                        Prénom
+                    </h2>
+
+                    <h2 class="ac-createGroup-body-h2">
+                        Nom
+                    </h2>
+
+                    <h2 class="ac-createGroup-body-h2">
+                        Rang
+                    </h2>
+
+                </li>
+
+                <?php
+                foreach ($users_list as $user) {
+                    echo"<li class='ac-createGroup-body-item'>";
+
+                    echo "<p class='ac-createGroup-body-item-name'>" . $user['Fname'] . "</p>";
+                    echo "<p class='ac-createGroup-body-item-lname'>" . $user['Lname'] . "</p>";
+                    echo"<select class='ac-createGroup-body-item-select' name='user_right[]'>
+                                 <option value='3'>Utilisateur</option>
+                                 <option value='2'>Administrateur</option>
+                            </select>";
+                    echo "<label class='ac-createGroup-popUp-checkbox-container'>";
+                    echo '<input class="ac-container ac-createGroup-body-item-checkbox" type="checkbox" name="users-choice[]" value="' . $user['id'] . '">';
+                    echo "<span class='ac-createGroup-popUp-checkbox-container-checkmark'></span>";
+                    echo "</label>";
+
+                    echo "</li>";
+                }
+                ?>
+
+            </ul>
+
+
+
+        </div>
+
+    </form>
+
+</div>
+
+<div class="ac-createGroup-popUp" style="display:none;" id="createGroup-popUp">
+
+    <form action="index.php" method="post">
+
+        <div class="ac-createGroup-popUp-content">
+
+            <div class="ac-createGroup-header">
+
+                <div class="ac-createGroup-header-close" id="closeGroup-popUp">
+                    &#xf00d;
+                </div>
+
+                <button type="submit" class="ac-createEvent-header-save" id="saveGroup"  name="action" value="create-group">
+                    Enregistrer
+                </button>
+
+                <input type="text" class="ac-createGroup-header-title" name="nom" placeholder="Nom du Groupe ..." required>
+
+            </div>
+
+            <div class="ac-createGroup-popUp-body">
+
+                <h1 class="ac-createGroup-popUp-body-addTitle">
+                    Ajouter des membres
+                </h1>
+
+                <ul class="ac-createGroup-popUp-body-ul">
+
+                    <li class="ac-createGroup-popUp-body-columns">
+
+                        <h2 class="ac-createGroup-popUp-body-h2">
+                            Prénom
+                        </h2>
+
+                        <h2 class="ac-createGroup-popUp-body-h2">
+                            Nom
+                        </h2>
+
+                        <h2 class="ac-createGroup-popUp-body-h2">
+                            Rang
+                        </h2>
+
+                    </li>
+
+                    <?php
+                    foreach ($users_list as $user) {
+                        echo"<li class='ac-createGroup-body-item'>";
+                        echo "<p class='ac-createGroup-popUp-body-item-name'>" . $user['Fname'] . "</p>";
+                        echo "<p class='ac-createGroup-popUp-body-item-lname'>" . $user['Lname'] . "</p>";
+                        echo"<select class='ac-createGroup-popUp-body-item-select' name='user_right[]'>
+                                     <option value='3'>Utilisateur</option>
+                                     <option value='2'>Administrateur</option>
+                                </select>";
+                        echo "<label class='ac-createGroup-popUp-checkbox-container'>";
+                        echo '<input class="ac-container" type="checkbox" name="users-choice[]" value="' . $user['id'] . '">';
+                        echo "<span class='ac-createGroup-popUp-checkbox-container-checkmark'></span>";
+                        echo "</label>";
+                        echo "</li>";
+                    }
+                    ?>
+
+                </ul>
+
+            </div>
+
+            <div class="ac-createGroup-popUp-body-description">
+                <input type="text" class="ac-createGroup-popUp-body-description-input" name="description" placeholder="Description ...">
+            </div>
+
+        </div>
+
+    </form>
+
+</div>

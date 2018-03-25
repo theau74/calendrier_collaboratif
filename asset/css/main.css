@@ -1273,7 +1273,6 @@ input:placeholder-shown {
 }
 
 .ac-listGroup-body-block {
-    max-width: 400px;
     border-bottom: 1px solid #000;
     background-color: #C9D6E5;
 }
@@ -1289,6 +1288,8 @@ input:placeholder-shown {
     height: 30px;
     font-size: 15px;
     padding: 0px 10px;
+    white-space: nowrap;
+    overflow-x: auto;
 }
 
 .ac-listGroup-body-block-item-nom {
@@ -1357,16 +1358,22 @@ input:placeholder-shown {
 .ac-listGroup-body-invitation {
     margin: 10px auto 0;
     max-width: 400px;
-    border: 1px solid #000;
-    background-color: #C9D6E5;
-    border-radius: 3px;
 }
 
 .ac-listGroup-body-invitation-item {
     max-width: 400px;
     background-color: #C9D6E5;
-    border-radius: 3px;
-    padding: 20px;
+    padding: 0px;
+    border: 1px solid #000;
+    margin: 10px 0;
+}
+
+.ac-listGroup-body-invitation-item h1 {
+    width: 100%;
+    line-height: 30px;
+    text-align: center;
+    font-size: 16px;
+    height: 30px;
 }
 
 .ac-listGroup-body-invitation-accepte {

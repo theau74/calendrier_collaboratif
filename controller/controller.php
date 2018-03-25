@@ -23,10 +23,10 @@ if (empty($_POST) && empty($_GET)) {
             if (user_signin(protect($_POST["pseudo"]), protect($_POST["password"]), $c, $encryption_key)) {
                 header('Location: index.php');
             } else {
-                $page = "connection_failed";
+                $page = "erreur";
             }
         } else {
-            $page = "connection_failed";
+            $page = "erreur";
         }
         //incription et connection automatique
         if ($_POST["action"] == "signup") {
@@ -36,10 +36,12 @@ if (empty($_POST) && empty($_GET)) {
                     header('Location: index.php');
 
                 } else {
-                    $page = "sub_failed";
+                    $page = "erreur";
+
                 }
             } else {
-                $page = "sub_failed";
+                $page = "erreur";
+
             }
         }
 
@@ -75,14 +77,14 @@ if (empty($_POST) && empty($_GET)) {
                             header('Location: index.php');
 
                         } else {
-                            echo "creation_failed";
+                            $page = "erreur";
                         }
                     }
                     else{
                         header('Location: index.php');
                     }
                 } else {
-                    echo "creation_failed";
+                    $page = "erreur";
                 }
 
             } else {
@@ -122,14 +124,14 @@ if (empty($_POST) && empty($_GET)) {
                             header('Location: index.php');
 
                         } else {
-                            echo "creation_failed";
+                            $page = "erreur";
                         }
                     }
                     else{
                         header('Location: index.php');
                     }
                 } else {
-                    echo "creation_failed";
+                    $page = "erreur";
                 }
             } else {
                 $free_slot_list = search_next_free_slot(protect($_POST['start_date']), protect($_POST['start_time']), protect($_POST['end_date']), protect($_POST['end_time']),array_column($users_choice_list, 'id'), 8, 17, 5, 100, $c);
@@ -155,7 +157,7 @@ if (empty($_POST) && empty($_GET)) {
                     header('Location: index.php');
                 }
                 else{
-                    $page = "creation_failed";
+                    $page = "erreur";
                 }
             }
             else {
@@ -180,7 +182,7 @@ if (empty($_POST) && empty($_GET)) {
                     header('Location: index.php');
                 }
                 else{
-                    $page = "creation_failed";
+                    $page = "erreur";
                 }
             }
             else {
@@ -196,7 +198,7 @@ if (empty($_POST) && empty($_GET)) {
             if (create_invitation($_SESSION['id'], $c)) {
                 header('Location: index.php');
             } else {
-                echo "creation_failed";
+                $page = "erreur";
             }
         }
         if ($_POST["action"] == "create-group") {
@@ -204,7 +206,7 @@ if (empty($_POST) && empty($_GET)) {
                 //$nom, $description, $creator, $users_choice, $c, $encryption_key
                 header('Location: index.php');
             } else {
-                $page ="creation_failed";
+                $page = "erreur";
             }
         }
         //Valider ou refuser une invitation d'event
@@ -212,7 +214,7 @@ if (empty($_POST) && empty($_GET)) {
             if (set_invitation_event($_POST["id_user"], $_POST["id_event"], $_POST["response"], $c)) {
                 header('Location: index.php');
             } else {
-                echo "set_failed";
+                $page = "erreur";
             }
         }
         //Valider ou refuser une invitation de groupe
@@ -220,7 +222,7 @@ if (empty($_POST) && empty($_GET)) {
             if (set_group_invitation($_POST["id_users"], $_POST["id_groups"], $_POST["response"], $c)) {
                 header('Location: index.php');
             } else {
-                echo "set_failed";
+                $page = "erreur";
             }
 
 
@@ -230,7 +232,7 @@ if (empty($_POST) && empty($_GET)) {
             if (delete_event_by_id($_POST["id_event"], $c)) {
                 header('Location: index.php');
             } else {
-                echo "delete_failed";
+                $page = "erreur";
             }
 
 
@@ -240,7 +242,7 @@ if (empty($_POST) && empty($_GET)) {
             if (update_event_by_id($_POST["id_event"], $_POST["nom"], $_POST["start"], $_POST["start_hour"], $_POST["end"], $_POST["end_hour"], $c)) {
                 header('Location: index.php');
             } else {
-                echo "update_failed";
+                $page = "erreur";
             }
 
 
@@ -250,7 +252,7 @@ if (empty($_POST) && empty($_GET)) {
             if(delete_groups_by_id($_POST["id_groups"],$c)){
                 header('Location: index.php');
             } else{
-                echo "delete_failed";
+                $page = "erreur";
             }
         }
         //modification de groupe
@@ -259,7 +261,7 @@ if (empty($_POST) && empty($_GET)) {
                 create_group($_POST['nom'], $_POST['description'], $_SESSION['id'], $_POST['users-choice'], $c, $encryption_key);
                 header('Location: index.php');
             } else {
-                echo "update_failed";
+                $page = "erreur";
             }
         }
         elseif(isset($_POST["view"])) {

@@ -76,6 +76,11 @@ elseif ($page == "create-group") {
 }
 elseif ($page == "erreur404") {
     display_error404();
+    display_footer_home();
+}
+elseif ($page == "erreur") {
+    display_error();
+    display_footer_home();
 }
 
 

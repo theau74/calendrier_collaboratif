@@ -95,3 +95,8 @@ function display_error404(){
     require ("pages/error404.php");
 
 }
+function display_error(){
+
+    require ("pages/error.php");
+
+}

@@ -1,7 +1,7 @@
 <div class="ac-createEvent">
     <div class="ac-createEvent-header">
 
-        <a href="index.php" class="close">
+        <a href="index.php" id="close">
             &#xf00d;
         </a>
 
