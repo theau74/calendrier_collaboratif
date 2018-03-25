@@ -23,7 +23,7 @@ INNER JOIN invitation I ON E.id = I.id_event
 WHERE I.id_user ='$id'
 AND I.id_event NOT IN 
     ( SELECT id_event FROM invitation 
-     WHERE id='$id_event')
+     WHERE id_event='$id_event')
 GROUP BY I.id_event
 
 ");
