@@ -87,6 +87,7 @@ input:placeholder-shown {
     text-align: center;
     width: 280px;
     margin: 0 auto;
+    cursor: default;
 }
 
 
@@ -120,6 +121,7 @@ input:placeholder-shown {
 
 .ac-home-sign-item-connec {
     padding: 10px;
+    cursor: default;
 }
 
 .ac-home-sign-item-inscrip {
