@@ -52,7 +52,18 @@
             eventClick: function (event) {
                 display_event_popup(event.id);
             },
-            editable: true,
+            <?php
+                foreach ($event_list as $events){
+                    if (!empty($events['level'])) {
+                        if($events['level']== '1' || $events['level'] == '2'){
+                            echo'editable: true,';
+                        } else{
+                            echo'editable: false,';
+                        }
+
+                    }
+                }
+            ?>
             eventDrop: function (event, delta, revertFunc) {
                 if (confirm(event.title + " commence maintenant à : " + event.start.format() + " êtes-vous sûr de ce changement? ")) {
                     moove_event_by_id(event.id, event.start.format(), event.end.format())
