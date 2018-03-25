@@ -57,7 +57,7 @@ elseif ($page == "list_invitation_gr"){
 
 elseif ($page == "list_event"){
     display_header_cal($pending_invitation_list);
-    display_list_event($event_list);
+    display_list_event($event_list,$invitation_list);
 }
 elseif (($page == "list_group")){
     display_header_cal($pending_invitation_list);
