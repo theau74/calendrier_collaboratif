@@ -51,8 +51,7 @@
             }
             echo"</ul>";
         }
-        ?>
-        <?php
+
         echo"<h1 class='ac-listEvent-body-h1'> Invitations d'évènement refusée </h1>";
         foreach ($invitation_list as $invitation){
             if($invitation['etat']=="refuser"){

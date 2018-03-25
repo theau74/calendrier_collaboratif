@@ -239,19 +239,6 @@
                         Date et horaires
                     </h1>
 
-                    <label class="ac-createEvent-body-item">
-
-                        <p class="ac-createEvent-body-item-fullDay" id="checkbox-container">
-                            Toute la journée
-                        </p>
-
-                        <input type="checkbox">
-
-                        <span class="ac-createEvent-body-item-checkmark">
-
-                        </span>
-
-                    </label>
 
                     <div class="ac-createEvent-body-creneaux-first">
 
@@ -379,19 +366,7 @@
 
                         </div>
 
-                        <label class="ac-createEvent-popUp-creneaux-checkbox-container">
 
-                            <p id="ac-createEvent-popUp-creneaux-checkbox-container-name">
-                                Toute la journée
-                            </p>
-
-                            <input type="checkbox">
-
-                            <span class="ac-createEvent-popUp-creneaux-checkbox-container-checkmark">
-
-                            </span>
-
-                        </label>
 
                     </div>
                     <div class="ac-createEvent-popUp-body-invitation">
