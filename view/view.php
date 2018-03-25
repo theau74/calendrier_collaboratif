@@ -5,7 +5,7 @@ if ($page == "home") {
     display_footer_home();
 }
 elseif ($page == "main") {
-    display_header_cal();
+    display_header_cal($pending_invitation_list);
     display_main($event_list,$pending_invitation_list, $groups_list, $users_list);
 }
 
