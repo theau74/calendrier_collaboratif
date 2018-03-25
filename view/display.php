@@ -3,38 +3,21 @@
 function display_home(){
 
 	require ("pages/home.php");
-    include ("footer_home.php");
+
+}
+function display_footer_home(){
+
+    require ("footer_home.php");
+
+}
+function display_header_cal(){
+
+    require ("header_cal.php");
 
 }
 function display_main($event_list,$pending_invitation_list, $groups_list, $users_list){
 
     require ("pages/main.php");
-
-}
-function display_apropos(){
-
-    require ("pages/propos.php");
-
-}
-function display_user_session(){
-    if(isset($_SESSION['stats'])) {
-        if ($_SESSION['stats'] == "login-done") {
-
-            require("pages/user_session_true.php");
-
-        } else {
-
-            require("pages/user_session_false.php");
-
-        }
-    }
-    else {
-        require("pages/user_session_false.php");
-    }
-}
-function display_signin_success(){
-
-    require ("pages/signin_success.php");
 
 }
 function display_signin_failed(){
@@ -98,14 +81,19 @@ function display_list_event($event_list){
 
 }
 function display_list_group($groups_list_by_id_user, $invitation_group_list){
+
     require("pages/list_group.php");
 
 }
 function display_set_group($one_group, $users_in_gr, $users_not_in_gr){
+
     require("pages/set_group.php");
+
 }
 function display_set_event($one_event){
+
     require("pages/set_event.php");
+
 }
 function display_create_group($users_list){
 

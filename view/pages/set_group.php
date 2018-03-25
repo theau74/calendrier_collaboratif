@@ -57,8 +57,6 @@
                 <button type="submit" class="ac-listGroupModif-body-block-boutton id="saveGroup"  name="action" value="delete-group">
                     Supprimer
                 </button>
-         <input type="text" value="'.$one_group[1].'" name="nom"> 
-         <input type="text" value="'.$one_group[2].'" name="description"> 
          <input type="hidden" value="'.$one_group[0].'" name="id_groups">
          </form>';
 foreach ($users_in_gr as $user) {
@@ -91,16 +89,7 @@ foreach ($users_not_in_gr as $user) {
     echo '<input class="ac-createGroup-body-item-checkbox" type="checkbox" name="users-choice[]" value="' . $user['id'] . '">';
     echo "</li>";
 }
-var_dump($users_in_gr);
-var_dump($users_not_in_gr);
 echo '</form>';
-
-
-
-
-
-
-
 
         ?>
 

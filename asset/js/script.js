@@ -66,6 +66,7 @@ $("#closeGroup-popUp").click(function(){
     $("#fondGris").css("opacity","0");
 });
 
+
 function hide_envent_popup(id) {
     if(document.getElementById("popup_stat").value == "display") {
         document.getElementById('event_' + id).style.display = "none";
@@ -73,6 +74,7 @@ function hide_envent_popup(id) {
         document.getElementById("popup_stat").value = "hide";
     }
 }
+
 function display_event_popup(id) {
     if(document.getElementById("popup_stat").value == "hide") {
         document.getElementById('popup_event').style.display = "block";
@@ -80,11 +82,10 @@ function display_event_popup(id) {
         document.getElementById("popup_stat").value = "display";
     }
 }
+
 function moove_event_by_id($id, $start, $end) {
     document.getElementById("id_event").value = $id;
     document.getElementById("start_event").value = $start;
     document.getElementById("end_event").value = $end;
     document.forms["moove-event"].submit();
-
-
 }
