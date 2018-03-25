@@ -155,10 +155,48 @@ function verify_user_list_disponibility($start, $start_hour, $end, $end_hour, $u
     $end_timestamp = date_timestamp_get(date_create('' . $end . ' ' . $end_hour . ''));
     foreach ($user_list as $user) {
         $event_list = get_event_by_user_id($user, $c);
+
         foreach ($event_list as $event) {
             $event_start = date_timestamp_get(date_create('' . $event['start'] . ' ' . $event['start_hour'] . ''));
             $event_end = date_timestamp_get(date_create('' . $event['end'] . ' ' . $event['end_hour'] . ''));
-            if ($event_start > $start_timestanp && $event_start < $end_timestamp || $event_end < $end_timestamp && $event_end > $end_timestamp || $event_start <= $start_timestanp && $event_end >= $end_timestamp) {
+            if (
+                $start_timestanp > $event_start && $start_timestanp < $event_end
+                ||
+                $end_timestamp > $event_start && $end_timestamp < $event_end
+                ||
+                $start_timestanp == $event_start
+                ||
+                $end_timestamp == $event_end
+                ||
+                $start_timestanp < $event_start && $end_timestamp > $event_end
+            ) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+function verify_user_list_disponibility_not_in($start, $start_hour, $end, $end_hour, $user_list, $id_event, $c)
+{
+    $start_timestanp = date_timestamp_get(date_create('' . $start . ' ' . $start_hour . ''));
+    $end_timestamp = date_timestamp_get(date_create('' . $end . ' ' . $end_hour . ''));
+    foreach ($user_list as $user) {
+        $event_list = get_event_by_user_id_not_in($user, $id_event, $c);
+
+        foreach ($event_list as $event) {
+            $event_start = date_timestamp_get(date_create('' . $event['start'] . ' ' . $event['start_hour'] . ''));
+            $event_end = date_timestamp_get(date_create('' . $event['end'] . ' ' . $event['end_hour'] . ''));
+            if (
+                $start_timestanp > $event_start && $start_timestanp < $event_end
+                ||
+                $end_timestamp > $event_start && $end_timestamp < $event_end
+                ||
+                $start_timestanp == $event_start
+                ||
+                $end_timestamp == $event_end
+                ||
+                $start_timestanp < $event_start && $end_timestamp > $event_end
+            ) {
                 return false;
             }
         }

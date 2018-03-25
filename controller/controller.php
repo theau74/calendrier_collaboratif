@@ -150,7 +150,7 @@ if (empty($_POST) && empty($_GET)) {
 
             //verify_user_list_disponibility($start, $start_hour, $end, $end_hour, $user_list, $c)
 
-            if (verify_user_list_disponibility($start[0], $start[1], $end[0], $end[1], array_column($users_list,'id_user'), $c)) {
+            if (verify_user_list_disponibility_not_in($start[0], $start[1], $end[0], $end[1], array_column($users_list,'id_user'), $id_event, $c)) {
                 if(reset_all_invit_by_id_event($_POST["id"],$c) && valid_invitaiton_by_iduser_and_id_event($_SESSION['id'], $_POST["id"], $c) && move_event($_POST['id'],$start[0], $start[1], $end[0], $end[1], $c)){
                     header('Location: index.php');
                 }
@@ -175,7 +175,7 @@ if (empty($_POST) && empty($_GET)) {
 
             //verify_user_list_disponibility($start, $start_hour, $end, $end_hour, $user_list, $c)
 
-            if (verify_user_list_disponibility($slot[0], $slot[1], $slot[2], $slot[3], array_column($users_list,'id_user'), $c)) {
+            if (verify_user_list_disponibility_not_in($slot[0], $slot[1], $slot[2], $slot[3], array_column($users_list,'id_user'), $id_event, $c)) {
                 if(reset_all_invit_by_id_event($id_event,$c) && valid_invitaiton_by_iduser_and_id_event($_SESSION['id'], $id_event, $c) && move_event($id_event,$slot[0], $slot[1], $slot[2], $slot[3], $c)){
                     header('Location: index.php');
                 }

@@ -15,6 +15,28 @@ GROUP BY I.id_event");
     }
     return $event_list;
 }
+function get_event_by_user_id_not_in($id, $id_event, $c){
+    $sql = ("SELECT *
+FROM events E
+
+INNER JOIN invitation I ON E.id = I.id_event
+WHERE I.id_user ='$id'
+AND I.id_event NOT IN 
+    ( SELECT id_event FROM invitation 
+     WHERE id='$id_event')
+GROUP BY I.id_event
+
+");
+    $result = mysqli_query($c,$sql);
+    $event_list= array ();
+    $loop = 0;
+    while ($donnees = mysqli_fetch_assoc($result))
+    {
+        $event_list[$loop]= $donnees;
+        $loop++;
+    }
+    return $event_list;
+}
 function get_one_event_by_id($id_event, $c){
     $sql = ("SELECT id, nom, start,start_hour,end,end_hour FROM events WHERE id='$id_event'");
     $result = mysqli_query($c,$sql);
