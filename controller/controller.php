@@ -249,12 +249,11 @@ if (empty($_POST) && empty($_GET)) {
         }
         if ($_POST["view"] == "set_event"){
             $one_event = get_one_event_by_id($_POST["id_event"],$c);
+            $pending_invitation_list = get_pending_invitation_by_id_user($_SESSION['id'], $c);
+            $users_list = get_users_list($c);
             $page ="set_event";
         }
-        if ($_POST["view"] == "set_event"){
-            $one_event = get_one_event_by_id($_POST["id_event"],$c);
-            $page ="set_event";
-        }
+
     }
     else{
         //formulaire d'incription
