@@ -495,7 +495,10 @@
                                  <option value='3'>Utilisateur</option>
                                  <option value='2'>Administrateur</option>
                             </select>";
-                        echo '<input class="ac-createGroup-body-item-checkbox" type="checkbox" name="users-choice[]" value="' . $user['id'] . '">';
+                        echo "<label class='ac-createGroup-popUp-checkbox-container'>";
+                        echo '<input class="ac-container ac-createGroup-body-item-checkbox" type="checkbox" name="users-choice[]" value="' . $user['id'] . '">';
+                        echo "<span class='ac-createGroup-popUp-checkbox-container-checkmark'></span>";
+                        echo "</label>";
 
                         echo "</li>";
                     }
@@ -581,6 +584,7 @@
                 </div>
 
             </div>
+
         </form>
 
     </div>
