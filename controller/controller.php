@@ -138,6 +138,7 @@ if (empty($_POST) && empty($_GET)) {
             }
             else {
                 $free_slot_list = search_next_free_slot($start[0], $start[1], $end[0], $end[1],array_column($users_list, 'id_user'), 8, 17, 5, 100, $c);
+                $users_choice_list = array_column($users_list, 'id_user');
                 $page = "select_slot_for_modification";
             }
         }
@@ -156,6 +157,7 @@ if (empty($_POST) && empty($_GET)) {
             }
             else {
                 $free_slot_list = search_next_free_slot($start[0], $start[1], $end[0], $end[1],array_column($users_list, 'id_user'), 8, 17, 5, 100, $c);
+                $users_choice_list = array_column($users_list, 'id_user');
                 $page = "select_slot_for_modification";
             }
         }
@@ -194,7 +196,7 @@ if (empty($_POST) && empty($_GET)) {
         //Valider ou refuser une invitation de groupe
         if ($_POST["action"] == "set-group-invitation") {
             if (set_group_invitation($_POST["id_users"], $_POST["id_groups"], $_POST["response"], $c)) {
-                header('Location: index.php');
+                header('Location: index.php?list_group');
             } else {
                 $page = "erreur";
             }
@@ -218,15 +220,18 @@ if (empty($_POST) && empty($_GET)) {
         //suppression de groupe
         if ($_POST["action"] == "delete-group"){
             if(delete_groups_by_id($_POST["id_groups"],$c)){
-                header('Location: index.php');
+                header('Location: index.php?list_group');
             } else{
                 $page = "erreur";
             }
         }
         //modification de groupe
         if ($_POST["action"] == "set-group"){
-            if(delete_groups_by_id($_POST['id_groups'],$c) || create_group($_POST['nom'], $_POST['description'], $_SESSION['id'], $_POST['users-choice'], $c, $encryption_key) || header('Location: index.php')) {
-                header('Location: index.php');
+            if(delete_groups_by_id($_POST['id_groups'],$c) ) {
+                if(create_group($_POST['nom'], $_POST['description'], $_SESSION['id'], $_POST['users-choice'], $c, $encryption_key)){
+                    header('Location: index.php?list_group');
+                }
+
             }else
             {
                 $page = "erreur";
@@ -238,6 +243,8 @@ if (empty($_POST) && empty($_GET)) {
             $one_group = get_one_group_by_id($_POST["id_groups"],$c);
             $users_in_gr = get_users_list_in_group_by_id($_POST["id_groups"],$c);
             $users_not_in_gr = get_users_list_not_in_group_by_id($_POST["id_groups"],$c);
+            $pending_invitation_list = get_pending_invitation_by_id_user($_SESSION['id'], $c);
+            $users_list = get_users_list($c);
             $page ="set_group";
         }
         if ($_POST["view"] == "set_event"){

@@ -69,9 +69,6 @@ function delete_groups_by_id($id_groups, $c)
     WHERE groups.id ='$id_groups'");
     $sql_users_groups = ("DELETE FROM users_groups
     WHERE users_groups.id_groups='$id_groups'");
-    echo$sql_groups;
-    echo$sql_users_groups;
-    exit;
     if (mysqli_query($c, $sql_users_groups)) {
         if (mysqli_query($c, $sql_groups)) {
             return true;
