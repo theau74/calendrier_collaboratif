@@ -653,6 +653,14 @@ input:placeholder-shown {
     top: 0;
 }
 
+.ac-createEventMaj {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 5;
+    top: 0;
+}
+
 .ac-createEvent-header {
     width: 100%;
     height: 80px;
@@ -822,6 +830,26 @@ input:placeholder-shown {
 
 .ac-createEvent-body-description-input::placeholder {
     color: white;
+
+}
+
+.ac-createEvent-body-description-radio {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.ac-createEvent-body-description-radio-item {
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid;
+    margin: 10px 0;
+}
+
+.ac-createEvent-body-radio {
+
+}
+
+.ac-createEvent-body-radio-span {
 
 }
 
@@ -1773,6 +1801,10 @@ button.fc-today-button.fc-button.fc-state-default.fc-corner-right.fc-state-disab
     margin: 0 0 0 0px;
 }
 
+.fc-agenda-view .fc-day-grid {
+    display: none;
+}
+
 .fc-state-hover, .fc-state-down, .fc-state-active, .fc-state-disabled {
     background-color: #fff;
 }
@@ -1792,11 +1824,11 @@ th.fc-day-header.fc-widget-header.fc-thu.fc-today span {
 }
 
 .fc-view.fc-agendaDay-view.fc-agenda-view table tbody tr td .fc-scroller {
-    height: calc(100vh - 256px) !important;
+    height: calc(100vh - 211px) !important;
 }
 
 .fc-view.fc-agendaWeek-view.fc-agenda-view table tbody tr td .fc-scroller {
-    height: calc(100vh - 276px) !important;
+    height: calc(100vh - 231px) !important;
 }
 
 .fc-view.fc-listWeek-view.fc-list-view.fc-widget-content .fc-scroller {
@@ -2737,11 +2769,11 @@ a[data-goto] {
     }
 
     .fc-scroller.fc-time-grid-container {
-        height: calc(100vh - 226px) !important;
+        height: calc(100vh - 211px) !important;
     }
 
     .fc-view.fc-agendaWeek-view.fc-agenda-view table tbody tr td .fc-scroller {
-        height: calc(100vh - 226px) !important;
+        height: calc(100vh - 211px) !important;
     }
 
     .ac-main-header {
