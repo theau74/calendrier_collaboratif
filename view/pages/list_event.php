@@ -81,7 +81,7 @@
 
         }
 
-        echo"<h1 class='ac-listEvent-body-h1'> Invitations d'évènenment validée </h1>";
+        echo"<h1 class='ac-listEvent-body-h1'> Invitations d'évènement validée </h1>";
         foreach ($invitation_list as $invitation){
             if($invitation['etat']=="valider"){
                 echo "<ul class='ac-listEvent-body-ul'>";

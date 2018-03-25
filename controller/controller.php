@@ -137,7 +137,7 @@ if (empty($_POST) && empty($_GET)) {
                 }
             }
             else {
-                $free_slot_list = search_next_free_slot($start[0], $start[1], $end[0], $end[1],array_column($users_list, 'id_user'), 8, 17, 5, 100, $c);
+                $free_slot_list = search_next_free_slot($start[0], $start[1], $end[0], $end[1],array_column($users_list, 'id_user'), 8, 17, 20, 200, $c);
                 $users_choice_list = array_column($users_list, 'id_user');
                 $page = "select_slot_for_modification";
             }
@@ -156,7 +156,7 @@ if (empty($_POST) && empty($_GET)) {
                 }
             }
             else {
-                $free_slot_list = search_next_free_slot($start[0], $start[1], $end[0], $end[1],array_column($users_list, 'id_user'), 8, 17, 5, 100, $c);
+                $free_slot_list = search_next_free_slot($start[0], $start[1], $end[0], $end[1],array_column($users_list, 'id_user'), 8, 17, 20, 200, $c);
                 $users_choice_list = array_column($users_list, 'id_user');
                 $page = "select_slot_for_modification";
             }
