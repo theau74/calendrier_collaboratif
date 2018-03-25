@@ -56,6 +56,7 @@ if (empty($_POST) && empty($_GET)) {
                     }
                 }
             }
+
             if (verify_user_list_disponibility(protect($_POST['start_date']), protect($_POST['start_time']), protect($_POST['end_date']), protect($_POST['end_time']), array_column($users_choice_list, 'id'), $c)) {
                 if (create_event(protect($_POST['nom']), protect($_POST['description']), protect($_SESSION['id']), protect($_POST['start_date']), protect($_POST['start_time']), protect($_POST['end_date']), protect($_POST['end_time']), $c, $encryption_key)) {
                     if(!empty($users_choice_list)){
@@ -75,7 +76,7 @@ if (empty($_POST) && empty($_GET)) {
                 $nom = $_POST['nom'];
                 $description = $_POST['description'];
                 $free_slot_list = search_next_free_slot(protect($_POST['start_date']), protect($_POST['start_time']), protect($_POST['end_date']), protect($_POST['end_time']), array_column($users_choice_list, 'id'), 8, 17, 5, 100, $c);
-                $page = "select-slot";
+                $page = "select_slot";
             }
         }
         if ($_POST["action"] == "create-event-by-slot-generator") {

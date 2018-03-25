@@ -6,6 +6,7 @@ function create_invitation($user_list, $creator, $c)
     $id_event = get_last_event_by_user_id($_SESSION['id'], $c);
     //insertion des valeurs dans la bdd
     $sql = ("INSERT INTO invitation (`id_event`, `id_user`, `id_group`, `etat`, `creator`, level) VALUES");
+    $sql2="";
     //invitation des utilisateurs sans groupe
     if (!empty($user_list)) {
         foreach ($user_list as $user) {
@@ -19,25 +20,31 @@ function create_invitation($user_list, $creator, $c)
             }
             if ($loop == 0) {
                 if($id_user== $creator){
-                    $sql2 = (" ('$id_event', '$id_user', '$id_group', 'valider', '$creator', '$right')");
+                    $sql2 .= (" ('$id_event', '$id_user', '$id_group', 'valider', '$creator', '$right')");
+                    $loop++;
                 }
                 else{
                     $sql2 .= (" ('$id_event', '$id_user', '$id_group', 'envoie', '$creator', '$right')");
+                    $loop++;
                 }
-                $loop++;
+
             } else {
                 if($id_user== $creator){
-                    $sql2 = (", ('$id_event', '$id_user', '$id_group', 'valider', '$creator', '$right')");
+                    $sql2 .= (", ('$id_event', '$id_user', '$id_group', 'valider', '$creator', '$right')");
+                    $loop++;
                 }
                 else{
                     $sql2 .= (", ('$id_event', '$id_user', '$id_group', 'envoie', '$creator', '$right')");
+                    $loop++;
                 }
             }
+
         }
     }
 
 
     if (isset($sql2)) {
+
         $sql .= $sql2;
         if (mysqli_query($c, $sql)) {
             return true;
