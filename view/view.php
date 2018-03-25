@@ -5,7 +5,7 @@ if ($page == "home") {
     display_footer_home();
 }
 elseif ($page == "main") {
-    display_header_cal($pending_invitation_list);
+    display_header_cal($pending_invitation_list,$users_list);
     display_main($event_list,$pending_invitation_list, $groups_list, $users_list);
 }
 
@@ -54,19 +54,19 @@ elseif ($page == "list_invitation_gr"){
 }
 
 elseif ($page == "list_event"){
-    display_header_cal($pending_invitation_list);
+    display_header_cal($pending_invitation_list,$users_list);
     display_list_event($event_list,$invitation_list);
 }
 elseif (($page == "list_group")){
-    display_header_cal($pending_invitation_list);
+    display_header_cal($pending_invitation_list,$users_list);
     display_list_group($groups_list_by_id_user, $invitation_group_list);
 }
 elseif ($page == "set_group"){
-    display_header_cal($pending_invitation_list);
+    display_header_cal($pending_invitation_list,$users_list);
     display_set_group($one_group, $users_in_gr, $users_not_in_gr);
 }
 elseif ($page == "set_event"){
-    display_header_cal($pending_invitation_list);
+    display_header_cal($pending_invitation_list,$users_list);
     display_set_event($one_event);
 }
 elseif ($page == "create-group") {

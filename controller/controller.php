@@ -291,6 +291,7 @@ if (empty($_POST) && empty($_GET)) {
                 $invitation_list = get_invitation_by_id_user($_SESSION['id'], $c);
                 $event_list = get_event_by_user_id($_SESSION['id'], $c);
                 $pending_invitation_list = get_pending_invitation_by_id_user($_SESSION['id'], $c);
+                $users_list = get_users_list($c);
                 $page = "list_event";
             }
             //Page liste des groupes
@@ -299,6 +300,7 @@ if (empty($_POST) && empty($_GET)) {
                 $groups_list_by_id_user = get_groups_by_id_user($_SESSION['id'],$c);
                 $invitation_group_list = get_group_invitation($_SESSION['id'], $c);
                 $pending_invitation_list = get_pending_invitation_by_id_user($_SESSION['id'], $c);
+                $users_list = get_users_list($c);
                 $page = "list_group";
             }
             //formulaire de modification d'information

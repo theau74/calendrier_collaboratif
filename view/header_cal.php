@@ -3,7 +3,13 @@
     <div class="fa fa-envelope-o ac-main-header-invitation" onclick="afficheNav()" id="enveloppe">
 
         <span class="ac-main-header-invitation-notif">
-            <?php echo count($pending_invitation_list); ?>
+            <?php
+            if (isset($pending_invitation_list)){
+                echo count($pending_invitation_list);
+            }else{
+                echo"0";
+            }
+            ?>
         </span>
 
     </div >

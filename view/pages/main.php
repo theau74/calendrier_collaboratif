@@ -10,6 +10,7 @@
             maxTime: "24:00:00",
 
             contentHeight: "auto",
+            editable: false,
 
             events: [
 
@@ -43,9 +44,7 @@
                     }
                     if (!empty($events['level'])) {
                         if ($events['level'] == '1' || $events['level'] == '2') {
-                            echo 'editable : true,';
-                        } else {
-                            echo 'editable : false,';
+                            echo 'editable : true';
                         }
                     }
                     echo "},";

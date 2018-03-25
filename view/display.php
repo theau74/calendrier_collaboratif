@@ -10,7 +10,8 @@ function display_footer_home(){
     require ("footer_home.php");
 
 }
-function display_header_cal($pending_invitation_list){
+
+function display_header_cal($pending_invitation_list, $users_list){
 
     require ("header_cal.php");
 
