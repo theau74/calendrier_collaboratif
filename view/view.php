@@ -56,15 +56,19 @@ elseif ($page == "list_invitation_gr"){
 }
 
 elseif ($page == "list_event"){
+    display_header_cal($pending_invitation_list);
     display_list_event($event_list);
 }
 elseif (($page == "list_group")){
+    display_header_cal($pending_invitation_list);
     display_list_group($groups_list_by_id_user, $invitation_group_list);
 }
 elseif ($page == "set_group"){
+    display_header_cal($pending_invitation_list);
     display_set_group($one_group, $users_in_gr, $users_not_in_gr);
 }
 elseif ($page == "set_event"){
+    display_header_cal($pending_invitation_list);
     display_set_event($one_event);
 }
 elseif ($page == "create-group") {
