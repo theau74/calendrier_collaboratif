@@ -1,36 +1,30 @@
 function afficheNav() {
-    var x = document.getElementById('nav-bar');
-    var y = document.getElementById('cal');
-    var z = document.getElementById('fondGris');
-    var h = document.getElementById('mainHeader');
+    var $navBar = $('#nav-bar');
+    var $cal = $('#cal');
+    var $greyBg = $('#fondGris');
+    var $mainHeader = $('#mainHeader');
+    var $envelop = $('#enveloppe');
 
-    if (x.className === "ac-main-nav") {
-        x.className += " responsive-nav-bar";
-        h.style.zIndex = "2";
+    var navBarResponsiveClass = 'responsive-nav-bar';
+    var calResponsiveClass = 'responsive-calendrier';
+    var envelopChangeClass = 'fa-envelope-open-o';
+
+    $navBar.toggleClass(navBarResponsiveClass);
+    $cal.toggleClass(calResponsiveClass);
+    $envelop.toggleClass(envelopChangeClass);
+
+    if ($navBar.hasClass(navBarResponsiveClass)) {
+        $mainHeader.css('zIndex', '2');
+        $greyBg.css('opacity', '1');
+        $greyBg.css('pointer-events', 'auto');
+
     } else {
-        x.className = "ac-main-nav";
-        h.style.zIndex = "0";
+        $mainHeader.css('zIndex', '0');
+        $greyBg.css('opacity', '0');
+        $greyBg.css('pointer-events', 'none');
     }
-
-    if (y.className === "ac-main-calendrier") {
-        y.className += " responsive-calendrier";
-    } else {
-        y.className = "ac-main-calendrier";
-    }
-
-    if (x.className === "ac-main-nav responsive-nav-bar") {
-        z.style.opacity = "1";
-        z.style.pointerEvents = "auto";
-    } else {
-        z.style.opacity = "0";
-        z.style.pointerEvents = "none";
-    }
-
-
 
 }
-
-
 
 $("#bouttonCreeEvent").click(function(){
     $("#createEvent").css("display","block");

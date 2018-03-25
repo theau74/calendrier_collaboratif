@@ -102,25 +102,29 @@
 <div class="ac-main-header" id="mainHeader">
 
 
-    <a href="javascript:void(0);" class="ac-main-header-menue-sandwish" onclick="afficheNav()">
-        &#9776;
+    <div class="fa fa-envelope-o ac-main-header-invitation" onclick="afficheNav()" id="enveloppe">
+
+        <span class="ac-main-header-invitation-notif">
+            <?php echo count($pending_invitation_list); ?>
+        </span>
+
+    </div >
+
+    <div id="bouttonCreeGroup" type="submit" class="material-icons ac-main-header-createGroup">
+        group_add
+    </div>
+
+    <a id="bouttonVoirAllGroup" type="submit" class="fa fa-group ac-main-header-allGroup" href="index.php?list_group">
+
     </a>
 
-    <div id="bouttonCreeGroup" type="submit" class="ac-main-header-createGroup"  name="action" value="create-grp">
-        &#xe7f0;
-    </div>
+    <a id="bouttonVoirAllEvent" type="submit" class="material-icons ac-main-header-allEvent" href="index.php?list_event">
+        event
+    </a>
 
-    <div id="bouttonVoirAllGroup" type="submit" class="ac-main-header-allGroup"  name="action" value="voir-grp">
-        &#xf0c0;
-    </div>
+    <a href="index.php?logout" type="submit" class="fa fa-power-off ac-main-header-logout">
 
-    <div id="bouttonVoirAllEvent" type="submit" class="ac-main-header-allEvent" name="logout">
-        &#xe878;
-    </div>
-
-    <div href="index.php?logout" type="submit" class="ac-main-header-logout" name="logout">
-        &#xf011;
-    </div>
+    </a>
 
     
 
@@ -375,7 +379,31 @@
 
             <div class="ac-createGroup-body">
 
-                <ul>
+                <h1 class="ac-createGroup-body-addTitle">
+                    Crez un groupe et ajoutez-y des membres
+                </h1>
+
+                <div class="ac-createGroup-body-item">
+                    <input type="text" class="ac-createGroup-body-description-input" name="description" placeholder="Description">
+                </div>
+
+                <ul class="ac-createGroup-body-ul">
+
+                    <li class="ac-createGroup-body-columns">
+
+                        <h2 class="ac-createGroup-body-h2">
+                            Prénom
+                        </h2>
+
+                        <h2 class="ac-createGroup-body-h2">
+                            Nom
+                        </h2>
+
+                        <h2 class="ac-createGroup-body-h2">
+                            Rang
+                        </h2>
+
+                    </li>
 
                     <?php
                     foreach ($users_list as $user) {
@@ -393,11 +421,9 @@
                     }
                     ?>
 
-                    <li class="ac-createGroup-body-item">
-                        <input type="text" class="ac-createGroup-body-item-descriptionGroup" name="description" placeholder="description">
-                    </li>
-
                 </ul>
+
+
 
             </div>
 
@@ -408,7 +434,9 @@
     <div class="ac-createGroup-popUp" style="display:none;" id="createGroup-popUp">
 
         <form action="index.php" method="post">
+
             <div class="ac-createGroup-popUp-content">
+
                 <div class="ac-createGroup-header">
 
                     <div class="ac-createGroup-header-close" id="closeGroup-popUp">
@@ -424,13 +452,29 @@
                 </div>
 
                 <div class="ac-createGroup-popUp-body">
-                    <h1 class="ac-createGroup-popUp-body-addTitle">Ajouter des membres</h1>
+
+                    <h1 class="ac-createGroup-popUp-body-addTitle">
+                        Ajouter des membres
+                    </h1>
+
                     <ul class="ac-createGroup-popUp-body-ul">
+
                         <li class="ac-createGroup-popUp-body-columns">
-                            <h2 class="ac-createGroup-popUp-body-h2">Prénom</h2>
-                            <h2 class="ac-createGroup-popUp-body-h2">Nom</h2>
-                            <h2 class="ac-createGroup-popUp-body-h2">Rang</h2>
+
+                            <h2 class="ac-createGroup-popUp-body-h2">
+                                Prénom
+                            </h2>
+
+                            <h2 class="ac-createGroup-popUp-body-h2">
+                                Nom
+                            </h2>
+
+                            <h2 class="ac-createGroup-popUp-body-h2">
+                                Rang
+                            </h2>
+
                         </li>
+
                         <?php
                         foreach ($users_list as $user) {
                             echo"<li class='ac-createGroup-body-item'>";
@@ -451,9 +495,11 @@
                     </ul>
 
                 </div>
+
                 <div class="ac-createGroup-popUp-body-description">
                     <input type="text" class="ac-createGroup-popUp-body-description-input" name="description" placeholder="Description ...">
                 </div>
+
             </div>
         </form>
 
@@ -465,7 +511,7 @@
 
     <div class="ac-main-nav" id="nav-bar">
 
-        <div class="ac-main-nav-invit" style="overflow-y: scroll;">
+        <div class="ac-main-nav-invit">
 
             <?php
 
@@ -517,21 +563,6 @@
                 echo "</div>";
             }
             ?>
-
-        </div>
-
-        <div class="ac-main-nav-showEv" style="overflow-y: scroll;">
-
-            <label class="ac-main-nav-showEv-container">
-                <input type="checkbox">
-                <span class="ac-main-nav-showEv-checkmark"></span>
-                <p id="checkbox-container">Meeting</p>
-            </label>
-
-        </div>
-
-        <div class="ac-main-nav-accDec" style="overflow-y: scroll;">
-
 
         </div>
 

@@ -23,7 +23,7 @@ body {
     background-size: cover;
     background: #1B2129;
     font-size: 15px;
-    height: calc(100vh - 25px);
+    height: 100%;
 }
 
 a {
@@ -101,7 +101,7 @@ input:placeholder-shown {
 }
 
 .ac-home-signin {
-    padding: 70px 50px;
+    padding: 0px;
 }
 
 .ac-home-signup {
@@ -290,23 +290,49 @@ input:placeholder-shown {
 }
 
 
-.ac-main-header-menue-sandwish {
+.ac-main-header-invitation {
     display: block;
     float: left;
-    line-height: 50px;
     width: 70px;
     padding: 10px 0px;
     text-align: center;
-    font-size: 30px;
     color: #fff;
+    position: relative;
+    font-size: 42px;
+    cursor: pointer;
 }
 
-.ac-main-header-menue-sandwish:hover {
+.ac-main-header-invitation:hover {
     background-color: #576574;
 }
 
-.ac-main-header-menue-sandwish:active {
+.ac-main-header-invitation:active {
     background-color: #8395a7;
+}
+
+.ac-main-header-invitation-notif {
+    position: absolute;
+    font-size: 10px;
+    top: 20px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    line-height: 18px;
+    margin-top: -10px;
+    padding: 0px;
+    font-weight: normal;
+    color: white;
+    text-align: center;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+    background: #e23442;
+    border: 1px solid #911f28;
+    border-radius: 11px;
+    background-image: -webkit-linear-gradient(top, #e8616c, #dd202f);
+    background-image: -moz-linear-gradient(top, #e8616c, #dd202f);
+    background-image: -o-linear-gradient(top, #e8616c, #dd202f);
+    background-image: linear-gradient(to bottom, #e8616c, #dd202f);
+    -webkit-box-shadow: inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 1px rgba(0, 0, 0, 0.12);
+    box-shadow: inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 1px rgba(0, 0, 0, 0.12);
 }
 
 
@@ -408,10 +434,14 @@ input:placeholder-shown {
     background-color: #8395a7;
 }
 
+.ac-main-header-logout:before {
+    content: "\f011";
+}
+
 
 .ac-main-calendrier {
     width: 100%;
-    height: calc(100vh - 70px);
+    height: calc(100% - 70px);
     float: right;
     background-color: #fff;
     overflow-y: auto;
@@ -446,6 +476,8 @@ input:placeholder-shown {
 
 }
 
+
+
 .ac-main-nav {
     display: none;
 }
@@ -458,7 +490,7 @@ input:placeholder-shown {
 
 .ac-main-nav-invit {
     display: block;
-    height: 80%;
+    height: calc(100% - 40px);
     background-color: #576574;
     box-shadow: inset -6px -3px 9px -5px #000;
     overflow-y: scroll;
@@ -574,35 +606,6 @@ input:placeholder-shown {
 
 .ac-main-nav-invit-item-boutton-refuser:hover {
 
-}
-
-
-/*************\
- *  ShowEven *
-\*************/
-
-
-.ac-main-nav-showEv {
-    display: block;
-    height: 30%;
-    box-shadow: 0px 0px 8px 0px #000;
-    overflow-y: scroll;
-    padding: 0px 10px;
-}
-
-
-/*************\
- *  Décision  *
-\*************/
-
-
-.ac-main-nav-accDec {
-    display: block;
-    height: 20%;
-    background-color: #576574;
-    padding: 20px;
-    box-shadow: inset -5px 6px 9px -5px #000;
-    overflow-y: scroll;
 }
 
 
@@ -918,7 +921,7 @@ input:placeholder-shown {
 
 
 /*********************************************************************************\
- *   Create Groupe                                                                  *
+ *   Cree Groupe                                                                  *
 \*********************************************************************************/
 
 
@@ -996,44 +999,38 @@ input:placeholder-shown {
     overflow-y: auto;
 }
 
-.ac-createGroup-body-creneaux {
-    border-bottom: 1px solid #dfe6e9;
-    margin-top: 10px;
+.ac-createGroup-body-addTitle{
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+    cursor: default;
+    padding-top: 10px;
+    font-weight: bold;
 }
 
-.ac-createGroup-body-creneaux-first {
+.ac-createGroup-body-columns{
     display: flex;
-    justify-content: space-between;
-    height: 100px;
+    width: 100%;
 }
 
-.ac-createGroup-body-creneaux-second {
-    display: flex;
-    justify-content: space-between;
-    height: 100px;
+.ac-createGroup-body-ul{
+    background-color: #c8d6e5;
+    box-shadow: 0 0 5px 2px;
+    margin: 5px;
+    padding: 5px;
 }
 
-.ac-createGroup-body-creneaux-crenTxt {
-    display: inline-block;
-    width: 20%;
-    border: none;
-    outline: none;
-    padding: 10px 10px;
-    font: normal normal normal 30px/1 FontAwesome;
-}
-
-.ac-createGroup-body-creneaux-dateEv {
-    font-size: 17px;
-    line-height: 98px;
-}
-
-.ac-createGroup-body-creneaux-hoursEv {
-    width: 23%;
-    border: none;
-    outline: none;
-    font-size: 17px;
-    line-height: 98px;
-    padding-left: 10px;
+.ac-createGroup-body-h2{
+    text-align: center;
+    line-height: 40px;
+    box-shadow: 5px 5px 3px 1px #000;
+    background-color: #1C2229;
+    margin: 10px auto;
+    color: white;
+    width: 30%;
+    font-size: 23px;
+    cursor: default;
 }
 
 .ac-createGroup-body-description-input {
@@ -1054,41 +1051,53 @@ input:placeholder-shown {
 
 .ac-createGroup-body-item {
     display: flex;
-    height: 40px;
+    height: 30px;
     justify-content: space-around;
-    margin-top: 40px;
+    margin: 20px 0px;
 }
 
 .ac-createGroup-body-item-name {
     width: 30%;
     text-align: left;
-    line-height: 40px;
+    line-height: 30px;
     padding-left: 10px;
+    box-shadow: 0px 0px 5px 1px;
+    background-color: #c8d6e5;
+    margin-left: 5px;
+    overflow-x: scroll;
+    cursor: default;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .ac-createGroup-body-item-lname {
     width: 30%;
     text-align: left;
-    line-height: 40px;
+    line-height: 30px;
     padding-left: 10px;
+    box-shadow: 0px 0px 5px 1px;
+    background-color: #c8d6e5;
+    margin-left: 5px;
+    overflow-x: scroll;
+    cursor: default;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .ac-createGroup-body-item-select {
-    height: 40px;
-    background-color: red;
-    border: none;
-    border-radius: 0px;
-    width: 30%;
+    height: 30px;
+    border: 1px solid grey;
+    border-radius: 3px;
+    width: 20%;
     float: right;
     display: block;
 }
 
 .ac-createGroup-body-item-checkbox {
-    width: 15%;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     margin: 0;
 }
-
 
 .ac-container {
     cursor: pointer;
@@ -1160,6 +1169,170 @@ input:placeholder-shown {
     padding: 10px;
     background-color: #3b9f97;
     color: white;
+}
+
+
+/*********************************************************************************\
+ *   Liste Groupe                                                                  *
+\*********************************************************************************/
+
+
+.ac-listGroup {
+    width: 100%;
+    height: calc(100% - 70px);
+}
+
+.ac-listGroup-header {
+    width: 100%;
+    height: 80px;
+    word-wrap: break-word;
+    padding: 0px;
+    background-color: #1C2229;
+    color: white;
+    position: relative;
+}
+
+.ac-listGroup-header-close {
+    color: white;
+    float: left;
+    cursor: pointer;
+    padding: 15px 15px 0px 15px;
+    font: normal normal normal 20px/1 FontAwesome;
+}
+
+.ac-listGroup-header-close:hover {
+    transform: scale(1.1);
+}
+
+.ac-listGroup-header-close:active {
+    transform: scale(.9);
+}
+
+.ac-listGroup-header-save {
+    color: white;
+    background-color: #1C2229;
+    outline: none;
+    font-size: 14px;
+    border: none;
+    float: right;
+    line-height: 20px;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.ac-listGroup-header-save:hover {
+    background-color: #576574;
+}
+
+.ac-listGroup-header-save:active {
+    background-color: #8395a7;
+}
+
+.ac-listGroup-header-title {
+    width: 100%;
+    font-size: 16px;
+    color: white;
+    background-color: #1C2229;
+    border: none;
+    outline: none;
+    height: 40px;
+    line-height: 40px;
+    padding: 0px 10px;
+    position: absolute;
+    top: 40px;
+    text-align: center;
+}
+
+.ac-listGroup-body {
+    width: 100%;
+    height: calc(100vh - 150px);
+    padding: 5px 0px;
+    background-color: #fff;
+    color: #000;
+    overflow-y: auto;
+}
+
+
+/*********************************************************************************\
+ *   Liste Event                                                                  *
+\*********************************************************************************/
+
+
+.ac-listEvent {
+    width: 100%;
+    height: calc(100% - 70px);
+}
+
+.ac-listEvent-header {
+    width: 100%;
+    height: 80px;
+    word-wrap: break-word;
+    padding: 0px;
+    background-color: #1C2229;
+    color: white;
+    position: relative;
+}
+
+.ac-listEvent-header-close {
+    color: white;
+    float: left;
+    cursor: pointer;
+    padding: 15px 15px 0px 15px;
+    font: normal normal normal 20px/1 FontAwesome;
+}
+
+.ac-listEvent-header-close:hover {
+    transform: scale(1.1);
+}
+
+.ac-listEvent-header-close:active {
+    transform: scale(.9);
+}
+
+.ac-listEvent-header-save {
+    color: white;
+    background-color: #1C2229;
+    outline: none;
+    font-size: 14px;
+    border: none;
+    float: right;
+    line-height: 20px;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.ac-listEvent-header-save:hover {
+    background-color: #576574;
+}
+
+.ac-listEvent-header-save:active {
+    background-color: #8395a7;
+}
+
+.ac-listEvent-header-title {
+    width: 100%;
+    font-size: 16px;
+    color: white;
+    background-color: #1C2229;
+    border: none;
+    outline: none;
+    height: 40px;
+    line-height: 40px;
+    padding: 0px 10px;
+    position: absolute;
+    top: 40px;
+    text-align: center;
+}
+
+.ac-listEvent-body {
+    width: 100%;
+    height: calc(100vh - 150px);
+    padding: 5px 0px;
+    background-color: #fff;
+    color: #000;
+    overflow-y: auto;
 }
 
 
@@ -1616,8 +1789,6 @@ a[data-goto] {
     padding: 5px 0;
 }
 
-
-
 .ac-createGroup-popUp-body-description {
     position: absolute;
     width: 100%;
@@ -1761,6 +1932,7 @@ a[data-goto] {
     color: #000;
     text-decoration: none;
 }
+
 
 /*********************************************************************************\
  *   checkbox standar                                                               *
@@ -2079,7 +2251,7 @@ a[data-goto] {
     height: 40px;
     width: 100%;
     padding: 10px;
-    box-shadow: 0px 0px 8px 0px #000;
+    box-shadow: inset 0px 0px 8px -2px #000;
 }
 
 .ac-main-footer-title {
@@ -2098,8 +2270,7 @@ a[data-goto] {
 
 .responsive-nav-bar {
     width: 300px;
-    height: calc(100vh - 70px);
-    float: left;
+    height: calc(100% - 71px);
     display: flex;
     flex-direction: column;
     background-color: #c8d6e5;
@@ -2124,6 +2295,25 @@ a[data-goto] {
         display: none !important;
     }
 }
+
+@media only screen and (min-width: 600px) {
+    .ac-home {
+        width: 600px;
+    }
+
+    .ac-header-home {
+        border-bottom: none;
+    }
+
+    .ac-main-footer {
+        border-top: none;
+    }
+
+    .ac-popUpFail-content {
+        width: 60%;
+    }
+}
+
 
 @media only screen and (min-width: 600px) {
     .ac-home {
@@ -2192,4 +2382,7 @@ a[data-goto] {
         height: calc(100vh - 226px) !important;
     }
 
+    .ac-main-header {
+        justify-content: space-around;
+    }
 }
