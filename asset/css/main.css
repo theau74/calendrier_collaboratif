@@ -1418,6 +1418,101 @@ input:placeholder-shown {
     overflow-y: auto;
 }
 
+.ac-listEvent-body-block {
+    margin: 20px;
+    border: 1px solid #000;
+    background-color: #C9D6E5;
+}
+
+.ac-listEvent-body-block-item {
+    display: inline-block;
+    width: 50%;
+    line-height: 30px;
+    height: 30px;
+    font-size: 15px;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.ac-listEvent-body-block-item-nom {
+    width: 100%;
+    border-bottom: 1px solid #000;
+    background-color: #1D2329;
+    color: #fff;
+    text-align: left;
+}
+
+.ac-listEvent-body-block-item-description {
+    width: 100%;
+    border-bottom: 1px solid #000;
+    text-align: left;
+}
+
+.ac-listEvent-body-block-item-boutton {
+    width: 100%;
+    padding: 0px;
+    border-top: 1px solid #000;
+}
+
+.ac-listEvent-body-block-item-boutton-link {
+    width: 100%;
+    height: 100%;
+    background-color: #8395A6;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 18px;
+    display: block;
+    margin: 0 auto;
+    border: none;
+}
+
+.ac-listEventModif-body-block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px auto 0;
+}
+
+.ac-listEventModif-body-block-nom {
+}
+
+.ac-listEventModif-body-block-description {
+}
+
+.ac-listEventModif-body-block-boutton {
+    width: 50%;
+    height: 40px;
+    padding: 0;
+    margin: 0 auto;
+    border: 1px solid #C9D6E5;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+.ac-listEventModif-body-block-input {
+    height: 40px;
+    width: 90%;
+    display: inline-block;
+    border: 1px solid #C9D6E5;
+    padding: 0;
+    text-align: center;
+    font-size: 16px;
+    background-color: #1D2329;
+    margin: 5px auto;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.ac-listEventModif-body-block-boutton-first {
+    margin-top: 20px;
+}
+
+.ac-listEventModif-body-block-boutton-valide {
+    padding-top: 0;
+    margin-top: 0;
+}
+
 
 /*********************************************************************************\
  *   Calendrier                                                                  *

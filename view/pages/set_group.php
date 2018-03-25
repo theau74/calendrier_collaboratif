@@ -26,7 +26,7 @@
 
 </div>
 
-<div class="ac-listGroup" id="listGroup">
+<div class="ac-listGroup">
 
     <div class="ac-listGroup-header">
 
@@ -66,34 +66,3 @@
     </div>
 
 </div>
-
-<?php
-foreach ($groups_list_by_id_user as $groups) {
-    echo"<div class='ac-listGroup-body-block'>";
-
-    echo"<ul>";
-
-    if (!empty($groups['nom'])) {
-        echo '<li class="ac-listGroup-body-block-item ac-listGroup-body-block-item-nom">' . $groups['nom'] . '</li>';
-    }
-    if (!empty($groups['description'])) {
-        echo '<li class="ac-listGroup-body-block-item ac-listGroup-body-block-item-description">' . $groups['description'] . '</li>';
-    }
-    if (!empty($groups['level'])){
-        if($groups['level'] == "1" || $groups['level'] == "2"){
-            echo"<li class='ac-listGroup-body-block-item ac-listGroup-body-block-item-boutton'>";
-            echo'<form  action="index.php" method="post">
-                           <button type="submit" class="ac-listGroup-body-block-item-boutton-link" id="saveGroup"  name="view" value="set_group">
-                                Modifier
-                           </button>
-                           <input type="hidden" value="'.$groups['id_groups'].'" name="id_groups">  
-                         </form>';
-        }
-    }   echo"</li>";
-
-    echo"</ul>";
-
-    echo"</div>";
-
-}
-?>
