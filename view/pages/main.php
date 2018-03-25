@@ -57,6 +57,16 @@
                 if (confirm(event.title + " commence maintenant à : " + event.start.format() + " êtes-vous sûr de ce changement? ")) {
                     moove_event_by_id(event.id, event.start.format(), event.end.format())
 
+                }else{
+                    revertFunc();
+                }
+            },
+            eventResize: function (event, delta, revertFunc) {
+                if (confirm(event.title + " commence maintenant à : " + event.start.format() + " êtes-vous sûr de ce changement? ")) {
+                    moove_event_by_id(event.id, event.start.format(), event.end.format())
+
+                }else{
+                    revertFunc();
                 }
             },
 
