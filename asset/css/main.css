@@ -59,7 +59,7 @@ input:placeholder-shown {
 .ac-home-container {
     width: 100%;
     padding: 50px;
-    height: calc(100vh - 160px);
+    height: calc(100% - 160px);
     overflow-y: auto;
 }
 
@@ -277,7 +277,7 @@ input:placeholder-shown {
 
 
 .ac-main {
-
+    height: calc(100% - 70px);
 }
 
 .ac-main-header {
@@ -443,10 +443,9 @@ input:placeholder-shown {
 
 .ac-main-calendrier {
     width: 100%;
-    height: calc(100% - 70px);
+    height: 100%;
     float: right;
     background-color: #fff;
-    overflow-y: auto;
     box-shadow: inset 0px 0px 0px 1px #fcf8e3;
 }
 
@@ -645,7 +644,7 @@ input:placeholder-shown {
 
 .ac-createEvent {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: absolute;
     z-index: 5;
     top: 0;
@@ -762,7 +761,7 @@ input:placeholder-shown {
     color: #FFF;
     text-align: center;
     padding: 5px 0;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .ac-createEvent-body-creneaux-first {
@@ -789,7 +788,6 @@ input:placeholder-shown {
 .ac-createEvent-body-creneaux-dateEv {
     font-size: 17px;
     height: 50px;
-    padding-left: 65px;
     background-color: #c8d6e5;
     border: none;
     box-shadow: 0px 0px 5px 1px;
@@ -802,7 +800,6 @@ input:placeholder-shown {
     height: 50px;
     box-shadow: 0px 0px 5px 1px;
     background-color: #c8d6e5;
-    padding-left: 30px;
 }
 
 .ac-createEvent-body-description {
@@ -829,7 +826,7 @@ input:placeholder-shown {
     display: flex;
     height: 30px;
     justify-content: space-around;
-    margin-top: 40px;
+    margin-top: 10px;
 }
 
 .ac-createEvent-body-item-fullDay {
@@ -844,7 +841,9 @@ input:placeholder-shown {
     text-align: left;
     line-height: 30px;
     padding-left: 10px;
-    font-size: 28px;
+    font-size: 18px;
+    white-space: nowrap;
+    overflow-x: auto;
 }
 
 .ac-createEvent-body-item-lname {
@@ -852,7 +851,9 @@ input:placeholder-shown {
     text-align: left;
     line-height: 30px;
     padding-left: 10px;
-    font-size: 28px;
+    font-size: 18px;
+    white-space: nowrap;
+    overflow-x: auto;
 }
 
 .ac-createEvent-body-item-select {
@@ -1263,6 +1264,78 @@ input:placeholder-shown {
     overflow-y: auto;
 }
 
+.ac-listGroup-body-block {
+    padding: 10px;
+    margin: 10px auto 0;
+}
+
+.ac-listGroup-body-block-item {
+    display: inline-block;
+    width: calc(100% / 3);
+    line-height: 30px;
+    height: 30px;
+    font-size: 15px;
+}
+
+.ac-listGroup-body-block-item-nom {
+}
+
+.ac-listGroup-body-block-item-description {
+}
+
+.ac-listGroup-body-block-item-boutton {
+}
+
+.ac-listGroup-body-block-item-boutton-link {
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    background-color: #1D2329;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 18px;
+    display: block;
+    margin: 0 auto;
+}
+
+.ac-listGroupModif-body-block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px auto 0;
+}
+
+.ac-listGroupModif-body-block-nom {
+}
+
+.ac-listGroupModif-body-block-description {
+}
+
+.ac-listGroupModif-body-block-boutton {
+    width: 50%;
+    height: 40px;
+    padding: 0;
+    margin: 0 auto;
+    border: 1px solid #C9D6E5;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+.ac-listGroupModif-body-block-input {
+    height: 40px;
+    width: 90%;
+    display: inline-block;
+    border: 1px solid #C9D6E5;
+    padding: 0;
+    text-align: center;
+    font-size: 16px;
+    background-color: #1D2329;
+    margin: 20px auto;
+    color: #fff;
+    border-radius: 4px;
+}
+
 
 /*********************************************************************************\
  *   Liste Event                                                                  *
@@ -1435,6 +1508,11 @@ input:placeholder-shown {
 
 .fc-button-group button {
     border-radius: 0px 0px 0px 0px !important;
+}
+
+button.fc-Semaine-button.fc-button.fc-state-default {
+    white-space: nowrap;
+    overflow-x: auto;
 }
 
 button.fc-today-button.fc-button.fc-state-default.fc-corner-right {
@@ -1972,7 +2050,7 @@ a[data-goto] {
     background-color: #1D2329;
     color: white;
     border-radius: 3px;
-    padding: 30px;
+    padding: 20px;
 }
 
 .ac-popUpEvent-header-text {
@@ -1984,9 +2062,9 @@ a[data-goto] {
 
 .ac-popUpEvent-header-close {
     cursor: pointer;
-    width: 150px;
+    width: 130px;
     display: block;
-    margin: 30px auto 0px;
+    margin: 40px auto 0px;
     text-align: center;
     line-height: 30px;
     font-size: 20px;
@@ -2012,6 +2090,10 @@ a[data-goto] {
     width: 100%;
     line-height: 30px;
     font-size: 20px;
+    border: 1px solid;
+    border-radius: 3px;
+    background-color: #8395A6;
+    margin-bottom: 30px;
 }
 
 .ac-popUpEvent-header-item-description {
@@ -2420,4 +2502,9 @@ a[data-goto] {
     .ac-main-header {
         justify-content: space-around;
     }
+
+    .ac-listGroup-body-block {
+        max-width: 50%;
+    }
+
 }
