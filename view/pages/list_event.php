@@ -41,14 +41,12 @@
             }
             echo"</ul>";
             if($events['level'] == "1" || $events['level'] == "2"){
-                echo'<li>
-                        <form class="ac-listEvent-body-button" action="index.php" method="post">
+                echo'<form class="ac-listEvent-body-button" action="index.php" method="post">
                             <button type="submit" class="ac-listEvent-body-button-content" id="saveGroup"  name="view" value="set_event">
                                 Modifier
                             </button>
                             <input type="hidden" value="'.$events['id_event'].'" name="id_event">
-                        </form>
-                    </li>';
+                        </form>';
             }
 
         }
@@ -72,16 +70,14 @@
                     echo"<li class='ac-listEvent-body-li'>Etat de l'évènement: ".$invitation['etat'].'</li>';
                 }
                 echo"</ul>";
-                    echo'<li>
-                            <form class="ac-listEvent-body-button" action="index.php" method="post">
+                    echo'<form class="ac-listEvent-body-button" action="index.php" method="post">
                                 <button type="submit" class="ac-listEvent-body-button-content" id="saveGroup"  name="action" value="set-event-invitation">
-                                            Valider
-                                        </button>
+                                    Valider
+                                </button>
                                  <input type="hidden" value="'.$invitation['id_user'].'" name="id_user">
                                  <input type="hidden" value="'.$invitation['id_event'].'" name="id_event">
                                  <input type="hidden" value="true" name="response">
-                             </form>
-                        </li>';
+                             </form>';
 
 
 
@@ -106,16 +102,14 @@
                     echo"<li class='ac-listEvent-body-li'>Etat de l'évènement: ".$invitation['etat'].'</li>';
                 }
                 echo"</ul>";
-                echo'<li>
-                        <form class="ac-listEvent-body-button" action="index.php" method="post">
+                echo'<form class="ac-listEvent-body-button" action="index.php" method="post">
                             <button type="submit" class="ac-listEvent-body-button-content" id="saveGroup"  name="action" value="set-event-invitation">
                                 Refuser
                             </button>
                             <input type="hidden" value="'.$invitation['id_user'].'" name="id_user">
                             <input type="hidden" value="'.$invitation['id_event'].'" name="id_event">
                             <input type="hidden" value="false" name="response">
-                         </form>
-                    </li>';
+                         </form>';
 
 
 
