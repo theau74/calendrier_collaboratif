@@ -338,9 +338,12 @@ if (empty($_POST) && empty($_GET)) {
             }
             //Page liste des groupes
             if (isset($_GET["list_group"])) {
+                $invitation_group_list = get_group_invitation($_SESSION['id'],$c);
                 $groups_list_by_id_user = get_groups_by_id_user($_SESSION['id'],$c);
                 $invitation_group_list = get_group_invitation($_SESSION['id'], $c);
+                $pending_invitation_list = get_pending_invitation_by_id_user($_SESSION['id'], $c);
                 $page = "list_group";
+
             }
 
             //formulaire de modification d'information

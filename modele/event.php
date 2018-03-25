@@ -47,17 +47,13 @@ function get_one_event_by_id($id_event, $c){
     return $one_event;
 }
 function get_accepeted_event_by_user_id($id, $c){
-    $sql = ("SELECT E.id, E.creator, nom, description, type, start, start_hour, end, end_hour, I.id as id_invit, id_event, id_user, id_group, etat, level, I.creator
-FROM events E
-INNER JOIN invitation I ON E.id = I.id_event
-WHERE I.id_user ='$id' AND I.etat ='valider'
-GROUP BY I.id_event");
-
+    $sql = ("SELECT E.id, E.creator, nom, description, type, start, start_hour, end, end_hour, I.id as id_invit, id_event, id_user, id_group, etat, I.creator 
+              FROM events E INNER JOIN invitation I ON E.id = I.id_event 
+              WHERE I.id_user ='$id' AND I.etat ='valider' GROUP BY I.id_event");
     $result = mysqli_query($c,$sql);
     $event_list= array ();
     $loop = 0;
-    while ($donnees = mysqli_fetch_assoc($result))
-    {
+    while ($donnees = mysqli_fetch_assoc($result))    {
         $event_list[$loop]= $donnees;
         $loop++;
     }

@@ -50,16 +50,6 @@ function select_slot_for_modification($id_event, $free_slot_list, $users_choice_
     require ("pages/select_slot_for_modification.php");
 
 }
-function display_event_visibility($groups_list, $users_list){
-
-    require ("pages/event_visibility.php");
-
-}
-function display_creation_event_sucess(){
-
-    require ("pages/creation_event_sucess.php");
-
-}
 function display_invitation($invitation_list,$invitation_group_list){
 
     require("pages/set_invitation.php");

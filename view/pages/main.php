@@ -5,10 +5,6 @@
 
         $('#calendar').fullCalendar({
 
-
-
-
-
             minTime: "00:00:00",
 
             maxTime: "24:00:00",
@@ -55,8 +51,6 @@
             navLinkDayClick: 'agendaDay',
             eventClick: function (event) {
                 display_event_popup(event.id);
-                var view = $('#calendar').fullCalendar('getView');
-                alert("The view's title is " + view.title);
             },
             editable: true,
             eventDrop: function (event, delta, revertFunc) {
@@ -76,100 +70,30 @@
                 }
             },
 
-
             customButtons: {
                 Mois: {
                     text: 'Mois',
                     click: function () {
-                        $('#calendar').fullCalendar('changeView', 'month');
-                        var view = $('#calendar').fullCalendar('getView');
-                        cookieName = "start";
-                        cookieValue = view.start;
-                        document.cookie = cookieName+"="+escape(cookieValue)
-                        cookieName = "type";
-                        cookieValue = view.type;
-                        document.cookie = cookieName+"="+escape(cookieValue)
-
+                        $('#calendar').fullCalendar('changeView', 'month')
                     }
                 },
                 Semaine: {
                     text: 'Semaine',
                     click: function () {
-                        $('#calendar').fullCalendar('changeView', 'agendaWeek');
-                        var view = $('#calendar').fullCalendar('getView');
-                        cookieName = "start";
-                        cookieValue = view.start;
-                        document.cookie = cookieName+"="+escape(cookieValue)
-                        cookieName = "type";
-                        cookieValue = view.type;
-                        document.cookie = cookieName+"="+escape(cookieValue)
-
-                    }
-
-                },next: {
-                    text: 'next',
-                    click: function () {
-                        $('#calendar').fullCalendar( 'next' )
-                        var view = $('#calendar').fullCalendar('getView');
-                        cookieName = "start";
-                        cookieValue = view.start;
-                        document.cookie = cookieName+"="+escape(cookieValue)
-                        cookieName = "type";
-                        cookieValue = view.type;
-                        document.cookie = cookieName+"="+escape(cookieValue)
-                    }
-
-                },prev: {
-                    text: 'prev',
-                    click: function () {
-                        $('#calendar').fullCalendar( 'prev' )
-                        var view = $('#calendar').fullCalendar('getView');
-                        cookieName = "start";
-                        cookieValue = view.start;
-                        document.cookie = cookieName+"="+escape(cookieValue)
-                        cookieName = "type";
-                        cookieValue = view.type;
-                        document.cookie = cookieName+"="+escape(cookieValue)
-                    }
-
-                },today: {
-                    text: 'today',
-                    click: function () {
-                        $('#calendar').fullCalendar( 'today' )
-                        var view = $('#calendar').fullCalendar('getView');
-                        cookieName = "start";
-                        cookieValue = view.start;
-                        document.cookie = cookieName+"="+escape(cookieValue)
-                        cookieName = "type";
-                        cookieValue = view.type;
-                        document.cookie = cookieName+"="+escape(cookieValue)
+                        $('#calendar').fullCalendar('changeView', 'agendaWeek')
                     }
 
                 },
                 Jour: {
                     text: 'Jour',
                     click: function () {
-                        $('#calendar').fullCalendar('changeView', 'agendaDay');
-                        var view = $('#calendar').fullCalendar('getView');
-                        cookieName = "start";
-                        cookieValue = view.start;
-                        document.cookie = cookieName+"="+escape(cookieValue)
-                        cookieName = "type";
-                        cookieValue = view.type;
-                        document.cookie = cookieName+"="+escape(cookieValue)
+                        $('#calendar').fullCalendar('changeView', 'agendaDay')
                     }
                 },
                 Agenda: {
                     text: 'Agenda',
                     click: function () {
-                        $('#calendar').fullCalendar('changeView', 'listWeek');
-                        var view = $('#calendar').fullCalendar('getView');
-                        cookieName = "start";
-                        cookieValue = view.start;
-                        document.cookie = cookieName+"="+escape(cookieValue)
-                        cookieName = "type";
-                        cookieValue = view.type;
-                        document.cookie = cookieName+"="+escape(cookieValue)
+                        $('#calendar').fullCalendar('changeView', 'listWeek')
                     }
                 }
 
@@ -183,28 +107,7 @@
 
         });
     });
-    <?php
-    if(isset($_COOKIE['start']) && isset($_COOKIE['type'])) {
-        $view_start = explode(" ", $_COOKIE['start']);
-        $start_month = DateTime::createFromFormat('M', $view_start[1]);
-        if($_COOKIE['type']== "month"){
-            $start_month->add(new DateInterval('P1M'));
-        }
-        $start_month = $start_month->format('m');
-        $start = "" . $view_start[3] . "-" . $start_month . "-" . $view_start[2] . "";
-        $type = $_COOKIE['type'];
-    }else{
-        $start = "today";
-        $type = "month";
-    }
-
-    ?>
-    $( window ).ready(function() {
-        $('#calendar').fullCalendar( 'changeView', '<?php echo $type;?>', '<?php echo$start; ?>' )
-
-    });
 </script>
-
 
 <form id="moove-event" action="index.php"  method="post">
     <input type='hidden' name='action' value='move-event'>
@@ -212,6 +115,7 @@
     <input type='hidden' name='start' id="start_event" value=''>
     <input type='hidden' name='end' id="end_event" value=''>
 </form>
+
 <div class="ac-main">
 
     <div class="ac-main-calendrier" id="cal">
@@ -223,73 +127,6 @@
         <button id="bouttonCreeEvent" type="submit" class="ac-main-calendrier-createEvent"  name="action" value="create-event">
             +
         </button>
-
-    </div>
-
-    <div class="ac-main-nav" style="display: none;" id="nav-bar">
-
-        <div class="ac-main-nav-invit">
-
-            <?php
-
-            foreach ($pending_invitation_list as $invitation) {
-                echo "<div class='ac-main-nav-invit-item'>";
-                echo "<ul class='ac-main-nav-invit-item-description'>";
-                if (!empty($invitation['event_name'])) {
-                    echo "<li class='ac-main-nav-invit-item-description-name'>" . $invitation['event_name'] . '</li>';
-                }
-                if (!empty($invitation['start'])) {
-                    echo "<li class='ac-main-nav-invit-item-description-jourStart'>" . $invitation['start'] . '</li>';
-                }
-                if (!empty($invitation['start_hour'])) {
-                    echo "<li class='ac-main-nav-invit-item-description-heureStart'>" . $invitation['start_hour'] . '</li>';
-                }
-                if (!empty($invitation['end'])) {
-                    echo "<li class='ac-main-nav-invit-item-description-jourFin'>" . $invitation['end'] . '</li>';
-                }
-                if (!empty($invitation['end_hour'])) {
-                    echo "<li class='ac-main-nav-invit-item-description-heureFin'>" . $invitation['end_hour'] . '</li>';
-                }
-                if (!empty($invitation['description'])) {
-                    echo "<li class='ac-main-nav-invit-item-description-descript'>" . $invitation['description'] . '</li>';
-                }
-                echo "</ul>";
-
-                echo "<div class='ac-main-nav-invit-item-boutton'>";
-
-                echo '<form  action="index.php" method="post">
-                                <button type="submit" class="ac-main-nav-invit-item-boutton-valider" id="saveEvent"  name="action" value="valid_event_invit">
-                                    &#xf00c;
-                                </button>
-                                <input type="hidden" value="' . $invitation['id_user'] . '" name="id_user">
-                                <input type="hidden" value="' . $invitation['id_event'] . '" name="id_event">
-                                <input type="hidden" value="true" name="response">
-                            </form>';
-
-                echo '<form  action="index.php" method="post">
-                                <button type="submit" class="ac-main-nav-invit-item-boutton-refuser" id="saveEvent"  name="action" value="deny_event_invit">
-                                    &#xf00d;
-                                </button>
-                                <input type="hidden" value="' . $invitation['id_user'] . '" name="id_user">
-                                <input type="hidden" value="' . $invitation['id_event'] . '" name="id_event">
-                                <input type="hidden" value="false" name="response">
-                            </form>';
-
-                echo "</div>";
-
-                echo "</div>";
-            }
-            ?>
-
-        </div>
-
-        <div class="ac-main-footer">
-
-            <h2 class="ac-main-footer-title">
-                Pimp My CSS
-            </h2>
-
-        </div>
 
     </div>
 

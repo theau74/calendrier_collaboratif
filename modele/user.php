@@ -84,8 +84,8 @@ function get_users_list_not_in_group_by_id($id,$c){
 }
 function get_users_list_in_group_by_id($id,$c){
     $sql = ("SELECT * FROM users E INNER JOIN users_groups U ON E.id = U.id_users WHERE E.id IN
-            ( SELECT id_users FROM users_groups WHERE id_groups=16)
-            AND U.id_groups = 16 ");
+            ( SELECT id_users FROM users_groups WHERE id_groups='$id'
+            AND U.id_groups = '$id' )");
     $result = mysqli_query($c,$sql);
     $users_list= array ();
     $loop = 0;
