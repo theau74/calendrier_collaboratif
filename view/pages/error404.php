@@ -11,7 +11,7 @@
     <div class="ac-home">
 
         <p class="ac-home-signin-text">
-            erreur 404, page incconue
+            erreur 404, page inconnue
         </p>
 
         <p class="ac-home-signin-text">

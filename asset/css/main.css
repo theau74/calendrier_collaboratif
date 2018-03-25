@@ -1494,7 +1494,8 @@ input:placeholder-shown {
 
 .ac-listEvent-header-title {
     width: 100%;
-    font-size: 16px;
+    font-size: 30px;
+    cursor: default;
     color: white;
     background-color: #1C2229;
     border: none;
@@ -1511,9 +1512,59 @@ input:placeholder-shown {
     width: 100%;
     height: calc(100vh - 150px);
     padding: 5px 0px;
-    background-color: #fff;
+    background-color: #1C2229;
     color: #000;
     overflow-y: auto;
+}
+
+.ac-listEvent-body-ul{
+    padding: 5px 5px;
+    margin-left: 40%;
+    background-color: #c8d6e5;
+    width: 20%;
+    color: white;
+    box-shadow: 0 0 4px 0px;
+    text-align: center;
+    font-size: 18px;
+    cursor: default;
+}
+
+.ac-listEvent-body-li{
+    cursor: default;
+    padding: 10px 0px;
+    margin: 5px 0 10px;
+    background-color: #1C2229;
+    box-shadow: 0 0 4px 3px #000;
+}
+
+.ac-listEvent-body-button{
+    text-align: center;
+    margin: 10px 0;
+}
+
+.ac-listEvent-body-button-content{
+    cursor: pointer;
+    border: none;
+    background-color: #76EAA8;
+    color: white;
+    font-size: 23px;
+    font-weight: bold;
+    padding: 5px 15px;
+    box-shadow: 0 0 4px 2px;
+}
+
+.ac-listEvent-body-button-content:hover{
+    padding: 7px 17px;
+    font-size: 20px;
+}
+
+.ac-listEvent-body-h1{
+    width: 100%;
+    font-size: 30px;
+    cursor: default;
+    color: white;
+    text-align: center;
+    margin: 25px 0;
 }
 
 .ac-listEvent-body-block {
