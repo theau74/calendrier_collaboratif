@@ -5,10 +5,6 @@
             &#xf00d;
         </a>
 
-
-
-
-
     </div>
 
         <div class="ac-createEvent-body">
@@ -107,16 +103,6 @@
                 </form>
             </div>
 
-
-
-
         </div>
-
-
-
-
-</div>
-
-</div>
 
 </div>
