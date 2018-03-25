@@ -3,7 +3,7 @@
     <div class="fa fa-envelope-o ac-main-header-invitation" onclick="afficheNav()" id="enveloppe">
 
         <span class="ac-main-header-invitation-notif">
-            <?php echo count($pending_invitation_list); ?>
+            <?php echo count($invitation_group_list); ?>
         </span>
 
     </div >
@@ -44,7 +44,8 @@
     <div class="ac-listGroup-body">
 
         <?php
-        foreach ($groups_list_by_id_user as $groups) {
+
+        foreach ($invitation_group_list as $groups) {
             echo"<div class='ac-listGroup-body-block'>";
 
                 echo"<ul>";
@@ -70,6 +71,75 @@
                 echo"</ul>";
 
             echo"</div>";
+
+        }
+
+
+        echo "<h1> Liste des invitations de groupe refuser : </h1>";
+        foreach ($invitation_group_list as $invitation_group){
+            if($invitation_group['etat']=="refuser"){
+                echo "<ul>";
+                if(!empty($invitation_group['nom'])){
+                    echo"<li>nom du groupe : ".$invitation_group['nom'].'</li>';
+                }if(!empty($invitation_group['description'])){
+                    echo"<li>description du groupe : ".$invitation_group['description'].'</li>';
+                }
+                echo'<form  action="index.php?ac=set-group-invitation" method="post">
+        <input type="submit" value="valider" >
+        <input type="hidden" value="'.$invitation_group['id_users'].'" name="id_users">
+        <input type="hidden" value="'.$invitation_group['id_groups'].'" name="id_groups">
+        <input type="hidden" value="true" name="response">
+        </form>';
+                echo"</ul>";
+            }
+
+        }
+        echo "<h1> Liste des invitations de groupe accepter : </h1>";
+
+        foreach ($invitation_group_list as $invitation_group) {
+            if ($invitation_group['etat'] == "valider") {
+                echo "<ul>";
+                if (!empty($invitation_group['nom'])) {
+                    echo "<li>nom du groupe : " . $invitation_group['nom'] . '</li>';
+                }
+                if (!empty($invitation_group['description'])) {
+                    echo "<li>description du groupe : " . $invitation_group['description'] . '</li>';
+                }
+                echo'<form  action="index.php?ac=set-group-invitation" method="post">
+        <input type="submit" value="refuser" >
+        <input type="hidden" value="'.$invitation_group['id_users'].'" name="id_users">
+        <input type="hidden" value="'.$invitation_group['id_groups'].'" name="id_groups">
+        <input type="hidden" value="false" name="response">
+        </form>';
+                echo"</ul>";
+            }
+
+        }
+        echo "<h1> Liste des invitations de groupe envoyer : </h1>";
+
+        foreach ($invitation_group_list as $invitation_group) {
+            if ($invitation_group['etat'] == "envoie") {
+                echo "<ul>";
+                if (!empty($invitation_group['nom'])) {
+                    echo "<li>nom du groupe : " . $invitation_group['nom'] . '</li>';
+                }
+                if (!empty($invitation_group['description'])) {
+                    echo "<li>description du groupe : " . $invitation_group['description'] . '</li>';
+                }
+                echo'<form  action="index.php?ac=set-group-invitation" method="post">
+        <input type="submit" value="refuser" >
+        <input type="hidden" value="'.$invitation_group['id_users'].'" name="id_users">
+        <input type="hidden" value="'.$invitation_group['id_groups'].'" name="id_groups">
+        <input type="hidden" value="false" name="response">
+        </form>';
+                echo'<form  action="index.php?ac=set-group-invitation" method="post">
+        <input type="submit" value="valider" >
+        <input type="hidden" value="'.$invitation_group['id_users'].'" name="id_users">
+        <input type="hidden" value="'.$invitation_group['id_groups'].'" name="id_groups">
+        <input type="hidden" value="true" name="response">
+        </form>';
+                echo"</ul>";
+            }
 
         }
         ?>

@@ -97,7 +97,7 @@ function display_list_event($event_list){
     require("pages/list_event.php");
 
 }
-function display_list_group($groups_list_by_id_user){
+function display_list_group($groups_list_by_id_user, $invitation_group_list){
     require("pages/list_group.php");
 
 }

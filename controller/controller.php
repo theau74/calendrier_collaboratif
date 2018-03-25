@@ -341,6 +341,7 @@ if (empty($_POST) && empty($_GET)) {
             //Page liste des groupes
             if (isset($_GET["list_group"])) {
                 $groups_list_by_id_user = get_groups_by_id_user($_SESSION['id'],$c);
+                $invitation_group_list = get_group_invitation($_SESSION['id'], $c);
                 $page = "list_group";
             }
 

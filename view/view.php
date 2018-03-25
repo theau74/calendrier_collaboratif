@@ -65,7 +65,7 @@ elseif (($page == "list_event")){
     display_list_event($event_list);
 }
 elseif (($page == "list_group")){
-    display_list_group($groups_list_by_id_user);
+    display_list_group($groups_list_by_id_user, $invitation_group_list);
 }
 elseif (($page == "set_group")){
     display_set_group($one_group, $users_in_gr, $users_not_in_gr);
