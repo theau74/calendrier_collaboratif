@@ -68,8 +68,10 @@
                                 echo"<li>".$invitation_group['description'].'</li>';
                             }
                             echo"<li>";
-                            echo'<form  action="index.php?ac=set-group-invitation" method="post">
-                            <input type="submit" value="valider" >
+                            echo'<form  action="index.php" method="post">
+                            <button type="submit" class="ac-listGroupModif-body-block-boutton"   name="action" value="set-group-invitation">
+                            Valider
+                            </button>
                             <input type="hidden" value="'.$invitation_group['id_users'].'" name="id_users">
                             <input type="hidden" value="'.$invitation_group['id_groups'].'" name="id_groups">
                             <input type="hidden" value="true" name="response">
@@ -101,8 +103,10 @@
                                 echo "<li>description du groupe : " . $invitation_group['description'] . '</li>';
                             }
                             echo"<li>";
-                            echo'<form  action="index.php?ac=set-group-invitation" method="post">
-                            <input type="submit" value="refuser" >
+                            echo'<form  action="index.php" method="post">
+                           <button type="submit" class="ac-listGroupModif-body-block-boutton"   name="action" value="set-group-invitation">
+                            Refuser
+                            </button>
                             <input type="hidden" value="'.$invitation_group['id_users'].'" name="id_users">
                             <input type="hidden" value="'.$invitation_group['id_groups'].'" name="id_groups">
                             <input type="hidden" value="false" name="response">
@@ -131,16 +135,21 @@
                             echo "<li>description du groupe : " . $invitation_group['description'] . '</li>';
                         }
                         echo"<li>";
-                        echo'<form  action="index.php?ac=set-group-invitation" method="post">
-                        <input type="submit" value="refuser" >
+                        echo'<form  action="index.php" method="post">
+                        <button type="submit" class="ac-listGroupModif-body-block-boutton"   name="action" value="set-group-invitation">
+                            Refuser
+                            </button>
                         <input type="hidden" value="'.$invitation_group['id_users'].'" name="id_users">
                         <input type="hidden" value="'.$invitation_group['id_groups'].'" name="id_groups">
                         <input type="hidden" value="false" name="response">
                         </form>';
                         echo"</li>";
                         echo"<li>";
-                        echo'<form  action="index.php?ac=set-group-invitation" method="post">
-                        <input type="submit" value="valider" >
+
+                        echo'<form  action="index.php" method="post">
+                        <button type="submit" class="ac-listGroupModif-body-block-boutton"   name="action" value="set-group-invitation">
+                            Valider
+                            </button>
                         <input type="hidden" value="'.$invitation_group['id_users'].'" name="id_users">
                         <input type="hidden" value="'.$invitation_group['id_groups'].'" name="id_groups">
                         <input type="hidden" value="true" name="response">
