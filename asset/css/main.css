@@ -1548,6 +1548,7 @@ input:placeholder-shown {
 .ac-listEvent-body-ul{
     padding: 5px 5px;
     margin-left: 40%;
+    margin-top: 25px;
     background-color: #c8d6e5;
     width: 20%;
     color: white;
@@ -1592,7 +1593,7 @@ input:placeholder-shown {
     cursor: default;
     color: white;
     text-align: center;
-    margin: 25px 0;
+    margin: 45px 0 20px;
 }
 
 .ac-listEvent-body-block {

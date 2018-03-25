@@ -39,6 +39,7 @@
             if (!empty($events['end_hour'])) {
                 echo '<li class="ac-listEvent-body-li">Heure de fin: ' . $events['end_hour'].'</li>';
             }
+            echo"</ul>";
             if($events['level'] == "1" || $events['level'] == "2"){
                 echo'<li>
                         <form class="ac-listEvent-body-button" action="index.php" method="post">
@@ -49,13 +50,14 @@
                         </form>
                     </li>';
             }
-            echo"</ul>";
+
         }
 
         echo"<h1 class='ac-listEvent-body-h1'> Invitations d'évènement refusée </h1>";
         foreach ($invitation_list as $invitation){
+            echo "<ul class='ac-listEvent-body-ul'>";
             if($invitation['etat']=="refuser"){
-                echo "<ul class='ac-listEvent-body-ul'>";
+
                 }if(!empty($invitation['event_name'])){
                     echo"<li class='ac-listEvent-body-li'>Nom de l'évènement: ".$invitation['event_name'].'</li>';
                 }if(!empty($invitation['start'])){
@@ -69,6 +71,7 @@
                 }if(!empty($invitation['etat'])){
                     echo"<li class='ac-listEvent-body-li'>Etat de l'évènement: ".$invitation['etat'].'</li>';
                 }
+                echo"</ul>";
                     echo'<li>
                             <form class="ac-listEvent-body-button" action="index.php" method="post">
                                 <button type="submit" class="ac-listEvent-body-button-content" id="saveGroup"  name="action" value="set-event-invitation">
@@ -79,15 +82,16 @@
                                  <input type="hidden" value="true" name="response">
                              </form>
                         </li>';
-                echo"</ul>";
+
 
 
         }
 
         echo"<h1 class='ac-listEvent-body-h1'> Invitations d'évènement validée </h1>";
         foreach ($invitation_list as $invitation){
+            echo "<ul class='ac-listEvent-body-ul'>";
             if($invitation['etat']=="valider"){
-                echo "<ul class='ac-listEvent-body-ul'>";
+
                 }if(!empty($invitation['event_name'])){
                     echo"<li class='ac-listEvent-body-li'>Nom de l'évènement: ".$invitation['event_name'].'</li>';
                 }if(!empty($invitation['start'])){
@@ -101,6 +105,7 @@
                 }if(!empty($invitation['etat'])){
                     echo"<li class='ac-listEvent-body-li'>Etat de l'évènement: ".$invitation['etat'].'</li>';
                 }
+                echo"</ul>";
                 echo'<li>
                         <form class="ac-listEvent-body-button" action="index.php" method="post">
                             <button type="submit" class="ac-listEvent-body-button-content" id="saveGroup"  name="action" value="set-event-invitation">
@@ -111,7 +116,7 @@
                             <input type="hidden" value="false" name="response">
                          </form>
                     </li>';
-                echo"</ul>";
+
 
 
 
