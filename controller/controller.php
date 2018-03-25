@@ -137,6 +137,11 @@ if (empty($_POST) && empty($_GET)) {
 
             }
         }
+        if ($_POST["action"] == "move-event") {
+            if(move_event($_POST["id"], $_POST["start"], $_POST["end"], $c)) {
+                header('Location: index.php');
+            }
+        }
         //creation des invitation d'évenement
         if ($_POST["action"] == "create-invitation") {
 

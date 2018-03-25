@@ -12,21 +12,29 @@ function create_invitation($user_list, $creator, $c)
             $id_user = $user['id'];
             $id_group = $user['id_group'];
 
-            if(isset($user['right'])){
+            if (isset($user['right'])) {
                 $right = $user['right'];
-            }
-            else{
+            } else {
                 $right = null;
             }
             if ($loop == 0) {
-                $sql2 = (" ('$id_event', '$id_user', '$id_group', 'envoie', '$creator', '$right')");
+                if($id_user== $creator){
+                    $sql2 = (" ('$id_event', '$id_user', '$id_group', 'valider', '$creator', '$right')");
+                }
+                else{
+                    $sql2 = (" ('$id_event', '$id_user', '$id_group', 'envoie', '$creator', '$right')");
+                }
                 $loop++;
             } else {
-                $sql2 .= (", ('$id_event', '$id_user', '$id_group', 'envoie', '$creator', '$right')");
+                if($id_user== $creator){
+                    $sql2 = (", ('$id_event', '$id_user', '$id_group', 'valider', '$creator', '$right')");
+                }
+                else{
+                    $sql2 = (", ('$id_event', '$id_user', '$id_group', 'envoie', '$creator', '$right')");
+                }
             }
         }
     }
-
 
 
     if (isset($sql2)) {
@@ -133,6 +141,15 @@ function verify_user_disponibility($start, $start_hour, $end, $end_hour, $user_i
     return true;
 }
 
+function valid_invitaiton_by_iduser_and_id_group($id_user, $id_event, $c){
+    $sql = ("UPDATE invitation SET etat = 'valider' WHERE id_event = '$id_event' AND id_user = '$id_user'");
+    if (mysqli_query($c, $sql)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 function verify_user_list_disponibility($start, $start_hour, $end, $end_hour, $user_list, $c)
 {
     $start_timestanp = date_timestamp_get(date_create('' . $start . ' ' . $start_hour . ''));
@@ -170,7 +187,7 @@ function search_next_free_slot($start, $start_hour, $end, $end_hour, $user_list,
     while ($free_slot < $nb_slot && $loop < $max_turn) {
         $loop++;
         if (verify_user_list_disponibility(date_format($start_date, 'Y-m-d'), $start_hour, date_format($end_date, 'Y-m-d'), $end_hour, $user_list, $c)) {
-            $free_slot_list[$free_slot] = array($free_slot, date_format($start_date, 'Y-m-d'), $start_hour, date_format($end_date, 'Y-m-d'),  $end_hour);
+            $free_slot_list[$free_slot] = array($free_slot, date_format($start_date, 'Y-m-d'), $start_hour, date_format($end_date, 'Y-m-d'), $end_hour);
             $free_slot++;
         }
         //incrémentation du créneau
@@ -187,3 +204,14 @@ function search_next_free_slot($start, $start_hour, $end, $end_hour, $user_list,
     }
     return $free_slot_list;
 }
+
+function reset_all_invit_by_id_event($id, $c)
+{
+    $sql = ("UPDATE invitation SET etat = 'envoie' WHERE id_event = '$id'");
+    if (mysqli_query($c, $sql)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+

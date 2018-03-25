@@ -80,3 +80,11 @@ function display_event_popup(id) {
         document.getElementById("popup_stat").value = "display";
     }
 }
+function moove_event_by_id($id, $start, $end) {
+    document.getElementById("id_event").value = $id;
+    document.getElementById("start_event").value = $start;
+    document.getElementById("end_event").value = $end;
+    document.forms["moove-event"].submit();
+
+
+}

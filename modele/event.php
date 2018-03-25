@@ -25,11 +25,12 @@ function get_one_event_by_id($id_event, $c){
     return $one_event;
 }
 function get_accepeted_event_by_user_id($id, $c){
-    $sql = ("SELECT *
+    $sql = ("SELECT E.id, E.creator, nom, description, type, start, start_hour, end, end_hour, I.id as id_invit, id_event, id_user, id_group, etat, level, I.creator
 FROM events E
 INNER JOIN invitation I ON E.id = I.id_event
 WHERE I.id_user ='$id' AND I.etat ='valider'
 GROUP BY I.id_event");
+
     $result = mysqli_query($c,$sql);
     $event_list= array ();
     $loop = 0;
@@ -102,3 +103,17 @@ function update_event_by_id($id_event,$nom,$start,$start_hour,$end,$end_hour,$c)
     }
 }
 
+function move_event($id, $start, $end, $c){
+    reset_all_invit_by_id_event($id,$c);
+    valid_invitaiton_by_iduser_and_id_group($_SESSION['id'], $id, $c);
+    $start = explode("T", $start);
+    $end = explode("T", $end);
+    $sql = ("UPDATE events SET start = '$start[0]', start_hour = '$start[1]', end = '$end[0]', end_hour = '$end[1]' WHERE id = '$id'");
+
+    if(mysqli_query($c,$sql)){
+        return true;
+    }
+    else{
+        return false;
+    }
+}

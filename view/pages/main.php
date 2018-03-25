@@ -32,8 +32,14 @@
                     if (!empty($events['start'])) {
                         echo 'start : "' . $events['start'] . 'T'.$events['start_hour'].'",';
                     }
+                    if (!empty($events['start'])) {
+                        echo 'Estart : "' . $events['start'] . 'T'.$events['start_hour'].'",';
+                    }
                     if (!empty($events['end'])) {
                         echo 'end : "' . $events['end'] . 'T'.$events['end_hour'].'",';
+                    }
+                    if (!empty($events['end'])) {
+                        echo 'Eend : "' . $events['end'] . 'T'.$events['end_hour'].'",';
                     }
                     echo "},";
                 }
@@ -48,9 +54,8 @@
             },
             editable: true,
             eventDrop: function (event, delta, revertFunc) {
-                if (!confirm(event.title + " commence maintenant à : " + event.start.format() + " êtes-vous sûr de ce changement? ")) {
-                    revertFunc();
-                } else {
+                if (confirm(event.title + " commence maintenant à : " + event.start.format() + " êtes-vous sûr de ce changement? ")) {
+                    moove_event_by_id(event.id, event.start.format(), event.end.format())
 
                 }
             },
@@ -93,7 +98,12 @@
         });
     });
 </script>
-
+<form id="moove-event" action="index.php"  method="post">
+    <input type='hidden' name='action' value='move-event'>
+    <input type='hidden' name='id' id="id_event" value=''>
+    <input type='hidden' name='start' id="start_event" value=''>
+    <input type='hidden' name='end' id="end_event" value=''>
+</form>
 <div class="ac-main-header" id="mainHeader">
 
     <div class="fa fa-envelope-o ac-main-header-invitation" onclick="afficheNav()" id="enveloppe">
