@@ -65,7 +65,7 @@ function display_list_invitation_group($invitation_group_list){
     require("pages/list_invitation_group.php");
 
 }
-function display_list_event($event_list){
+function display_list_event($event_list,$invitation_list){
 
     require("pages/list_event.php");
 

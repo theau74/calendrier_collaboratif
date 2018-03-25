@@ -79,7 +79,7 @@ function get_group_invitation($id_user, $c)
     return $invitation_group_list;
 }
 
-function set_invitation($id_user, $id_event, $response, $c)
+function set_invitation_event($id_user, $id_event, $response, $c)
 {
     if ($response == "true") {
         $sql = ("UPDATE invitation SET etat ='valider' WHERE id_user ='$id_user' AND id_event='$id_event'");

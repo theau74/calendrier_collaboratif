@@ -173,17 +173,9 @@ if (empty($_POST) && empty($_GET)) {
                 $page = "erreur";
             }
         }
-        //Valider une invitation d'event
-        if ($_POST["action"] == "valid_event_invit") {
-            if (set_invitation($_POST["id_user"], $_POST["id_event"], "true", $c)) {
-                header('Location: index.php');
-            } else {
-                $page = "erreur";
-            }
-        }
-        //refuser une invitation d'event
-        if ($_POST["action"] == "deny_event_invit") {
-            if (set_invitation($_POST["id_user"], $_POST["id_event"], "false", $c)) {
+        //Valider ou refuser une invitation d'event
+        if ($_POST["action"] == "set-event-invitation") {
+            if (set_invitation_event($_POST["id_user"], $_POST["id_event"], $_POST["response"], $c)) {
                 header('Location: index.php');
             } else {
                 $page = "erreur";
@@ -286,6 +278,7 @@ if (empty($_POST) && empty($_GET)) {
             }
             //Page liste des evenenments
             if (isset($_GET["list_event"])) {
+                $invitation_list = get_invitation_by_id_user($_SESSION['id'], $c);
                 $event_list = get_event_by_user_id($_SESSION['id'], $c);
                 $pending_invitation_list = get_pending_invitation_by_id_user($_SESSION['id'], $c);
                 $page = "list_event";

@@ -74,4 +74,3 @@ foreach ($invitation_group_list as $invitation_group) {
     }
 
 }
-?>
