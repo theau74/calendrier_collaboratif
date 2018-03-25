@@ -15,6 +15,7 @@ if (empty($_POST) && empty($_GET)) {
 } else {
 //script de connection et l'inscription
     if (isset($_POST["action"])) {
+
         if ($_POST["action"] == "signin") {
             if (user_signin(protect($_POST["pseudo"]), protect($_POST["password"]), $c, $encryption_key)) {
                 header('Location: index.php');
@@ -173,9 +174,17 @@ if (empty($_POST) && empty($_GET)) {
                 $page = "erreur";
             }
         }
-        //Valider ou refuser une invitation d'event
-        if ($_POST["action"] == "set-event-invitation") {
-            if (set_invitation_event($_POST["id_user"], $_POST["id_event"], $_POST["response"], $c)) {
+        //Valider une invitation d'event
+        if ($_POST["action"] == "valid_event_invit") {
+            if (set_invitation_event($_POST["id_user"], $_POST["id_event"], "true", $c)) {
+                header('Location: index.php');
+            } else {
+                $page = "erreur";
+            }
+        }
+        //refuser une invitation d'event
+        if ($_POST["action"] == "deny_event_invit") {
+            if (set_invitation_event($_POST["id_user"], $_POST["id_event"], "false", $c)) {
                 header('Location: index.php');
             } else {
                 $page = "erreur";
