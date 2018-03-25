@@ -1,5 +1,5 @@
-
 <div class="ac-createEvent">
+
     <div class="ac-createEvent-header">
 
         <a href="index.php" class="close">
@@ -13,6 +13,7 @@
 
 
     </div>
+
     <form action="index.php?ac=create-event" method="post">
         <input type="text" id="addEventTitle" placeholder="Titre de l'événement ..." name="nom">
         <div class="ac-createEvent-body">
