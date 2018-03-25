@@ -49,8 +49,7 @@
                 </form>';
             }
         }
-        ?>
-        <?php
+
         echo"<h1 class='ac-listEvent-body-h1'> Invitations d'évènement refusée </h1>";
         foreach ($invitation_list as $invitation){
             if($invitation['etat']=="refuser"){
@@ -68,15 +67,16 @@
                 }if(!empty($invitation['etat'])){
                     echo"<li class='ac-listEvent-body-li'>Etat de l'évènement: ".$invitation['etat'].'</li>';
                 }
+                echo"</ul>";
                 echo'<form class="ac-listEvent-body-button" action="index.php" method="post">
-            <button type="submit" class="ac-listEvent-body-button-content" id="saveGroup"  name="action" value="set-event-invitation">
+                    <button type="submit" class="ac-listEvent-body-button-content" id="saveGroup"  name="action" value="set-event-invitation">
                         Valider
                     </button>
-             <input type="hidden" value="'.$invitation['id_user'].'" name="id_user">
-             <input type="hidden" value="'.$invitation['id_event'].'" name="id_event">
-             <input type="hidden" value="true" name="response">
+                    <input type="hidden" value="'.$invitation['id_user'].'" name="id_user">
+                    <input type="hidden" value="'.$invitation['id_event'].'" name="id_event">
+                    <input type="hidden" value="true" name="response">
              </form>';
-                echo"</ul>";
+
 
 
         }
@@ -98,6 +98,7 @@
                 }if(!empty($invitation['etat'])){
                     echo"<li class='ac-listEvent-body-li'>Etat de l'évènement: ".$invitation['etat'].'</li>';
                 }
+                echo"</ul>";
                 echo'<form class="ac-listEvent-body-button" action="index.php" method="post">
                     <button type="submit" class="ac-listEvent-body-button-content" id="saveGroup"  name="action" value="set-event-invitation">
                         Refuser
@@ -106,7 +107,7 @@
                     <input type="hidden" value="'.$invitation['id_event'].'" name="id_event">
                     <input type="hidden" value="false" name="response">
                  </form>';
-                echo"</ul>";
+
 
 
 
