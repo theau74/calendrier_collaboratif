@@ -32,7 +32,7 @@ elseif ($page == "create-event") {
     display_create_event($groups_list, $users_list);
 }
 
-elseif ($page == "select-slot") {
+elseif ($page == "select_slot") {
     display_select_slot($nom, $description, $free_slot_list, $users_choice_list);
 }
 elseif ($page == "select_slot_for_modification") {
@@ -81,6 +81,9 @@ elseif ($page == "erreur404") {
 elseif ($page == "erreur") {
     display_error();
     display_footer_home();
+}
+elseif ($page == "erreur") {
+    display_error();
 }
 
 

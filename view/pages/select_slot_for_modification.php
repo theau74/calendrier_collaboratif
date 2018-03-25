@@ -49,7 +49,6 @@
 
                     <div class="ac-createEvent-body-description">
                         <?php
-                        var_dump($id_event);
                         foreach ($free_slot_list as $free_slot){
                             echo'<input type ="radio" name="slot_list" value="'.$free_slot[1].','.$free_slot[2].','.$free_slot[3].','.$free_slot[4].'">'.$free_slot[1].','.$free_slot[2].','.$free_slot[3].','.$free_slot[4].' ';
                         }
