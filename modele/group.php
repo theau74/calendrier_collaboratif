@@ -1,4 +1,5 @@
 <?php
+//recupere la liste des groupes
 function get_groups_list($c)
 {
     $sql = ("SELECT * FROM groups");
@@ -11,7 +12,7 @@ function get_groups_list($c)
     }
     return $groups_list;
 }
-
+//renvoie la liste des groupes via un id user
 function get_groups_by_id_user($id_user, $c)
 {
     $sql = ("SELECT U.level, U.id_users, U.id_groups, G.id, G.nom, G.description FROM users_groups U INNER JOIN groups G ON U.id_groups = G.id WHERE U.id_users ='$id_user'");
@@ -24,7 +25,7 @@ function get_groups_by_id_user($id_user, $c)
     }
     return $groups_list_by_id_user;
 }
-
+//recupère les information d'un groupe
 function get_one_group_by_id($id_group, $c)
 {
     $sql = ("SELECT id, nom, description FROM groups WHERE id='$id_group'");
@@ -35,7 +36,7 @@ function get_one_group_by_id($id_group, $c)
     }
     return $one_group;
 }
-
+//renvoie la liste des utilisateur d'un groupe
 function get_users_in_group_by_id($id_group, $c)
 {
     $sql = ("SELECT G.id_users,G.level,G.etat,U.id,U.Fname,U.Lname FROM users_groups G INNER JOIN users U ON G.id_users = U.id WHERE G.id_groups ='$id_group'");

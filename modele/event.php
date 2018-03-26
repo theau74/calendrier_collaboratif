@@ -1,4 +1,5 @@
 <?php
+//recupère les events d'un utilisateur
 function get_event_by_user_id($id, $c){
     $sql = ("SELECT *
 FROM events E
@@ -15,6 +16,7 @@ GROUP BY I.id_event");
     }
     return $event_list;
 }
+//recupère les event d'un utilisateur en ecluant l'event actuel
 function get_event_by_user_id_not_in($id, $id_event, $c){
     $sql = ("SELECT *
 FROM events E
@@ -37,6 +39,7 @@ GROUP BY I.id_event
     }
     return $event_list;
 }
+//recupère les information d'un event
 function get_one_event_by_id($id_event, $c){
     $sql = ("SELECT id, nom, start,start_hour,end,end_hour FROM events WHERE id='$id_event'");
     $result = mysqli_query($c,$sql);
@@ -46,6 +49,7 @@ function get_one_event_by_id($id_event, $c){
     }
     return $one_event;
 }
+//recupère les events accepté pour un utilisateur
 function get_accepeted_event_by_user_id($id, $c){
     $sql = ("SELECT E.id, E.creator, I.level ,nom, description, type, start, start_hour, end, end_hour, I.id as id_invit, id_event, id_user, id_group, etat, I.creator 
               FROM events E INNER JOIN invitation I ON E.id = I.id_event 
@@ -93,7 +97,7 @@ LIMIT 1");
     }
     $result->close();
 }
-
+//supprime un event par son id
 function delete_event_by_id($id_event,$c){
     $sql_event = ("DELETE FROM events 
     WHERE events.id ='$id_event'");
@@ -112,6 +116,7 @@ function delete_event_by_id($id_event,$c){
     }
 
 }
+//modifie un event par son id
 function update_event_by_id($id_event,$nom,$start,$start_hour,$end,$end_hour,$c){
     $sql = ("UPDATE events SET nom = '$nom', start = '$start', start_hour = '$start_hour', end = '$end', end_hour = '$end_hour' WHERE id = '$id_event'");
     if(mysqli_query($c,$sql)){
@@ -121,7 +126,7 @@ function update_event_by_id($id_event,$nom,$start,$start_hour,$end,$end_hour,$c)
         return false;
     }
 }
-
+//deplace un event
 function move_event($id, $start, $start_hour, $end, $end_hour, $c){
     $sql = ("UPDATE events SET start = '$start', start_hour = '$start_hour', end = '$end', end_hour = '$end_hour' WHERE id = '$id'");
     if(mysqli_query($c,$sql)){

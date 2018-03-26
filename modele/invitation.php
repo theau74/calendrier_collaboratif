@@ -55,7 +55,7 @@ function create_invitation($user_list, $creator, $c)
         return true;
     }
 }
-
+//renvoie les invitation via un id_user
 function get_invitation_by_id_user($id_user, $c)
 {
     $sql = ("SELECT I.id_event, I.id_user, I.id_group, I.etat, E.nom as event_name, E.start, E.end, G.nom as group_name, G.description FROM invitation I 
@@ -72,7 +72,7 @@ WHERE I.id_user ='$id_user' GROUP BY id_event");
     return $invitation_list;
 
 }
-
+//renvoie les
 function get_group_invitation($id_user, $c)
 {
     $sql = ("SELECT * FROM groups G INNER JOIN users_groups U ON G.id = U.id_groups WHERE U.id_users ='$id_user'");
