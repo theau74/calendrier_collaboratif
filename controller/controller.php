@@ -86,6 +86,7 @@ if (empty($_POST) && empty($_GET)) {
                 $page = "erreur";
             }
         }
+        //creation d'évenement avec le générateur de créneau
         if ($_POST["action"] == "create-event-by-slot-generator") {
             $loop = 0;
             $users_choice_list = array();
@@ -104,6 +105,7 @@ if (empty($_POST) && empty($_GET)) {
                 }
             }
             $slot = explode(",", $_POST['slot_list']);
+            //creation de l'event
             if (verify_user_list_disponibility($slot[0], $slot[1], $slot[2], $slot[3], array_column($users_choice_list, 'id'), $c)) {
                 if (create_event($_POST['nom'], $_POST['description'], $_SESSION['id'], $slot[0], $slot[1], $slot[2], $slot[3], $c, $encryption_key)) {
                     if (!empty($users_choice_list)) {
@@ -124,6 +126,7 @@ if (empty($_POST) && empty($_GET)) {
                 $page = "select_slot";
             }
         }
+        //deplacement d'evenement
         if ($_POST["action"] == "move-event") {
             $users_list = get_users_list_by_event_id($_POST["id"], $c);
             $id_event = $_POST['id'];
@@ -133,7 +136,7 @@ if (empty($_POST) && empty($_GET)) {
             $end = explode("T", $_POST['end']);
             $end[1] = explode(":", $end[1]);
             $end[1] = "" . $end[1][0] . ":" . $end[1][1] . "";
-            //verify_user_list_disponibility($start, $start_hour, $end, $end_hour, $user_list, $c)
+            //verification des disponibilité des utilisateurs
             if (verify_user_list_disponibility_not_in($start[0], $start[1], $end[0], $end[1], array_column($users_list, 'id_user'), $id_event, $c)) {
                 if (reset_all_invit_by_id_event($_POST["id"], $c) && valid_invitaiton_by_iduser_and_id_event($_SESSION['id'], $_POST["id"], $c) && move_event($_POST['id'], $start[0], $start[1], $end[0], $end[1], $c)) {
                     header('Location: index.php');
@@ -146,6 +149,7 @@ if (empty($_POST) && empty($_GET)) {
                 $page = "select_slot_for_modification";
             }
         }
+        //deplacement d'event avec le generateur de creneau
         if ($_POST["action"] == "move-event-by-slot-generator") {
             $id_event = $_POST['id_event'];
             $users_list = get_users_list_by_event_id($id_event, $c);
@@ -171,6 +175,7 @@ if (empty($_POST) && empty($_GET)) {
                 $page = "erreur";
             }
         }
+        //creation de groupe
         if ($_POST["action"] == "create-group") {
             if (create_group($_POST['nom'], $_POST['description'], $_SESSION['id'], $_POST['users-choice'], $c, $encryption_key)) {
                 //$nom, $description, $creator, $users_choice, $c, $encryption_key
@@ -238,6 +243,7 @@ if (empty($_POST) && empty($_GET)) {
                 $page = "erreur";
             }
         }
+        //affichage des page view
     } elseif (isset($_POST["view"])) {
         if ($_POST["view"] == "set_group") {
             $one_group = get_one_group_by_id($_POST["id_groups"], $c);
