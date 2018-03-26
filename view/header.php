@@ -18,7 +18,11 @@
     <script src="asset/js/pre_load.js"      type="text/javascript"></script>
     <script src="asset/js/jquery.min.js"></script>
     <script src="asset/js/moment.min.js"></script>
-    <script src="asset/js/fullcalendar.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.print.css"></script>
+
     <script src="asset/js/fr.js"></script>
 
 </head>

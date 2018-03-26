@@ -11,13 +11,8 @@
     <div class="ac-home">
 
         <p class="ac-home-signin-text">
-            erreur, page incconue
+            Erreur !
         </p>
-
-        <p class="ac-home-signin-text">
-
-        </p>
-
 
         <a href='index.php' class="ac-home-signin-continue">
             Retour

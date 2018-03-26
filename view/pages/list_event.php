@@ -54,65 +54,75 @@
         echo"<h1 class='ac-listEvent-body-h1'> Invitations d'évènement refusée </h1>";
         foreach ($invitation_list as $invitation){
             echo "<ul class='ac-listEvent-body-ul'>";
-            if($invitation['etat']=="refuser"){
+            if($invitation['etat']=="refuser") {
 
-                }if(!empty($invitation['event_name'])){
-                    echo"<li class='ac-listEvent-body-li'>Nom de l'évènement: ".$invitation['event_name'].'</li>';
-                }if(!empty($invitation['start'])){
-                    echo"<li class='ac-listEvent-body-li'>Debut de l'évènement: ".$invitation['start'].'</li>';
-                }if(!empty($invitation['end'])){
-                    echo"<li class='ac-listEvent-body-li'>Fin de l'évènement: ".$invitation['end'].'</li>';
-                }if(!empty($invitation['group_name'])){
-                    echo"<li class='ac-listEvent-body-li'>Nom du groupe: ".$invitation['group_name'].'</li>';
-                }if(!empty($invitation['description'])){
-                    echo"<li class='ac-listEvent-body-li'>Description de l'évènement: ".$invitation['description'].'</li>';
-                }if(!empty($invitation['etat'])){
-                    echo"<li class='ac-listEvent-body-li'>Etat de l'évènement: ".$invitation['etat'].'</li>';
+                if (!empty($invitation['event_name'])) {
+                    echo "<li class='ac-listEvent-body-li'>Nom de l'évènement: " . $invitation['event_name'] . '</li>';
                 }
-                echo"</ul>";
-                    echo'<form class="ac-listEvent-body-button" action="index.php" method="post">
+                if (!empty($invitation['start'])) {
+                    echo "<li class='ac-listEvent-body-li'>Debut de l'évènement: " . $invitation['start'] . '</li>';
+                }
+                if (!empty($invitation['end'])) {
+                    echo "<li class='ac-listEvent-body-li'>Fin de l'évènement: " . $invitation['end'] . '</li>';
+                }
+                if (!empty($invitation['group_name'])) {
+                    echo "<li class='ac-listEvent-body-li'>Nom du groupe: " . $invitation['group_name'] . '</li>';
+                }
+                if (!empty($invitation['description'])) {
+                    echo "<li class='ac-listEvent-body-li'>Description de l'évènement: " . $invitation['description'] . '</li>';
+                }
+                if (!empty($invitation['etat'])) {
+                    echo "<li class='ac-listEvent-body-li'>Etat de l'évènement: " . $invitation['etat'] . '</li>';
+                }
+                echo "</ul>";
+                echo '<form class="ac-listEvent-body-button" action="index.php" method="post">
                                 <button type="submit" class="ac-listEvent-body-button-content" id="saveGroup"  name="action" value="set-event-invitation">
                                     Valider
                                 </button>
-                                 <input type="hidden" value="'.$invitation['id_user'].'" name="id_user">
-                                 <input type="hidden" value="'.$invitation['id_event'].'" name="id_event">
+                                 <input type="hidden" value="' . $invitation['id_user'] . '" name="id_user">
+                                 <input type="hidden" value="' . $invitation['id_event'] . '" name="id_event">
                                  <input type="hidden" value="true" name="response">
                              </form>';
 
-
+            }
 
         }
 
         echo"<h1 class='ac-listEvent-body-h1'> Invitations d'évènement validée </h1>";
         foreach ($invitation_list as $invitation){
             echo "<ul class='ac-listEvent-body-ul'>";
-            if($invitation['etat']=="valider"){
+            if($invitation['etat']=="valider") {
 
-                }if(!empty($invitation['event_name'])){
-                    echo"<li class='ac-listEvent-body-li'>Nom de l'évènement: ".$invitation['event_name'].'</li>';
-                }if(!empty($invitation['start'])){
-                    echo"<li class='ac-listEvent-body-li'>Debut de l'évènement: ".$invitation['start'].'</li>';
-                }if(!empty($invitation['end'])){
-                    echo"<li class='ac-listEvent-body-li'>Fin de l'évènement: ".$invitation['end'].'</li>';
-                }if(!empty($invitation['group_name'])){
-                    echo"<li class='ac-listEvent-body-li'>Nom du groupe: ".$invitation['group_name'].'</li>';
-                }if(!empty($invitation['description'])){
-                    echo"<li class='ac-listEvent-body-li'>Description de l'évènement: ".$invitation['description'].'</li>';
-                }if(!empty($invitation['etat'])){
-                    echo"<li class='ac-listEvent-body-li'>Etat de l'évènement: ".$invitation['etat'].'</li>';
+                if (!empty($invitation['event_name'])) {
+                    echo "<li class='ac-listEvent-body-li'>Nom de l'évènement: " . $invitation['event_name'] . '</li>';
                 }
-                echo"</ul>";
-                echo'<form class="ac-listEvent-body-button" action="index.php" method="post">
+                if (!empty($invitation['start'])) {
+                    echo "<li class='ac-listEvent-body-li'>Debut de l'évènement: " . $invitation['start'] . '</li>';
+                }
+                if (!empty($invitation['end'])) {
+                    echo "<li class='ac-listEvent-body-li'>Fin de l'évènement: " . $invitation['end'] . '</li>';
+                }
+                if (!empty($invitation['group_name'])) {
+                    echo "<li class='ac-listEvent-body-li'>Nom du groupe: " . $invitation['group_name'] . '</li>';
+                }
+                if (!empty($invitation['description'])) {
+                    echo "<li class='ac-listEvent-body-li'>Description de l'évènement: " . $invitation['description'] . '</li>';
+                }
+                if (!empty($invitation['etat'])) {
+                    echo "<li class='ac-listEvent-body-li'>Etat de l'évènement: " . $invitation['etat'] . '</li>';
+                }
+                echo "</ul>";
+                echo '<form class="ac-listEvent-body-button" action="index.php" method="post">
                             <button type="submit" class="ac-listEvent-body-button-content" id="saveGroup"  name="action" value="set-event-invitation">
                                 Refuser
                             </button>
-                            <input type="hidden" value="'.$invitation['id_user'].'" name="id_user">
-                            <input type="hidden" value="'.$invitation['id_event'].'" name="id_event">
+                            <input type="hidden" value="' . $invitation['id_user'] . '" name="id_user">
+                            <input type="hidden" value="' . $invitation['id_event'] . '" name="id_event">
                             <input type="hidden" value="false" name="response">
                          </form>';
 
 
-
+            }
 
         }
         ?>
