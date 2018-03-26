@@ -707,6 +707,10 @@ input:placeholder-shown {
     background-color: #8395a7;
 }
 
+.ac-createEventModif-header-save {
+    width: 100%;
+}
+
 .ac-createEvent-header-title {
     width: 100%;
     font-size: 16px;
@@ -716,6 +720,19 @@ input:placeholder-shown {
     outline: none;
     height: 40px;
     padding: 0px 10px;
+}
+
+.ac-createEventModif-header-title {
+    width: 100%;
+    font-size: 18px;
+    color: white;
+    background-color: #1C2229;
+    border: none;
+    outline: none;
+    height: 80px;
+    line-height: 20px;
+    padding-top: 48px;
+    text-align: center;
 }
 
 .ac-createEvent-header-item-checkmark {
@@ -834,23 +851,29 @@ input:placeholder-shown {
 }
 
 .ac-createEvent-body-description-radio {
-    width: 600px;
+    max-width: 250px;
     margin: 0 auto;
 }
 
 .ac-createEvent-body-description-radio-item {
-    height: 40px;
+    height: 80px;
     line-height: 40px;
     border: 1px solid;
     margin: 10px 0;
 }
 
 .ac-createEvent-body-radio {
-
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 24px;
+    cursor: pointer;
 }
 
 .ac-createEvent-body-radio-span {
-
+    display: inline-block;
+    width: calc(100% - 80px);
+    float: right;
 }
 
 .ac-createEvent-body-item {
@@ -1095,6 +1118,7 @@ input:placeholder-shown {
     height: 40px;
     justify-content: space-around;
     margin: 20px 0px;
+    white-space: nowrap;
 }
 
 .ac-createGroup-body-item-name {
@@ -1131,7 +1155,7 @@ input:placeholder-shown {
     box-shadow: 0px 0px 5px 1px;
     background-color: #c8d6e5;
     width: 25%;
-    margin-left: 45px;
+    margin-left: 10px;
     font-size: 17px;
 }
 
@@ -2811,5 +2835,15 @@ a[data-goto] {
         margin: 0 auto;
     }
 
+    .ac-createEvent-body-description-radio {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 100%;
+    }
+
+    .ac-createEvent-body-description-radio-item {
+        min-width: 250px;
+        width: calc(100% / 3);
+    }
 
 }

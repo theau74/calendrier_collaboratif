@@ -4,7 +4,9 @@
         <a href="index.php" class="fa fa-close ac-createEvent-header-close">
         </a>
 
-
+        <h1 class="ac-createEventModif-header-title">
+            Liste des Créneaux disponible :
+        </h1>
 
     </div>
 
@@ -33,7 +35,7 @@
 
                     <input type="hidden" id="addEventTitle" name="id_event" value="<?php echo $id_event; ?>">
 
-                    <button type="submit" class="ac-createEvent-header-save" id="saveEvent" name="action"
+                    <button type="submit" class="ac-createEvent-header-save ac-createEventModif-header-save" id="saveEvent" name="action"
                             value="move-event-by-slot-generator">
                         valider
                     </button>
