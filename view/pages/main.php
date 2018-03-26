@@ -369,6 +369,7 @@
 
 
                     </div>
+
                     <div class="ac-createEvent-popUp-body-invitation">
 
                         <h1 class="ac-createEvent-popUp-body-invitation-title">

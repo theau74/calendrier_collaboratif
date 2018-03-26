@@ -832,7 +832,7 @@ input:placeholder-shown {
 }
 
 .ac-createEvent-body-description {
-    margin-top: 30px;
+    margin-top: 80px;
 }
 
 .ac-createEvent-body-description-input {
@@ -1125,7 +1125,7 @@ input:placeholder-shown {
 .ac-createGroup-body-item-name {
     width: 30%;
     text-align: left;
-    line-height: 30px;
+    line-height: 40px;
     padding-left: 10px;
     box-shadow: 0px 0px 5px 1px;
     background-color: #c8d6e5;
@@ -1139,7 +1139,7 @@ input:placeholder-shown {
 .ac-createGroup-body-item-lname {
     width: 30%;
     text-align: left;
-    line-height: 30px;
+    line-height: 40px;
     padding-left: 10px;
     box-shadow: 0px 0px 5px 1px;
     background-color: #c8d6e5;
@@ -2540,13 +2540,11 @@ a[data-goto] {
     font-size: 22px;
     display: flex;
     padding: 5px;
-    width: 100%;
     justify-content: space-between;
 }
 
 .ac-createEvent-popUp-checkbox-container span:nth-child(1),
 .ac-createEvent-popUp-checkbox-container span:nth-child(2) {
-    width: 40%;
 }
 
 /*cacher checkbox par default */
@@ -2845,6 +2843,15 @@ a[data-goto] {
     .ac-createEvent-body-description-radio-item {
         min-width: 250px;
         width: calc(100% / 3);
+    }
+
+    .ac-createEvent-body-creneaux {
+        width: 500px;
+        margin: 0 auto;
+    }
+
+    .ac-createEvent-body-description-radio-item {
+        margin: 10px auto;
     }
 
 }
